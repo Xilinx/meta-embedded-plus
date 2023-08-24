@@ -1,0 +1,88 @@
+From 31ec2f951bc79d6ad996be43001f3c986afb9da5 Mon Sep 17 00:00:00 2001
+From: Swagath Gadde <swagath.gadde@amd.com>
+Date: Fri, 11 Aug 2023 11:46:19 +0530
+Subject: [DEVICE-TREE-XLNX PATCH] versal-rave: add initial version rave reva
+ dts
+
+Add versal-rave-reva board dtsi in dtg.
+
+Signed-off-by: Swagath Gadde <swagath.gadde@amd.com>
+---
+ .../2023.2/BOARD/versal-rave-reva.dtsi        | 65 +++++++++++++++++++
+ 1 file changed, 65 insertions(+)
+ create mode 100755 device_tree/data/kernel_dtsi/2023.2/BOARD/versal-rave-reva.dtsi
+
+diff --git a/device_tree/data/kernel_dtsi/2023.2/BOARD/versal-rave-reva.dtsi b/device_tree/data/kernel_dtsi/2023.2/BOARD/versal-rave-reva.dtsi
+new file mode 100755
+index 00000000..08315065
+--- /dev/null
++++ b/device_tree/data/kernel_dtsi/2023.2/BOARD/versal-rave-reva.dtsi
+@@ -0,0 +1,65 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * dts file for Xilinx Versal RAVE revA
++ *
++ * (C) Copyright 2023, Advanced Micro Devices, Inc
++ *
++ * Michal Simek <michal.simek@amd.com>
++ */
++
++#include <dt-bindings/gpio/gpio.h>
++#include "versal.dtsi"
++#include "versal-clk.dtsi"
++
++/ {
++	compatible = "xlnx,versal-rave-revA", "xlnx,versal-rave",
++		     "xlnx,versal";
++	model = "Xilinx Versal RAVE board revA";
++
++	memory: memory@0 {
++		device_type = "memory";
++		reg = <0 0 0 0x80000000>, <0x8 0x0 0x1 0x80000000>; /* 8GB */
++	};
++
++	chosen {
++		bootargs = "earlycon clk_ignore_unused";
++		stdout-path = "serial0:115200";
++	};
++
++	aliases {
++		serial0 = &serial0;
++		serial1 = &serial1;
++		i2c0 = &i2c0;
++	};
++
++	/* For extension board */
++	onewire {
++		compatible = "w1-gpio";
++		gpios = <&gpio0 4 GPIO_ACTIVE_HIGH>;
++	};
++};
++
++&serial1 { /* PMC_MIO20/21 */
++	status = "okay";
++};
++
++&i2c0 { /* PS_MIO 10/11 - to Ryzen */
++	status = "okay";
++};
++
++&gpio0 {
++	status = "okay";
++	gpio-line-names = "GPIO_LED2", "GPIO_LED3", "GPIO_LED4", "", "1WIRE", /* 0 - 4 */
++			"", "FUSA", "", "EGPIO", "AGPIO", /* 5 - 9 */
++			"I2C0_SCL", "I2C0_SDA", "", "", "", /* 10 - 14 */
++			"", "", "", "", "", /* 15 - 19 */
++			"", "", "", "", "3V3_MON_N", /* 20 - 24 */
++			"3V3_MON_P", /* 25, MIO end and EMIO start */
++			"", "", "", /* 26 - 29 */
++			"", "", "", "", "", /* 30 - 34 */
++			"", "", "", "", "", /* 35 - 39 */
++			"", "", "", "", "", /* 40 - 44 */
++			"", "", "", "", "", /* 45 - 49 */
++			"", "", "", "", "", /* 50 - 54 */
++			"", "", ""; /* 55 - 57 */
++};
+-- 
+2.25.1
+

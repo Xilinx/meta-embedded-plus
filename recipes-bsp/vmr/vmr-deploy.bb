@@ -6,7 +6,8 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/Apache-2.0;md5
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:versal-rave = "versal-rave"
 
-SRC_URI ?= "http://url/for/vmr.elf"
+VMR_FILE ?= "vmr.elf"
+SRC_URI ?= "http://url/for/${VMR_FILE}"
 SRC_URI[sha256sum] = "0000"
 
 inherit deploy

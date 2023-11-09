@@ -10,6 +10,7 @@ DEPENDS += "\
     virtual/bootloader \
     virtual/dtb \
     virtual/kernel \
+    xclbinutil-native \
     "
 
 inherit deploy image-artifact-names
@@ -47,11 +48,14 @@ do_compile[depends] += " \
 
 do_compile () {
     bootgen -image ${WORKDIR}/${PN}.bif -arch ${SOC_FAMILY} -w -o ${B}/${IMAGE_NAME}.bin
+    xclbinutil --add-section PDI:RAW:${B}/${IMAGE_NAME}.bin -o ${IMAGE_NAME}.xsabin
 }
 
 do_deploy () {
     install -Dm 0644 ${B}/${IMAGE_NAME}.bin ${DEPLOYDIR}/${IMAGE_NAME}.bin
     ln -sf ${IMAGE_NAME}.bin ${DEPLOYDIR}/${PN}-${MACHINE}.bin
+    install -Dm 0644 ${B}/${IMAGE_NAME}.xsabin ${DEPLOYDIR}/${IMAGE_NAME}.xsabin
+    ln -sf ${IMAGE_NAME}.xsabin ${DEPLOYDIR}/${PN}-${MACHINE}.xsabin
 }
 
 addtask deploy after do_compile

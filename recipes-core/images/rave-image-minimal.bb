@@ -23,4 +23,7 @@ IMAGE_INSTALL = " \
     run-postinsts \
     u-boot-tools \
     udev-extraconf \
+    apu-boot \
+    init-apu \
+    skd \
 "

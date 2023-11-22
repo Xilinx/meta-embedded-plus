@@ -1,17 +1,13 @@
 DESCRIPTION = "Generate the partition metadata binary for RAVE"
 SUMMARY = "Generate the partition metadata using xclbinutil for RAVE"
 
-LICENSE = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=3b83ef96387f14655fc854ddc3c6bd57"
-
 require rave-boot-fw-gen.inc
 
-COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:versal-rave = "${MACHINE}"
 
 DEPENDS = "xclbinutil-native"
 
-S = "${WORKDIR}/git/fpt_config"
+S = "${WORKDIR}/git"
 
 inherit deploy image-artifact-names
 

@@ -1,22 +1,18 @@
 DESCRIPTION = "Generate the extension FPT for RAVE"
 SUMMARY = "Generate the extension flash parition table for RAVE"
 
-LICENSE = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=3b83ef96387f14655fc854ddc3c6bd57"
-
 require rave-boot-fw-gen.inc
 
-COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:versal-rave = "${MACHINE}"
 
 DEPENDS = "python3"
 
-S = "${WORKDIR}/git/fpt_config"
+S = "${WORKDIR}/git"
 
 inherit deploy image-artifact-names
 
 do_compile () {
-    ${S}/fpt_config.py --fpt ${S}/metadata/rave_ivh/ext_fpt.json --output ${WORKDIR}/${PN}.bin
+    ${S}/gen_fpt_bin.py --fpt ${S}/metadata/rave_ivh/ext_fpt.json --output ${WORKDIR}/${PN}.bin
 }
 
 do_deploy () {

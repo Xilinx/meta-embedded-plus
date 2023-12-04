@@ -22,16 +22,16 @@ do_configure:append () {
 cat > ${WORKDIR}/${PN}.bif << EOF
     all:
     {
-        id_code = 0x14ca8093
+        id_code = 0x14cc8093
         extended_id_code = 0x01
         image { 
             id = 0x1c000000, name=apu_subsystem
             { core=a72-0, exception_level=el-3, trustzone, file=${DEPLOY_DIR_IMAGE}/arm-trusted-firmware.elf }
             { core=a72-0, exception_level=el-2, file=${DEPLOY_DIR_IMAGE}/u-boot.elf }
-            { load=0x4000000, file=${DEPLOY_DIR_IMAGE}/rave-image-minimal-versal-rave.cpio.gz.u-boot }
-            { load=0x2000000, file=${DEPLOY_DIR_IMAGE}/boot.scr }
+            { load=0x2000000, file=${DEPLOY_DIR_IMAGE}/rave-image-minimal-versal-rave.cpio.gz.u-boot }
+            { load=0x20000000, file=${DEPLOY_DIR_IMAGE}/boot.scr }
             { load=0x200000, file=${DEPLOY_DIR_IMAGE}/Image }
-            { load=0x1000, file=${DEPLOY_DIR_IMAGE}/system.dtb }
+            { load=0x40000, file=${DEPLOY_DIR_IMAGE}/system.dtb }
         }
     }
 EOF

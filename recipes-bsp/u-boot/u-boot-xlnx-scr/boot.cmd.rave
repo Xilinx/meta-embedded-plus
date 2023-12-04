@@ -1,6 +1,5 @@
 system_dtb_addr=0x40000
-kernel_addr=0x20100000
-rootfs_addr=0x21000000
+kernel_addr=0x200000
+rootfs_addr=0x2000000
 
-setenv bootargs "console=ttyUL0 clk_ignore_unused modprobe.blacklist=allegro,al5d systemd.unified_cgroup_hierarchy=1"
-bootm ${kernel_addr} ${rootfs_addr} ${system_dtb_addr}
+booti ${kernel_addr} ${rootfs_addr} ${system_dtb_addr}

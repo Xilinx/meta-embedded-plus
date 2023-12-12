@@ -1,4 +1,5 @@
-BIF_FSBL_ATTR:versal-rave = "base-pdi plmfw"
+#BIF_FSBL_ATTR:versal-rave = "base-pdi plmfw"
+BIF_FSBL_ATTR:versal-rave = "base-pdi"
 BIF_VMR_ATTR:versal-rave = "vmr-deploy"
 
 BIF_FPT_ATTR:versal-rave = "extension-fpt"

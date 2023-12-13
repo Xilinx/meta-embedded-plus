@@ -44,7 +44,7 @@ index 00000000..08315065
 +	};
 +
 +	chosen {
-+		bootargs = "earlycon clk_ignore_unused";
++		bootargs = "earlycon";
 +		stdout-path = "serial0:115200";
 +	};
 +
@@ -115,7 +115,7 @@ index 00000000..08315065
 +	};
 +
 +	chosen {
-+		bootargs = "earlycon clk_ignore_unused";
++		bootargs = "earlycon";
 +		stdout-path = "serial0:115200";
 +	};
 +

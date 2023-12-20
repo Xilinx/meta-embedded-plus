@@ -11,17 +11,14 @@ IMAGE_INSTALL = " \
     ${CORE_IMAGE_EXTRA_INSTALL} \
     packagegroup-core-boot \
     kernel-modules \
-    \
-    e2fsprogs-mke2fs \
-    fpga-manager-script \
+    xrt \
+    zocl \
+    dfx-mgr \
     libdfx \
     linux-xlnx-udev-rules \
     mtd-utils \
-    nfs-utils \
-    nfs-utils-client \
     pciutils \
     run-postinsts \
-    u-boot-tools \
     udev-extraconf \
     apu-boot \
     init-apu \

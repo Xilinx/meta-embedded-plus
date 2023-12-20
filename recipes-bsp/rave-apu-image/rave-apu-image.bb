@@ -31,7 +31,7 @@ cat > ${WORKDIR}/${PN}.bif << EOF
             { load=0x2000000, file=${DEPLOY_DIR_IMAGE}/rave-image-minimal-versal-rave.cpio.gz.u-boot }
             { load=0x20000000, file=${DEPLOY_DIR_IMAGE}/boot.scr }
             { load=0x200000, file=${DEPLOY_DIR_IMAGE}/Image }
-            { load=0x40000, file=${DEPLOY_DIR_IMAGE}/system.dtb }
+            { load=0x1000, file=${DEPLOY_DIR_IMAGE}/system.dtb }
         }
     }
 EOF

@@ -1,4 +1,4 @@
-system_dtb_addr=0x40000
+system_dtb_addr=0x1000
 kernel_addr=0x200000
 rootfs_addr=0x2000000
 

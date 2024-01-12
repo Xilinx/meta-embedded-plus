@@ -21,3 +21,8 @@ BIF_PARTITION_IMAGE[partition-metadata] = "${DEPLOY_DIR_IMAGE}/partition-metadat
 BIF_PARTITION_ID[partition-metadata] = "0x1c000000, name=rpu_subsystem, delay_handoff"
 
 BIF_PARTITION_ATTR:versal-rave  = "${BIF_FSBL_ATTR} ${BIF_VMR_ATTR} ${BIF_FPT_ATTR} ${BIF_META_ATTR}"
+
+ADDN_COMPILE_DEPENDS = ""
+ADDN_COMPILE_DEPENDS:versal-rave = "vmr-deploy:do_deploy extension-fpt:do_deploy partition-metadata:do_deploy"
+
+do_compile[depends] += "${ADDN_COMPILE_DEPENDS}"

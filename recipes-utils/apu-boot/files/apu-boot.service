@@ -1,6 +1,6 @@
 [Unit]
 Description=apu-boot
-After=skd.service
+After=soft-kernel-daemon.service
  
 [Service]
 ExecStart=/usr/bin/apu-boot

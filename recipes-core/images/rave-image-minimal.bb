@@ -22,5 +22,5 @@ IMAGE_INSTALL = " \
     udev-extraconf \
     apu-boot \
     init-apu \
-    skd \
+    soft-kernel-daemon \
 "

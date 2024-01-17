@@ -5,7 +5,7 @@ After=init-apu.service
 [Service]
 Type=forking
 User=softkernel
-ExecStart=/usr/bin/skd
+ExecStart=/usr/bin/soft-kernel-daemon
 StandardOutput=journal+console
 MemoryLimit=1G
 

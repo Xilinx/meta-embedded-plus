@@ -19,7 +19,7 @@ inherit deploy image-artifact-names
 do_compile() {
     [ ! -e ${XSA_FILE} ] && bbfatal "Unable to find XSA file: ${XSA_FILE}"
 
-    unzip -j "${XSA_FILE}" "${PARTMETA_FILE}"
+    unzip -j "${XSA_FILE}" "project/${PARTMETA_FILE}"
 
     xclbinutil --add-section PARTITION_METADATA:JSON:${PARTMETA_FILE} \
         -o ${WORKDIR}/${PN}.xsabin --force

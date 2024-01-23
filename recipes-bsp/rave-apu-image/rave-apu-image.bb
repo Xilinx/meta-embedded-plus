@@ -56,6 +56,7 @@ do_deploy () {
     ln -sf ${IMAGE_NAME}.bin ${DEPLOYDIR}/${PN}-${MACHINE}.bin
     install -Dm 0644 ${B}/${IMAGE_NAME}.xsabin ${DEPLOYDIR}/${IMAGE_NAME}.xsabin
     ln -sf ${IMAGE_NAME}.xsabin ${DEPLOYDIR}/${PN}-${MACHINE}.xsabin
+    ln -sf ${IMAGE_NAME}.xsabin ${DEPLOYDIR}/xrt-versal-apu.xsabin
 }
 
 addtask deploy after do_compile

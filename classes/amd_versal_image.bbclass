@@ -58,7 +58,7 @@ def generate_image(d):
     image_data.write(b'\x00\x00\x00\x00') #TODO Checksum
 
     # Write the OSPI data to file
-    with open(d.getVar("B") + "/" + d.getVar("IMAGE_NAME") + ".bin", "wb") as f:
+    with open(d.getVar("B") + "/" + d.getVar("PN") + ".bin", "wb") as f:
         f.write(image_data.getbuffer())
 
 do_compile[depends] += "virtual/boot-bin:do_deploy main-fpt:do_deploy"

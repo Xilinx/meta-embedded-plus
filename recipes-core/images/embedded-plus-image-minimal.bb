@@ -1,9 +1,9 @@
-DESCRIPTION = "A minimal image for RAVE."
+DESCRIPTION = "A minimal image for Embedded Plus."
 
 inherit core-image
 
 COMPATIBLE_MACHINE = "^$"
-COMPATIBLE_MACHINE:versal-rave = "${MACHINE}"
+COMPATIBLE_MACHINE:embedded-plus-ve2302 = "${MACHINE}"
 
 IMAGE_FEATURES += "ssh-server-openssh hwcodecs package-management"
 

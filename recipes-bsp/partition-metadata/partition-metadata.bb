@@ -1,11 +1,11 @@
-DESCRIPTION = "Generate the partition metadata binary for RAVE"
-SUMMARY = "Generate the partition metadata using xclbinutil for RAVE"
+DESCRIPTION = "Generate the partition metadata binary for Embedded Plus"
+SUMMARY = "Generate the partition metadata using xclbinutil for Embedded Plus"
 
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
 COMPATIBLE_MACHINE = ""
-COMPATIBLE_MACHINE:versal-rave = "${MACHINE}"
+COMPATIBLE_MACHINE:embedded-plus-ve2302 = "${MACHINE}"
 
 DEPENDS += "virtual/hdf unzip-native xclbinutil-native"
 

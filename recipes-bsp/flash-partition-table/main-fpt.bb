@@ -1,9 +1,9 @@
-DESCRIPTION = "Generate the main FPT for RAVE"
-SUMMARY = "Generate the main flash partition table for RAVE"
+DESCRIPTION = "Generate the main FPT for Embedded Plus"
+SUMMARY = "Generate the main flash partition table for Embedded Plus"
 
-require rave-boot-fw-gen.inc
+require embedded-plus-boot-fw-gen.inc
 
-COMPATIBLE_MACHINE:versal-rave = "${MACHINE}"
+COMPATIBLE_MACHINE:embedded-plus-ve2302 = "${MACHINE}"
 
 DEPENDS = "python3"
 

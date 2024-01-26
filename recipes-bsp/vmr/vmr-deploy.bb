@@ -4,7 +4,7 @@ LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/Apache-2.0;md5=89aea4e17d99a7cacdbeed46a0096b10"
 
 COMPATIBLE_MACHINE = "^$"
-COMPATIBLE_MACHINE:versal-rave = "versal-rave"
+COMPATIBLE_MACHINE:embedded-plus-ve2302 = "embedded-plus-ve2302"
 
 VMR_FILE ?= "vmr.elf"
 SRC_URI ?= "http://url/for/${VMR_FILE}"

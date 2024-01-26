@@ -1,3 +1,3 @@
-# meta-rave
+# meta-embedded-plus
 
-This layer enables AMD RAVE platform.
+This layer enables AMD Embedded Plus platform.

@@ -1,9 +1,9 @@
-DESCRIPTION = "Generate the extension FPT for RAVE"
-SUMMARY = "Generate the extension flash parition table for RAVE"
+DESCRIPTION = "Generate the extension FPT for Embedded Plus"
+SUMMARY = "Generate the extension flash parition table for Embedded Plus"
 
-require rave-boot-fw-gen.inc
+require embedded-plus-boot-fw-gen.inc
 
-COMPATIBLE_MACHINE:versal-rave = "${MACHINE}"
+COMPATIBLE_MACHINE:embedded-plus-ve2302 = "${MACHINE}"
 
 DEPENDS = "python3"
 

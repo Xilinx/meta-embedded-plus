@@ -28,7 +28,7 @@ cat > ${WORKDIR}/${PN}.bif << EOF
             id = 0x1c000000, name=apu_subsystem
             { core=a72-0, exception_level=el-3, trustzone, file=${DEPLOY_DIR_IMAGE}/arm-trusted-firmware.elf }
             { core=a72-0, exception_level=el-2, file=${DEPLOY_DIR_IMAGE}/u-boot.elf }
-            { load=0x2000000, file=${DEPLOY_DIR_IMAGE}/embedded-plus-image-minimal-embedded-plus-ve2302.cpio.gz.u-boot }
+            { load=0x2000000, file=${DEPLOY_DIR_IMAGE}/embedded-plus-image-minimal-${MACHINE}.cpio.gz.u-boot }
             { load=0x20000000, file=${DEPLOY_DIR_IMAGE}/boot.scr }
             { load=0x200000, file=${DEPLOY_DIR_IMAGE}/Image }
             { load=0x1000, file=${DEPLOY_DIR_IMAGE}/system.dtb }

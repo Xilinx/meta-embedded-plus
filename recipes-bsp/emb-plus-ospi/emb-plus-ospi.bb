@@ -8,12 +8,12 @@ DEPENDS = "virtual/boot-bin main-fpt xclbinutil-native partition-metadata"
 inherit deploy image-artifact-names amd_versal_image
 
 COMPATIBLE_MACHINE = "^$"
-COMPATIBLE_MACHINE:embedded-plus-ve2302 = "${MACHINE}"
+COMPATIBLE_MACHINE:emb-plus-ve2302 = "${MACHINE}"
 
 OSPI_IMAGE_NAME = "XilinxRave_OspiImage"
 
 OSPI_IMAGE_VERSION ?= ""
-OSPI_IMAGE_VERSION:embedded-plus-ve2302 = "1.0"
+OSPI_IMAGE_VERSION:emb-plus-ve2302 = "1.0"
 
 do_compile[depends] += "main-fpt:do_deploy"
 

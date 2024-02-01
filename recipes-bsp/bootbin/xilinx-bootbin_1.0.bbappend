@@ -22,7 +22,20 @@ BIF_PARTITION_ID[partition-metadata] = "0x1c000000, name=rpu_subsystem, delay_ha
 
 BIF_PARTITION_ATTR:embedded-plus-ve2302 = "${BIF_FSBL_ATTR} ${BIF_VMR_ATTR} ${BIF_FPT_ATTR} ${BIF_META_ATTR}"
 
+DEPENDS:append:embedded-plus-ve2302 = " xclbinutil-native"
+
 ADDN_COMPILE_DEPENDS = ""
 ADDN_COMPILE_DEPENDS:embedded-plus-ve2302 = "vmr-deploy:do_deploy extension-fpt:do_deploy partition-metadata:do_deploy"
 
 do_compile[depends] += "${ADDN_COMPILE_DEPENDS}"
+
+do_compile:append:embedded-plus-ve2302() {
+    xclbinutil --force --input ${DEPLOY_DIR_IMAGE}/partition-metadata-${MACHINE}.xsabin \
+        --add-section PDI:RAW:${B}/BOOT.bin --output ${B}/BOOT.xsabin
+}
+
+do_deploy:append:embedded-plus-ve2302() {
+    install -m 0644 ${B}/BOOT.xsabin ${DEPLOYDIR}/${BOOTBIN_BASE_NAME}.xsabin
+    ln -sf ${BOOTBIN_BASE_NAME}.xsabin ${DEPLOYDIR}/BOOT-${MACHINE}.xsabin
+    ln -sf ${BOOTBIN_BASE_NAME}.xsabin ${DEPLOYDIR}/boot.xsabin
+}

@@ -1,9 +1,13 @@
 / {
+	chosen {
+                bootargs = "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8 clk_ignore_unused root=/dev/ram0 rw";
+                stdout-path = "serial0:115200n8";
+        };
+
 	reserved-memory {
         	#address-cells = <0x2>;
         	#size-cells = <0x2>;
         	ranges;
-
         	u2a_xgq_region: buffer0@36000000 {
             		no-map;
             		reg = <0x0 0x36000000 0x0 0x1000000>;
@@ -66,4 +70,8 @@
 &blp_blp_logic_gcq_r2a {
         interrupts = <0x0 0x5c 0x01>;
         reg = <0x00000004 0x02000000 0x0 0x1000>;
+};
+
+&serial0 {
+        status = "disabled";
 };

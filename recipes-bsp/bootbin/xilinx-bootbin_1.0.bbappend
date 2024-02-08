@@ -1,5 +1,4 @@
-#BIF_FSBL_ATTR:emb-plus-ve2302 = "base-pdi plmfw"
-BIF_FSBL_ATTR:emb-plus-ve2302 = "base-pdi"
+BIF_FSBL_ATTR:emb-plus-ve2302 = "base-pdi plmfw"
 BIF_VMR_ATTR:emb-plus-ve2302 = "vmr-deploy"
 
 BIF_FPT_ATTR:emb-plus-ve2302 = "extension-fpt"

@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Copyright (C) 2024 Advanced Micro Devices, Inc. All rights reserved.
+#
+# SPDX-License-Identifier: MIT
+
 # Add softkernel user to run PS kernel Daemon 
 useradd softkernel
 

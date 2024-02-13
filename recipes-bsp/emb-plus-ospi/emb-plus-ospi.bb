@@ -26,9 +26,9 @@ do_xsabin () {
 
 do_deploy () {
     install -Dm 644 ${B}/${PN}.bin ${DEPLOYDIR}/${IMAGE_NAME}.bin
-    ln -s ${PN}.bin ${DEPLOYDIR}/${IMAGE_LINK_NAME}.bin
+    ln -s ${IMAGE_NAME}.bin ${DEPLOYDIR}/${IMAGE_LINK_NAME}.bin
     install -Dm 644 ${B}/${PN}.xsabin ${DEPLOYDIR}/${IMAGE_NAME}.xsabin
-    ln -s ${PN}.xsabin ${DEPLOYDIR}/${IMAGE_LINK_NAME}.xsabin
+    ln -s ${IMAGE_NAME}.xsabin ${DEPLOYDIR}/${IMAGE_LINK_NAME}.xsabin
 }
 
 addtask xsabin after do_compile

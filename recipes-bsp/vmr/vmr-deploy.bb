@@ -4,13 +4,13 @@ LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/Apache-2.0;md5=89aea4e17d99a7cacdbeed46a0096b10"
 
 COMPATIBLE_MACHINE = "^$"
-COMPATIBLE_MACHINE:emb-plus-ve2302 = "emb-plus-ve2302"
-
-VMR_FILE ?= "vmr.elf"
-SRC_URI ?= "http://url/for/${VMR_FILE}"
-SRC_URI[sha256sum] = "0000"
+COMPATIBLE_MACHINE:emb-plus-ve2302 = "${MACHINE}"
 
 inherit deploy
+
+include vmr-repository.inc
+
+SRC_URI = "${VMR_PATH};name=${MACHINE}"
 
 do_patch[noexec] = "1"
 do_configure[noexec] = "1"

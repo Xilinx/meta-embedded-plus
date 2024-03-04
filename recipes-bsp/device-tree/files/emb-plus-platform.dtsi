@@ -84,3 +84,30 @@
 &serial0 {
         status = "disabled";
 };
+
+&ttc0 {
+        status = "disabled";
+};
+&ttc1 {
+        status = "disabled";
+};
+
+&ospi {
+        status = "disabled";
+};
+
+&blp_blp_logic_axi_uart_rpu {
+	status = "disabled";
+};
+
+&i2c2 {
+        status = "disabled";
+};
+
+&gpio1 {
+        status = "disabled";
+};
+
+&blp_blp_logic_base_clocking_pr_reset_gpio {
+	status = "disabled";
+};

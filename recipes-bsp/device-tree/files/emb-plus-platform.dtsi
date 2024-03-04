@@ -9,7 +9,7 @@
 
 / {
 	chosen {
-                bootargs = "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8 clk_ignore_unused root=/dev/ram0 rw";
+                bootargs = "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8";
                 stdout-path = "serial0:115200n8";
         };
 

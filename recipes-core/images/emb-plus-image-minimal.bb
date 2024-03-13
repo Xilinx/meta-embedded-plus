@@ -23,4 +23,5 @@ IMAGE_INSTALL = " \
     apu-boot \
     init-apu \
     soft-kernel-daemon \
+    lrzsz \
 "

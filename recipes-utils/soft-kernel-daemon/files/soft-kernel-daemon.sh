@@ -5,5 +5,5 @@
 # SPDX-License-Identifier: MIT
 
 if [ -e /sys/bus/platform/devices/rpu-channel/ready ]; then
-   /usr/bin/soft-kernel-daemon
+   /usr/bin/skd
 fi

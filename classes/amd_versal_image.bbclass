@@ -8,9 +8,12 @@ IMAGE_SIZE ?= "0x3280000"
 
 # OSPI Offsets
 IMAGE_FPT_OFFSET ?= "0x0"
-IMAGE_FPT_RECOVERY_OFFSET ?= "0x20000"
+IMAGE_FPT_BACKUP_OFFSET ?= "0x20000"
 IMAGE_ACTIVE_OFFSET ?= "0x40000"
-IMAGE_METADATA_OFFSET ?= "0x3260000"
+IMAGE_ACTIVE_METADATA_OFFSET ?= "0x3260000"
+IMAGE_BACKUP_OFFSET ?= "0x32A0000"
+IMAGE_BACKUP_METADATA_OFFSET ?= "0x64C0000"
+IMAGE_VERSION_OFFSET ?= "0x7FE0000"
 
 def generate_image(d):
 
@@ -18,9 +21,12 @@ def generate_image(d):
 
     # OSPI Offsets
     image_fpt_offset = int(d.getVar("IMAGE_FPT_OFFSET") or '0', 0)
-    image_fpt_recovery_offset = int(d.getVar("IMAGE_RECOVERY_FPT_OFFSET") or '0', 0)
+    image_fpt_backup_offset = int(d.getVar("IMAGE_FPT_BACKUP_OFFSET") or '0', 0)
     image_active_offset = int(d.getVar("IMAGE_ACTIVE_OFFSET") or '0', 0)
-    image_metadata_offset = int(d.getVar("IMAGE_METADATA_OFFSET") or '0', 0)
+    image_active_metadata_offset = int(d.getVar("IMAGE_ACTIVE_METADATA_OFFSET") or '0', 0)
+    image_backup_offset = int(d.getVar("IMAGE_BACKUP_OFFSET") or '0', 0)
+    image_backup_metadata_offset = int(d.getVar("IMAGE_BACKUP_METADATA_OFFSET") or '0', 0)
+    image_version_offset = int(d.getVar("IMAGE_VERSION_OFFSET") or '0', 0)
 
     # OSPI data
     image_size = int(d.getVar("IMAGE_SIZE") or '0', 0)
@@ -37,7 +43,7 @@ def generate_image(d):
 
     image_data.seek(image_fpt_offset)
     image_data.write(fpt_data)
-    image_data.seek(image_fpt_recovery_offset)
+    image_data.seek(image_fpt_backup_offset)
     image_data.write(fpt_data)
 
     # Image Active and Backup - boot.bin
@@ -49,13 +55,26 @@ def generate_image(d):
 
     image_data.seek(image_active_offset)
     image_data.write(bootbin)
+    image_data.seek(image_backup_offset)
+    image_data.write(bootbin)
 
     # Image metadata
-    image_data.seek(image_metadata_offset)
+    image_data.seek(image_active_metadata_offset)
     image_data.write(bytearray("PDIM", 'utf8')) # Magic string "PDIM"
     image_data.write(b'\x00\x00\x00\x00') #TODO Version
     image_data.write(len(bootbin).to_bytes(4,'little'))
     image_data.write(b'\x00\x00\x00\x00') #TODO Checksum
+
+    image_data.seek(image_backup_metadata_offset)
+    image_data.write(bytearray("PDIM", 'utf8')) # Magic string "PDIM"
+    image_data.write(b'\x00\x00\x00\x00') #TODO Version
+    image_data.write(len(bootbin).to_bytes(4,'little'))
+    image_data.write(b'\x00\x00\x00\x00') #TODO Checksum
+
+    # OSPI Version
+    ospi_version = f"01.02.03\x00"
+    image_data.seek(image_version_offset)
+    image_data.write(ospi_version.encode())
 
     # Write the OSPI data to file
     with open(d.getVar("B") + "/" + d.getVar("PN") + ".bin", "wb") as f:

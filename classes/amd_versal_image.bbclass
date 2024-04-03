@@ -72,7 +72,11 @@ def generate_image(d):
     image_data.write(b'\x00\x00\x00\x00') #TODO Checksum
 
     # OSPI Version
-    ospi_version = f"01.02.03\x00"
+    machine = d.getVar("MACHINE")
+    version = d.getVar("OSPI_IMAGE_VERSION")
+    date = time.strftime("%Y%m%d")
+    ospi_version = f"{machine}-ospi-v{version}-{date}\x00"
+
     image_data.seek(image_version_offset)
     image_data.write(ospi_version.encode())
 

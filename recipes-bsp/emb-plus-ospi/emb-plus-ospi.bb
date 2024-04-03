@@ -7,6 +7,10 @@ DEPENDS = "virtual/boot-bin main-fpt xclbinutil-native partition-metadata"
 
 inherit deploy image-artifact-names amd_versal_image
 
+OSPI_IMAGE_VERSION ?= ""
+OSPI_IMAGE_VERSION:emb-plus-ve2302 = "1.0"
+OSPI_IMAGE_VERSION:emb-plus-ve2302-es1 = "1.0"
+
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:emb-plus-ve2302 = "${MACHINE}"
 

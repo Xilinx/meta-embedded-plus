@@ -1,3 +1,5 @@
+BIF_OPTIONAL_DATA:emb-plus-ve2302 = "${DEPLOY_DIR_IMAGE}/bootbin-version-string-${MACHINE}.txt, id=0x21"
+
 BIF_FSBL_ATTR:emb-plus-ve2302 = "base-pdi plmfw"
 BIF_VMR_ATTR:emb-plus-ve2302 = "vmr-deploy"
 
@@ -24,7 +26,9 @@ BIF_PARTITION_ATTR:emb-plus-ve2302 = "${BIF_FSBL_ATTR} ${BIF_VMR_ATTR} ${BIF_FPT
 DEPENDS:append:emb-plus-ve2302 = " xclbinutil-native"
 
 ADDN_COMPILE_DEPENDS = ""
-ADDN_COMPILE_DEPENDS:emb-plus-ve2302 = "vmr-deploy:do_deploy extension-fpt:do_deploy partition-metadata:do_deploy"
+ADDN_COMPILE_DEPENDS:emb-plus-ve2302 = "vmr-deploy:do_deploy extension-fpt:do_deploy partition-metadata:do_deploy bootbin-version-string:do_deploy"
+
+require xilinx-bootbin-version.inc
 
 do_compile[depends] += "${ADDN_COMPILE_DEPENDS}"
 

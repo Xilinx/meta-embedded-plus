@@ -5,6 +5,8 @@
 #
 
 IMAGE_SIZE ?= "0x3280000"
+OSPI_VERSION ?= ""
+OSPI_IMAGE_VERSION ?= ""
 
 # OSPI Offsets
 IMAGE_FPT_OFFSET ?= "0x0"
@@ -72,13 +74,11 @@ def generate_image(d):
     image_data.write(b'\x00\x00\x00\x00') #TODO Checksum
 
     # OSPI Version
-    machine = d.getVar("MACHINE")
-    version = d.getVar("OSPI_IMAGE_VERSION")
-    date = time.strftime("%Y%m%d")
-    ospi_version = f"{machine}-ospi-v{version}-{date}\x00"
+    version = d.getVar('OSPI_IMAGE_VERSION')
+    version = f"{version}\x00"
 
     image_data.seek(image_version_offset)
-    image_data.write(ospi_version.encode())
+    image_data.write(version.encode())
 
     # Write the OSPI data to file
     with open(d.getVar("B") + "/" + d.getVar("PN") + ".bin", "wb") as f:

@@ -41,4 +41,6 @@ do_deploy:append:emb-plus-ve2302() {
     install -m 0644 ${B}/BOOT.xsabin ${DEPLOYDIR}/${BOOTBIN_BASE_NAME}.xsabin
     ln -sf ${BOOTBIN_BASE_NAME}.xsabin ${DEPLOYDIR}/BOOT-${MACHINE}.xsabin
     ln -sf ${BOOTBIN_BASE_NAME}.xsabin ${DEPLOYDIR}/boot.xsabin
+
+    ln -sf ${BOOTBIN_BASE_NAME}.xsabin ${DEPLOYDIR}/${@d.getVar("MACHINE")}-${BOOTBIN_VER_MAIN}${IMAGE_VERSION_SUFFIX}.xsabin
 }

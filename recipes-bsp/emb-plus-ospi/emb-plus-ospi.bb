@@ -7,17 +7,15 @@ DEPENDS = "virtual/boot-bin main-fpt partition-metadata xsct-native"
 
 inherit deploy image-artifact-names amd_versal_image
 
-OSPI_IMAGE_VERSION ?= ""
-OSPI_IMAGE_VERSION:emb-plus-ve2302 = "1.0"
-OSPI_IMAGE_VERSION:emb-plus-ve2302-es1 = "1.0"
+IMAGE_NAME_SUFFIX = ""
+
+OSPI_VERSION:emb-plus-ve2302 = "1.0"
+OSPI_VERSION:emb-plus-ve2302-es1 = "1.0"
+
+OSPI_IMAGE_VERSION:emb-plus-ve2302 = "${PN}-${MACHINE}-v${OSPI_VERSION}${IMAGE_VERSION_SUFFIX}"
 
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:emb-plus-ve2302 = "${MACHINE}"
-
-OSPI_IMAGE_NAME = "XilinxRave_OspiImage"
-
-OSPI_IMAGE_VERSION ?= ""
-OSPI_IMAGE_VERSION:emb-plus-ve2302 = "1.0"
 
 do_compile[depends] += "main-fpt:do_deploy"
 
@@ -31,8 +29,11 @@ do_xsabin () {
 do_deploy () {
     install -Dm 644 ${B}/${PN}.bin ${DEPLOYDIR}/${IMAGE_NAME}.bin
     ln -s ${IMAGE_NAME}.bin ${DEPLOYDIR}/${IMAGE_LINK_NAME}.bin
+    ln -s ${IMAGE_NAME}.bin ${DEPLOYDIR}/${OSPI_IMAGE_VERSION}.bin
+
     install -Dm 644 ${B}/${PN}.xsabin ${DEPLOYDIR}/${IMAGE_NAME}.xsabin
     ln -s ${IMAGE_NAME}.xsabin ${DEPLOYDIR}/${IMAGE_LINK_NAME}.xsabin
+    ln -s ${IMAGE_NAME}.bin ${DEPLOYDIR}/${OSPI_IMAGE_VERSION}.xsabin
 }
 
 addtask xsabin after do_compile

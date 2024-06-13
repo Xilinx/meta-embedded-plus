@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 COMPATIBLE_MACHINE = ""
 COMPATIBLE_MACHINE:emb-plus-ve2302 = "${MACHINE}"
 
-DEPENDS += "virtual/hdf unzip-native xclbinutil-native"
+DEPENDS += "virtual/hdf unzip-native xsct-native"
 
 XSA_FILE ?= "${DEPLOY_DIR_IMAGE}/Xilinx-${MACHINE}.xsa"
 PARTMETA_FILE ?= "partition_metadata.json"
@@ -16,11 +16,13 @@ do_compile[depends] += "virtual/hdf:do_deploy"
 
 inherit deploy image-artifact-names
 
+IMAGE_NAME_SUFFIX = ""
+
 do_compile() {
     [ ! -e ${XSA_FILE} ] && bbfatal "Unable to find XSA file: ${XSA_FILE}"
     unzip -p "${XSA_FILE}" "project/${PARTMETA_FILE}" > ${MACHINE}_${PARTMETA_FILE}
 
-    xclbinutil --add-section PARTITION_METADATA:JSON:${MACHINE}_${PARTMETA_FILE} \
+    ${XILINX_SDK_TOOLCHAIN}/bin/xclbinutil --add-section PARTITION_METADATA:JSON:${MACHINE}_${PARTMETA_FILE} \
         -o ${WORKDIR}/${PN}.xsabin --force
 }
 

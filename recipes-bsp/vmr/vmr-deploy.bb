@@ -15,7 +15,16 @@ SRC_URI = "${VMR_PATH};name=${MACHINE}"
 do_patch[noexec] = "1"
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
-do_install[noexec] = "1"
+
+do_install() {
+    install -Dm 0644 ${WORKDIR}/vmr.elf ${D}/boot/vmr.elf
+}
+
+INSANE_SKIP:${PN} = "arch"
+INSANE_SKIP:${PN}-dbg = "arch"
+
+SYSROOT_DIRS += "/boot"
+FILES:${PN} = "/boot/vmr.elf"
 
 do_deploy() {
     install -m 0644 ${WORKDIR}/vmr.elf ${DEPLOYDIR}/vmr.elf

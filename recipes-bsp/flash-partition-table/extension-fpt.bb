@@ -17,6 +17,13 @@ do_compile () {
     ${S}/gen_fpt_bin.py --fpt ${S}/metadata/rave_ivh/ext_fpt.json --output ${WORKDIR}/${PN}.bin
 }
 
+do_install () {
+    install -Dm 0644 ${WORKDIR}/${PN}.bin ${D}/boot/${IMAGE_NAME}.bin
+}
+
+SYSROOT_DIRS += "/boot"
+FILES:${PN} = "/boot/${IMAGE_NAME}.bin"
+
 do_deploy () {
     install -Dm 0644 ${WORKDIR}/${PN}.bin ${DEPLOYDIR}/${IMAGE_NAME}.bin
     ln -sf ${IMAGE_NAME}.bin ${DEPLOYDIR}/${IMAGE_LINK_NAME}.bin

@@ -8,17 +8,17 @@ BIF_META_ATTR:emb-plus-ve2302 = "partition-metadata"
 
 # specify BIF partition attributes for VMR
 BIF_PARTITION_ATTR[vmr-deploy] = "core=r5-0"
-BIF_PARTITION_IMAGE[vmr-deploy] = "${DEPLOY_DIR_IMAGE}/vmr.elf"
+BIF_PARTITION_IMAGE[vmr-deploy] = "${SYSROOT_DIR}/vmr.elf"
 BIF_PARTITION_ID[vmr-deploy] = "0x1c000000, name=rpu_subsystem, delay_handoff"
 
 # specify BIF partition attributes for ext_fpt
 BIF_PARTITION_ATTR[extension-fpt] = "type=raw, load=0x5FBF0000"
-BIF_PARTITION_IMAGE[extension-fpt] = "${DEPLOY_DIR_IMAGE}/extension-fpt-${MACHINE}.bin"
+BIF_PARTITION_IMAGE[extension-fpt] = "${SYSROOT_DIR}/extension-fpt-${MACHINE}.bin"
 BIF_PARTITION_ID[extension-fpt] = "0x1c000000, name=rpu_subsystem, delay_handoff"
 
 # specify BIF partition attributes for ext_fpt
 BIF_PARTITION_ATTR[partition-metadata] = "type=raw, load=0x5FBF2000"
-BIF_PARTITION_IMAGE[partition-metadata] = "${DEPLOY_DIR_IMAGE}/partition-metadata-${MACHINE}.xsabin"
+BIF_PARTITION_IMAGE[partition-metadata] = "${SYSROOT_DIR}/partition-metadata-${MACHINE}.xsabin"
 BIF_PARTITION_ID[partition-metadata] = "0x1c000000, name=rpu_subsystem, delay_handoff"
 
 BIF_PARTITION_ATTR:emb-plus-ve2302 = "${BIF_FSBL_ATTR} ${BIF_VMR_ATTR} ${BIF_FPT_ATTR} ${BIF_META_ATTR}"

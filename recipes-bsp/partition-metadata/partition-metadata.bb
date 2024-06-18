@@ -26,6 +26,13 @@ do_compile() {
         -o ${WORKDIR}/${PN}.xsabin --force
 }
 
+do_install() {
+    install -Dm 0644 ${MACHINE}_${PARTMETA_FILE} ${D}/boot/${PARTMETA_FILE}
+}
+
+SYSROOT_DIRS += "/boot"
+FILES:${PN} = "/boot/${PARTMETA_FILE}"
+
 do_deploy() {
     install -d ${DEPLOYDIR}
     install -Dm 0644 ${MACHINE}_${PARTMETA_FILE} ${DEPLOYDIR}/${PARTMETA_FILE}

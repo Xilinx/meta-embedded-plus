@@ -111,3 +111,36 @@
 &blp_blp_logic_base_clocking_pr_reset_gpio {
 	status = "disabled";
 };
+
+&amba_pl {
+        aie_core_ref_clk: aie_core_ref_clk {
+                #clock-cells = <0x00>;
+                clock-frequency = <1250000000>;
+                compatible = "fixed-clock";
+        };
+
+        ai_engine@20000000000 {
+                #address-cells = <0x02>;
+                #size-cells = <0x02>;
+                compatible = "xlnx,ai-engine-v2.0";
+                clock-names = "aclk0";
+                clocks = <&aie_core_ref_clk>;
+		power-domains = <&versal_firmware 0x18224072U>;
+                ranges;
+                reg = <0x200 0x00 0x01 0x00>;
+                xlnx,aie-gen = [02];
+                xlnx,core-rows = [02 02];
+                xlnx,mem-rows = [01 01];
+                xlnx,shim-rows = [00 01];
+
+                aie_aperture@20000000000 {
+                        #address-cells = <0x02>;
+                        #size-cells = <0x02>;
+                        reg = <0x200 0x00 0x01 0x00>;
+                        xlnx,columns = <0x00 0x11>;
+                        xlnx,device-name = <0x00>;
+                        xlnx,node-id = <0x18800000>;
+                };
+        };
+
+};

@@ -23,7 +23,7 @@ BIF_PARTITION_ID[partition-metadata] = "0x1c000000, name=rpu_subsystem, delay_ha
 
 BIF_PARTITION_ATTR:emb-plus-ve2302 = "${BIF_FSBL_ATTR} ${BIF_VMR_ATTR} ${BIF_FPT_ATTR} ${BIF_META_ATTR}"
 
-DEPENDS:append:emb-plus-ve2302 = " xsct-native"
+DEPENDS:append:emb-plus-ve2302 = " xclbinutil-native"
 
 ADDN_COMPILE_DEPENDS = ""
 ADDN_COMPILE_DEPENDS:emb-plus-ve2302 = "vmr-deploy:do_deploy extension-fpt:do_deploy partition-metadata:do_deploy bootbin-version-string:do_deploy"
@@ -33,7 +33,7 @@ require xilinx-bootbin-version.inc
 do_compile[depends] += "${ADDN_COMPILE_DEPENDS}"
 
 do_compile:append:emb-plus-ve2302() {
-    ${XILINX_SDK_TOOLCHAIN}/bin/xclbinutil --force --input ${DEPLOY_DIR_IMAGE}/partition-metadata-${MACHINE}.xsabin \
+    xclbinutil --force --input ${DEPLOY_DIR_IMAGE}/partition-metadata-${MACHINE}.xsabin \
         --add-section PDI:RAW:${B}/BOOT.bin --output ${B}/BOOT.xsabin
 }
 

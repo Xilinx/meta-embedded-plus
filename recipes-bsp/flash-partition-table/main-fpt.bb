@@ -10,7 +10,6 @@ DEPENDS = "python3"
 S = "${WORKDIR}/git"
 
 inherit deploy image-artifact-names
-IMAGE_NAME_SUFFIX = ""
 
 do_compile () {
     ${S}/gen_fpt_bin.py --fpt ${S}/metadata/rave_ivh/main_fpt.json --output ${WORKDIR}/${PN}.bin

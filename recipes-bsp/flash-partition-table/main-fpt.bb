@@ -3,6 +3,8 @@ SUMMARY = "Generate the main flash partition table for Embedded Plus"
 
 require emb-plus-boot-fw-gen.inc
 
+IMAGE_NAME_SUFFIX = ""
+
 COMPATIBLE_MACHINE:emb-plus-ve2302 = "${MACHINE}"
 
 DEPENDS = "python3"

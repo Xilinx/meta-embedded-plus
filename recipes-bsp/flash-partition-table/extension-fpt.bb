@@ -22,7 +22,7 @@ do_install () {
 }
 
 SYSROOT_DIRS += "/boot"
-FILES:${PN} = "/boot/${IMAGE_NAME}.bin"
+FILES:${PN} += "/boot /boot/${IMAGE_NAME}.bin"
 
 do_deploy () {
     install -Dm 0644 ${WORKDIR}/${PN}.bin ${DEPLOYDIR}/${IMAGE_NAME}.bin

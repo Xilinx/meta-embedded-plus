@@ -16,6 +16,8 @@ do_compile[depends] += "virtual/hdf:do_deploy"
 
 inherit deploy image-artifact-names
 
+IMAGE_NAME_SUFFIX = ""
+
 do_compile() {
     [ ! -e ${XSA_FILE} ] && bbfatal "Unable to find XSA file: ${XSA_FILE}"
     unzip -p "${XSA_FILE}" "project/${PARTMETA_FILE}" > ${MACHINE}_${PARTMETA_FILE}

@@ -4,6 +4,7 @@ inherit core-image
 
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:emb-plus-ve2302 = "${MACHINE}"
+COMPATIBLE_MACHINE:emb-plus-ve2302-sdt = "${MACHINE}"
 
 IMAGE_FEATURES += "ssh-server-openssh hwcodecs package-management"
 

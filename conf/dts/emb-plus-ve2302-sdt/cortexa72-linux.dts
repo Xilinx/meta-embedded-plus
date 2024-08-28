@@ -33,8 +33,8 @@
                         enable-method = "psci";
                         operating-points-v2 = <0x83>;
                         reg = <0x0>;
-                        cpu-idle-states = <0x84>;
-                        power-domains = <0x85 0x18110003>;
+                        cpu-idle-states = <&CPU_SLEEP_0>;
+                        power-domains = <&versal_firmware 0x18110003>;
                         clocks = <&versal_clk 0x4d>;
                         xlnx,timestamp-clk-freq = <0x5f5e0a4>;
                         xlnx,rable = <0x0>;
@@ -53,8 +53,8 @@
                         enable-method = "psci";
                         operating-points-v2 = <0x83>;
                         reg = <0x1>;
-                        cpu-idle-states = <0x84>;
-                        power-domains = <0x85 0x18110004>;
+                        cpu-idle-states = <&CPU_SLEEP_0>;
+                        power-domains = <&versal_firmware 0x18110004>;
                         xlnx,timestamp-clk-freq = <0x5f5e0a4>;
                         xlnx,rable = <0x0>;
                         xlnx,pss-ref-clk-freq = <0x1fca034>;
@@ -177,8 +177,9 @@
                         rx-fifo-depth = <0x40>;
                         tx-mailbox-count = <0x20>;
                         clocks = <&can0_clk>,
-                         <&versal_clk 0x52>;
-                        power-domains = <0x85 0x1822401f>;
+                         <&versal_clk>,
+                         <&smmu>;
+                        power-domains = <&versal_firmware 0x1822401f>;
                         phandle = <0xbe>;
                 };
 
@@ -192,8 +193,9 @@
                         rx-fifo-depth = <0x40>;
                         tx-mailbox-count = <0x20>;
                         clocks = <&can1_clk>,
-                         <&versal_clk 0x52>;
-                        power-domains = <0x85 0x18224020>;
+                         <&versal_clk>,
+                         <&smmu>;
+                        power-domains = <&versal_firmware 0x18224020>;
                         phandle = <0xbf>;
                 };
 
@@ -229,7 +231,7 @@
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
                          <&versal_clk 0x52>;
-                        power-domains = <0x85 0x18224035>;
+                        power-domains = <&versal_firmware 0x18224035>;
                         xlnx,rable = <0x0>;
                         xlnx,is-cache-coherent = <0x0>;
                         xlnx,ip-name = "psv_adma";
@@ -249,7 +251,7 @@
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
                          <&versal_clk 0x52>;
-                        power-domains = <0x85 0x18224036>;
+                        power-domains = <&versal_firmware 0x18224036>;
                         xlnx,rable = <0x0>;
                         xlnx,is-cache-coherent = <0x0>;
                         xlnx,ip-name = "psv_adma";
@@ -269,7 +271,7 @@
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
                          <&versal_clk 0x52>;
-                        power-domains = <0x85 0x18224037>;
+                        power-domains = <&versal_firmware 0x18224037>;
                         xlnx,rable = <0x0>;
                         xlnx,is-cache-coherent = <0x0>;
                         xlnx,ip-name = "psv_adma";
@@ -289,7 +291,7 @@
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
                          <&versal_clk 0x52>;
-                        power-domains = <0x85 0x18224038>;
+                        power-domains = <&versal_firmware 0x18224038>;
                         xlnx,rable = <0x0>;
                         xlnx,is-cache-coherent = <0x0>;
                         xlnx,ip-name = "psv_adma";
@@ -309,7 +311,7 @@
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
                          <&versal_clk 0x52>;
-                        power-domains = <0x85 0x18224039>;
+                        power-domains = <&versal_firmware 0x18224039>;
                         xlnx,rable = <0x0>;
                         xlnx,is-cache-coherent = <0x0>;
                         xlnx,ip-name = "psv_adma";
@@ -329,7 +331,7 @@
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
                          <&versal_clk 0x52>;
-                        power-domains = <0x85 0x1822403a>;
+                        power-domains = <&versal_firmware 0x1822403a>;
                         xlnx,rable = <0x0>;
                         xlnx,is-cache-coherent = <0x0>;
                         xlnx,ip-name = "psv_adma";
@@ -349,7 +351,7 @@
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
                          <&versal_clk 0x52>;
-                        power-domains = <0x85 0x1822403b>;
+                        power-domains = <&versal_firmware 0x1822403b>;
                         xlnx,rable = <0x0>;
                         xlnx,is-cache-coherent = <0x0>;
                         xlnx,ip-name = "psv_adma";
@@ -369,7 +371,7 @@
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
                          <&versal_clk 0x52>;
-                        power-domains = <0x85 0x1822403c>;
+                        power-domains = <&versal_firmware 0x1822403c>;
                         xlnx,rable = <0x0>;
                         xlnx,is-cache-coherent = <0x0>;
                         xlnx,ip-name = "psv_adma";
@@ -392,7 +394,7 @@
                          <&versal_clk 0x31>,
                          <&versal_clk 0x30>,
                          <&versal_clk 0x2b>;
-                        power-domains = <0x85 0x18224019>;
+                        power-domains = <&versal_firmware 0x18224019>;
                         phandle = <0xc1>;
                 };
 
@@ -410,7 +412,7 @@
                          <&versal_clk 0x33>,
                          <&versal_clk 0x32>,
                          <&versal_clk 0x2b>;
-                        power-domains = <0x85 0x1822401a>;
+                        power-domains = <&versal_firmware 0x1822401a>;
                         phandle = <0xc2>;
                 };
 
@@ -425,7 +427,7 @@
                         #interrupt-cells = <0x2>;
                         interrupt-controller;
                         clocks = <&versal_clk 0x52>;
-                        power-domains = <0x85 0x18224023>;
+                        power-domains = <&versal_firmware 0x18224023>;
                         xlnx,rable = <0x0>;
                         xlnx,ip-name = "psv_gpio";
                         emio-gpio-width = [00];
@@ -445,7 +447,7 @@
                         #interrupt-cells = <0x2>;
                         interrupt-controller;
                         clocks = <&versal_clk 0x3d>;
-                        power-domains = <0x85 0x1822402c>;
+                        power-domains = <&versal_firmware 0x1822402c>;
                         xlnx,rable = <0x0>;
                         xlnx,ip-name = "psv_pmc_gpio";
                         xlnx,name = "blp_cips_pspmc_0_psv_pmc_gpio_0";
@@ -462,7 +464,7 @@
                         #address-cells = <0x1>;
                         #size-cells = <0x0>;
                         clocks = <&versal_clk 0x62>;
-                        power-domains = <0x85 0x1822401d>;
+                        power-domains = <&versal_firmware 0x1822401d>;
                         phandle = <0xc3>;
                 };
 
@@ -476,7 +478,7 @@
                         #address-cells = <0x1>;
                         #size-cells = <0x0>;
                         clocks = <&versal_clk 0x63>;
-                        power-domains = <0x85 0x1822401e>;
+                        power-domains = <&versal_firmware 0x1822401e>;
                         phandle = <0xc4>;
                 };
 
@@ -490,7 +492,7 @@
                         #address-cells = <0x1>;
                         #size-cells = <0x0>;
                         clocks = <&versal_clk 0x3e>;
-                        power-domains = <0x85 0x1822402d>;
+                        power-domains = <&versal_firmware 0x1822402d>;
                         xlnx,rable = <0x0>;
                         xlnx,clock-freq = <0x5f5e0a4>;
                         xlnx,i2c-clk-freq-hz = <0x5f5e0a4>;
@@ -548,7 +550,7 @@
                         interrupts = <0x0 0x8e 0x4 0x0 0x8f 0x4>;
                         interrupt-parent = <&gic_a72>;
                         calibration = <0x7fff>;
-                        power-domains = <0x85 0x18224034>;
+                        power-domains = <&versal_firmware 0x18224034>;
                         xlnx,rable = <0x0>;
                         xlnx,ip-name = "psv_pmc_rtc";
                         xlnx,name = "blp_cips_pspmc_0_psv_pmc_rtc_0";
@@ -568,7 +570,7 @@
                         clocks = <&versal_clk 0x3b>,
                          <&versal_clk 0x52>,
                          <&versal_clk 0x4a>;
-                        power-domains = <0x85 0x1822402e>;
+                        power-domains = <&versal_firmware 0x1822402e>;
                         phandle = <0xca>;
                 };
 
@@ -585,7 +587,7 @@
                         clocks = <&versal_clk 0x3c>,
                          <&versal_clk 0x52>,
                          <&versal_clk 0x4a>;
-                        power-domains = <0x85 0x1822402f>;
+                        power-domains = <&versal_firmware 0x1822402f>;
                         phandle = <0xcb>;
                 };
 
@@ -601,7 +603,7 @@
                         bootph-all;
                         clocks = <&versal_clk 0x5c>,
                          <&versal_clk 0x52>;
-                        power-domains = <0x85 0x18224021>;
+                        power-domains = <&versal_firmware 0x18224021>;
                         xlnx,has-modem = <0x0>;
                         xlnx,uart-clk-freq-hz = <0x5f5e0a4>;
                         port-number = <0x0>;
@@ -628,7 +630,7 @@
                         bootph-all;
                         clocks = <&versal_clk 0x5d>,
                          <&versal_clk 0x52>;
-                        power-domains = <0x85 0x18224022>;
+                        power-domains = <&versal_firmware 0x18224022>;
                         xlnx,has-modem = <0x0>;
                         xlnx,uart-clk-freq-hz = <0x5f5e0a4>;
                         port-number = <0x0>;
@@ -673,7 +675,7 @@
                         #address-cells = <0x1>;
                         #size-cells = <0x0>;
                         clocks = <&versal_clk 0x3a>;
-                        power-domains = <0x85 0x1822402a>;
+                        power-domains = <&versal_firmware 0x1822402a>;
                         reset-names = "qspi";
                         resets = <&versal_reset 0xc10402e>;
                         is-stacked = <0x0>;
@@ -699,7 +701,7 @@
                         #size-cells = <0x0>;
                         clocks = <&versal_clk 0x39>,
                          <&versal_clk 0x52>;
-                        power-domains = <0x85 0x1822402b>;
+                        power-domains = <&versal_firmware 0x1822402b>;
                         phandle = <0xcc>;
                 };
 
@@ -714,7 +716,7 @@
                         #size-cells = <0x0>;
                         clocks = <&versal_clk 0x5e>,
                          <&versal_clk 0x52>;
-                        power-domains = <0x85 0x1822401b>;
+                        power-domains = <&versal_firmware 0x1822401b>;
                         xlnx,rable = <0x0>;
                         xlnx,spi-board-interface = "custom";
                         xlnx,has-ss0 = <0x1>;
@@ -738,7 +740,7 @@
                         #size-cells = <0x0>;
                         clocks = <&versal_clk 0x5f>,
                          <&versal_clk 0x52>;
-                        power-domains = <0x85 0x1822401c>;
+                        power-domains = <&versal_firmware 0x1822401c>;
                         phandle = <0xcd>;
                 };
 
@@ -934,7 +936,7 @@
                         timer-width = <0x20>;
                         clocks = <&versal_clk 0x27>,
                          <&versal_clk 0x52>;
-                        power-domains = <0x85 0x18224024>;
+                        power-domains = <&versal_firmware 0x18224024>;
                         xlnx,ttc-clk2-clksrc = <0x0>;
                         xlnx,rable = <0x0>;
                         xlnx,ip-name = "psv_ttc";
@@ -958,7 +960,7 @@
                         timer-width = <0x20>;
                         clocks = <&versal_clk 0x28>,
                          <&versal_clk 0x52>;
-                        power-domains = <0x85 0x18224025>;
+                        power-domains = <&versal_firmware 0x18224025>;
                         xlnx,ttc-clk2-clksrc = <0x0>;
                         xlnx,rable = <0x0>;
                         xlnx,ip-name = "psv_ttc";
@@ -982,7 +984,7 @@
                         timer-width = <0x20>;
                         clocks = <&versal_clk 0x29>,
                          <&versal_clk 0x52>;
-                        power-domains = <0x85 0x18224026>;
+                        power-domains = <&versal_firmware 0x18224026>;
                         xlnx,ttc-clk2-clksrc = <0x0>;
                         xlnx,rable = <0x0>;
                         xlnx,ip-name = "psv_ttc";
@@ -1006,7 +1008,7 @@
                         timer-width = <0x20>;
                         clocks = <&versal_clk 0x2a>,
                          <&versal_clk 0x52>;
-                        power-domains = <0x85 0x18224027>;
+                        power-domains = <&versal_firmware 0x18224027>;
                         xlnx,ttc-clk2-clksrc = <0x0>;
                         xlnx,rable = <0x0>;
                         xlnx,ip-name = "psv_ttc";
@@ -1031,7 +1033,7 @@
                         #size-cells = <0x2>;
                         clocks = <&versal_clk 0x5b>,
                          <&versal_clk 0x68>;
-                        power-domains = <0x85 0x18224018>;
+                        power-domains = <&versal_firmware 0x18224018>;
                         resets = <&versal_reset 0xc104036>;
                         phandle = <0xd1>;
 
@@ -1057,10 +1059,10 @@
                         #size-cells = <0x2>;
                         compatible = "xlnx,versal-cpm-host-1.00";
                         status = "disabled";
-                        interrupt-map = <0x1 &pcie_intc_0 0x0>,
-                         <0x2 &pcie_intc_0 0x1>,
-                         <0x3 &pcie_intc_0 0x2>,
-                         <0x4 &pcie_intc_0 0x3>;
+                        interrupt-map = <0x0 0x0 0x0 0x1 &pcie_intc_0 0x0>,
+                         <0x0 0x0 0x0 0x2 &pcie_intc_0 0x1>,
+                         <0x0 0x0 0x0 0x3 &pcie_intc_0 0x2>,
+                         <0x0 0x0 0x0 0x4 &pcie_intc_0 0x3>;
                         interrupt-map-mask = <0x0 0x0 0x0 0x7>;
                         interrupt-names = "misc";
                         interrupts = <0x0 0x48 0x4>;
@@ -1090,10 +1092,10 @@
                         #size-cells = <0x2>;
                         compatible = "xlnx,versal-cpm5-host";
                         status = "disabled";
-                        interrupt-map = <0x1 &pcie_intc_2 0x0>,
-                         <0x2 &pcie_intc_2 0x1>,
-                         <0x3 &pcie_intc_2 0x2>,
-                         <0x4 &pcie_intc_2 0x3>;
+                        interrupt-map = <0x0 0x0 0x0 0x1 &pcie_intc_2 0x0>,
+                         <0x0 0x0 0x0 0x2 &pcie_intc_2 0x1>,
+                         <0x0 0x0 0x0 0x3 &pcie_intc_2 0x2>,
+                         <0x0 0x0 0x0 0x4 &pcie_intc_2 0x3>;
                         interrupt-map-mask = <0x0 0x0 0x0 0x7>;
                         interrupt-names = "misc";
                         interrupts = <0x0 0x48 0x4>;
@@ -1126,7 +1128,7 @@
                         timeout-sec = <0x1e>;
                         pretimeout-sec = <0x19>;
                         clocks = <&versal_clk 0x4c>;
-                        power-domains = <0x85 0x18224029>;
+                        power-domains = <&versal_firmware 0x18224029>;
                         phandle = <0xd5>;
                 };
 
@@ -1140,7 +1142,7 @@
                         timeout-sec = <0x1e>;
                         pretimeout-sec = <0x19>;
                         clocks = <&versal_clk 0x52>;
-                        power-domains = <0x85 0x18224028>;
+                        power-domains = <&versal_firmware 0x18224028>;
                         phandle = <0xd6>;
                 };
 
@@ -1461,7 +1463,7 @@
                         xlnx,rable = <0x0>;
                         compatible = "xlnx,psv-ocm-1.0";
                         status = "okay";
-                        power-domains = <0x85 0x18314007>;
+                        power-domains = <&versal_firmware 0x18314007>;
                         xlnx,ip-name = "psv_ocm";
                         reg = <0x0 0xff960000 0x0 0x10000>;
                         xlnx,name = "blp_cips_pspmc_0_psv_ocm_ctrl";
@@ -2040,7 +2042,7 @@
                 compatible = "simple-bus";
                 #address-cells = <0x2>;
                 #size-cells = <0x2>;
-                firmware-name = "ve2302_pcie_qdma.pdi";
+                firmware-name = "ve2302_pcie_qdma_base.pdi";
                 phandle = <0x16c>;
 
                 fpga_PR: fpga-PR {
@@ -2414,6 +2416,7 @@
                         xlnx,nr-outputs = <0x1>;
                         compatible = "xlnx,clk-wizard-1.0", "xlnx,clocking-wizard";
                         xlnx,speed-grade = <0x2>;
+                        xlnx,rable = <0x0>;
                         clocks = <&versal_clk 0x42>,
                          <&versal_clk 0x42>;
                         #clock-cells = <0x1>;
@@ -2426,6 +2429,7 @@
                         xlnx,nr-outputs = <0x1>;
                         compatible = "xlnx,clk-wizard-1.0", "xlnx,clocking-wizard";
                         xlnx,speed-grade = <0x2>;
+                        xlnx,rable = <0x0>;
                         clocks = <&versal_clk 0x42>,
                          <&versal_clk 0x42>;
                         #clock-cells = <0x1>;
@@ -2442,9 +2446,7 @@
                         xlnx,freq-cnt-ref-clk-hz = <0x8235>;
                         clocks = <&versal_clk 0x41>,
                          <&versal_clk 0x42>,
-                         <&misc_clk_0>,
-                         <&blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_00 0x0>,
-                         <&blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_01 0x0>;
+                         <&misc_clk_0 0xf>;
                         xlnx,edk-iptype = "PERIPHERAL";
                         status = "okay";
                         clock-names = "aclk_ctrl", "aclk_freerun", "aclk_pcie", "clk_in_kernel_00", "clk_in_kernel_01";

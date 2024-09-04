@@ -1,5 +1,5 @@
 BRANCH = "main"
-SRC_URI = "git://github.com/Xilinx/rave-boot-fw-gen.git;protocol=https;branch=${BRANCH}"
+SRC_URI = "git://github.com/Xilinx/emb-plus-boot-fw-gen.git;protocol=https;branch=${BRANCH}"
 SRCREV = "97c603b3a92ff07f53256e9934b06b6551f17743"
 
 LICENSE = "MIT"

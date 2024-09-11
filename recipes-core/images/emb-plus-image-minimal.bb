@@ -6,16 +6,12 @@ COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:emb-plus-ve2302 = "${MACHINE}"
 COMPATIBLE_MACHINE:emb-plus-ve2302-sdt = "${MACHINE}"
 
-IMAGE_FEATURES += "ssh-server-openssh hwcodecs package-management"
-
 IMAGE_INSTALL = " \
     ${CORE_IMAGE_EXTRA_INSTALL} \
     packagegroup-core-boot \
     kernel-modules \
     xrt \
     zocl \
-    dfx-mgr \
-    libdfx \
     linux-xlnx-udev-rules \
     mtd-utils \
     pciutils \
@@ -25,4 +21,7 @@ IMAGE_INSTALL = " \
     init-apu \
     soft-kernel-daemon \
     lrzsz \
+    libopencv-core \
+    libopencv-imgcodecs \
+    libopencv-imgproc \
 "

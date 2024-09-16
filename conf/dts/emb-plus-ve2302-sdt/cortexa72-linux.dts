@@ -1189,6 +1189,116 @@
                         phandle = <0x14>;
                 };
 
+                blp_cips_pspmc_0_psv_coresight_apu_cti: blp_cips_pspmc_0_psv_coresight_apu_cti@f0ca0000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-coresight-apu-cti-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_coresight_apu_cti";
+                        reg = <0x0 0xf0ca0000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_coresight_apu_cti";
+                        phandle = <0x1b>;
+                };
+
+                blp_cips_pspmc_0_psv_coresight_cpm_cti2d: blp_cips_pspmc_0_psv_coresight_cpm_cti2d@f0fd0000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-coresight-cpm-cti2d-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_coresight_cpm_cti2d";
+                        reg = <0x0 0xf0fd0000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_coresight_cpm_cti2d";
+                        phandle = <0x2c>;
+                };
+
+                blp_cips_pspmc_0_psv_coresight_cpm_ela2a: blp_cips_pspmc_0_psv_coresight_cpm_ela2a@f0f40000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-coresight-cpm-ela2a-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_coresight_cpm_ela2a";
+                        reg = <0x0 0xf0f40000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_coresight_cpm_ela2a";
+                        phandle = <0x26>;
+                };
+
+                blp_cips_pspmc_0_psv_coresight_cpm_ela2b: blp_cips_pspmc_0_psv_coresight_cpm_ela2b@f0f50000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-coresight-cpm-ela2b-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_coresight_cpm_ela2b";
+                        reg = <0x0 0xf0f50000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_coresight_cpm_ela2b";
+                        phandle = <0x27>;
+                };
+
+                blp_cips_pspmc_0_psv_coresight_cpm_ela2c: blp_cips_pspmc_0_psv_coresight_cpm_ela2c@f0f60000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-coresight-cpm-ela2c-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_coresight_cpm_ela2c";
+                        reg = <0x0 0xf0f60000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_coresight_cpm_ela2c";
+                        phandle = <0x28>;
+                };
+
+                blp_cips_pspmc_0_psv_coresight_cpm_ela2d: blp_cips_pspmc_0_psv_coresight_cpm_ela2d@f0f70000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-coresight-cpm-ela2d-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_coresight_cpm_ela2d";
+                        reg = <0x0 0xf0f70000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_coresight_cpm_ela2d";
+                        phandle = <0x29>;
+                };
+
+                blp_cips_pspmc_0_psv_coresight_cpm_fun: blp_cips_pspmc_0_psv_coresight_cpm_fun@f0f20000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-coresight-cpm-fun-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_coresight_cpm_fun";
+                        reg = <0x0 0xf0f20000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_coresight_cpm_fun";
+                        phandle = <0x25>;
+                };
+
+                blp_cips_pspmc_0_psv_coresight_cpm_rom: blp_cips_pspmc_0_psv_coresight_cpm_rom@f0f00000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-coresight-cpm-rom-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_coresight_cpm_rom";
+                        reg = <0x0 0xf0f00000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_coresight_cpm_rom";
+                        phandle = <0x24>;
+                };
+
+                blp_cips_pspmc_0_psv_coresight_fpd_atm: blp_cips_pspmc_0_psv_coresight_fpd_atm@f0b80000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-coresight-fpd-atm-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_coresight_fpd_atm";
+                        reg = <0x0 0xf0b80000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_coresight_fpd_atm";
+                        phandle = <0x17>;
+                };
+
+                blp_cips_pspmc_0_psv_coresight_fpd_stm: blp_cips_pspmc_0_psv_coresight_fpd_stm@f0b70000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-coresight-fpd-stm-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_coresight_fpd_stm";
+                        reg = <0x0 0xf0b70000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_coresight_fpd_stm";
+                        phandle = <0x16>;
+                };
+
+                blp_cips_pspmc_0_psv_coresight_lpd_atm: blp_cips_pspmc_0_psv_coresight_lpd_atm@f0980000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-coresight-lpd-atm-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_coresight_lpd_atm";
+                        reg = <0x0 0xf0980000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_coresight_lpd_atm";
+                        phandle = <0x15>;
+                };
+
                 blp_cips_pspmc_0_psv_cpm: blp_cips_pspmc_0_psv_cpm@0 {
                         xlnx,rable = <0x0>;
                         compatible = "xlnx,psv-cpm-1.0";
@@ -1197,6 +1307,353 @@
                         reg = <0x0 0xfc000000 0x0 0x1000000>;
                         xlnx,name = "blp_cips_pspmc_0_psv_cpm";
                         phandle = <0x46>;
+                };
+
+                blp_cips_pspmc_0_psv_crf_0: blp_cips_pspmc_0_psv_crf_0@fd1a0000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-crf-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_crf";
+                        reg = <0x0 0xfd1a0000 0x0 0x140000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_crf_0";
+                        phandle = <0x48>;
+                };
+
+                blp_cips_pspmc_0_psv_crl_0: blp_cips_pspmc_0_psv_crl_0@ff5e0000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-crl-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_crl";
+                        reg = <0x0 0xff5e0000 0x0 0x300000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_crl_0";
+                        phandle = <0x61>;
+                };
+
+                blp_cips_pspmc_0_psv_crp_0: blp_cips_pspmc_0_psv_crp_0@f1260000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-crp-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_crp";
+                        reg = <0x0 0xf1260000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_crp_0";
+                        phandle = <0x3b>;
+                };
+
+                blp_cips_pspmc_0_psv_fpd_afi_0: blp_cips_pspmc_0_psv_fpd_afi_0@fd360000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-fpd-afi-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_fpd_afi";
+                        reg = <0x0 0xfd360000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_fpd_afi_0";
+                        phandle = <0x49>;
+                };
+
+                blp_cips_pspmc_0_psv_fpd_afi_2: blp_cips_pspmc_0_psv_fpd_afi_2@fd380000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-fpd-afi-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_fpd_afi";
+                        reg = <0x0 0xfd380000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_fpd_afi_2";
+                        phandle = <0x4a>;
+                };
+
+                blp_cips_pspmc_0_psv_fpd_cci_0: blp_cips_pspmc_0_psv_fpd_cci_0@fd5e0000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-fpd-cci-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_fpd_cci";
+                        reg = <0x0 0xfd5e0000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_fpd_cci_0";
+                        phandle = <0x4d>;
+                };
+
+                blp_cips_pspmc_0_psv_fpd_gpv_0: blp_cips_pspmc_0_psv_fpd_gpv_0@fd700000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-fpd-gpv-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_fpd_gpv";
+                        reg = <0x0 0xfd700000 0x0 0x100000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_fpd_gpv_0";
+                        phandle = <0x51>;
+                };
+
+                blp_cips_pspmc_0_psv_fpd_slcr_0: blp_cips_pspmc_0_psv_fpd_slcr_0@fd610000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-fpd-slcr-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_fpd_slcr";
+                        reg = <0x0 0xfd610000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_fpd_slcr_0";
+                        phandle = <0x4f>;
+                };
+
+                blp_cips_pspmc_0_psv_fpd_slcr_secure_0: blp_cips_pspmc_0_psv_fpd_slcr_secure_0@fd690000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-fpd-slcr-secure-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_fpd_slcr_secure";
+                        reg = <0x0 0xfd690000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_fpd_slcr_secure_0";
+                        phandle = <0x50>;
+                };
+
+                blp_cips_pspmc_0_psv_fpd_smmu_0: blp_cips_pspmc_0_psv_fpd_smmu_0@fd5f0000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-fpd-smmu-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_fpd_smmu";
+                        reg = <0x0 0xfd5f0000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_fpd_smmu_0";
+                        phandle = <0x4e>;
+                };
+
+                blp_cips_pspmc_0_psv_lpd_afi_0: blp_cips_pspmc_0_psv_lpd_afi_0@ff9b0000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-lpd-afi-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_lpd_afi";
+                        reg = <0x0 0xff9b0000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_lpd_afi_0";
+                        phandle = <0x71>;
+                };
+
+                blp_cips_pspmc_0_psv_lpd_iou_secure_slcr_0: blp_cips_pspmc_0_psv_lpd_iou_secure_slcr_0@ff0a0000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-lpd-iou-secure-slcr-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_lpd_iou_secure_slcr";
+                        reg = <0x0 0xff0a0000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_lpd_iou_secure_slcr_0";
+                        phandle = <0x57>;
+                };
+
+                blp_cips_pspmc_0_psv_lpd_iou_slcr_0: blp_cips_pspmc_0_psv_lpd_iou_slcr_0@ff080000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-lpd-iou-slcr-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_lpd_iou_slcr";
+                        reg = <0x0 0xff080000 0x0 0x20000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_lpd_iou_slcr_0";
+                        phandle = <0x56>;
+                };
+
+                blp_cips_pspmc_0_psv_lpd_slcr_0: blp_cips_pspmc_0_psv_lpd_slcr_0@ff410000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-lpd-slcr-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_lpd_slcr";
+                        reg = <0x0 0xff410000 0x0 0x100000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_lpd_slcr_0";
+                        phandle = <0x5f>;
+                };
+
+                blp_cips_pspmc_0_psv_lpd_slcr_secure_0: blp_cips_pspmc_0_psv_lpd_slcr_secure_0@ff510000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-lpd-slcr-secure-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_lpd_slcr_secure";
+                        reg = <0x0 0xff510000 0x0 0x40000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_lpd_slcr_secure_0";
+                        phandle = <0x60>;
+                };
+
+                blp_cips_pspmc_0_psv_ocm_ctrl: blp_cips_pspmc_0_psv_ocm_ctrl@ff960000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-ocm-1.0";
+                        status = "okay";
+                        power-domains = <&versal_firmware 0x18314007>;
+                        xlnx,ip-name = "psv_ocm";
+                        reg = <0x0 0xff960000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_ocm_ctrl";
+                        phandle = <0x6c>;
+                };
+
+                blp_cips_pspmc_0_psv_pmc_aes: blp_cips_pspmc_0_psv_pmc_aes@f11e0000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-pmc-aes-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_pmc_aes";
+                        reg = <0x0 0xf11e0000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_aes";
+                        phandle = <0x33>;
+                };
+
+                blp_cips_pspmc_0_psv_pmc_bbram_ctrl: blp_cips_pspmc_0_psv_pmc_bbram_ctrl@f11f0000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-pmc-bbram-ctrl-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_pmc_bbram_ctrl";
+                        reg = <0x0 0xf11f0000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_bbram_ctrl";
+                        phandle = <0x34>;
+                };
+
+                blp_cips_pspmc_0_psv_pmc_cfi_cframe_0: blp_cips_pspmc_0_psv_pmc_cfi_cframe_0@f12d0000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-pmc-cfi-cframe-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_pmc_cfi_cframe";
+                        reg = <0x0 0xf12d0000 0x0 0x1000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_cfi_cframe_0";
+                        phandle = <0x3f>;
+                };
+
+                blp_cips_pspmc_0_psv_pmc_cfu_apb_0: blp_cips_pspmc_0_psv_pmc_cfu_apb_0@f12b0000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-pmc-cfu-apb-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_pmc_cfu_apb";
+                        reg = <0x0 0xf12b0000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_cfu_apb_0";
+                        phandle = <0x3e>;
+                };
+
+                blp_cips_pspmc_0_psv_pmc_efuse_cache: blp_cips_pspmc_0_psv_pmc_efuse_cache@f1250000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-pmc-efuse-cache-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_pmc_efuse_cache";
+                        reg = <0x0 0xf1250000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_efuse_cache";
+                        phandle = <0x3a>;
+                };
+
+                blp_cips_pspmc_0_psv_pmc_efuse_ctrl: blp_cips_pspmc_0_psv_pmc_efuse_ctrl@f1240000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-pmc-efuse-ctrl-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_pmc_efuse_ctrl";
+                        reg = <0x0 0xf1240000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_efuse_ctrl";
+                        phandle = <0x39>;
+                };
+
+                blp_cips_pspmc_0_psv_pmc_global_0: blp_cips_pspmc_0_psv_pmc_global_0@f1110000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-pmc-global-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_pmc_global";
+                        reg = <0x0 0xf1110000 0x0 0x50000>;
+                        xlnx,npi-scan = <0x0>;
+                        xlnx,event-log = <0x0>;
+                        xlnx,cram-scan = <0x0>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_global_0";
+                        phandle = <0x30>;
+                };
+
+                blp_cips_pspmc_0_psv_pmc_ppu1_mdm_0: blp_cips_pspmc_0_psv_pmc_ppu1_mdm_0@f0310000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-pmc-ppu1-mdm-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_pmc_ppu1_mdm";
+                        reg = <0x0 0xf0310000 0x0 0x8000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_ppu1_mdm_0";
+                        phandle = <0x13>;
+                };
+
+                blp_cips_pspmc_0_psv_pmc_ram_npi: blp_cips_pspmc_0_psv_pmc_ram_npi@f6000000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-pmc-ram-npi-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_pmc_ram_npi";
+                        reg = <0x0 0xf6000000 0x0 0x2000000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_ram_npi";
+                        phandle = <0x44>;
+                };
+
+                blp_cips_pspmc_0_psv_pmc_rsa: blp_cips_pspmc_0_psv_pmc_rsa@f1200000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-pmc-rsa-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_pmc_rsa";
+                        reg = <0x0 0xf1200000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_rsa";
+                        phandle = <0x35>;
+                };
+
+                blp_cips_pspmc_0_psv_pmc_sha: blp_cips_pspmc_0_psv_pmc_sha@f1210000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-pmc-sha-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_pmc_sha";
+                        reg = <0x0 0xf1210000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_sha";
+                        phandle = <0x36>;
+                };
+
+                blp_cips_pspmc_0_psv_pmc_slave_boot: blp_cips_pspmc_0_psv_pmc_slave_boot@f1220000 {
+                        xlnx,rable = <0x0>;
+                        xlnx,device-id = <0x0>;
+                        compatible = "xlnx,psv-pmc-slave-boot-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_pmc_slave_boot";
+                        reg = <0x0 0xf1220000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_slave_boot";
+                        phandle = <0x37>;
+                };
+
+                blp_cips_pspmc_0_psv_pmc_slave_boot_stream: blp_cips_pspmc_0_psv_pmc_slave_boot_stream@f2100000 {
+                        xlnx,rable = <0x0>;
+                        xlnx,device-id = <0x0>;
+                        compatible = "xlnx,psv-pmc-slave-boot-stream-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_pmc_slave_boot_stream";
+                        reg = <0x0 0xf2100000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_slave_boot_stream";
+                        phandle = <0x43>;
+                };
+
+                blp_cips_pspmc_0_psv_pmc_trng: blp_cips_pspmc_0_psv_pmc_trng@f1230000 {
+                        xlnx,rable = <0x0>;
+                        xlnx,device-id = <0x0>;
+                        compatible = "xlnx,psv-pmc-trng-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_pmc_trng";
+                        reg = <0x0 0xf1230000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_trng";
+                        phandle = <0x38>;
+                };
+
+                blp_cips_pspmc_0_psv_psm_global_reg: blp_cips_pspmc_0_psv_psm_global_reg@ffc90000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-psm-global-reg-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_psm_global_reg";
+                        reg = <0x0 0xffc90000 0x0 0xf000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_psm_global_reg";
+                        phandle = <0x7a>;
+                };
+
+                blp_cips_pspmc_0_psv_rpu_0: blp_cips_pspmc_0_psv_rpu_0@ff9a0000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-rpu-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_rpu";
+                        reg = <0x0 0xff9a0000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_rpu_0";
+                        phandle = <0x70>;
+                };
+
+                blp_cips_pspmc_0_psv_scntr_0: blp_cips_pspmc_0_psv_scntr_0@ff130000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-scntr-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_scntr";
+                        reg = <0x0 0xff130000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_scntr_0";
+                        phandle = <0x5d>;
+                };
+
+                blp_cips_pspmc_0_psv_scntrs_0: blp_cips_pspmc_0_psv_scntrs_0@ff140000 {
+                        xlnx,rable = <0x0>;
+                        compatible = "xlnx,psv-scntrs-1.0";
+                        status = "okay";
+                        xlnx,ip-name = "psv_scntrs";
+                        reg = <0x0 0xff140000 0x0 0x10000>;
+                        xlnx,name = "blp_cips_pspmc_0_psv_scntrs_0";
+                        phandle = <0x5e>;
                 };
 
                 blp_cips_pspmc_0_psv_xram_atm: blp_cips_pspmc_0_psv_xram_atm@ff970000 {
@@ -1334,6 +1791,110 @@
                                 status = "okay";
                                 compatible = "arm,gic-v3-its";
                         };
+                };
+        };
+
+        amba_xppu: indirect-bus@1 {
+                compatible = "indirect-bus";
+                #address-cells = <0x2>;
+                #size-cells = <0x2>;
+                phandle = <0x157>;
+
+                lpd_xppu: xppu@ff990000 {
+                        compatible = "xlnx,xppu";
+                        #firewall-cells = <0x0>;
+                        reg = <0x0 0xff990000 0x0 0x2000>;
+                        status = "okay";
+                        xlnx,rable = <0x0>;
+                        xlnx,ip-name = "psv_lpd_xppu";
+                        xlnx,name = "blp_cips_pspmc_0_psv_lpd_xppu_0";
+                        phandle = <0x6f>;
+                };
+
+                pmc_xppu: xppu@f1310000 {
+                        compatible = "xlnx,xppu";
+                        #firewall-cells = <0x0>;
+                        reg = <0x0 0xf1310000 0x0 0x2000>;
+                        status = "okay";
+                        xlnx,rable = <0x0>;
+                        xlnx,ip-name = "psv_pmc_xppu";
+                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_xppu_0";
+                        phandle = <0x42>;
+                };
+
+                pmc_xppu_npi: xppu@f1300000 {
+                        compatible = "xlnx,xppu";
+                        #firewall-cells = <0x0>;
+                        reg = <0x0 0xf1300000 0x0 0x2000>;
+                        status = "okay";
+                        xlnx,rable = <0x0>;
+                        xlnx,ip-name = "psv_pmc_xppu_npi";
+                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_xppu_npi_0";
+                        phandle = <0x41>;
+                };
+        };
+
+        amba_xmpu: indirect-bus@2 {
+                compatible = "indirect-bus";
+                #address-cells = <0x2>;
+                #size-cells = <0x2>;
+                phandle = <0x158>;
+
+                fpd_xmpu: xmpu@fd390000 {
+                        compatible = "xlnx,xmpu";
+                        #firewall-cells = <0x0>;
+                        reg = <0x0 0xfd390000 0x0 0x1000>;
+                        status = "okay";
+                        xlnx,rable = <0x0>;
+                        xlnx,ip-name = "psv_fpd_slave_xmpu";
+                        xlnx,name = "blp_cips_pspmc_0_psv_fpd_slave_xmpu_0";
+                        phandle = <0x4b>;
+                };
+
+                pmc_xmpu: xmpu@f12f0000 {
+                        compatible = "xlnx,xmpu";
+                        #firewall-cells = <0x0>;
+                        reg = <0x0 0xf12f0000 0x0 0x1000>;
+                        status = "okay";
+                        xlnx,rable = <0x0>;
+                        xlnx,ip-name = "psv_pmc_xmpu";
+                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_xmpu_0";
+                        phandle = <0x40>;
+                };
+
+                ocm_xmpu: xmpu@ff980000 {
+                        compatible = "xlnx,xmpu";
+                        #firewall-cells = <0x0>;
+                        reg = <0x0 0xff980000 0x0 0x1000>;
+                        status = "okay";
+                        xlnx,rable = <0x0>;
+                        xlnx,ip-name = "psv_ocm_xmpu";
+                        xlnx,name = "blp_cips_pspmc_0_psv_ocm_xmpu_0";
+                        phandle = <0x6e>;
+                };
+
+                ddrmc_xmpu_1: xmpu@f6220000 {
+                        compatible = "xlnx,xmpu";
+                        #firewall-cells = <0x0>;
+                        reg = <0x0 0xf6220000 0x0 0x1000>;
+                        status = "disabled";
+                        phandle = <0x15a>;
+                };
+
+                ddrmc_xmpu_2: xmpu@f6390000 {
+                        compatible = "xlnx,xmpu";
+                        #firewall-cells = <0x0>;
+                        reg = <0x0 0xf6390000 0x0 0x1000>;
+                        status = "disabled";
+                        phandle = <0x15b>;
+                };
+
+                ddrmc_xmpu_3: xmpu@f6500000 {
+                        compatible = "xlnx,xmpu";
+                        #firewall-cells = <0x0>;
+                        reg = <0x0 0xf6500000 0x0 0x1000>;
+                        status = "disabled";
+                        phandle = <0x15c>;
                 };
         };
 
@@ -2007,7 +2568,52 @@
                 dma0 = "/axi/pmcdma@f11c0000";
                 dma1 = "/axi/pmcdma@f11d0000";
                 coresight = "/axi/coresight@f0800000";
+                blp_cips_pspmc_0_psv_coresight_apu_cti = "/axi/blp_cips_pspmc_0_psv_coresight_apu_cti@f0ca0000";
+                blp_cips_pspmc_0_psv_coresight_cpm_cti2d = "/axi/blp_cips_pspmc_0_psv_coresight_cpm_cti2d@f0fd0000";
+                blp_cips_pspmc_0_psv_coresight_cpm_ela2a = "/axi/blp_cips_pspmc_0_psv_coresight_cpm_ela2a@f0f40000";
+                blp_cips_pspmc_0_psv_coresight_cpm_ela2b = "/axi/blp_cips_pspmc_0_psv_coresight_cpm_ela2b@f0f50000";
+                blp_cips_pspmc_0_psv_coresight_cpm_ela2c = "/axi/blp_cips_pspmc_0_psv_coresight_cpm_ela2c@f0f60000";
+                blp_cips_pspmc_0_psv_coresight_cpm_ela2d = "/axi/blp_cips_pspmc_0_psv_coresight_cpm_ela2d@f0f70000";
+                blp_cips_pspmc_0_psv_coresight_cpm_fun = "/axi/blp_cips_pspmc_0_psv_coresight_cpm_fun@f0f20000";
+                blp_cips_pspmc_0_psv_coresight_cpm_rom = "/axi/blp_cips_pspmc_0_psv_coresight_cpm_rom@f0f00000";
+                blp_cips_pspmc_0_psv_coresight_fpd_atm = "/axi/blp_cips_pspmc_0_psv_coresight_fpd_atm@f0b80000";
+                blp_cips_pspmc_0_psv_coresight_fpd_stm = "/axi/blp_cips_pspmc_0_psv_coresight_fpd_stm@f0b70000";
+                blp_cips_pspmc_0_psv_coresight_lpd_atm = "/axi/blp_cips_pspmc_0_psv_coresight_lpd_atm@f0980000";
                 blp_cips_pspmc_0_psv_cpm = "/axi/blp_cips_pspmc_0_psv_cpm@0";
+                blp_cips_pspmc_0_psv_crf_0 = "/axi/blp_cips_pspmc_0_psv_crf_0@fd1a0000";
+                blp_cips_pspmc_0_psv_crl_0 = "/axi/blp_cips_pspmc_0_psv_crl_0@ff5e0000";
+                blp_cips_pspmc_0_psv_crp_0 = "/axi/blp_cips_pspmc_0_psv_crp_0@f1260000";
+                blp_cips_pspmc_0_psv_fpd_afi_0 = "/axi/blp_cips_pspmc_0_psv_fpd_afi_0@fd360000";
+                blp_cips_pspmc_0_psv_fpd_afi_2 = "/axi/blp_cips_pspmc_0_psv_fpd_afi_2@fd380000";
+                blp_cips_pspmc_0_psv_fpd_cci_0 = "/axi/blp_cips_pspmc_0_psv_fpd_cci_0@fd5e0000";
+                blp_cips_pspmc_0_psv_fpd_gpv_0 = "/axi/blp_cips_pspmc_0_psv_fpd_gpv_0@fd700000";
+                blp_cips_pspmc_0_psv_fpd_slcr_0 = "/axi/blp_cips_pspmc_0_psv_fpd_slcr_0@fd610000";
+                blp_cips_pspmc_0_psv_fpd_slcr_secure_0 = "/axi/blp_cips_pspmc_0_psv_fpd_slcr_secure_0@fd690000";
+                blp_cips_pspmc_0_psv_fpd_smmu_0 = "/axi/blp_cips_pspmc_0_psv_fpd_smmu_0@fd5f0000";
+                blp_cips_pspmc_0_psv_lpd_afi_0 = "/axi/blp_cips_pspmc_0_psv_lpd_afi_0@ff9b0000";
+                blp_cips_pspmc_0_psv_lpd_iou_secure_slcr_0 = "/axi/blp_cips_pspmc_0_psv_lpd_iou_secure_slcr_0@ff0a0000";
+                blp_cips_pspmc_0_psv_lpd_iou_slcr_0 = "/axi/blp_cips_pspmc_0_psv_lpd_iou_slcr_0@ff080000";
+                blp_cips_pspmc_0_psv_lpd_slcr_0 = "/axi/blp_cips_pspmc_0_psv_lpd_slcr_0@ff410000";
+                blp_cips_pspmc_0_psv_lpd_slcr_secure_0 = "/axi/blp_cips_pspmc_0_psv_lpd_slcr_secure_0@ff510000";
+                blp_cips_pspmc_0_psv_ocm_ctrl = "/axi/blp_cips_pspmc_0_psv_ocm_ctrl@ff960000";
+                blp_cips_pspmc_0_psv_pmc_aes = "/axi/blp_cips_pspmc_0_psv_pmc_aes@f11e0000";
+                blp_cips_pspmc_0_psv_pmc_bbram_ctrl = "/axi/blp_cips_pspmc_0_psv_pmc_bbram_ctrl@f11f0000";
+                blp_cips_pspmc_0_psv_pmc_cfi_cframe_0 = "/axi/blp_cips_pspmc_0_psv_pmc_cfi_cframe_0@f12d0000";
+                blp_cips_pspmc_0_psv_pmc_cfu_apb_0 = "/axi/blp_cips_pspmc_0_psv_pmc_cfu_apb_0@f12b0000";
+                blp_cips_pspmc_0_psv_pmc_efuse_cache = "/axi/blp_cips_pspmc_0_psv_pmc_efuse_cache@f1250000";
+                blp_cips_pspmc_0_psv_pmc_efuse_ctrl = "/axi/blp_cips_pspmc_0_psv_pmc_efuse_ctrl@f1240000";
+                blp_cips_pspmc_0_psv_pmc_global_0 = "/axi/blp_cips_pspmc_0_psv_pmc_global_0@f1110000";
+                blp_cips_pspmc_0_psv_pmc_ppu1_mdm_0 = "/axi/blp_cips_pspmc_0_psv_pmc_ppu1_mdm_0@f0310000";
+                blp_cips_pspmc_0_psv_pmc_ram_npi = "/axi/blp_cips_pspmc_0_psv_pmc_ram_npi@f6000000";
+                blp_cips_pspmc_0_psv_pmc_rsa = "/axi/blp_cips_pspmc_0_psv_pmc_rsa@f1200000";
+                blp_cips_pspmc_0_psv_pmc_sha = "/axi/blp_cips_pspmc_0_psv_pmc_sha@f1210000";
+                blp_cips_pspmc_0_psv_pmc_slave_boot = "/axi/blp_cips_pspmc_0_psv_pmc_slave_boot@f1220000";
+                blp_cips_pspmc_0_psv_pmc_slave_boot_stream = "/axi/blp_cips_pspmc_0_psv_pmc_slave_boot_stream@f2100000";
+                blp_cips_pspmc_0_psv_pmc_trng = "/axi/blp_cips_pspmc_0_psv_pmc_trng@f1230000";
+                blp_cips_pspmc_0_psv_psm_global_reg = "/axi/blp_cips_pspmc_0_psv_psm_global_reg@ffc90000";
+                blp_cips_pspmc_0_psv_rpu_0 = "/axi/blp_cips_pspmc_0_psv_rpu_0@ff9a0000";
+                blp_cips_pspmc_0_psv_scntr_0 = "/axi/blp_cips_pspmc_0_psv_scntr_0@ff130000";
+                blp_cips_pspmc_0_psv_scntrs_0 = "/axi/blp_cips_pspmc_0_psv_scntrs_0@ff140000";
                 blp_cips_pspmc_0_psv_xram_atm = "/axi/blp_cips_pspmc_0_psv_xram_atm@ff970000";
                 blp_cips_pspmc_0_psv_xram_ctrl_1 = "/axi/blp_cips_pspmc_0_psv_xram_ctrl_1@ff8e0000";
                 blp_cips_pspmc_0_psv_xram_ctrl_2 = "/axi/blp_cips_pspmc_0_psv_xram_ctrl_2@ff8f0000";
@@ -2019,6 +2625,17 @@
                 blp_cips_pspmc_0_psv_xram_xmpu_bank_2 = "/axi/blp_cips_pspmc_0_psv_xram_xmpu_bank_2@ff934000";
                 blp_cips_pspmc_0_psv_xram_xmpu_bank_3 = "/axi/blp_cips_pspmc_0_psv_xram_xmpu_bank_3@ff938000";
                 blp_cips_pspmc_0_psv_xram_xmpu_bank_4 = "/axi/blp_cips_pspmc_0_psv_xram_xmpu_bank_4@ff93c000";
+                amba_xppu = "/indirect-bus@1";
+                lpd_xppu = "/indirect-bus@1/xppu@ff990000";
+                pmc_xppu = "/indirect-bus@1/xppu@f1310000";
+                pmc_xppu_npi = "/indirect-bus@1/xppu@f1300000";
+                amba_xmpu = "/indirect-bus@2";
+                fpd_xmpu = "/indirect-bus@2/xmpu@fd390000";
+                pmc_xmpu = "/indirect-bus@2/xmpu@f12f0000";
+                ocm_xmpu = "/indirect-bus@2/xmpu@ff980000";
+                ddrmc_xmpu_1 = "/indirect-bus@2/xmpu@f6220000";
+                ddrmc_xmpu_2 = "/indirect-bus@2/xmpu@f6390000";
+                ddrmc_xmpu_3 = "/indirect-bus@2/xmpu@f6500000";
                 pl_alt_ref_clk = "/pl_alt_ref_clk";
                 ref_clk = "/ref_clk";
                 can0_clk = "/can0_clk";

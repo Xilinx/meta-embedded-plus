@@ -2,7 +2,7 @@
 
 ### The following table controls the automatic generated of the machine .conf files (lines start with #M#)
 ### Machine              BOARD                     OVERLAY    PRE     POST
-#M# emb-plus-ve2302-sdt  versal-generic.conf       none       none    none
+#M# emb-plus-ve2302-sdt  versal-generic.conf       none       none    MACHINEOVERRIDES =\. \":emb-plus-ve2302\"
 
 this=$(realpath $0)
 

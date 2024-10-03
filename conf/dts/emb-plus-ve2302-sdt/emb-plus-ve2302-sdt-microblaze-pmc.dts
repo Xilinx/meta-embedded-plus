@@ -162,7 +162,7 @@
                         compatible = "arm,cortex-a72", "arm,armv8";
                         device_type = "cpu";
                         enable-method = "psci";
-                        operating-points-v2 = <0x83>;
+                        operating-points-v2 = <&cpu_opp_table>;
                         reg = <0x0>;
                         cpu-idle-states = <&CPU_SLEEP_0>;
                         power-domains = <&versal_firmware 0x18110003>;
@@ -182,7 +182,7 @@
                         compatible = "arm,cortex-a72", "arm,armv8";
                         device_type = "cpu";
                         enable-method = "psci";
-                        operating-points-v2 = <0x83>;
+                        operating-points-v2 = <&cpu_opp_table>;
                         reg = <0x1>;
                         cpu-idle-states = <&CPU_SLEEP_0>;
                         power-domains = <&versal_firmware 0x18110004>;
@@ -202,7 +202,7 @@
 
                         CPU_SLEEP_0: cpu-sleep-0 {
                                 compatible = "arm,idle-state";
-                                arm,psci-suspend-param = "@", "", "";
+                                arm,psci-suspend-param = <0x40000000>;
                                 local-timer-stop;
                                 entry-latency-us = <0x12c>;
                                 exit-latency-us = <0x258>;
@@ -347,7 +347,7 @@
                         compatible = "pmc-microblaze";
                         device_type = "cpu";
                         reg = <0x0>;
-                        operating-points-v2 = <0x83>;
+                        operating-points-v2 = <&cpu_opp_table>;
                         xlnx,d-axi = <0x1>;
                         xlnx,addr-tag-bits = <0x0>;
                         xlnx,m-axi-dc-thread-id-width = <0x1>;
@@ -711,7 +711,7 @@
                         compatible = "psm-microblaze";
                         device_type = "cpu";
                         reg = <0x1>;
-                        operating-points-v2 = <0x83>;
+                        operating-points-v2 = <&cpu_opp_table>;
                         xlnx,d-axi = <0x1>;
                         xlnx,addr-tag-bits = <0x0>;
                         xlnx,m-axi-dc-thread-id-width = <0x1>;
@@ -1081,7 +1081,7 @@
                         compatible = "arm,cortex-r5";
                         device_type = "cpu";
                         reg = <0x0>;
-                        operating-points-v2 = <0x83>;
+                        operating-points-v2 = <&cpu_opp_table>;
                         power-domains = <&versal_firmware 0x18110005>;
                         xlnx,rable = <0x0>;
                         xlnx,is-cache-coherent = <0x0>;
@@ -1234,7 +1234,7 @@
                         compatible = "arm,cortex-r5";
                         device_type = "cpu";
                         reg = <0x1>;
-                        operating-points-v2 = <0x83>;
+                        operating-points-v2 = <&cpu_opp_table>;
                         power-domains = <&versal_firmware 0x18110006>;
                         xlnx,rable = <0x0>;
                         xlnx,is-cache-coherent = <0x0>;
@@ -1287,7 +1287,7 @@
 
         fpga: fpga {
                 compatible = "fpga-region";
-                fpga-mgr = <0xa3>;
+                fpga-mgr = <&versal_fpga>;
                 #address-cells = <0x2>;
                 #size-cells = <0x2>;
                 phandle = <0xba>;
@@ -1486,8 +1486,7 @@
                         rx-fifo-depth = <0x40>;
                         tx-mailbox-count = <0x20>;
                         clocks = <&can0_clk>,
-                         <&versal_clk>,
-                         <&smmu>;
+                         <&versal_clk 0x52>;
                         power-domains = <&versal_firmware 0x1822401f>;
                         phandle = <0xbe>;
                 };
@@ -1502,8 +1501,7 @@
                         rx-fifo-depth = <0x40>;
                         tx-mailbox-count = <0x20>;
                         clocks = <&can1_clk>,
-                         <&versal_clk>,
-                         <&smmu>;
+                         <&versal_clk 0x52>;
                         power-domains = <&versal_firmware 0x18224020>;
                         phandle = <0xbf>;
                 };
@@ -6328,7 +6326,8 @@
                         xlnx,pf0-entry-minor-version-0 = <0x2>;
                         xlnx,pf1-entry-version-type-12 = <0x0>;
                         xlnx,pf0-entry-minor-version-1 = <0x0>;
-                        clocks = <&versal_clk 0x41>;
+                        clocks = <&versal_clk 0x41>,
+                         <&misc_clk_0>;
                         xlnx,pf1-entry-version-type-13 = <0x0>;
                         xlnx,pf0-entry-minor-version-2 = <0x0>;
                         xlnx,pf1-entry-version-type-14 = <0x0>;
@@ -7178,7 +7177,9 @@
                         xlnx,freq-cnt-ref-clk-hz = <0x8235>;
                         clocks = <&versal_clk 0x41>,
                          <&versal_clk 0x42>,
-                         <&misc_clk_0 0xf>;
+                         <&misc_clk_0>,
+                         <&blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_00 0x0>,
+                         <&blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_01 0x0>;
                         xlnx,edk-iptype = "PERIPHERAL";
                         status = "okay";
                         clock-names = "aclk_ctrl", "aclk_freerun", "aclk_pcie", "clk_in_kernel_00", "clk_in_kernel_01";

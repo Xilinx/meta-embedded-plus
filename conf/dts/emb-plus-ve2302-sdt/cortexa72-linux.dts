@@ -1244,6 +1244,98 @@
                 };
         };
 
+        amba_xppu: indirect-bus@1 {
+                compatible = "indirect-bus";
+                #address-cells = <0x2>;
+                #size-cells = <0x2>;
+                phandle = <0x157>;
+
+                lpd_xppu: xppu@ff990000 {
+                        compatible = "xlnx,xppu";
+                        #firewall-cells = <0x0>;
+                        reg = <0x0 0xff990000 0x0 0x2000>;
+                        status = "okay";
+                        xlnx,ip-name = "psv_lpd_xppu";
+                        phandle = <0x6f>;
+                };
+
+                pmc_xppu: xppu@f1310000 {
+                        compatible = "xlnx,xppu";
+                        #firewall-cells = <0x0>;
+                        reg = <0x0 0xf1310000 0x0 0x2000>;
+                        status = "okay";
+                        xlnx,ip-name = "psv_pmc_xppu";
+                        phandle = <0x42>;
+                };
+
+                pmc_xppu_npi: xppu@f1300000 {
+                        compatible = "xlnx,xppu";
+                        #firewall-cells = <0x0>;
+                        reg = <0x0 0xf1300000 0x0 0x2000>;
+                        status = "okay";
+                        xlnx,ip-name = "psv_pmc_xppu_npi";
+                        phandle = <0x41>;
+                };
+        };
+
+        amba_xmpu: indirect-bus@2 {
+                compatible = "indirect-bus";
+                #address-cells = <0x2>;
+                #size-cells = <0x2>;
+                phandle = <0x158>;
+
+                fpd_xmpu: xmpu@fd390000 {
+                        compatible = "xlnx,xmpu";
+                        #firewall-cells = <0x0>;
+                        reg = <0x0 0xfd390000 0x0 0x1000>;
+                        status = "okay";
+                        xlnx,ip-name = "psv_fpd_slave_xmpu";
+                        phandle = <0x4b>;
+                };
+
+                pmc_xmpu: xmpu@f12f0000 {
+                        compatible = "xlnx,xmpu";
+                        #firewall-cells = <0x0>;
+                        reg = <0x0 0xf12f0000 0x0 0x1000>;
+                        status = "okay";
+                        xlnx,ip-name = "psv_pmc_xmpu";
+                        phandle = <0x40>;
+                };
+
+                ocm_xmpu: xmpu@ff980000 {
+                        compatible = "xlnx,xmpu";
+                        #firewall-cells = <0x0>;
+                        reg = <0x0 0xff980000 0x0 0x1000>;
+                        status = "okay";
+                        xlnx,ip-name = "psv_ocm_xmpu";
+                        phandle = <0x6e>;
+                };
+
+                ddrmc_xmpu_1: xmpu@f6220000 {
+                        compatible = "xlnx,xmpu";
+                        #firewall-cells = <0x0>;
+                        reg = <0x0 0xf6220000 0x0 0x1000>;
+                        status = "disabled";
+                        phandle = <0x15a>;
+                };
+
+                ddrmc_xmpu_2: xmpu@f6390000 {
+                        compatible = "xlnx,xmpu";
+                        #firewall-cells = <0x0>;
+                        reg = <0x0 0xf6390000 0x0 0x1000>;
+                        status = "disabled";
+                        phandle = <0x15b>;
+                };
+
+                ddrmc_xmpu_3: xmpu@f6500000 {
+                        compatible = "xlnx,xmpu";
+                        #firewall-cells = <0x0>;
+                        reg = <0x0 0xf6500000 0x0 0x1000>;
+                        status = "disabled";
+                        phandle = <0x15c>;
+                };
+        };
+
         pl_alt_ref_clk: pl_alt_ref_clk {
                 bootph-all;
                 compatible = "fixed-clock";
@@ -1900,6 +1992,17 @@
                 blp_cips_pspmc_0_psv_xram_xmpu_bank_2 = "/axi/blp_cips_pspmc_0_psv_xram_xmpu_bank_2@ff934000";
                 blp_cips_pspmc_0_psv_xram_xmpu_bank_3 = "/axi/blp_cips_pspmc_0_psv_xram_xmpu_bank_3@ff938000";
                 blp_cips_pspmc_0_psv_xram_xmpu_bank_4 = "/axi/blp_cips_pspmc_0_psv_xram_xmpu_bank_4@ff93c000";
+                amba_xppu = "/indirect-bus@1";
+                lpd_xppu = "/indirect-bus@1/xppu@ff990000";
+                pmc_xppu = "/indirect-bus@1/xppu@f1310000";
+                pmc_xppu_npi = "/indirect-bus@1/xppu@f1300000";
+                amba_xmpu = "/indirect-bus@2";
+                fpd_xmpu = "/indirect-bus@2/xmpu@fd390000";
+                pmc_xmpu = "/indirect-bus@2/xmpu@f12f0000";
+                ocm_xmpu = "/indirect-bus@2/xmpu@ff980000";
+                ddrmc_xmpu_1 = "/indirect-bus@2/xmpu@f6220000";
+                ddrmc_xmpu_2 = "/indirect-bus@2/xmpu@f6390000";
+                ddrmc_xmpu_3 = "/indirect-bus@2/xmpu@f6500000";
                 pl_alt_ref_clk = "/pl_alt_ref_clk";
                 ref_clk = "/ref_clk";
                 can0_clk = "/can0_clk";

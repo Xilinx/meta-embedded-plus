@@ -132,13 +132,13 @@
 
         pmu {
                 compatible = "arm,armv8-pmuv3";
-                interrupt-parent = <&gic_a72>;
+                interrupt-parent = <&gic>;
                 interrupts = <0x1 0x7 0x304>;
         };
 
         timer: timer {
                 compatible = "arm,armv8-timer";
-                interrupt-parent = <&gic_a72>;
+                interrupt-parent = <&gic>;
                 interrupts = <0x1 0xd 0x4 0x1 0xe 0x4 0x1 0xb 0x4 0x1 0xa 0x4>;
                 phandle = <0xbc>;
         };
@@ -153,7 +153,7 @@
                 #address-cells = <0x2>;
                 #size-cells = <0x2>;
                 ranges;
-                interrupt-parent = <&gic_a72>;
+                interrupt-parent = <&gic>;
                 bootph-all;
                 phandle = <0x1>;
 
@@ -170,7 +170,7 @@
                         status = "disabled";
                         reg = <0x0 0xff060000 0x0 0x6000>;
                         interrupts = <0x0 0x14 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-names = "can_clk", "s_axi_aclk";
                         rx-fifo-depth = <0x40>;
                         tx-mailbox-count = <0x20>;
@@ -185,7 +185,7 @@
                         status = "disabled";
                         reg = <0x0 0xff070000 0x0 0x6000>;
                         interrupts = <0x0 0x15 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-names = "can_clk", "s_axi_aclk";
                         rx-fifo-depth = <0x40>;
                         tx-mailbox-count = <0x20>;
@@ -208,7 +208,7 @@
                         cci_pmu: pmu@10000 {
                                 compatible = "arm,cci-500-pmu,r0";
                                 reg = <0x10000 0x90000>;
-                                interrupt-parent = <&gic_a72>;
+                                interrupt-parent = <&gic>;
                                 interrupts = <0x0 0x6a 0x4 0x0 0x6a 0x4 0x0 0x6a 0x4 0x0 0x6a 0x4 0x0 0x6a 0x4 0x0 0x6a 0x4 0x0 0x6a 0x4 0x0 0x6a 0x4 0x0 0x6a 0x4>;
                                 phandle = <0xc0>;
                         };
@@ -219,7 +219,7 @@
                         status = "okay";
                         reg = <0x0 0xffa80000 0x0 0x1000>;
                         interrupts = <0x0 0x3c 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
                         xlnx,bus-width = <0x40>;
@@ -237,7 +237,7 @@
                         status = "okay";
                         reg = <0x0 0xffa90000 0x0 0x1000>;
                         interrupts = <0x0 0x3d 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
                         xlnx,bus-width = <0x40>;
@@ -255,7 +255,7 @@
                         status = "okay";
                         reg = <0x0 0xffaa0000 0x0 0x1000>;
                         interrupts = <0x0 0x3e 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
                         xlnx,bus-width = <0x40>;
@@ -273,7 +273,7 @@
                         status = "okay";
                         reg = <0x0 0xffab0000 0x0 0x1000>;
                         interrupts = <0x0 0x3f 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
                         xlnx,bus-width = <0x40>;
@@ -291,7 +291,7 @@
                         status = "okay";
                         reg = <0x0 0xffac0000 0x0 0x1000>;
                         interrupts = <0x0 0x40 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
                         xlnx,bus-width = <0x40>;
@@ -309,7 +309,7 @@
                         status = "okay";
                         reg = <0x0 0xffad0000 0x0 0x1000>;
                         interrupts = <0x0 0x41 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
                         xlnx,bus-width = <0x40>;
@@ -327,7 +327,7 @@
                         status = "okay";
                         reg = <0x0 0xffae0000 0x0 0x1000>;
                         interrupts = <0x0 0x42 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
                         xlnx,bus-width = <0x40>;
@@ -345,7 +345,7 @@
                         status = "okay";
                         reg = <0x0 0xffaf0000 0x0 0x1000>;
                         interrupts = <0x0 0x43 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
                         xlnx,bus-width = <0x40>;
@@ -363,7 +363,7 @@
                         status = "disabled";
                         reg = <0x0 0xff0c0000 0x0 0x1000>;
                         interrupts = <0x0 0x38 0x4 0x0 0x38 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-names = "pclk", "hclk", "tx_clk", "rx_clk", "tsu_clk";
                         #address-cells = <0x1>;
                         #size-cells = <0x0>;
@@ -381,7 +381,7 @@
                         status = "disabled";
                         reg = <0x0 0xff0d0000 0x0 0x1000>;
                         interrupts = <0x0 0x3a 0x4 0x0 0x3a 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-names = "pclk", "hclk", "tx_clk", "rx_clk", "tsu_clk";
                         #address-cells = <0x1>;
                         #size-cells = <0x0>;
@@ -399,7 +399,7 @@
                         status = "okay";
                         reg = <0x0 0xff0b0000 0x0 0x1000>;
                         interrupts = <0x0 0xd 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         #gpio-cells = <0x2>;
                         gpio-controller;
                         #interrupt-cells = <0x2>;
@@ -417,7 +417,7 @@
                         status = "okay";
                         reg = <0x0 0xf1020000 0x0 0x1000>;
                         interrupts = <0x0 0x7a 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         #gpio-cells = <0x2>;
                         gpio-controller;
                         #interrupt-cells = <0x2>;
@@ -433,7 +433,7 @@
                         status = "disabled";
                         reg = <0x0 0xff020000 0x0 0x1000>;
                         interrupts = <0x0 0xe 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-frequency = <0x186a0>;
                         #address-cells = <0x1>;
                         #size-cells = <0x0>;
@@ -447,7 +447,7 @@
                         status = "disabled";
                         reg = <0x0 0xff030000 0x0 0x1000>;
                         interrupts = <0x0 0xf 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-frequency = <0x186a0>;
                         #address-cells = <0x1>;
                         #size-cells = <0x0>;
@@ -461,7 +461,7 @@
                         status = "okay";
                         reg = <0x0 0xf1000000 0x0 0x1000>;
                         interrupts = <0x0 0x7b 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-frequency = <0x186a0>;
                         #address-cells = <0x1>;
                         #size-cells = <0x0>;
@@ -479,7 +479,7 @@
                         reg = <0x0 0xf62c0000 0x0 0x2000 0x0 0xf6210000 0x0 0x20000>;
                         reg-names = "ddrmc_base", "ddrmc_noc_base";
                         interrupts = <0x0 0x93 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         xlnx,mc-id = <0x1>;
                         phandle = <0xc6>;
                 };
@@ -490,7 +490,7 @@
                         reg = <0x0 0xf6430000 0x0 0x2000 0x0 0xf6380000 0x0 0x20000>;
                         reg-names = "ddrmc_base", "ddrmc_noc_base";
                         interrupts = <0x0 0x93 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         xlnx,mc-id = <0x2>;
                         phandle = <0xc7>;
                 };
@@ -501,7 +501,7 @@
                         reg = <0x0 0xf65a0000 0x0 0x2000 0x0 0xf64f0000 0x0 0x20000>;
                         reg-names = "ddrmc_base", "ddrmc_noc_base";
                         interrupts = <0x0 0x93 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         xlnx,mc-id = <0x3>;
                         phandle = <0xc8>;
                 };
@@ -510,7 +510,7 @@
                         compatible = "xlnx,zynqmp-ocmc-1.0";
                         reg = <0x0 0xff960000 0x0 0x1000>;
                         interrupts = <0x0 0xa 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         phandle = <0xc9>;
                 };
 
@@ -520,7 +520,7 @@
                         reg = <0x0 0xf12a0000 0x0 0x100>;
                         interrupt-names = "alarm", "sec";
                         interrupts = <0x0 0x8e 0x4 0x0 0x8f 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         calibration = <0x7fff>;
                         power-domains = <&versal_firmware 0x18224034>;
                         xlnx,ip-name = "psv_pmc_rtc";
@@ -532,7 +532,7 @@
                         status = "disabled";
                         reg = <0x0 0xf1040000 0x0 0x10000>;
                         interrupts = <0x0 0x7e 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-names = "clk_xin", "clk_ahb", "gate";
                         xlnx,device_id = <0x0>;
                         #clock-cells = <0x1>;
@@ -549,7 +549,7 @@
                         status = "disabled";
                         reg = <0x0 0xf1050000 0x0 0x10000>;
                         interrupts = <0x0 0x80 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-names = "clk_xin", "clk_ahb", "gate";
                         xlnx,device_id = <0x1>;
                         #clock-cells = <0x1>;
@@ -566,7 +566,7 @@
                         status = "okay";
                         reg = <0x0 0xff000000 0x0 0x1000>;
                         interrupts = <0x0 0x12 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         reg-io-width = <0x4>;
                         clock-names = "uartclk", "apb_pclk";
                         current-speed = <0x1c200>;
@@ -591,7 +591,7 @@
                         status = "okay";
                         reg = <0x0 0xff010000 0x0 0x1000>;
                         interrupts = <0x0 0x13 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         reg-io-width = <0x4>;
                         clock-names = "uartclk", "apb_pclk";
                         current-speed = <0x1c200>;
@@ -619,7 +619,7 @@
                         #iommu-cells = <0x1>;
                         #global-interrupts = <0x1>;
                         interrupts = <0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         xlnx,ip-name = "psv_fpd_smmutcu";
                         phandle = <0x52>;
                 };
@@ -629,7 +629,7 @@
                         status = "okay";
                         reg = <0x0 0xf1010000 0x0 0x10000 0x0 0xc0000000 0x0 0x20000000>;
                         interrupts = <0x0 0x7c 0x4 0x0 0x7c 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-names = "ref_clk", "pclk";
                         cdns,fifo-depth = <0x100>;
                         cdns,fifo-width = <0x4>;
@@ -657,7 +657,7 @@
                         status = "disabled";
                         reg = <0x0 0xf1030000 0x0 0x1000>;
                         interrupts = <0x0 0x7d 0x4 0x0 0x7d 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-names = "ref_clk", "pclk";
                         #address-cells = <0x1>;
                         #size-cells = <0x0>;
@@ -672,7 +672,7 @@
                         status = "okay";
                         reg = <0x0 0xff040000 0x0 0x1000>;
                         interrupts = <0x0 0x10 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-names = "ref_clk", "pclk";
                         #address-cells = <0x1>;
                         #size-cells = <0x0>;
@@ -694,7 +694,7 @@
                         status = "disabled";
                         reg = <0x0 0xff050000 0x0 0x1000>;
                         interrupts = <0x0 0x11 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         clock-names = "ref_clk", "pclk";
                         #address-cells = <0x1>;
                         #size-cells = <0x0>;
@@ -798,46 +798,57 @@
 
                         supply@1 {
                                 reg = <0x1>;
+                                xlnx,name = "vccaux";
                         };
 
                         supply@5 {
                                 reg = <0x5>;
+                                xlnx,name = "vcc_soc";
                         };
 
                         supply@8 {
                                 reg = <0x8>;
+                                xlnx,name = "vcco_302";
                         };
 
                         supply@10 {
                                 reg = <0xa>;
+                                xlnx,name = "vccaux_pmc";
                         };
 
                         supply@7 {
                                 reg = <0x7>;
+                                xlnx,name = "vcco_500";
                         };
 
                         supply@2 {
                                 reg = <0x2>;
+                                xlnx,name = "vcc_pmc";
                         };
 
                         supply@3 {
                                 reg = <0x3>;
+                                xlnx,name = "vcc_psfp";
                         };
 
                         supply@4 {
                                 reg = <0x4>;
+                                xlnx,name = "vcc_pslp";
                         };
 
                         supply@6 {
                                 reg = <0x6>;
+                                xlnx,name = "vp_vn";
                         };
 
                         supply@9 {
                                 reg = <0x9>;
+                                xlnx,name = "vcco_703";
                         };
 
                         supply@0 {
                                 reg = <0x0>;
+                                xlnx,name = "vaux_ch0";
                         };
                 };
 
@@ -878,7 +889,7 @@
                         compatible = "cdns,ttc";
                         status = "okay";
                         interrupts = <0x0 0x25 0x4 0x0 0x26 0x4 0x0 0x27 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         reg = <0x0 0xff0e0000 0x0 0x1000>;
                         timer-width = <0x20>;
                         clocks = <&versal_clk 0x27>,
@@ -900,7 +911,7 @@
                         compatible = "cdns,ttc";
                         status = "okay";
                         interrupts = <0x0 0x28 0x4 0x0 0x29 0x4 0x0 0x2a 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         reg = <0x0 0xff0f0000 0x0 0x1000>;
                         timer-width = <0x20>;
                         clocks = <&versal_clk 0x28>,
@@ -922,7 +933,7 @@
                         compatible = "cdns,ttc";
                         status = "okay";
                         interrupts = <0x0 0x2b 0x4 0x0 0x2c 0x4 0x0 0x2d 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         reg = <0x0 0xff100000 0x0 0x1000>;
                         timer-width = <0x20>;
                         clocks = <&versal_clk 0x29>,
@@ -944,7 +955,7 @@
                         compatible = "cdns,ttc";
                         status = "okay";
                         interrupts = <0x0 0x2e 0x4 0x0 0x2f 0x4 0x0 0x30 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         reg = <0x0 0xff110000 0x0 0x1000>;
                         timer-width = <0x20>;
                         clocks = <&versal_clk 0x2a>,
@@ -1008,7 +1019,7 @@
                         xlnx,csr-slcr = <0x6 0x0>;
                         xlnx,num-of-bars = <0x2>;
                         xlnx,port-type = <0x1>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         bus-range = <0x0 0xff>;
                         ranges = <0x2000000 0x0 0xe0000000 0x0 0xe0000000 0x0 0x10000000 0x43000000 0x80 0x0 0x80 0x0 0x0 0x80000000>;
                         msi-map = <0x0 0x4 0x0 0x10000>;
@@ -1041,7 +1052,7 @@
                         xlnx,csr-slcr = <0xfce20000>;
                         xlnx,num-of-bars = <0x2>;
                         xlnx,port-type = <0x1>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         bus-range = <0x0 0xff>;
                         ranges = <0x2000000 0x0 0xe0000000 0x0 0xe0000000 0x0 0x10000000 0x43000000 0x80 0x0 0x80 0x0 0x0 0x80000000>;
                         msi-map = <0x0 0x4 0x0 0x10000>;
@@ -1063,7 +1074,7 @@
                         reg = <0x0 0xfd4d0000 0x0 0x10000>;
                         interrupt-names = "wdt", "wwdt_reset_pending", "gwdt", "gwdt_reset_pending";
                         interrupts = <0x0 0x64 0x1 0x0 0x6d 0x1 0x0 0x6c 0x1 0x0 0x6e 0x1>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         timeout-sec = <0x1e>;
                         pretimeout-sec = <0x19>;
                         clocks = <&versal_clk 0x4c>;
@@ -1075,7 +1086,7 @@
                         compatible = "xlnx,versal-wwdt";
                         status = "disabled";
                         reg = <0x0 0xff120000 0x0 0x10000>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         interrupt-names = "wdt", "wwdt_reset_pending", "gwdt", "gwdt_reset_pending";
                         interrupts = <0x0 0x31 0x1 0x0 0x45 0x1 0x0 0x46 0x4 0x0 0x47 0x4>;
                         timeout-sec = <0x1e>;
@@ -1095,7 +1106,7 @@
                 dma0: pmcdma@f11c0000 {
                         status = "okay";
                         compatible = "xlnx,zynqmp-csudma-1.0";
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         interrupts = <0x0 0x83 0x4>;
                         reg = <0x0 0xf11c0000 0x0 0x10000>;
                         xlnx,dma-type = <0x1>;
@@ -1106,7 +1117,7 @@
                 dma1: pmcdma@f11d0000 {
                         status = "okay";
                         compatible = "xlnx,zynqmp-csudma-1.0";
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         interrupts = <0x0 0x84 0x4>;
                         reg = <0x0 0xf11d0000 0x0 0x10000>;
                         xlnx,dma-type = <0x2>;
@@ -1218,13 +1229,13 @@
                         phandle = <0x69>;
                 };
 
-                gic_a72: interrupt-controller@f9000000 {
+                gic: interrupt-controller@f9000000 {
                         phandle = <0x45>;
                         xlnx,ip-name = "psv_acpu_gic";
                         xlnx,apu-gic-its-ctl = <0xf9020000>;
                         status = "okay";
                         interrupts = <0x1 0x9 0x4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         interrupt-controller;
                         reg = <0x0 0xf9000000 0x0 0x80000 0x0 0xf9080000 0x0 0x80000>;
                         ranges;
@@ -1374,7 +1385,7 @@
 
                 versal_firmware: versal-firmware {
                         compatible = "xlnx,versal-firmware";
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         bootph-all;
                         method = "smc";
                         #power-domain-cells = <0x1>;
@@ -1498,7 +1509,7 @@
                         phandle = <0xac>;
                 };
 
-                blp_blp_logic_ert_support_axi_intc_0_31: axi_intc@20202020000 {
+                blp_blp_logic_ert_support_axi_intc_0_31: interrupt-controller@20202020000 {
                         #interrupt-cells = <0x2>;
                         interrupts = <0x0 0x5d 0x1>;
                         xlnx,sense-of-irq-edge-type = "Rising";
@@ -1510,9 +1521,9 @@
                         compatible = "xlnx,axi-intc-4.1", "xlnx,xps-intc-1.00.a";
                         xlnx,disable-synchronizers = <0x0>;
                         xlnx,kind-of-lvl = <0xffffffff>;
-                        xlnx,ivar-reset-value = <0x0 0x10>;
+                        xlnx,ivar-reset-value = <0x10>;
                         xlnx,irq-active = <0x1>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         xlnx,en-cascade-mode = <0x0>;
                         xlnx,ip-name = "axi_intc";
                         xlnx,has-ilr = <0x0>;
@@ -1591,7 +1602,7 @@
                         phandle = <0x9>;
                 };
 
-                blp_blp_logic_axi_intc_gcq_apu: axi_intc@402031000 {
+                blp_blp_logic_axi_intc_gcq_apu: interrupt-controller@402031000 {
                         #interrupt-cells = <0x2>;
                         interrupts = <0x0 0x5f 0x1>;
                         xlnx,sense-of-irq-edge-type = "Rising";
@@ -1603,9 +1614,9 @@
                         compatible = "xlnx,axi-intc-4.1", "xlnx,xps-intc-1.00.a";
                         xlnx,disable-synchronizers = <0x0>;
                         xlnx,kind-of-lvl = <0xffffffff>;
-                        xlnx,ivar-reset-value = <0x0 0x10>;
+                        xlnx,ivar-reset-value = <0x10>;
                         xlnx,irq-active = <0x1>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         xlnx,en-cascade-mode = <0x0>;
                         xlnx,ip-name = "axi_intc";
                         xlnx,has-ilr = <0x0>;
@@ -1637,7 +1648,7 @@
                         phandle = <0x81>;
                 };
 
-                blp_blp_logic_axi_intc_uart_apu: axi_intc@402030000 {
+                blp_blp_logic_axi_intc_uart_apu: interrupt-controller@402030000 {
                         #interrupt-cells = <0x2>;
                         interrupts = <0x0 0x5e 0x1>;
                         xlnx,sense-of-irq-edge-type = "Rising";
@@ -1649,9 +1660,9 @@
                         compatible = "xlnx,axi-intc-4.1", "xlnx,xps-intc-1.00.a";
                         xlnx,disable-synchronizers = <0x0>;
                         xlnx,kind-of-lvl = <0xffffffff>;
-                        xlnx,ivar-reset-value = <0x0 0x10>;
+                        xlnx,ivar-reset-value = <0x10>;
                         xlnx,irq-active = <0x1>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         xlnx,en-cascade-mode = <0x0>;
                         xlnx,ip-name = "axi_intc";
                         xlnx,has-ilr = <0x0>;
@@ -1710,7 +1721,7 @@
                         compatible = "xlnx,axi-uartlite-2.0", "xlnx,xps-uartlite-1.00.a";
                         xlnx,uartlite-board-interface = "Custom";
                         xlnx,s-axi-aclk-freq-hz-d = <0x5f5e0a4>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         xlnx,ip-name = "axi_uartlite";
                         reg = <0x0 0x80021000 0x0 0x1000>;
                         xlnx,baudrate = <0x38400>;
@@ -1757,7 +1768,7 @@
                 blp_blp_logic_gcq_m2r: cmd_queue@20102010000 {
                         compatible = "xlnx,cmd-queue-2.0";
                         interrupts = <0x0 0x54 0x1>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         xlnx,ip-name = "cmd_queue";
                         reg = <0x0 0x80010000 0x0 0x1000 0x201 0x2010000 0x0 0x1000>;
                         clocks = <&versal_clk 0x41>;
@@ -1773,7 +1784,7 @@
                 blp_blp_logic_gcq_r2a: cmd_queue@80011000 {
                         compatible = "xlnx,cmd-queue-2.0";
                         interrupts = <0x0 0x55 0x1 0x0 0x5c 0x1>;
-                        interrupt-parent = <&gic_a72>;
+                        interrupt-parent = <&gic>;
                         xlnx,ip-name = "cmd_queue";
                         reg = <0x0 0x80011000 0x0 0x1000 0x4 0x2000000 0x0 0x1000>;
                         clocks = <&versal_clk 0x41>;
@@ -1922,7 +1933,6 @@
                 timer = "/timer";
                 versal_fpga = "/versal-fpga";
                 amba_apu = "/apu-bus";
-                gic_a72 = "/axi/interrupt-controller@f9000000";
                 gic_its = "/axi/interrupt-controller@f9000000/gic-its@f9020000";
                 amba = "/axi";
                 imux = "/axi/interrupt-multiplex";
@@ -2028,10 +2038,10 @@
                 amba_pl = "/amba_pl";
                 fpga_PR = "/amba_pl/fpga-PR";
                 misc_clk_0 = "/amba_pl/misc_clk_0";
-                blp_blp_logic_ert_support_axi_intc_0_31 = "/amba_pl/axi_intc@20202020000";
+                blp_blp_logic_ert_support_axi_intc_0_31 = "/amba_pl/interrupt-controller@20202020000";
                 blp_blp_logic_axi_firewall_user = "/amba_pl/axi_firewall@80001000";
-                blp_blp_logic_axi_intc_gcq_apu = "/amba_pl/axi_intc@402031000";
-                blp_blp_logic_axi_intc_uart_apu = "/amba_pl/axi_intc@402030000";
+                blp_blp_logic_axi_intc_gcq_apu = "/amba_pl/interrupt-controller@402031000";
+                blp_blp_logic_axi_intc_uart_apu = "/amba_pl/interrupt-controller@402030000";
                 blp_blp_logic_axi_uart_apu0 = "/amba_pl/axi_uartlite@402020000";
                 blp_blp_logic_axi_uart_rpu = "/amba_pl/axi_uartlite@80021000";
                 blp_blp_logic_base_clocking_pr_reset_gpio = "/amba_pl/axi_gpio@80020000";
@@ -2044,5 +2054,6 @@
                 blp_blp_logic_ulp_clocking_shell_utils_ucc = "/amba_pl/shell_utils_ucc@80030000";
                 blp_blp_logic_uuid_register = "/amba_pl/uuid_register@20102002000";
                 blp_axi_noc_mc_1x_ddr_memory = "/memory@00000000";
+                gic = "/axi/interrupt-controller@f9000000";
         };
 };

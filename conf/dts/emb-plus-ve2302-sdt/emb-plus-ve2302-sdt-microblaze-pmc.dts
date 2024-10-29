@@ -5666,7 +5666,7 @@
                         phandle = <0x80>;
                 };
 
-                blp_blp_logic_axi_uart_apu0: axi_uartlite@402020000 {
+                blp_blp_logic_axi_uart_apu0: serial@402020000 {
                         interrupts = <0x0 0x0>;
                         compatible = "xlnx,axi-uartlite-2.0", "xlnx,xps-uartlite-1.00.a";
                         xlnx,uartlite-board-interface = "Custom";
@@ -5690,7 +5690,7 @@
                         phandle = <0x7f>;
                 };
 
-                blp_blp_logic_axi_uart_mgmt_apu0: axi_uartlite@20102021000 {
+                blp_blp_logic_axi_uart_mgmt_apu0: serial@20102021000 {
                         compatible = "xlnx,axi-uartlite-2.0", "xlnx,xps-uartlite-1.00.a";
                         xlnx,uartlite-board-interface = "Custom";
                         xlnx,s-axi-aclk-freq-hz-d = <0x5f5e0a4>;
@@ -5711,7 +5711,7 @@
                         phandle = <0x16f>;
                 };
 
-                blp_blp_logic_axi_uart_mgmt_rpu: axi_uartlite@20102020000 {
+                blp_blp_logic_axi_uart_mgmt_rpu: serial@20102020000 {
                         compatible = "xlnx,axi-uartlite-2.0", "xlnx,xps-uartlite-1.00.a";
                         xlnx,uartlite-board-interface = "Custom";
                         xlnx,s-axi-aclk-freq-hz-d = <0x5f5e0a4>;
@@ -5732,7 +5732,7 @@
                         phandle = <0x170>;
                 };
 
-                blp_blp_logic_axi_uart_rpu: axi_uartlite@80021000 {
+                blp_blp_logic_axi_uart_rpu: serial@80021000 {
                         interrupts = <0x0 0x57 0x1>;
                         compatible = "xlnx,axi-uartlite-2.0", "xlnx,xps-uartlite-1.00.a";
                         xlnx,uartlite-board-interface = "Custom";
@@ -5756,7 +5756,7 @@
                         phandle = <0xd>;
                 };
 
-                blp_blp_logic_base_clocking_force_reset_gpio: axi_gpio@20102040000 {
+                blp_blp_logic_base_clocking_force_reset_gpio: gpio@20102040000 {
                         xlnx,gpio-board-interface = "Custom";
                         compatible = "xlnx,axi-gpio-2.0", "xlnx,xps-gpio-1.00.a";
                         xlnx,all-outputs = <0x1>;
@@ -5785,7 +5785,7 @@
                         phandle = <0x171>;
                 };
 
-                blp_blp_logic_base_clocking_pr_reset_gpio: axi_gpio@80020000 {
+                blp_blp_logic_base_clocking_pr_reset_gpio: gpio@80020000 {
                         xlnx,gpio-board-interface = "Custom";
                         compatible = "xlnx,axi-gpio-2.0", "xlnx,xps-gpio-1.00.a";
                         xlnx,all-outputs = <0x1>;
@@ -7160,7 +7160,7 @@
                         phandle = <0x12>;
                 };
 
-                blp_qdma_0: qdma@20107000000 {
+                blp_qdma_0: axi-pcie@20107000000 {
                         xlnx,num-vfs-pf3 = <0x0>;
                         xlnx,dbg-en = "DEBUG_NONE";
                         xlnx,pf0-bar1-control = <0x0>;
@@ -8120,13 +8120,13 @@
         };
 
         aliases {
-                serial4 = "/amba_pl/axi_uartlite@20102020000";
+                serial4 = "/amba_pl/serial@20102020000";
                 serial0 = "/axi/serial@ff000000";
-                serial5 = "/amba_pl/axi_uartlite@80021000";
+                serial5 = "/amba_pl/serial@80021000";
                 serial1 = "/axi/serial@ff010000";
                 serial6 = "/axi/coresight@f0800000";
-                serial2 = "/amba_pl/axi_uartlite@402020000";
-                serial3 = "/amba_pl/axi_uartlite@20102021000";
+                serial2 = "/amba_pl/serial@402020000";
+                serial3 = "/amba_pl/serial@20102021000";
                 i2c0 = "/axi/i2c@ff020000";
         };
 
@@ -8488,12 +8488,12 @@
                 blp_blp_logic_axi_firewall_user = "/amba_pl/axi_firewall@80001000";
                 blp_blp_logic_axi_intc_gcq_apu = "/amba_pl/interrupt-controller@402031000";
                 blp_blp_logic_axi_intc_uart_apu = "/amba_pl/interrupt-controller@402030000";
-                blp_blp_logic_axi_uart_apu0 = "/amba_pl/axi_uartlite@402020000";
-                blp_blp_logic_axi_uart_mgmt_apu0 = "/amba_pl/axi_uartlite@20102021000";
-                blp_blp_logic_axi_uart_mgmt_rpu = "/amba_pl/axi_uartlite@20102020000";
-                blp_blp_logic_axi_uart_rpu = "/amba_pl/axi_uartlite@80021000";
-                blp_blp_logic_base_clocking_force_reset_gpio = "/amba_pl/axi_gpio@20102040000";
-                blp_blp_logic_base_clocking_pr_reset_gpio = "/amba_pl/axi_gpio@80020000";
+                blp_blp_logic_axi_uart_apu0 = "/amba_pl/serial@402020000";
+                blp_blp_logic_axi_uart_mgmt_apu0 = "/amba_pl/serial@20102021000";
+                blp_blp_logic_axi_uart_mgmt_rpu = "/amba_pl/serial@20102020000";
+                blp_blp_logic_axi_uart_rpu = "/amba_pl/serial@80021000";
+                blp_blp_logic_base_clocking_force_reset_gpio = "/amba_pl/gpio@20102040000";
+                blp_blp_logic_base_clocking_pr_reset_gpio = "/amba_pl/gpio@80020000";
                 blp_blp_logic_gcq_m2r = "/amba_pl/cmd_queue@20102010000";
                 blp_blp_logic_gcq_r2a = "/amba_pl/cmd_queue@80011000";
                 blp_blp_logic_gcq_u2a_0 = "/amba_pl/cmd_queue@20202010000";
@@ -8504,8 +8504,8 @@
                 blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_01 = "/amba_pl/clk_wizard@80043000";
                 blp_blp_logic_ulp_clocking_shell_utils_ucc = "/amba_pl/shell_utils_ucc@80030000";
                 blp_blp_logic_uuid_register = "/amba_pl/uuid_register@20102002000";
-                blp_qdma_0 = "/amba_pl/qdma@20107000000";
-                pcie_intc_1 = "/amba_pl/qdma@20107000000/interrupt-controller";
+                blp_qdma_0 = "/amba_pl/axi-pcie@20107000000";
+                pcie_intc_1 = "/amba_pl/axi-pcie@20107000000/interrupt-controller";
                 blp_axi_noc_mc_1x_ddr_memory = "/memory@00000000";
                 blp_cips_pspmc_0_psv_ocm_ram_0_memory = "/memory@FFFC0000";
         };

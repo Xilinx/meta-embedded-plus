@@ -1383,7 +1383,7 @@
                 bootph-all;
                 compatible = "fixed-clock";
                 #clock-cells = <0x0>;
-                clock-frequency = <0x1fca055>;
+                clock-frequency = <0x1fca034>;
                 phandle = <0xab>;
         };
 

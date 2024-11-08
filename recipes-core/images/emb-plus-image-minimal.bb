@@ -21,4 +21,9 @@ IMAGE_INSTALL = " \
     init-apu \
     soft-kernel-daemon \
     lrzsz \
+    iperf3 \
+    netperf \
+    ethtool \
+    phytool \
+    tcpdump \
 "

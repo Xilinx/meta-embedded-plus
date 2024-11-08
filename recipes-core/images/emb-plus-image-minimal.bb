@@ -21,7 +21,4 @@ IMAGE_INSTALL = " \
     init-apu \
     soft-kernel-daemon \
     lrzsz \
-    libopencv-core \
-    libopencv-imgcodecs \
-    libopencv-imgproc \
 "

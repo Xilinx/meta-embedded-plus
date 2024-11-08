@@ -26,4 +26,8 @@ IMAGE_INSTALL = " \
     ethtool \
     phytool \
     tcpdump \
+    util-linux \
+    libgpiod \
+    libgpiod-tools \
+    i2c-tools \
 "

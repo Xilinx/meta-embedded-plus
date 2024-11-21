@@ -10,7 +10,4 @@ do_compile[depends] += "virtual/hdf:do_deploy"
 do_compile:prepend() {
     [ ! -e ${XSA_FILE} ] && bbfatal "Unable to find XSA file: ${XSA_FILE}"
     unzip -p "${XSA_FILE}" "project/${PARTMETA_FILE}" > ${MACHINE}_${PARTMETA_FILE}
-
-    xclbinutil --add-section PARTITION_METADATA:JSON:${MACHINE}_${PARTMETA_FILE} \
-        -o ${WORKDIR}/${PN}.xsabin --force
 }

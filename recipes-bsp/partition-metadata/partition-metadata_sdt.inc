@@ -11,7 +11,4 @@ do_compile:prepend() {
     else
         bbfatal "Unable to find SDT Artifacts path: ${PARTITION_METADATA_PATH}"
     fi
-
-    xclbinutil --add-section PARTITION_METADATA:JSON:${MACHINE}_${PARTMETA_FILE} \
-        -o ${WORKDIR}/${PN}.xsabin --force
 }

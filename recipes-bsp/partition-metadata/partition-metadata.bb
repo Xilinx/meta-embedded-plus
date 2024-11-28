@@ -4,9 +4,10 @@ SUMMARY = "Generate the partition metadata using xclbinutil for Embedded Plus"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-COMPATIBLE_MACHINE = ""
+COMPATIBLE_MACHINE = "^$"
 
 DEPENDS += "xclbinutil-native"
+INHIBIT_DEFAULT_DEPS = "1"
 
 PARTMETA_FILE ?= "partition_metadata.json"
 

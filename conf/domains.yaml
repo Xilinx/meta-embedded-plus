@@ -1,13 +1,79 @@
 domains:
   Non_secure:
+    access:
+    - dev: gpio@ff0b0000
+      flags: {}
+      label: gpio0
+      spec_name: LPD_GPIO
+    - dev: i2c@ff020000
+      flags: {}
+      label: i2c0
+      spec_name: LPD_I2C0
+    - dev: rtc@f12a0000
+      flags: {}
+      label: rtc
+      spec_name: PMC_RTC
+    - dev: spi@ff040000
+      flags: {}
+      label: spi0
+      spec_name: SPI0
+    - dev: timer@ff100000
+      flags: {}
+      label: ttc2
+      spec_name: TTC2
+    - dev: timer@ff110000
+      flags: {}
+      label: ttc3
+      spec_name: TTC3
+    - dev: serial@ff010000
+      flags: {}
+      label: serial1
+      spec_name: UART1
+    - dev: mailbox@ff330000
+      flags: {}
+      label: ipi0
+      spec_name: IPI0
+    - dev: mailbox@ff340000
+      flags: {}
+      label: ipi1
+      spec_name: IPI1
+    - dev: mailbox@ff350000
+      flags: {}
+      label: ipi2
+      spec_name: IPI2
+    - dev: mailbox@ff380000
+      flags: {}
+      label: ipi5
+      spec_name: IPI5
+    - dev: mailbox@ff3a0000
+      flags: {}
+      label: ipi6
+      spec_name: IPI6
     compatible: xilinx,subsystem
+    cpus:
+    - cluster: cpus_a72
+      cluster_cpu: psv_cortexa72_0
+      cpumask: '0x1'
+      dev: cpus_a72
+      mode:
+        el: '0x3'
+        secure: false
+      spec_name: APU0
+    - {}
     id: '0x1c000003'
     memory:
+    - dev: OCM_mem
+      size: 256K
+      spec_name: OCM_mem
+      start: '0xfffc0000'
+    - dev: ddr_reg_0
+      size: 864M
+      spec_name: ddr_reg_0
+      start: '0x0'
     - dev: ddr_reg_2
       size: 16M
       spec_name: ddr_reg_2
       start: '0x37000000'
-    - {}
     - dev: ddr_reg_1
       size: 16M
       spec_name: ddr_reg_1
@@ -21,7 +87,60 @@ domains:
       spec_name: ddr_reg_6
       start: '0x50000000000'
   Secure:
+    access:
+    - dev: gpio@f1020000
+      flags:
+        secure: true
+      label: gpio1
+      spec_name: PMC_GPIO
+    - dev: i2c@f1000000
+      flags:
+        secure: true
+      label: i2c2
+      spec_name: PMC_I2C
+    - dev: timer@ff0e0000
+      flags:
+        secure: true
+      label: ttc0
+      spec_name: TTC0
+    - dev: timer@ff0f0000
+      flags:
+        secure: true
+      label: ttc1
+      spec_name: TTC1
+    - dev: serial@ff000000
+      flags:
+        secure: true
+      label: serial0
+      spec_name: UART0
+    - dev: spi@f1010000
+      flags: {}
+      label: ospi
+      spec_name: OSPI
+    - dev: sysmon@f1270000
+      flags: {}
+      label: sysmon0
+      spec_name: PMC_SYSMON_CSR
+    - dev: mailbox@ff360000
+      flags:
+        secure: true
+      label: ipi3
+      spec_name: IPI3
+    - dev: mailbox@ff370000
+      flags:
+        secure: true
+      label: ipi4
+      spec_name: IPI4
     compatible: xilinx,subsystem
+    cpus:
+    - cluster: cpus_r5_0
+      cluster_cpu: psv_cortexr5_0
+      cpumask: '0x1'
+      dev: cpus_r5_0
+      mode:
+        secure: false
+      spec_name: RPU0
+    - {}
     id: '0x1c000002'
     memory:
     - dev: ddr_reg_4
@@ -29,10 +148,350 @@ domains:
       spec_name: ddr_reg_4
       start: '0x40000000'
     - {}
+    - dev: PMC_OSPI_mem
+      size: 512M
+      spec_name: PMC_OSPI_mem
+      start: '0xc0000000'
+    - dev: PMC_XMPU_mem
+      size: 2M
+      spec_name: PMC_XMPU_mem
+      start: '0xf2000000'
     - dev: ddr_reg_3
       size: 128M
       spec_name: ddr_reg_3
       start: '0x38000000'
+    sram:
+      dev: RPU0_TCMA_mem
+      size: 64K
+      spec_name: RPU0_TCMA_mem
+      start: '0xffe00000'
   default:
+    access:
+    - dev: serial@ff000000
+      flags:
+        requested: true
+        requested_emit_wakeup: true
+        requested_full_access: true
+        requested_preserve_context: true
+        shared: true
+      label: serial0
+      spec_name: UART0
+    - dev: serial@ff010000
+      flags:
+        requested: true
+        requested_emit_wakeup: true
+        requested_full_access: true
+        requested_preserve_context: true
+        shared: true
+      label: serial1
+      spec_name: UART1
+    - dev: ethernet@ff0c0000
+      flags:
+        requested: true
+        requested_emit_wakeup: true
+        requested_full_access: true
+        requested_preserve_context: true
+        shared: true
+      label: gem0
+      spec_name: GEM0
+    - dev: ethernet@ff0d0000
+      flags:
+        requested: true
+        requested_emit_wakeup: true
+        requested_full_access: true
+        requested_preserve_context: true
+        shared: true
+      label: gem1
+      spec_name: GEM1
+    - dev: spi@f1010000
+      flags:
+        requested: true
+        requested_full_access: true
+        shared: true
+      label: ospi
+      spec_name: OSPI
+    - dev: spi@f1030000
+      flags:
+        requested: true
+        requested_full_access: true
+        shared: true
+      label: qspi
+      spec_name: QSPI
+    - dev: mmc@f1040000
+      flags:
+        requested: true
+        requested_full_access: true
+        shared: true
+      label: sdhci0
+      spec_name: SD_eMMC0
+    - dev: mmc@f1050000
+      flags:
+        requested: true
+        requested_full_access: true
+        shared: true
+      label: sdhci1
+      spec_name: SD_eMMC1
+    - dev: i2c@ff020000
+      flags:
+        requested: true
+        requested_full_access: true
+        shared: true
+      label: i2c0
+      spec_name: LPD_I2C0
+    - dev: i2c@ff030000
+      flags:
+        requested: true
+        requested_full_access: true
+        shared: true
+      label: i2c1
+      spec_name: LPD_I2C1
+    - dev: timer@ff0e0000
+      flags:
+        requested: true
+        requested_full_access: true
+        shared: true
+      label: ttc0
+      spec_name: TTC0
+    - dev: timer@ff0f0000
+      flags:
+        requested: true
+        requested_full_access: true
+        shared: true
+      label: ttc1
+      spec_name: TTC1
+    - dev: timer@ff100000
+      flags:
+        requested: true
+        requested_full_access: true
+        shared: true
+      label: ttc2
+      spec_name: TTC2
+    - dev: timer@ff110000
+      flags:
+        requested: true
+        requested_full_access: true
+        shared: true
+      label: ttc3
+      spec_name: TTC3
+    - dev: mailbox@ff330000
+      flags:
+        requested: true
+        requested_full_access: true
+      label: ipi0
+      spec_name: IPI0
+    - dev: mailbox@ff340000
+      flags:
+        requested: true
+        requested_full_access: true
+      label: ipi1
+      spec_name: IPI1
+    - dev: mailbox@ff350000
+      flags:
+        requested: true
+        requested_full_access: true
+      label: ipi2
+      spec_name: IPI2
+    - dev: mailbox@ff380000
+      flags:
+        requested: true
+        requested_full_access: true
+      label: ipi5
+      spec_name: IPI5
+    - dev: mailbox@ff360000
+      flags:
+        requested: true
+        requested_full_access: true
+      label: ipi3
+      spec_name: IPI3
+    - dev: mailbox@ff370000
+      flags:
+        requested: true
+        requested_full_access: true
+      label: ipi4
+      spec_name: IPI4
+    - dev: mailbox@ff3a0000
+      flags:
+        requested: true
+        requested_full_access: true
+      label: ipi6
+      spec_name: IPI6
+    - dev: usb@ff9d0000
+      flags:
+        shared: true
+      label: usb0
+      spec_name: USB2_CSR
+    - dev: dma-controller@ffa80000
+      flags:
+        shared: true
+      label: lpd_dma_chan0
+      spec_name: LPD_DMA_CH0
+    - dev: dma-controller@ffa90000
+      flags:
+        shared: true
+      label: lpd_dma_chan1
+      spec_name: LPD_DMA_CH1
+    - dev: dma-controller@ffaa0000
+      flags:
+        shared: true
+      label: lpd_dma_chan2
+      spec_name: LPD_DMA_CH2
+    - dev: dma-controller@ffab0000
+      flags:
+        shared: true
+      label: lpd_dma_chan3
+      spec_name: LPD_DMA_CH3
+    - dev: dma-controller@ffac0000
+      flags:
+        shared: true
+      label: lpd_dma_chan4
+      spec_name: LPD_DMA_CH4
+    - dev: dma-controller@ffad0000
+      flags:
+        shared: true
+      label: lpd_dma_chan5
+      spec_name: LPD_DMA_CH5
+    - dev: dma-controller@ffae0000
+      flags:
+        shared: true
+      label: lpd_dma_chan6
+      spec_name: LPD_DMA_CH6
+    - dev: dma-controller@ffaf0000
+      flags:
+        shared: true
+      label: lpd_dma_chan7
+      spec_name: LPD_DMA_CH7
+    - dev: sysmon@f1270000
+      flags:
+        shared: true
+      label: sysmon0
+      spec_name: PMC_SYSMON_CSR
+    - dev: watchdog@fd4d0000
+      flags:
+        shared: true
+      label: watchdog
+      spec_name: FPD_SWDT
+    - dev: can@ff060000
+      flags:
+        shared: true
+      label: can0
+      spec_name: CANFD0
+    - dev: can@ff070000
+      flags:
+        shared: true
+      label: can1
+      spec_name: CANFD1
+    - dev: gpio@ff0b0000
+      flags:
+        shared: true
+      label: gpio0
+      spec_name: LPD_GPIO
+    - dev: watchdog@ff120000
+      flags:
+        shared: true
+      label: watchdog1
+      spec_name: LPD_SWDT
+    - dev: blp_cips_pspmc_0_psv_pmc_efuse_cache@f1250000
+      flags:
+        shared: true
+      label: blp_cips_pspmc_0_psv_pmc_efuse_cache
+      spec_name: PMC_EFUSE_CACHE
+    - dev: gpio@f1020000
+      flags:
+        shared: true
+      label: gpio1
+      spec_name: PMC_GPIO
+    - dev: i2c@f1000000
+      flags:
+        shared: true
+      label: i2c2
+      spec_name: PMC_I2C
+    - dev: rtc@f12a0000
+      flags:
+        shared: true
+      label: rtc
+      spec_name: PMC_RTC
+    - dev: spi@ff040000
+      flags:
+        shared: true
+      label: spi0
+      spec_name: SPI0
+    - dev: spi@ff050000
+      flags:
+        shared: true
+      label: spi1
+      spec_name: SPI1
     compatible: xilinx,subsystem
+    cpus:
+    - cluster: cpus_a72
+      cluster_cpu: ''
+      cpumask: '0xf'
+      dev: cpus_a72
+      mode:
+        el: '0x3'
+        secure: false
+      spec_name: APU
+    - {}
+    - cluster: cpus_r5_0
+      cluster_cpu: psv_cortexr5_0
+      cpumask: '0x1'
+      dev: cpus_r5_0
+      mode:
+        secure: false
+      spec_name: RPU0
+    - {}
     id: '0x1c000000'
+    memory:
+    - dev: PMC_OSPI_mem
+      size: 512M
+      spec_name: PMC_OSPI_mem
+      start: '0xc0000000'
+    - {}
+    - dev: XRAM0_mem
+      size: 1M
+      spec_name: XRAM0_mem
+      start: '0xfe800000'
+    - dev: XRAM1_mem
+      size: 1M
+      spec_name: XRAM1_mem
+      start: '0xfe900000'
+    - dev: XRAM2_mem
+      size: 1M
+      spec_name: XRAM2_mem
+      start: '0xfea00000'
+    - dev: XRAM3_mem
+      size: 1M
+      spec_name: XRAM3_mem
+      start: '0xfeb00000'
+    sram:
+    - dev: OCM0_mem
+      size: 64K
+      spec_name: OCM0_mem
+      start: '0xfffc0000'
+    - dev: OCM1_mem
+      size: 64K
+      spec_name: OCM1_mem
+      start: '0xfffd0000'
+    - dev: OCM2_mem
+      size: 64K
+      spec_name: OCM2_mem
+      start: '0xfffe0000'
+    - dev: OCM3_mem
+      size: 64K
+      spec_name: OCM3_mem
+      start: '0xffff0000'
+    - dev: RPU0_TCMA_mem
+      size: 64K
+      spec_name: RPU0_TCMA_mem
+      start: '0xffe00000'
+    - dev: RPU0_TCMB_mem
+      size: 64K
+      spec_name: RPU0_TCMB_mem
+      start: '0xffe20000'
+    - dev: RPU1_TCMA_mem_dual
+      size: 64K
+      spec_name: RPU1_TCMA_mem_dual
+      start: '0xffe90000'
+    - dev: RPU1_TCMB_mem_dual
+      size: 64K
+      spec_name: RPU1_TCMB_mem_dual
+      start: '0xffeb0000'

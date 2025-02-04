@@ -3,15 +3,11 @@ domains:
     compatible: xilinx,subsystem
     id: '0x1c000003'
     memory:
-    - dev: ddr_reg_0
-      size: 864M
-      spec_name: ddr_reg_0
-      start: '0x0'
-    - {}
     - dev: ddr_reg_2
       size: 16M
       spec_name: ddr_reg_2
       start: '0x37000000'
+    - {}
     - dev: ddr_reg_1
       size: 16M
       spec_name: ddr_reg_1
@@ -28,11 +24,15 @@ domains:
     compatible: xilinx,subsystem
     id: '0x1c000002'
     memory:
+    - dev: ddr_reg_4
+      size: 512M
+      spec_name: ddr_reg_4
+      start: '0x40000000'
+    - {}
     - dev: ddr_reg_3
       size: 128M
       spec_name: ddr_reg_3
       start: '0x38000000'
-    - {}
   default:
     compatible: xilinx,subsystem
     id: '0x1c000000'

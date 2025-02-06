@@ -1019,6 +1019,7 @@
                                 reg = <0x0 0xfe200000 0x0 0x10000>;
                                 interrupt-names = "host", "peripheral", "otg", "wakeup";
                                 interrupts = <0x0 0x16 0x4 0x0 0x16 0x4 0x0 0x1a 0x4 0x0 0x4a 0x4>;
+                                interrupt-parent = <&gic>;
                                 snps,dis_u2_susphy_quirk;
                                 snps,dis_u3_susphy_quirk;
                                 snps,quirk-frame-length-adjustment = <0x20>;
@@ -1533,97 +1534,28 @@
                         phandle = <0xad>;
                 };
 
-                blp_blp_logic_ert_support_axi_intc_0_31: interrupt-controller@20202020000 {
-                        #interrupt-cells = <0x2>;
-                        interrupts = <0x0 0x5d 0x1>;
-                        xlnx,sense-of-irq-edge-type = "Rising";
-                        xlnx,edk-special = "INTR_CTRL";
-                        xlnx,kind-of-intr = <0x1>;
-                        xlnx,kind-of-edge = <0xffffffff>;
-                        xlnx,irq-is-level = <0x0>;
-                        xlnx,has-ivr = <0x1>;
-                        compatible = "xlnx,axi-intc-4.1", "xlnx,xps-intc-1.00.a";
-                        xlnx,disable-synchronizers = <0x0>;
-                        xlnx,kind-of-lvl = <0xffffffff>;
-                        xlnx,ivar-reset-value = <0x10>;
-                        xlnx,irq-active = <0x1>;
-                        interrupt-parent = <&gic>;
-                        xlnx,en-cascade-mode = <0x0>;
-                        xlnx,ip-name = "axi_intc";
-                        xlnx,has-ilr = <0x0>;
-                        reg = <0x202 0x2020000 0x0 0x1000>;
-                        xlnx,addr-width = <0x20>;
-                        clocks = <&versal_clk 0x41>;
-                        xlnx,s-axi-aclk-freq-mhz = <0x5f5e0a4>;
-                        xlnx,num-sw-intr = <0x0>;
-                        xlnx,irq-connection = <0x1>;
-                        xlnx,num-intr-inputs = <0x20>;
-                        xlnx,has-sie = <0x1>;
-                        xlnx,enable-async = <0x0>;
-                        xlnx,has-cie = <0x1>;
-                        xlnx,num-sync-ff = <0x2>;
-                        xlnx,edk-iptype = "PERIPHERAL";
-                        xlnx,mb-clk-not-connected = <0x1>;
-                        xlnx,has-ipr = <0x1>;
-                        xlnx,sense-of-irq-level-type = "Active_High";
-                        xlnx,cascade-master = <0x0>;
-                        xlnx,processor-clk-freq-mhz = <0x64>;
-                        status = "okay";
-                        xlnx,is-fast = <0x0>;
-                        clock-names = "s_axi_aclk";
-                        xlnx,has-fast = <0x0>;
-                        xlnx,ivar-rst-val = <0x10>;
-                        interrupt-controller;
-                        interrupt-names = "irq";
-                        xlnx,async-intr = <0xffffffff>;
-                        phandle = <0x82>;
+                blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_00: clk_wizard@80042000 {
+                        reg = <0x0 0x80042000 0x0 0x1000>;
+                        clock-names = "clk_in1", "s_axi_aclk";
+                        xlnx,nr-outputs = <0x1>;
+                        compatible = "xlnx,clk-wizard-1.0", "xlnx,versal-clk-wizard";
+                        xlnx,speed-grade = <0x2>;
+                        clocks = <&versal_clk 0x42>,
+                         <&versal_clk 0x42>;
+                        #clock-cells = <0x1>;
+                        phandle = <0xf>;
                 };
 
-                blp_blp_logic_axi_firewall_user: axi_firewall@80001000 {
-                        xlnx,protocol = <0x2>;
-                        compatible = "xlnx,axi-firewall-1.2";
-                        xlnx,enable-pipelining = <0x1>;
-                        xlnx,enable-protocol-checks = <0x1>;
-                        xlnx,awuser-width = <0x0>;
-                        xlnx,has-rresp = <0x1>;
-                        xlnx,has-bresp = <0x1>;
-                        xlnx,supports-narrow = <0x0>;
-                        xlnx,read-write-mode = "READ_WRITE";
-                        xlnx,has-prot = <0x1>;
-                        xlnx,wdata-width = <0x20>;
-                        xlnx,ruser-width = <0x0>;
-                        xlnx,buser-width = <0x0>;
-                        xlnx,has-aclken = <0x0>;
-                        xlnx,ip-name = "axi_firewall";
-                        xlnx,num-write-threads = <0x1>;
-                        reg = <0x0 0x80001000 0x0 0x1000>;
-                        xlnx,addr-width = <0x40>;
-                        clocks = <&versal_clk 0x41>;
-                        xlnx,num-read-threads = <0x1>;
-                        xlnx,has-lock = <0x1>;
-                        xlnx,id-width = <0x0>;
-                        xlnx,enable-initial-delay = <0x1>;
-                        xlnx,has-wstrb = <0x1>;
-                        xlnx,has-aresetn = <0x1>;
-                        xlnx,wuser-width = <0x0>;
-                        xlnx,has-qos = <0x1>;
-                        xlnx,edk-iptype = "PERIPHERAL";
-                        xlnx,has-region = <0x1>;
-                        xlnx,has-cache = <0x1>;
-                        xlnx,num-write-outstanding = <0x20>;
-                        xlnx,enable-prescaler = <0x1>;
-                        xlnx,num-read-outstanding = <0x20>;
-                        status = "okay";
-                        clock-names = "aclk";
-                        xlnx,data-width = <0x20>;
-                        xlnx,aruser-width = <0x0>;
-                        xlnx,firewall-mode = <0x0>;
-                        xlnx,enable-ctl-clock = <0x0>;
-                        xlnx,has-burst = <0x1>;
-                        xlnx,rdata-width = <0x20>;
-                        xlnx,mask-err-resp = <0x1>;
-                        xlnx,enable-timeout-checks = <0x1>;
-                        phandle = <0x9>;
+                blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_01: clk_wizard@80043000 {
+                        reg = <0x0 0x80043000 0x0 0x1000>;
+                        clock-names = "clk_in1", "s_axi_aclk";
+                        xlnx,nr-outputs = <0x1>;
+                        compatible = "xlnx,clk-wizard-1.0", "xlnx,versal-clk-wizard";
+                        xlnx,speed-grade = <0x2>;
+                        clocks = <&versal_clk 0x42>,
+                         <&versal_clk 0x42>;
+                        #clock-cells = <0x1>;
+                        phandle = <0x10>;
                 };
 
                 blp_blp_logic_axi_intc_gcq_apu: interrupt-controller@402031000 {
@@ -1716,6 +1648,99 @@
                         interrupt-names = "irq";
                         xlnx,async-intr = <0xfffffffe>;
                         phandle = <0x80>;
+                };
+
+                blp_blp_logic_ert_support_axi_intc_0_31: interrupt-controller@20202020000 {
+                        #interrupt-cells = <0x2>;
+                        interrupts = <0x0 0x5d 0x1>;
+                        xlnx,sense-of-irq-edge-type = "Rising";
+                        xlnx,edk-special = "INTR_CTRL";
+                        xlnx,kind-of-intr = <0x1>;
+                        xlnx,kind-of-edge = <0xffffffff>;
+                        xlnx,irq-is-level = <0x0>;
+                        xlnx,has-ivr = <0x1>;
+                        compatible = "xlnx,axi-intc-4.1", "xlnx,xps-intc-1.00.a";
+                        xlnx,disable-synchronizers = <0x0>;
+                        xlnx,kind-of-lvl = <0xffffffff>;
+                        xlnx,ivar-reset-value = <0x10>;
+                        xlnx,irq-active = <0x1>;
+                        interrupt-parent = <&gic>;
+                        xlnx,en-cascade-mode = <0x0>;
+                        xlnx,ip-name = "axi_intc";
+                        xlnx,has-ilr = <0x0>;
+                        reg = <0x202 0x2020000 0x0 0x1000>;
+                        xlnx,addr-width = <0x20>;
+                        clocks = <&versal_clk 0x41>;
+                        xlnx,s-axi-aclk-freq-mhz = <0x5f5e0a4>;
+                        xlnx,num-sw-intr = <0x0>;
+                        xlnx,irq-connection = <0x1>;
+                        xlnx,num-intr-inputs = <0x20>;
+                        xlnx,has-sie = <0x1>;
+                        xlnx,enable-async = <0x0>;
+                        xlnx,has-cie = <0x1>;
+                        xlnx,num-sync-ff = <0x2>;
+                        xlnx,edk-iptype = "PERIPHERAL";
+                        xlnx,mb-clk-not-connected = <0x1>;
+                        xlnx,has-ipr = <0x1>;
+                        xlnx,sense-of-irq-level-type = "Active_High";
+                        xlnx,cascade-master = <0x0>;
+                        xlnx,processor-clk-freq-mhz = <0x64>;
+                        status = "okay";
+                        xlnx,is-fast = <0x0>;
+                        clock-names = "s_axi_aclk";
+                        xlnx,has-fast = <0x0>;
+                        xlnx,ivar-rst-val = <0x10>;
+                        interrupt-controller;
+                        interrupt-names = "irq";
+                        xlnx,async-intr = <0xffffffff>;
+                        phandle = <0x82>;
+                };
+
+                blp_blp_logic_axi_firewall_user: axi_firewall@80001000 {
+                        xlnx,protocol = <0x2>;
+                        compatible = "xlnx,axi-firewall-1.2";
+                        xlnx,enable-pipelining = <0x1>;
+                        xlnx,enable-protocol-checks = <0x1>;
+                        xlnx,awuser-width = <0x0>;
+                        xlnx,has-rresp = <0x1>;
+                        xlnx,has-bresp = <0x1>;
+                        xlnx,supports-narrow = <0x0>;
+                        xlnx,read-write-mode = "READ_WRITE";
+                        xlnx,has-prot = <0x1>;
+                        xlnx,wdata-width = <0x20>;
+                        xlnx,ruser-width = <0x0>;
+                        xlnx,buser-width = <0x0>;
+                        xlnx,has-aclken = <0x0>;
+                        xlnx,ip-name = "axi_firewall";
+                        xlnx,num-write-threads = <0x1>;
+                        reg = <0x0 0x80001000 0x0 0x1000>;
+                        xlnx,addr-width = <0x40>;
+                        clocks = <&versal_clk 0x41>;
+                        xlnx,num-read-threads = <0x1>;
+                        xlnx,has-lock = <0x1>;
+                        xlnx,id-width = <0x0>;
+                        xlnx,enable-initial-delay = <0x1>;
+                        xlnx,has-wstrb = <0x1>;
+                        xlnx,has-aresetn = <0x1>;
+                        xlnx,wuser-width = <0x0>;
+                        xlnx,has-qos = <0x1>;
+                        xlnx,edk-iptype = "PERIPHERAL";
+                        xlnx,has-region = <0x1>;
+                        xlnx,has-cache = <0x1>;
+                        xlnx,num-write-outstanding = <0x20>;
+                        xlnx,enable-prescaler = <0x1>;
+                        xlnx,num-read-outstanding = <0x20>;
+                        status = "okay";
+                        clock-names = "aclk";
+                        xlnx,data-width = <0x20>;
+                        xlnx,aruser-width = <0x0>;
+                        xlnx,firewall-mode = <0x0>;
+                        xlnx,enable-ctl-clock = <0x0>;
+                        xlnx,has-burst = <0x1>;
+                        xlnx,rdata-width = <0x20>;
+                        xlnx,mask-err-resp = <0x1>;
+                        xlnx,enable-timeout-checks = <0x1>;
+                        phandle = <0x9>;
                 };
 
                 blp_blp_logic_axi_uart_apu0: serial@402020000 {
@@ -1859,30 +1884,6 @@
                         xlnx,max-pf-length = <0x20>;
                         xlnx,edge-select-pf3 = <0x0>;
                         phandle = <0x11>;
-                };
-
-                blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_00: clk_wizard@80042000 {
-                        reg = <0x0 0x80042000 0x0 0x1000>;
-                        clock-names = "clk_in1", "s_axi_aclk";
-                        xlnx,nr-outputs = <0x1>;
-                        compatible = "xlnx,clk-wizard-1.0", "xlnx,versal-clk-wizard";
-                        xlnx,speed-grade = <0x2>;
-                        clocks = <&versal_clk 0x42>,
-                         <&versal_clk 0x42>;
-                        #clock-cells = <0x1>;
-                        phandle = <0xf>;
-                };
-
-                blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_01: clk_wizard@80043000 {
-                        reg = <0x0 0x80043000 0x0 0x1000>;
-                        clock-names = "clk_in1", "s_axi_aclk";
-                        xlnx,nr-outputs = <0x1>;
-                        compatible = "xlnx,clk-wizard-1.0", "xlnx,versal-clk-wizard";
-                        xlnx,speed-grade = <0x2>;
-                        clocks = <&versal_clk 0x42>,
-                         <&versal_clk 0x42>;
-                        #clock-cells = <0x1>;
-                        phandle = <0x10>;
                 };
 
                 blp_blp_logic_ulp_clocking_shell_utils_ucc: shell_utils_ucc@80030000 {
@@ -2065,10 +2066,12 @@
                 amba_pl = "/amba_pl";
                 fpga_PR = "/amba_pl/fpga-PR";
                 misc_clk_0 = "/amba_pl/misc_clk_0";
-                blp_blp_logic_ert_support_axi_intc_0_31 = "/amba_pl/interrupt-controller@20202020000";
-                blp_blp_logic_axi_firewall_user = "/amba_pl/axi_firewall@80001000";
+                blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_00 = "/amba_pl/clk_wizard@80042000";
+                blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_01 = "/amba_pl/clk_wizard@80043000";
                 blp_blp_logic_axi_intc_gcq_apu = "/amba_pl/interrupt-controller@402031000";
                 blp_blp_logic_axi_intc_uart_apu = "/amba_pl/interrupt-controller@402030000";
+                blp_blp_logic_ert_support_axi_intc_0_31 = "/amba_pl/interrupt-controller@20202020000";
+                blp_blp_logic_axi_firewall_user = "/amba_pl/axi_firewall@80001000";
                 blp_blp_logic_axi_uart_apu0 = "/amba_pl/serial@402020000";
                 blp_blp_logic_axi_uart_rpu = "/amba_pl/serial@80021000";
                 blp_blp_logic_base_clocking_pr_reset_gpio = "/amba_pl/gpio@80020000";
@@ -2076,8 +2079,6 @@
                 blp_blp_logic_gcq_r2a = "/amba_pl/cmd_queue@80011000";
                 blp_blp_logic_gcq_u2a_0 = "/amba_pl/cmd_queue@20202010000";
                 blp_blp_logic_pfm_irq_ctlr = "/amba_pl/pfm_irq_ctlr@80044000";
-                blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_00 = "/amba_pl/clk_wizard@80042000";
-                blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_01 = "/amba_pl/clk_wizard@80043000";
                 blp_blp_logic_ulp_clocking_shell_utils_ucc = "/amba_pl/shell_utils_ucc@80030000";
                 blp_blp_logic_uuid_register = "/amba_pl/uuid_register@20102002000";
                 blp_axi_noc_mc_1x_ddr_memory = "/memory@00000000";

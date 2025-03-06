@@ -1,5 +1,4 @@
 /dts-v1/;
-
 / {
         compatible = "xlnx,versal-emb-plus-ve2302-revA", "xlnx,versal-emb-plus-ve2302", "xlnx,versal";
         #address-cells = <0x2>;

@@ -440,7 +440,7 @@
                         clocks = <&versal_clk 0x52>;
                         power-domains = <&versal_firmware 0x18224023>;
                         xlnx,ip-name = "psv_gpio";
-                        emio-gpio-width = [00];
+                        emio-gpio-width = "";
                         gpio-line-names = [47 50 49 4F 5F 4C 45 44 32 00 47 50 49 4F 5F 4C 45 44 33 00 47 50 49 4F 5F 4C 45 44 34 00 00 31 57 49 52 45 00 00 46 55 53 41 00 00 45 47 50 49 4F 00 41 47 50 49 4F 00 49 32 43 30 5F 53 43 4C 00 49 32 43 30 5F 53 44 41 00 00 00 00 00 00 00 00 00 00 00 00 00 33 56 33 5F 4D 4F 4E 5F 4E 00 33 56 33 5F 4D 4F 4E 5F 50 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00];
                         phandle = <0x58>;
                 };
@@ -881,7 +881,7 @@
                         compatible = "xlnx,versal-sysmon";
                         status = "disabled";
                         reg = <0x1 0x9270000 0x0 0x4000>;
-                        xlnx,numchannels = [00];
+                        xlnx,numchannels = "";
                         #address-cells = <0x1>;
                         #size-cells = <0x0>;
                         xlnx,nodeid = <0x18225055>;
@@ -892,7 +892,7 @@
                         compatible = "xlnx,versal-sysmon";
                         status = "disabled";
                         reg = <0x1 0x11270000 0x0 0x4000>;
-                        xlnx,numchannels = [00];
+                        xlnx,numchannels = "";
                         #address-cells = <0x1>;
                         #size-cells = <0x0>;
                         xlnx,nodeid = <0x18226055>;
@@ -903,7 +903,7 @@
                         compatible = "xlnx,versal-sysmon";
                         status = "disabled";
                         reg = <0x1 0x19270000 0x0 0x4000>;
-                        xlnx,numchannels = [00];
+                        xlnx,numchannels = "";
                         #address-cells = <0x1>;
                         #size-cells = <0x0>;
                         xlnx,nodeid = <0x18227055>;

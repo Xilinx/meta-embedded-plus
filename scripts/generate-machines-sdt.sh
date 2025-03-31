@@ -1,8 +1,8 @@
 #! /bin/bash -e
 
 ### The following table controls the automatic generated of the machine .conf files (lines start with #M#)
-### Machine              BOARD                     OVERLAY    PRE     POST
-#M# emb-plus-ve2302-sdt  versal-generic.conf       none       none    MACHINEOVERRIDES \.= \":emb-plus-ve2302\"
+### Machine                 MULTICONFIGS                                                OVERLAY  DOMAIN   PRE   POST
+#M# emb-plus-ve2302-sdt     --add-config\ CONFIG_YOCTO_BBMC_CORTEXR5_0_FREERTOS=y       full     default  none  MACHINEOVERRIDES \.= \":emb-plus-amr:emb-plus-ve2302\"
 
 this=$(realpath $0)
 
@@ -39,14 +39,40 @@ done < ${mach_index}
 
 # Load in the arrays from this script
 count=0
-while read marker machine include overlay pre post ; do
+while read marker machine multiconfigs overlay domain pre post ; do
   if [ "${marker}" != "#M#" ]; then
       continue
   fi
 
+  # machines
   MACHINES[$count]=${machine}
-  INCLUDES[$count]=${include}
+
+  # multiconfigs
+  if [ "$multiconfigs" = "full" ]; then
+    multiconfigs=" --multiconfigfull "
+  elif [ "$multiconfigs" = "default" ]; then
+    multiconfigs=""
+  fi
+  MULTICONFIGS[$count]=${multiconfigs}
+
+  # overlays
+  if [ "$overlay" = "full" ]; then
+    overlay=" -g full "
+  else
+    overlay=""
+  fi
   OVERLAYS[$count]=${overlay}
+
+  # domains
+  if [ "$domain" = "default" ]; then
+    domain=""
+  else
+    dir=$(dirname $this)
+    domain=" --domain-file ${dir}/${domain} "
+  fi
+  DOMAINS[$count]=${domain}
+
+  # URLs
   for mach in ${!MACHINE_ID[@]}; do
     if [ ${MACHINE_ID[${mach}]} = ${machine} ]; then
       URLS[$count]=${MACHINE_URL[${mach}]}
@@ -57,13 +83,14 @@ while read marker machine include overlay pre post ; do
     echo "ERROR: Unable to find ${machine} in ${mach_index}" >&2
     exit 1
   fi
+
+  # pre
   if [ "$pre" = "none" ]; then
     pre=
   fi
   PRE[$count]=${pre}
-  if [ "$post" = "none" ]; then
-    post=
-  fi
+
+  # post
   POST[$count]=${post}
 
   count=$(expr $count + 1)
@@ -75,33 +102,27 @@ for mach in ${!MACHINES[@]}; do
     continue
   fi
 
-  echo "Machine: ${MACHINES[${mach}]}"
-  echo "Include: ${INCLUDES[${mach}]}"
-  echo "Overlay: ${OVERLAYS[${mach}]}"
-  echo "URL:     ${URLS[${mach}]}"
+  echo "Machine:      ${MACHINES[${mach}]}"
+  echo "Multiconfigs: ${MULTICONFIGS[${mach}]}"
+  echo "Overlay:      ${OVERLAYS[${mach}]}"
+  echo "Domain:       ${DOMAINS[${mach}]}"
+  echo "URL:          ${URLS[${mach}]}"
+  echo "Pre:          ${PRE[${mach}]}"
+  echo "Post:         ${POST[${mach}]}"
   echo
-  if [ ${OVERLAYS[${mach}]} = 'none' ]; then
-      set -x
-      rm -rf output
-      gen-machineconf parse-sdt --hw-description ${URLS[${mach}]} -c ${conf_path} --machine-name ${MACHINES[${mach}]}
-      set +x
-  else
-      set -x
-      rm -rf output
-      gen-machineconf parse-sdt --hw-description ${URLS[${mach}]} -g ${OVERLAYS[${mach}]} -c ${conf_path} --machine-name ${MACHINES[${mach}]}
-      set +x
-  fi
+
+  set -x
+  rm -rf output
+  gen-machineconf parse-sdt --hw-description ${URLS[${mach}]} -c ${conf_path} --machine-name ${MACHINES[${mach}]} ${MULTICONFIGS[${mach}]} ${OVERLAYS[${mach}]} ${DOMAINS[${mach}]}
+  set +x
 
   ######### Post gen-machineconf changes
   #
-  # Reset the include, gen-machine-conf generally can't include a .inc file, so we do it instead
-  sed -i ${conf_path}/machine/${MACHINES[${mach}]}.conf -e 's,^\(require conf/machine/\).*\.conf,\1'${INCLUDES[${mach}]}','
-
   if [ -n "${PRE[${mach}]}" ]; then
-    sed -i ${conf_path}/machine/${MACHINES[${mach}]}.conf -e 's,\(# Required generic machine inclusion\),'"${PRE[${mach}]}"'\n\1,'
+    sed -i ${conf_path}/machine/${MACHINES[${mach}]}.conf -e 's!\(# Required generic machine inclusion\)!'"${PRE[${mach}]}"'\n\1!'
   fi
 
   if [ -n "${POST[${mach}]}" ]; then
-    sed -i ${conf_path}/machine/${MACHINES[${mach}]}.conf -e 's,\(^require conf/machine/'${INCLUDES[${mach}]}'\),\1\n\n'"${POST[${mach}]}"','
+    sed -i ${conf_path}/machine/${MACHINES[${mach}]}.conf -e 's!\(^require conf/machine/.*\.conf\)!\1\n\n'"${POST[${mach}]}"'!'
   fi
 done

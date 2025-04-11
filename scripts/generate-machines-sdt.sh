@@ -1,8 +1,9 @@
 #! /bin/bash -e
 
 ### The following table controls the automatic generated of the machine .conf files (lines start with #M#)
-### Machine                 MULTICONFIGS                                                OVERLAY  DOMAIN   PRE   POST
-#M# emb-plus-ve2302-sdt     --add-config\ CONFIG_YOCTO_BBMC_CORTEXR5_0_FREERTOS=y       full     default  none  MACHINEOVERRIDES \.= \":emb-plus-amr:emb-plus-ve2302\"
+### Machine               MULTICONFIGS                                           OVERLAY  DOMAIN   OVERRIDES       PRE   POST
+#M# emb-plus-ve2302-sdt   default       					 full     default  emb-plus-ve2302 none  none
+###M# emb-plus-ve2302-amr   --add-config\ CONFIG_YOCTO_BBMC_CORTEXR5_0_FREERTOS=y  full     default  emb-plus-amr    none  none
 
 this=$(realpath $0)
 
@@ -39,7 +40,7 @@ done < ${mach_index}
 
 # Load in the arrays from this script
 count=0
-while read marker machine multiconfigs overlay domain pre post ; do
+while read marker machine multiconfigs overlay domain overrides pre post ; do
   if [ "${marker}" != "#M#" ]; then
       continue
   fi
@@ -71,6 +72,14 @@ while read marker machine multiconfigs overlay domain pre post ; do
     domain=" --domain-file ${dir}/${domain} "
   fi
   DOMAINS[$count]=${domain}
+
+  # machine_overrides
+  if [ "$overrides" = "none" ]; then
+    overrides=""
+  else
+    overrides="-O ${overrides} "
+  fi
+  OVERRIDES[$count]=${overrides}
 
   # URLs
   for mach in ${!MACHINE_ID[@]}; do
@@ -106,6 +115,7 @@ for mach in ${!MACHINES[@]}; do
   echo "Multiconfigs: ${MULTICONFIGS[${mach}]}"
   echo "Overlay:      ${OVERLAYS[${mach}]}"
   echo "Domain:       ${DOMAINS[${mach}]}"
+  echo "Overrides:    ${OVERRIDES[${mach}]}"
   echo "URL:          ${URLS[${mach}]}"
   echo "Pre:          ${PRE[${mach}]}"
   echo "Post:         ${POST[${mach}]}"
@@ -113,7 +123,7 @@ for mach in ${!MACHINES[@]}; do
 
   set -x
   rm -rf output
-  gen-machineconf parse-sdt --hw-description ${URLS[${mach}]} -c ${conf_path} --machine-name ${MACHINES[${mach}]} ${MULTICONFIGS[${mach}]} ${OVERLAYS[${mach}]} ${DOMAINS[${mach}]}
+  gen-machineconf parse-sdt --hw-description ${URLS[${mach}]} -c ${conf_path} --machine-name ${MACHINES[${mach}]} ${MULTICONFIGS[${mach}]} ${OVERLAYS[${mach}]} ${DOMAINS[${mach}]} ${OVERRIDES[${mach}]}
   set +x
 
   ######### Post gen-machineconf changes

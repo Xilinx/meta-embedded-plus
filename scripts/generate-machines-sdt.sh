@@ -3,7 +3,7 @@
 ### The following table controls the automatic generated of the machine .conf files (lines start with #M#)
 ### Machine               MULTICONFIGS                                           OVERLAY  DOMAIN   OVERRIDES       PRE   POST
 #M# emb-plus-ve2302-sdt   default       					 full     default  emb-plus-ve2302 none  none
-###M# emb-plus-ve2302-amr   --add-config\ CONFIG_YOCTO_BBMC_CORTEXR5_0_FREERTOS=y  full     default  emb-plus-amr    none  none
+#M# emb-plus-ve2302-amr   --add-config\ CONFIG_YOCTO_BBMC_CORTEXR5_0_FREERTOS=y  full     default  emb-plus-amr    none  none
 
 this=$(realpath $0)
 
@@ -95,11 +95,14 @@ while read marker machine multiconfigs overlay domain overrides pre post ; do
 
   # pre
   if [ "$pre" = "none" ]; then
-    pre=
+    pre=""
   fi
   PRE[$count]=${pre}
 
   # post
+  if [ "$post" = "none" ]; then
+    post=""
+  fi
   POST[$count]=${post}
 
   count=$(expr $count + 1)

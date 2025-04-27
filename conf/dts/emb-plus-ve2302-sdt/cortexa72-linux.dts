@@ -506,6 +506,17 @@
                         phandle = <0x2d>;
                 };
 
+                mc0: memory-controller@f6150000 {
+                        compatible = "xlnx,versal-ddrmc";
+                        status = "okay";
+                        reg = <0x0 0xf6150000 0x0 0x2000 0x0 0xf6070000 0x0 0x20000>;
+                        reg-names = "base", "noc";
+                        interrupts = <0x0 0x93 0x4>;
+                        interrupt-parent = <&gic>;
+                        ranges = <0x0 0x0 0x0 0x80000000 0x0 0x40000 0x0 0x7ffc0000 0x500 0x0 0x1 0x80000000>;
+                        phandle = <0xc8>;
+                };
+
                 mc1: memory-controller@f62c0000 {
                         compatible = "xlnx,versal-ddrmc";
                         status = "disabled";
@@ -1983,6 +1994,7 @@
                 i2c0 = "/axi/i2c@ff020000";
                 i2c1 = "/axi/i2c@ff030000";
                 i2c2 = "/axi/i2c@f1000000";
+                mc0 = "/axi/memory-controller@f6150000";
                 mc1 = "/axi/memory-controller@f62c0000";
                 mc2 = "/axi/memory-controller@f6430000";
                 mc3 = "/axi/memory-controller@f65a0000";

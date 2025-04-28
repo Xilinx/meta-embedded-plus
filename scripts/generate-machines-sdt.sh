@@ -127,6 +127,8 @@ for mach in ${!MACHINES[@]}; do
   set -x
   rm -rf output
   gen-machineconf parse-sdt --hw-description ${URLS[${mach}]} -c ${conf_path} --machine-name ${MACHINES[${mach}]} ${MULTICONFIGS[${mach}]} ${OVERLAYS[${mach}]} ${DOMAINS[${mach}]} ${OVERRIDES[${mach}]}
+  rm -f ${conf_path}/domains.yaml
+  rm -f ${conf_path}/system-top.dts.pp
   set +x
 
   ######### Post gen-machineconf changes

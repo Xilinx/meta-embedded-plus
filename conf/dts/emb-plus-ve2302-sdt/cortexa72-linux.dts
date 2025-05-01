@@ -8,6 +8,7 @@
         device_id = "xcve2302";
         slrcount = <0x1>;
         family = "Versal";
+        speed_grade = "2MP";
 
         options {
 
@@ -38,8 +39,8 @@
                         xlnx,pss-ref-clk-freq = <0x1fca034>;
                         stamp-frequency = <0x5f5e0a4>;
                         xlnx,ip-name = "psv_cortexa72";
-                        xlnx,cpu-clk-freq-hz = <0x537248c1>;
-                        cpu-frequency = <0x537248c1>;
+                        xlnx,cpu-clk-freq-hz = <0x50775841>;
+                        cpu-frequency = <0x50775841>;
                         bus-handle = <0x1>;
                         phandle = <0xb0>;
                 };
@@ -56,8 +57,8 @@
                         xlnx,pss-ref-clk-freq = <0x1fca034>;
                         stamp-frequency = <0x5f5e0a4>;
                         xlnx,ip-name = "psv_cortexa72";
-                        xlnx,cpu-clk-freq-hz = <0x537248c1>;
-                        cpu-frequency = <0x537248c1>;
+                        xlnx,cpu-clk-freq-hz = <0x50775841>;
+                        cpu-frequency = <0x50775841>;
                         bus-handle = <0x1>;
                         phandle = <0xb1>;
                 };
@@ -82,26 +83,26 @@
                 opp-shared;
                 phandle = <0x83>;
 
-                opp-1400000000 {
-                        opp-hz = <0x0 0x53724e00>;
+                opp-1350000000 {
+                        opp-hz = <0x0 0x50775d80>;
                         clock-latency-ns = <0x7a120>;
                         opp-microvolt = <0xf4240>;
                 };
 
-                opp-700000000 {
-                        opp-hz = <0x0 0x29b92700>;
+                opp-675000000 {
+                        opp-hz = <0x0 0x283baec0>;
                         clock-latency-ns = <0x7a120>;
                         opp-microvolt = <0xf4240>;
                 };
 
-                opp-466666666 {
-                        opp-hz = <0x0 0x1bd0c4aa>;
+                opp-450000000 {
+                        opp-hz = <0x0 0x1ad27480>;
                         clock-latency-ns = <0x7a120>;
                         opp-microvolt = <0xf4240>;
                 };
 
-                opp-350000000 {
-                        opp-hz = <0x0 0x14dc9380>;
+                opp-337500000 {
+                        opp-hz = <0x0 0x141dd760>;
                         clock-latency-ns = <0x7a120>;
                         opp-microvolt = <0xf4240>;
                 };
@@ -500,20 +501,19 @@
                         #size-cells = <0x0>;
                         clocks = <&versal_clk 0x3e>;
                         power-domains = <&versal_firmware 0x1822402d>;
-                        xlnx,clock-freq = <0x5f5e0a4>;
-                        xlnx,i2c-clk-freq-hz = <0x5f5e0a4>;
+                        xlnx,clock-freq = <0x5f5e09d>;
+                        xlnx,i2c-clk-freq-hz = <0x5f5e09d>;
                         xlnx,ip-name = "psv_pmc_i2c";
                         phandle = <0x2d>;
                 };
 
                 mc0: memory-controller@f6150000 {
                         compatible = "xlnx,versal-ddrmc";
-                        status = "okay";
+                        status = "disabled";
                         reg = <0x0 0xf6150000 0x0 0x2000 0x0 0xf6070000 0x0 0x20000>;
                         reg-names = "base", "noc";
                         interrupts = <0x0 0x93 0x4>;
                         interrupt-parent = <&gic>;
-                        ranges = <0x0 0x0 0x0 0x80000000 0x0 0x40000 0x0 0x7ffc0000 0x500 0x0 0x1 0x80000000>;
                         phandle = <0xc8>;
                 };
 
@@ -612,15 +612,15 @@
                         clocks = <&versal_clk 0x5c>,
                          <&versal_clk 0x52>;
                         power-domains = <&versal_firmware 0x18224021>;
-                        xlnx,has-modem = <0x0>;
-                        xlnx,uart-clk-freq-hz = <0x5f5e0a4>;
-                        port-number = <0x0>;
-                        xlnx,ip-name = "psv_sbsauart";
+                        xlnx,clock-freq = <0x5f5e0a4>;
+                        u-boot,dm-pre-reloc;
                         xlnx,uart-board-interface = "custom";
+                        xlnx,has-modem = <0x0>;
+                        xlnx,ip-name = "psv_sbsauart";
                         xlnx,baudrate = <0x1c200>;
                         cts-override;
-                        u-boot,dm-pre-reloc;
-                        xlnx,clock-freq = <0x5f5e0a4>;
+                        port-number = <0x0>;
+                        xlnx,uart-clk-freq-hz = <0x5f5e0a4>;
                         phandle = <0x53>;
                 };
 
@@ -636,15 +636,15 @@
                         clocks = <&versal_clk 0x5d>,
                          <&versal_clk 0x52>;
                         power-domains = <&versal_firmware 0x18224022>;
-                        xlnx,has-modem = <0x0>;
-                        xlnx,uart-clk-freq-hz = <0x5f5e0a4>;
-                        port-number = <0x0>;
-                        xlnx,ip-name = "psv_sbsauart";
+                        xlnx,clock-freq = <0x5f5e0a4>;
+                        u-boot,dm-pre-reloc;
                         xlnx,uart-board-interface = "custom";
+                        xlnx,has-modem = <0x0>;
+                        xlnx,ip-name = "psv_sbsauart";
                         xlnx,baudrate = <0x1c200>;
                         cts-override;
-                        u-boot,dm-pre-reloc;
-                        xlnx,clock-freq = <0x5f5e0a4>;
+                        port-number = <0x0>;
+                        xlnx,uart-clk-freq-hz = <0x5f5e0a4>;
                         phandle = <0x54>;
                 };
 
@@ -679,9 +679,9 @@
                         resets = <&versal_reset 0xc10402e>;
                         is-stacked = <0x0>;
                         xlnx,is-cache-coherent = <0x0>;
-                        xlnx,clock-freq = <0xbebc149>;
+                        xlnx,clock-freq = <0x9cacc71>;
                         xlnx,ip-name = "psv_pmc_ospi";
-                        xlnx,ospi-clk-freq-hz = <0xbebc149>;
+                        xlnx,ospi-clk-freq-hz = <0x9cacc71>;
                         is-dual = <0x0>;
                         xlnx,ospi-mode = <0x0>;
                         phandle = <0x2e>;
@@ -770,8 +770,8 @@
                         xlnx,sat-10-y = <0x2905>;
                         xlnx,sat-64-y = <0xb34>;
                         xlnx,sat-2-y = <0xb34>;
-                        xlnx,sat-13-desc = "Clocking , column , satellite";
                         xlnx,meas-7-root-id = <0x4>;
+                        xlnx,sat-13-desc = "Clocking , column , satellite";
                         xlnx,meas-8-root-id = <0x6>;
                         xlnx,sat-6-desc = "VNOC , satellite";
                         xlnx,meas-9-root-id = <0x9>;
@@ -928,17 +928,16 @@
                         interrupt-parent = <&gic>;
                         reg = <0x0 0xff0e0000 0x0 0x1000>;
                         timer-width = <0x20>;
-                        clocks = <&versal_clk 0x27>,
-                         <&versal_clk 0x52>;
+                        clocks = <&versal_clk 0x27>;
                         power-domains = <&versal_firmware 0x18224024>;
+                        xlnx,ttc-board-interface = "custom";
+                        xlnx,ttc-clk2-freq-hz = <0x8ab7547>;
+                        xlnx,ttc-clk1-clksrc = <0x0>;
+                        xlnx,clock-freq = <0x8ab7547>;
                         xlnx,ttc-clk2-clksrc = <0x0>;
                         xlnx,ip-name = "psv_ttc";
-                        xlnx,ttc-clk1-clksrc = <0x0>;
-                        xlnx,ttc-clk0-freq-hz = <0x8f0d0f7>;
-                        xlnx,ttc-clk1-freq-hz = <0x8f0d0f7>;
-                        xlnx,ttc-clk2-freq-hz = <0x8f0d0f7>;
-                        xlnx,ttc-board-interface = "custom";
-                        xlnx,clock-freq = <0x8f0d0f7>;
+                        xlnx,ttc-clk0-freq-hz = <0x8ab7547>;
+                        xlnx,ttc-clk1-freq-hz = <0x8ab7547>;
                         xlnx,ttc-clk0-clksrc = <0x0>;
                         phandle = <0x59>;
                 };
@@ -950,17 +949,16 @@
                         interrupt-parent = <&gic>;
                         reg = <0x0 0xff0f0000 0x0 0x1000>;
                         timer-width = <0x20>;
-                        clocks = <&versal_clk 0x28>,
-                         <&versal_clk 0x52>;
+                        clocks = <&versal_clk 0x28>;
                         power-domains = <&versal_firmware 0x18224025>;
+                        xlnx,ttc-board-interface = "custom";
+                        xlnx,ttc-clk2-freq-hz = <0x8ab7547>;
+                        xlnx,ttc-clk1-clksrc = <0x0>;
+                        xlnx,clock-freq = <0x8ab7547>;
                         xlnx,ttc-clk2-clksrc = <0x0>;
                         xlnx,ip-name = "psv_ttc";
-                        xlnx,ttc-clk1-clksrc = <0x0>;
-                        xlnx,ttc-clk0-freq-hz = <0x8f0d0f7>;
-                        xlnx,ttc-clk1-freq-hz = <0x8f0d0f7>;
-                        xlnx,ttc-clk2-freq-hz = <0x8f0d0f7>;
-                        xlnx,ttc-board-interface = "custom";
-                        xlnx,clock-freq = <0x8f0d0f7>;
+                        xlnx,ttc-clk0-freq-hz = <0x8ab7547>;
+                        xlnx,ttc-clk1-freq-hz = <0x8ab7547>;
                         xlnx,ttc-clk0-clksrc = <0x0>;
                         phandle = <0x5a>;
                 };
@@ -972,17 +970,16 @@
                         interrupt-parent = <&gic>;
                         reg = <0x0 0xff100000 0x0 0x1000>;
                         timer-width = <0x20>;
-                        clocks = <&versal_clk 0x29>,
-                         <&versal_clk 0x52>;
+                        clocks = <&versal_clk 0x29>;
                         power-domains = <&versal_firmware 0x18224026>;
+                        xlnx,ttc-board-interface = "custom";
+                        xlnx,ttc-clk2-freq-hz = <0x8ab7547>;
+                        xlnx,ttc-clk1-clksrc = <0x0>;
+                        xlnx,clock-freq = <0x8ab7547>;
                         xlnx,ttc-clk2-clksrc = <0x0>;
                         xlnx,ip-name = "psv_ttc";
-                        xlnx,ttc-clk1-clksrc = <0x0>;
-                        xlnx,ttc-clk0-freq-hz = <0x8f0d0f7>;
-                        xlnx,ttc-clk1-freq-hz = <0x8f0d0f7>;
-                        xlnx,ttc-clk2-freq-hz = <0x8f0d0f7>;
-                        xlnx,ttc-board-interface = "custom";
-                        xlnx,clock-freq = <0x8f0d0f7>;
+                        xlnx,ttc-clk0-freq-hz = <0x8ab7547>;
+                        xlnx,ttc-clk1-freq-hz = <0x8ab7547>;
                         xlnx,ttc-clk0-clksrc = <0x0>;
                         phandle = <0x5b>;
                 };
@@ -994,17 +991,16 @@
                         interrupt-parent = <&gic>;
                         reg = <0x0 0xff110000 0x0 0x1000>;
                         timer-width = <0x20>;
-                        clocks = <&versal_clk 0x2a>,
-                         <&versal_clk 0x52>;
+                        clocks = <&versal_clk 0x2a>;
                         power-domains = <&versal_firmware 0x18224027>;
+                        xlnx,ttc-board-interface = "custom";
+                        xlnx,ttc-clk2-freq-hz = <0x8ab7547>;
+                        xlnx,ttc-clk1-clksrc = <0x0>;
+                        xlnx,clock-freq = <0x8ab7547>;
                         xlnx,ttc-clk2-clksrc = <0x0>;
                         xlnx,ip-name = "psv_ttc";
-                        xlnx,ttc-clk1-clksrc = <0x0>;
-                        xlnx,ttc-clk0-freq-hz = <0x8f0d0f7>;
-                        xlnx,ttc-clk1-freq-hz = <0x8f0d0f7>;
-                        xlnx,ttc-clk2-freq-hz = <0x8f0d0f7>;
-                        xlnx,ttc-board-interface = "custom";
-                        xlnx,clock-freq = <0x8f0d0f7>;
+                        xlnx,ttc-clk0-freq-hz = <0x8ab7547>;
+                        xlnx,ttc-clk1-freq-hz = <0x8ab7547>;
                         xlnx,ttc-clk0-clksrc = <0x0>;
                         phandle = <0x5c>;
                 };
@@ -1060,8 +1056,8 @@
                         bus-range = <0x0 0xff>;
                         ranges = <0x2000000 0x0 0xe0010000 0x0 0xe0010000 0x0 0x10000000 0x43000000 0x80 0x0 0x80 0x0 0x0 0x80000000>;
                         msi-map = <0x0 0x4 0x0 0x10000>;
-                        reg = <0x6 0x0 0x0 0x1000000 0x0 0xfca10000 0x0 0x1000>;
-                        reg-names = "cfg", "cpm_slcr";
+                        reg = <0x6 0x0 0x0 0x1000000 0x0 0xfca10000 0x0 0x1000 0x0 0xfca00000 0x0 0x10000>;
+                        reg-names = "cfg", "cpm_slcr", "cpm_crx";
                         phandle = <0xd6>;
 
                         pcie_intc_0: interrupt-controller {
@@ -1093,8 +1089,8 @@
                         bus-range = <0x0 0xff>;
                         ranges = <0x2000000 0x0 0xe0000000 0x0 0xe0000000 0x0 0x10000000 0x43000000 0x80 0x0 0x80 0x0 0x0 0x80000000>;
                         msi-map = <0x0 0x4 0x0 0x10000>;
-                        reg = <0x6 0x0 0x0 0x1000000 0x0 0xfcdd0000 0x0 0x1000 0x0 0xfce20000 0x0 0x1000000>;
-                        reg-names = "cfg", "cpm_slcr", "cpm_csr";
+                        reg = <0x6 0x0 0x0 0x1000000 0x0 0xfcdd0000 0x0 0x1000 0x0 0xfce20000 0x0 0x10000 0x0 0xfcdc0000 0x0 0x10000>;
+                        reg-names = "cfg", "cpm_slcr", "cpm_csr", "cpm_crx";
                         phandle = <0xd7>;
 
                         pcie_intc_2: interrupt-controller {
@@ -1357,6 +1353,14 @@
                         phandle = <0x6e>;
                 };
 
+                ddrmc_xmpu_0: xmpu@f6080000 {
+                        compatible = "xlnx,xmpu";
+                        #firewall-cells = <0x0>;
+                        reg = <0x0 0xf6080000 0x0 0x1000>;
+                        status = "disabled";
+                        phandle = <0x15c>;
+                };
+
                 ddrmc_xmpu_1: xmpu@f6220000 {
                         compatible = "xlnx,xmpu";
                         #firewall-cells = <0x0>;
@@ -1382,37 +1386,41 @@
                 };
         };
 
-        pl_alt_ref_clk: pl_alt_ref_clk {
+        pl_alt_ref: pl-alt-ref {
                 bootph-all;
                 compatible = "fixed-clock";
                 #clock-cells = <0x0>;
                 clock-frequency = <0x1fca055>;
+                clock-output-names = "pl_alt_ref_clk";
                 phandle = <0xac>;
         };
 
-        ref_clk: ref_clk {
+        ref: ref {
                 bootph-all;
                 compatible = "fixed-clock";
                 #clock-cells = <0x0>;
                 clock-frequency = <0x1fca034>;
+                clock-output-names = "ref_clk";
                 phandle = <0xab>;
         };
 
-        can0_clk: can0_clk {
+        can0_clk: can0-clk {
                 #clock-cells = <0x0>;
                 compatible = "fixed-factor-clock";
                 clocks = <&versal_clk 0x60>;
                 clock-div = <0x2>;
                 clock-mult = <0x1>;
+                clock-output-names = "can0_clk";
                 phandle = <0xa6>;
         };
 
-        can1_clk: can1_clk {
+        can1_clk: can1-clk {
                 #clock-cells = <0x0>;
                 compatible = "fixed-factor-clock";
                 clocks = <&versal_clk 0x61>;
                 clock-div = <0x2>;
                 clock-mult = <0x1>;
+                clock-output-names = "can1_clk";
                 phandle = <0xa7>;
         };
 
@@ -1430,13 +1438,13 @@
                                 bootph-all;
                                 #clock-cells = <0x1>;
                                 compatible = "xlnx,versal-clk";
-                                clocks = <&ref_clk>,
-                                 <&pl_alt_ref_clk>;
-                                clock-names = "ref_clk", "pl_alt_ref_clk";
+                                clocks = <&ref>,
+                                 <&pl_alt_ref>;
+                                clock-names = "ref", "pl_alt_ref";
                                 phandle = <0x86>;
                         };
 
-                        zynqmp_power: zynqmp-power {
+                        zynqmp_power: power-management {
                                 compatible = "xlnx,zynqmp-power";
                                 phandle = <0x160>;
                         };
@@ -1458,64 +1466,70 @@
                                 #size-cells = <0x1>;
                                 phandle = <0x162>;
 
-                                bbram_zeroize: bbram-zeroize@4 {
-                                        reg = <0x4 0x4>;
-                                        phandle = <0x163>;
-                                };
+                                nvmem-layout {
+                                        compatible = "fixed-layout";
+                                        #address-cells = <0x1>;
+                                        #size-cells = <0x1>;
 
-                                bbram_key: bbram-key@10 {
-                                        reg = <0x10 0x20>;
-                                        phandle = <0x164>;
-                                };
+                                        bbram_zeroize: bbram-zeroize@4 {
+                                                reg = <0x4 0x4>;
+                                                phandle = <0x163>;
+                                        };
 
-                                bbram_usr: bbram-usr@30 {
-                                        reg = <0x30 0x4>;
-                                        phandle = <0x165>;
-                                };
+                                        bbram_key: bbram-key@10 {
+                                                reg = <0x10 0x20>;
+                                                phandle = <0x164>;
+                                        };
 
-                                bbram_lock: bbram-lock@48 {
-                                        reg = <0x48 0x4>;
-                                        phandle = <0x166>;
-                                };
+                                        bbram_usr: bbram-usr@30 {
+                                                reg = <0x30 0x4>;
+                                                phandle = <0x165>;
+                                        };
 
-                                user_key0: user-key@110 {
-                                        reg = <0x110 0x20>;
-                                        phandle = <0x167>;
-                                };
+                                        bbram_lock: bbram-lock@48 {
+                                                reg = <0x48 0x4>;
+                                                phandle = <0x166>;
+                                        };
 
-                                user_key1: user-key@130 {
-                                        reg = <0x130 0x20>;
-                                        phandle = <0x168>;
-                                };
+                                        user_key0: user-key@110 {
+                                                reg = <0x110 0x20>;
+                                                phandle = <0x167>;
+                                        };
 
-                                user_key2: user-key@150 {
-                                        reg = <0x150 0x20>;
-                                        phandle = <0x169>;
-                                };
+                                        user_key1: user-key@130 {
+                                                reg = <0x130 0x20>;
+                                                phandle = <0x168>;
+                                        };
 
-                                user_key3: user-key@170 {
-                                        reg = <0x170 0x20>;
-                                        phandle = <0x16a>;
-                                };
+                                        user_key2: user-key@150 {
+                                                reg = <0x150 0x20>;
+                                                phandle = <0x169>;
+                                        };
 
-                                user_key4: user-key@190 {
-                                        reg = <0x190 0x20>;
-                                        phandle = <0x16b>;
-                                };
+                                        user_key3: user-key@170 {
+                                                reg = <0x170 0x20>;
+                                                phandle = <0x16a>;
+                                        };
 
-                                user_key5: user-key@1b0 {
-                                        reg = <0x1b0 0x20>;
-                                        phandle = <0x16c>;
-                                };
+                                        user_key4: user-key@190 {
+                                                reg = <0x190 0x20>;
+                                                phandle = <0x16b>;
+                                        };
 
-                                user_key6: user-key@1d0 {
-                                        reg = <0x1d0 0x20>;
-                                        phandle = <0x16d>;
-                                };
+                                        user_key5: user-key@1b0 {
+                                                reg = <0x1b0 0x20>;
+                                                phandle = <0x16c>;
+                                        };
 
-                                user_key7: user-key@1f0 {
-                                        reg = <0x1f0 0x20>;
-                                        phandle = <0x16e>;
+                                        user_key6: user-key@1d0 {
+                                                reg = <0x1d0 0x20>;
+                                                phandle = <0x16d>;
+                                        };
+
+                                        user_key7: user-key@1f0 {
+                                                reg = <0x1f0 0x20>;
+                                                phandle = <0x16e>;
+                                        };
                                 };
                         };
                 };
@@ -1526,7 +1540,7 @@
                 compatible = "simple-bus";
                 #address-cells = <0x2>;
                 #size-cells = <0x2>;
-                firmware-name = "ve2302_pcie_qdma_base.pdi";
+                firmware-name = "ve2302_pcie_qdma_secure_base.pdi";
                 phandle = <0x16f>;
 
                 fpga_PR: fpga-PR {
@@ -1589,7 +1603,7 @@
                         reg = <0x4 0x2031000 0x0 0x1000>;
                         xlnx,addr-width = <0x20>;
                         clocks = <&versal_clk 0x41>;
-                        xlnx,s-axi-aclk-freq-mhz = <0x5f5e0a4>;
+                        xlnx,s-axi-aclk-freq-mhz = <0x5f5e09d>;
                         xlnx,num-sw-intr = <0x0>;
                         xlnx,irq-connection = <0x1>;
                         xlnx,num-intr-inputs = <0x1>;
@@ -1635,7 +1649,7 @@
                         reg = <0x4 0x2030000 0x0 0x1000>;
                         xlnx,addr-width = <0x20>;
                         clocks = <&versal_clk 0x41>;
-                        xlnx,s-axi-aclk-freq-mhz = <0x5f5e0a4>;
+                        xlnx,s-axi-aclk-freq-mhz = <0x5f5e09d>;
                         xlnx,num-sw-intr = <0x0>;
                         xlnx,irq-connection = <0x1>;
                         xlnx,num-intr-inputs = <0x2>;
@@ -1681,7 +1695,7 @@
                         reg = <0x202 0x2020000 0x0 0x1000>;
                         xlnx,addr-width = <0x20>;
                         clocks = <&versal_clk 0x41>;
-                        xlnx,s-axi-aclk-freq-mhz = <0x5f5e0a4>;
+                        xlnx,s-axi-aclk-freq-mhz = <0x5f5e09d>;
                         xlnx,num-sw-intr = <0x0>;
                         xlnx,irq-connection = <0x1>;
                         xlnx,num-intr-inputs = <0x20>;
@@ -1757,7 +1771,7 @@
                         interrupts = <0x0 0x0>;
                         compatible = "xlnx,axi-uartlite-2.0", "xlnx,xps-uartlite-1.00.a";
                         xlnx,uartlite-board-interface = "Custom";
-                        xlnx,s-axi-aclk-freq-hz-d = <0x5f5e0a4>;
+                        xlnx,s-axi-aclk-freq-hz-d = <0x5f5e09d>;
                         interrupt-parent = <&blp_blp_logic_axi_intc_uart_apu>;
                         xlnx,ip-name = "axi_uartlite";
                         reg = <0x4 0x2020000 0x0 0x1000>;
@@ -1779,7 +1793,7 @@
                         interrupts = <0x0 0x57 0x1>;
                         compatible = "xlnx,axi-uartlite-2.0", "xlnx,xps-uartlite-1.00.a";
                         xlnx,uartlite-board-interface = "Custom";
-                        xlnx,s-axi-aclk-freq-hz-d = <0x5f5e0a4>;
+                        xlnx,s-axi-aclk-freq-hz-d = <0x5f5e09d>;
                         interrupt-parent = <&gic>;
                         xlnx,ip-name = "axi_uartlite";
                         reg = <0x0 0x80021000 0x0 0x1000>;
@@ -1898,19 +1912,19 @@
 
                 blp_blp_logic_ulp_clocking_shell_utils_ucc: shell_utils_ucc@80030000 {
                         compatible = "xlnx,shell-utils-ucc-1.0";
-                        xlnx,ext-tog-enable = <0x1>;
-                        xlnx,num-clocks = <0x2>;
+                        status = "okay";
+                        clock-names = "aclk_ctrl", "aclk_freerun", "aclk_pcie", "clk_in_kernel_00", "clk_in_kernel_01";
                         xlnx,ip-name = "shell_utils_ucc";
-                        reg = <0x0 0x80030000 0x0 0x10000>;
+                        xlnx,edk-iptype = "PERIPHERAL";
+                        xlnx,num-clocks = <0x2>;
                         xlnx,freq-cnt-ref-clk-hz = <0x8235>;
+                        xlnx,ext-tog-enable = <0x1>;
+                        reg = <0x0 0x80030000 0x0 0x10000>;
                         clocks = <&versal_clk 0x41>,
                          <&versal_clk 0x42>,
                          <&misc_clk_0>,
                          <&blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_00 0x0>,
                          <&blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_01 0x0>;
-                        xlnx,edk-iptype = "PERIPHERAL";
-                        status = "okay";
-                        clock-names = "aclk_ctrl", "aclk_freerun", "aclk_pcie", "clk_in_kernel_00", "clk_in_kernel_01";
                         phandle = <0xe>;
                 };
 
@@ -2049,31 +2063,32 @@
                 fpd_xmpu = "/indirect-bus@2/xmpu@fd390000";
                 pmc_xmpu = "/indirect-bus@2/xmpu@f12f0000";
                 ocm_xmpu = "/indirect-bus@2/xmpu@ff980000";
+                ddrmc_xmpu_0 = "/indirect-bus@2/xmpu@f6080000";
                 ddrmc_xmpu_1 = "/indirect-bus@2/xmpu@f6220000";
                 ddrmc_xmpu_2 = "/indirect-bus@2/xmpu@f6390000";
                 ddrmc_xmpu_3 = "/indirect-bus@2/xmpu@f6500000";
-                pl_alt_ref_clk = "/pl_alt_ref_clk";
-                ref_clk = "/ref_clk";
-                can0_clk = "/can0_clk";
-                can1_clk = "/can1_clk";
+                pl_alt_ref = "/pl-alt-ref";
+                ref = "/ref";
+                can0_clk = "/can0-clk";
+                can1_clk = "/can1-clk";
                 versal_firmware = "/firmware/versal-firmware";
                 versal_clk = "/firmware/versal-firmware/clock-controller";
-                zynqmp_power = "/firmware/versal-firmware/zynqmp-power";
+                zynqmp_power = "/firmware/versal-firmware/power-management";
                 versal_reset = "/firmware/versal-firmware/reset-controller";
                 pinctrl0 = "/firmware/versal-firmware/pinctrl";
                 versal_sec_cfg = "/firmware/versal-firmware/versal-sec-cfg";
-                bbram_zeroize = "/firmware/versal-firmware/versal-sec-cfg/bbram-zeroize@4";
-                bbram_key = "/firmware/versal-firmware/versal-sec-cfg/bbram-key@10";
-                bbram_usr = "/firmware/versal-firmware/versal-sec-cfg/bbram-usr@30";
-                bbram_lock = "/firmware/versal-firmware/versal-sec-cfg/bbram-lock@48";
-                user_key0 = "/firmware/versal-firmware/versal-sec-cfg/user-key@110";
-                user_key1 = "/firmware/versal-firmware/versal-sec-cfg/user-key@130";
-                user_key2 = "/firmware/versal-firmware/versal-sec-cfg/user-key@150";
-                user_key3 = "/firmware/versal-firmware/versal-sec-cfg/user-key@170";
-                user_key4 = "/firmware/versal-firmware/versal-sec-cfg/user-key@190";
-                user_key5 = "/firmware/versal-firmware/versal-sec-cfg/user-key@1b0";
-                user_key6 = "/firmware/versal-firmware/versal-sec-cfg/user-key@1d0";
-                user_key7 = "/firmware/versal-firmware/versal-sec-cfg/user-key@1f0";
+                bbram_zeroize = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/bbram-zeroize@4";
+                bbram_key = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/bbram-key@10";
+                bbram_usr = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/bbram-usr@30";
+                bbram_lock = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/bbram-lock@48";
+                user_key0 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@110";
+                user_key1 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@130";
+                user_key2 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@150";
+                user_key3 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@170";
+                user_key4 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@190";
+                user_key5 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@1b0";
+                user_key6 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@1d0";
+                user_key7 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@1f0";
                 amba_pl = "/amba_pl";
                 fpga_PR = "/amba_pl/fpga-PR";
                 misc_clk_0 = "/amba_pl/misc_clk_0";

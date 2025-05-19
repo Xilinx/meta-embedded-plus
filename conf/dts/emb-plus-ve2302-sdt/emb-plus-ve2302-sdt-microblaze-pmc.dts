@@ -7142,7 +7142,7 @@
                         xlnx,pf1-bar0-size-qdma = <0x100>;
                         xlnx,pf0-sriov-bar5-type = "AXI_Bridge_Master";
                         xlnx,num-queues = <0x200>;
-                        status = "okay";
+                        status = "disabled";
                         xlnx,pf0-subsystem-vendor-id = <0x10ee>;
                         xlnx,pf1-msix-cap-table-offset-qdma = <0x7530>;
                         xlnx,pcie-extended-tag;
@@ -7970,10 +7970,10 @@
                         xlnx,pf1-pciebar2axibar-6 = <0x0>;
                         xlnx,pf3-sriov-bar5-type = "AXI_Bridge_Master";
                         xlnx,pf1-vf-bar2-aperture-size = <0x0>;
-                        interrupt-map = <0x0 0x0 0x0 0x1 &pcie_intc_1 0x0>,
-                         <0x0 0x0 0x0 0x2 &pcie_intc_1 0x1>,
-                         <0x0 0x0 0x0 0x3 &pcie_intc_1 0x2>,
-                         <0x0 0x0 0x0 0x4 &pcie_intc_1 0x3>;
+                        interrupt-map = <0x0 0x0 0x0 0x1 &qdma_intc_0 0x0>,
+                         <0x0 0x0 0x0 0x2 &qdma_intc_0 0x1>,
+                         <0x0 0x0 0x0 0x3 &qdma_intc_0 0x2>,
+                         <0x0 0x0 0x0 0x4 &qdma_intc_0 0x3>;
                         xlnx,pf1-sriov-bar5-control = <0x0>;
                         xlnx,pf3-sriov-bar2-type = "AXI_Lite_Master";
                         xlnx,pf2-vf-bar5-aperture-size = <0x0>;
@@ -8000,7 +8000,7 @@
                         xlnx,pf0-msix-cap-pba-offset = "00008FE0";
                         phandle = <0x17d>;
 
-                        pcie_intc_1: interrupt-controller {
+                        qdma_intc_0: interrupt-controller {
                                 #interrupt-cells = <0x1>;
                                 #address-cells = <0x0>;
                                 interrupt-controller;
@@ -8427,7 +8427,7 @@
                 blp_blp_logic_ulp_clocking_shell_utils_ucc = "/amba_pl/shell_utils_ucc@80030000";
                 blp_blp_logic_uuid_register = "/amba_pl/uuid_register@20102002000";
                 blp_qdma_0 = "/amba_pl/axi-pcie@20107000000";
-                pcie_intc_1 = "/amba_pl/axi-pcie@20107000000/interrupt-controller";
+                qdma_intc_0 = "/amba_pl/axi-pcie@20107000000/interrupt-controller";
                 blp_axi_noc_mc_1x_ddr_memory = "/memory@00000000";
                 blp_cips_pspmc_0_psv_ocm_ram_0_memory = "/memory@FFFC0000";
         };

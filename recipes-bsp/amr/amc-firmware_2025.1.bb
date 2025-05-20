@@ -44,12 +44,10 @@ EOF
 
     cat >> ${WORKDIR}/../../xilplmi/2025.1+git/toolchain.cmake <<EOF
     set (XILPLMI_mode "client" CACHE STRING "")
-    set (BSP_LIBSRC_SUBDIRS "xilmailbox" CACHE STRING "")
 EOF
 
     cat >> ${WORKDIR}/../../xilloader/2025.1+git/toolchain.cmake <<EOF
     set (XILLOADER_mode "client" CACHE STRING "")
-    set (BSP_LIBSRC_SUBDIRS "xilmailbox" CACHE STRING "")
 EOF
 }
 

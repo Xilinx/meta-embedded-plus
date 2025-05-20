@@ -44,7 +44,7 @@ https://www.openembedded.org/wiki/How_to_submit_a_patch_to_OpenEmbedded
 `git format-patch -s --subject "meta-embedded-plus][<BRANCH_NAME>][PATCH" -1`
 
 **Example:**
-`git format-patch -s --subject "meta-embedded-plus][rel-v2025.1][PATCH" -1`
+`git format-patch -s --subject "meta-embedded-plus][rel-v2025.2][PATCH" -1`
 
 **Maintainers:**
 
@@ -69,22 +69,22 @@ This layer depends on:
         https://git.yoctoproject.org/meta-xilinx (official version)
         https://github.com/Xilinx/meta-xilinx (development and amd xilinx release)
 	layers: meta-xilinx-microblaze, meta-xilinx-core, meta-xilinx-standalone, meta-xilinx-standalone-sdt
-	branch: langdale or amd xilinx release version (e.g. rel-v2025.1)
+	branch: langdale or amd xilinx release version (e.g. rel-v2025.2)
 
 	URI:
         https://git.yoctoproject.org/meta-xilinx-tools (official version)
         https://github.com/Xilinx/meta-xilinx-tools (development and amd xilinx release)
-	branch: langdale or amd xilinx release version (e.g. rel-v2025.1)
+	branch: langdale or amd xilinx release version (e.g. rel-v2025.2)
 
 	URI: https://github.com/Xilinx/meta-amd-adaptive-socs
 	layers: meta-amd-adaptive-socs-core 
-	branch: amd xilinx release version (e.g. rel-v2025.1)
+	branch: amd xilinx release version (e.g. rel-v2025.2)
 
 	URI: https://github.com/Xilinx/meta-petalinux
-	branch: amd xilinx release version (e.g. rel-v2025.1)
+	branch: amd xilinx release version (e.g. rel-v2025.2)
 
 	URI: https://github.com/Xilinx/meta-jupyter
-	branch: langdale or amd xilinx release version (e.g. rel-v2025.1)
+	branch: langdale or amd xilinx release version (e.g. rel-v2025.2)
 
 ## License
 

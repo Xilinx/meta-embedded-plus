@@ -22,8 +22,8 @@ do_configure[noexec] = "1"
 do_install[noexec] = "1"
 
 do_compile[depends] += "amcfw:do_deploy amr-fpt:do_deploy virtual/boot-bin:do_deploy"
-IMAGE_SIZE = "0x03F0_8000"
-IMAGE_ACTIVE_OFFSET = "0x000_8000"
+IMAGE_SIZE = "0x03A0_0000"
+IMAGE_ACTIVE_OFFSET = "0x0008_0000"
 
 IMAGE_COMPONENTS:emb-plus-ve2302-amr = "fpt image_active"
 

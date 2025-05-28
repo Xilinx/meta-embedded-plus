@@ -5393,7 +5393,7 @@
                 compatible = "simple-bus";
                 #address-cells = <0x2>;
                 #size-cells = <0x2>;
-                firmware-name = "ve2302_pcie_qdma_base.pdi";
+                firmware-name = "ve2302_pcie_qdma_secure_base.pdi";
                 phandle = <0x176>;
 
                 fpga_PR: fpga-PR {

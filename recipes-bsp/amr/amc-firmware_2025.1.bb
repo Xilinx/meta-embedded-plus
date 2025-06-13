@@ -41,14 +41,6 @@ cmake_do_generate_toolchain_file:append:arm() {
     set (XIL_INCLUDE_DIR " ${PKG_CONFIG_SYSROOT_DIR}/usr/include/" CACHE STRING "")
     set (CMAKE_C_FLAGS " ${CMAKE_C_FLAGS} ${PKG_CONFIG_SYSROOT_DIR}/usr/include/" CACHE STRING "")
 EOF
-
-    cat >> ${WORKDIR}/../../xilplmi/2025.1+git/toolchain.cmake <<EOF
-    set (XILPLMI_mode "client" CACHE STRING "")
-EOF
-
-    cat >> ${WORKDIR}/../../xilloader/2025.1+git/toolchain.cmake <<EOF
-    set (XILLOADER_mode "client" CACHE STRING "")
-EOF
 }
 
 do_deploy() {

@@ -5,21 +5,17 @@ inherit core-image
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:emb-plus-ve2302 = "${MACHINE}"
 COMPATIBLE_MACHINE:emb-plus-ve2302-sdt = "${MACHINE}"
+COMPATIBLE_MACHINE:emb-plus-ve2302-amr = "${MACHINE}"
 
 IMAGE_INSTALL = " \
     ${CORE_IMAGE_EXTRA_INSTALL} \
     packagegroup-core-boot \
     kernel-modules \
-    xrt \
-    zocl \
     linux-xlnx-udev-rules \
     mtd-utils \
     pciutils \
     run-postinsts \
     udev-extraconf \
-    apu-boot \
-    init-apu \
-    soft-kernel-daemon \
     lrzsz \
     iperf3 \
     netperf \
@@ -31,3 +27,13 @@ IMAGE_INSTALL = " \
     libgpiod-tools \
     i2c-tools \
 "
+
+XRT_INSTALL = " \
+     xrt \
+     zocl \
+     apu-boot \
+     init-apu \
+     soft-kernel-daemon \
+"
+IMAGE_INSTALL:append:emb-plus-ve2302 = " ${XRT_INSTALL}"
+IMAGE_INSTALL:append:emb-plus-ve2302-sdt = " ${XRT_INSTALL}"

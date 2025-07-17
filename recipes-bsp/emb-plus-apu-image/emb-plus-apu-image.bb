@@ -18,6 +18,7 @@ inherit deploy image-artifact-names
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:emb-plus-ve2302 = "emb-plus-ve2302"
 COMPATIBLE_MACHINE:emb-plus-ve2302-sdt = "emb-plus-ve2302-sdt"
+COMPATIBLE_MACHINE:emb-plus-ve2302-amr = "emb-plus-ve2302-amr"
 
 do_configure:append () {
 cat > ${WORKDIR}/${PN}.bif << EOF

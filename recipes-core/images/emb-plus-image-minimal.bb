@@ -3,7 +3,6 @@ DESCRIPTION = "A minimal image for Embedded Plus."
 inherit core-image
 
 COMPATIBLE_MACHINE = "^$"
-COMPATIBLE_MACHINE:emb-plus-ve2302 = "${MACHINE}"
 COMPATIBLE_MACHINE:emb-plus-ve2302-sdt = "${MACHINE}"
 COMPATIBLE_MACHINE:emb-plus-ve2302-amr = "${MACHINE}"
 

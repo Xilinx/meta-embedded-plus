@@ -11,7 +11,7 @@ INHIBIT_DEFAULT_DEPS = "1"
 
 PARTMETA_FILE ?= "partition_metadata.json"
 
-require ${@'partition-metadata_sdt.inc' if d.getVar('XILINX_WITH_ESW') == 'sdt' else 'partition-metadata_xsct.inc'}
+require partition-metadata_sdt.inc
 
 inherit deploy image-artifact-names
 

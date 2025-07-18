@@ -3,7 +3,7 @@ DESCRIPTION = "A minimal image for Embedded Plus."
 inherit core-image
 
 COMPATIBLE_MACHINE = "^$"
-COMPATIBLE_MACHINE:emb-plus-ve2302-sdt = "${MACHINE}"
+COMPATIBLE_MACHINE:emb-plus-ve2302-xrt = "${MACHINE}"
 COMPATIBLE_MACHINE:emb-plus-ve2302-amr = "${MACHINE}"
 
 IMAGE_INSTALL = " \
@@ -34,5 +34,4 @@ XRT_INSTALL = " \
      init-apu \
      soft-kernel-daemon \
 "
-IMAGE_INSTALL:append:emb-plus-ve2302 = " ${XRT_INSTALL}"
-IMAGE_INSTALL:append:emb-plus-ve2302-sdt = " ${XRT_INSTALL}"
+IMAGE_INSTALL:append:emb-plus-ve2302-xrt = " ${XRT_INSTALL}"

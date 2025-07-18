@@ -4,19 +4,19 @@ This layer enables AMD Embedded Plus platform.
 
 ## Embedded Plus buildable machines and images
 
-The following MACHINE and build target combinations are possible to build artifacts for
+The following MACHINE and build target combinations are possible to build artifacts in SDT flow for
 the Embedded Plus platform:
 
 | Machine             | Target             | Description            |
 |---------------------|--------------------|------------------------|
-| emb-plus-ve2302     | emb-plus-apu-image | APU image (XSCT flow)  |
-| emb-plus-ve2302     | emb-plus-ospi      | OSPI image (XSCT flow) |
-| emb-plus-ve2302-sdt | emb-plus-apu-image | APU image (SDT flow)   |
-| emb-plus-ve2302-sdt | emb-plus-ospi      | OSPI image (SDT flow)  |
+| emb-plus-ve2302-amr | emb-plus-apu-image | APU image              |
+| emb-plus-ve2302-amr | emb-plus-ospi      | OSPI image             |
+| emb-plus-ve2302-xrt | emb-plus-apu-image | APU image              |
+| emb-plus-ve2302-xrt | emb-plus-ospi      | OSPI image             |
 
 > Usageexample:
 >
-> MACHINE=emb-plus-ve2302 bitbake emb-plus-apu-image
+> MACHINE=emb-plus-ve2302-amr bitbake emb-plus-apu-image
 
 ## Maintainers, Patches/Submissions, Community
 

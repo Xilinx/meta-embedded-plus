@@ -9,12 +9,12 @@ inherit deploy image-artifact-names amd_versal_image
 
 IMAGE_NAME_SUFFIX = ""
 
-OSPI_VERSION:emb-plus-ve2302 = "1.0"
+OSPI_VERSION:emb-plus-ve2302-xrt = "1.0"
 
-OSPI_IMAGE_VERSION:emb-plus-ve2302 = "${PN}-${MACHINE}-v${OSPI_VERSION}${IMAGE_VERSION_SUFFIX}"
+OSPI_IMAGE_VERSION:emb-plus-ve2302-xrt = "${PN}-${MACHINE}-v${OSPI_VERSION}${IMAGE_VERSION_SUFFIX}"
 
 COMPATIBLE_MACHINE = "^$"
-COMPATIBLE_MACHINE:emb-plus-ve2302 = "${MACHINE}"
+COMPATIBLE_MACHINE:emb-plus-ve2302-xrt = "${MACHINE}"
 
 do_configure[noexec] = "1"
 do_install[noexec] = "1"

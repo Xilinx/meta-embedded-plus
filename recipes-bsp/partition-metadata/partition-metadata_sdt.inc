@@ -1,7 +1,6 @@
-# For XSCT builds
 
 DEPENDS += "sdt-artifacts"
-COMPATIBLE_MACHINE:emb-plus-ve2302-sdt = "${MACHINE}"
+COMPATIBLE_MACHINE:emb-plus-ve2302-xrt = "${MACHINE}"
 
 PARTITION_METADATA_PATH ?= "${SYSTEM_DTFILE_DIR}"
 

@@ -2,7 +2,7 @@
 
 ### The following table controls the automatic generated of the machine .conf files (lines start with #M#)
 ### Machine               MULTICONFIGS                                           OVERLAY  DOMAIN   OVERRIDES       PRE   POST
-#M# emb-plus-ve2302-sdt   default       					 none     default  emb-plus-ve2302 none  none
+#M# emb-plus-ve2302-xrt   default       					 none     default  none            none  none
 #M# emb-plus-ve2302-amr   --add-config\ CONFIG_YOCTO_BBMC_CORTEXR5_0_FREERTOS=y  full     default  emb-plus-amr    none  none
 
 this=$(realpath $0)

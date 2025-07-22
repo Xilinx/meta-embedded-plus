@@ -24,89 +24,25 @@
                 #size-cells = <0x0>;
                 compatible = "cpus,cluster";
                 address-map = <0xf0000000 &amba 0xf0000000 0x10000000>,
-                 <0x0 &blp_axi_noc_mc_1x_ddr_memory 0x0 0x80000000>,
                  <0xff320000 &ipi_pmc 0xff320000 0x10000>,
                  <0xff390000 &ipi_pmc_nobuf 0xff390000 0x10000>,
-                 <0xfffc0000 &blp_cips_pspmc_0_psv_ocm_ram_0_memory 0xfffc0000 0x40000>,
-                 <0x80001000 &blp_blp_logic_axi_firewall_user 0x80001000 0x1000>,
-                 <0x80010000 &blp_blp_logic_gcq_m2r 0x80010000 0x1000>,
-                 <0x80011000 &blp_blp_logic_gcq_r2a 0x80011000 0x1000>,
-                 <0x80020000 &blp_blp_logic_base_clocking_pr_reset_gpio 0x80020000 0x1000>,
-                 <0x80021000 &blp_blp_logic_axi_uart_rpu 0x80021000 0x1000>,
-                 <0x80030000 &blp_blp_logic_ulp_clocking_shell_utils_ucc 0x80030000 0x10000>,
-                 <0x80042000 &blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_00 0x80042000 0x1000>,
-                 <0x80043000 &blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_01 0x80043000 0x1000>,
-                 <0x80044000 &blp_blp_logic_pfm_irq_ctlr 0x80044000 0x1000>,
-                 <0x80045000 &blp_blp_logic_uuid_register 0x80045000 0x1000>,
                  <0xf0310000 &pmc_ppu1_mdm_0 0xf0310000 0x8000>,
                  <0xf1000000 &i2c2 0xf1000000 0x10000>,
                  <0xf1010000 &ospi 0xf1010000 0x10000>,
                  <0xf1020000 &gpio1 0xf1020000 0x10000>,
-                 <0xf1110000 &blp_cips_pspmc_0_psv_pmc_global_0 0xf1110000 0x50000>,
-                 <0xf1160000 &blp_cips_pspmc_0_psv_pmc_analog_0 0xf1160000 0x30000>,
-                 <0xf11a0000 &blp_cips_pspmc_0_psv_pmc_tap 0xf11a0000 0x20000>,
                  <0xf11c0000 &dma0 0xf11c0000 0x10000>,
                  <0xf11d0000 &dma1 0xf11d0000 0x10000>,
-                 <0xf11e0000 &blp_cips_pspmc_0_psv_pmc_aes 0xf11e0000 0x10000>,
-                 <0xf11f0000 &blp_cips_pspmc_0_psv_pmc_bbram_ctrl 0xf11f0000 0x10000>,
-                 <0xf1200000 &blp_cips_pspmc_0_psv_pmc_rsa 0xf1200000 0x10000>,
-                 <0xf1210000 &blp_cips_pspmc_0_psv_pmc_sha 0xf1210000 0x10000>,
-                 <0xf1220000 &blp_cips_pspmc_0_psv_pmc_slave_boot 0xf1220000 0x10000>,
                  <0xf1230000 &pmc_trng 0xf1230000 0x10000>,
-                 <0xf1240000 &blp_cips_pspmc_0_psv_pmc_efuse_ctrl 0xf1240000 0x10000>,
-                 <0xf1250000 &blp_cips_pspmc_0_psv_pmc_efuse_cache 0xf1250000 0x10000>,
-                 <0xf1260000 &blp_cips_pspmc_0_psv_crp_0 0xf1260000 0x10000>,
                  <0xf1270000 &sysmon0 0xf1270000 0x30000>,
-                 <0xf12a0000 &rtc 0xf12a0000 0x10000>,
                  <0xf12b0000 &pmc_cfu_apb_0 0xf12b0000 0x10000>,
                  <0xf12d0000 &pmc_cfi_cframe_0 0xf12d0000 0x1000>,
-                 <0xf12f0000 &pmc_xmpu 0xf12f0000 0x10000>,
-                 <0xf1300000 &pmc_xppu_npi 0xf1300000 0x10000>,
-                 <0xf1310000 &pmc_xppu 0xf1310000 0x10000>,
-                 <0xf2100000 &blp_cips_pspmc_0_psv_pmc_slave_boot_stream 0xf2100000 0x10000>,
-                 <0xf6000000 &blp_cips_pspmc_0_psv_pmc_ram_npi 0xf6000000 0x2000000>,
-                 <0x0 &blp_cips_pspmc_0_psv_cpm 0x0 0xfd000000>,
-                 <0xfd000000 &cci 0xfd000000 0x100000>,
-                 <0xfd1a0000 &blp_cips_pspmc_0_psv_crf_0 0xfd1a0000 0x140000>,
-                 <0xfd360000 &blp_cips_pspmc_0_psv_fpd_afi_0 0xfd360000 0x10000>,
-                 <0xfd380000 &blp_cips_pspmc_0_psv_fpd_afi_2 0xfd380000 0x10000>,
-                 <0xfd390000 &fpd_xmpu 0xfd390000 0x10000>,
-                 <0xfd5e0000 &blp_cips_pspmc_0_psv_fpd_cci_0 0xfd5e0000 0x10000>,
-                 <0xfd5f0000 &blp_cips_pspmc_0_psv_fpd_smmu_0 0xfd5f0000 0x10000>,
-                 <0xfd610000 &blp_cips_pspmc_0_psv_fpd_slcr_0 0xfd610000 0x10000>,
-                 <0xfd690000 &blp_cips_pspmc_0_psv_fpd_slcr_secure_0 0xfd690000 0x10000>,
-                 <0xfd700000 &blp_cips_pspmc_0_psv_fpd_gpv_0 0xfd700000 0x100000>,
-                 <0xfd800000 &smmu 0xfd800000 0x800000>,
                  <0xff000000 &serial0 0xff000000 0x10000>,
                  <0xff010000 &serial1 0xff010000 0x10000>,
-                 <0xff040000 &spi0 0xff040000 0x10000>,
-                 <0xff080000 &blp_cips_pspmc_0_psv_lpd_iou_slcr_0 0xff080000 0x20000>,
-                 <0xff0a0000 &blp_cips_pspmc_0_psv_lpd_iou_secure_slcr_0 0xff0a0000 0x10000>,
                  <0xff0b0000 &gpio0 0xff0b0000 0x10000>,
                  <0xff0e0000 &ttc0 0xff0e0000 0x10000>,
                  <0xff0f0000 &ttc1 0xff0f0000 0x10000>,
                  <0xff100000 &ttc2 0xff100000 0x10000>,
                  <0xff110000 &ttc3 0xff110000 0x10000>,
-                 <0xff130000 &blp_cips_pspmc_0_psv_scntr_0 0xff130000 0x10000>,
-                 <0xff140000 &blp_cips_pspmc_0_psv_scntrs_0 0xff140000 0x10000>,
-                 <0xff410000 &blp_cips_pspmc_0_psv_lpd_slcr_0 0xff410000 0x100000>,
-                 <0xff510000 &blp_cips_pspmc_0_psv_lpd_slcr_secure_0 0xff510000 0x40000>,
-                 <0xff5e0000 &blp_cips_pspmc_0_psv_crl_0 0xff5e0000 0x300000>,
-                 <0xff8e0000 &blp_cips_pspmc_0_psv_xram_ctrl_1 0xff8e0000 0x10000>,
-                 <0xff8f0000 &blp_cips_pspmc_0_psv_xram_ctrl_2 0xff8f0000 0x10000>,
-                 <0xff900000 &blp_cips_pspmc_0_psv_xram_ctrl_3 0xff900000 0x10000>,
-                 <0xff910000 &blp_cips_pspmc_0_psv_xram_ctrl_4 0xff910000 0x10000>,
-                 <0xff930000 &blp_cips_pspmc_0_psv_xram_xmpu_bank_1 0xff930000 0x4000>,
-                 <0xff934000 &blp_cips_pspmc_0_psv_xram_xmpu_bank_2 0xff934000 0x4000>,
-                 <0xff938000 &blp_cips_pspmc_0_psv_xram_xmpu_bank_3 0xff938000 0x4000>,
-                 <0xff93c000 &blp_cips_pspmc_0_psv_xram_xmpu_bank_4 0xff93c000 0x4000>,
-                 <0xff940000 &blp_cips_pspmc_0_psv_xram_gpv 0xff940000 0x10000>,
-                 <0xff950000 &blp_cips_pspmc_0_psv_xram_global_ctrl 0xff950000 0x10000>,
-                 <0xff960000 &blp_cips_pspmc_0_psv_ocm_ctrl 0xff960000 0x10000>,
-                 <0xff970000 &blp_cips_pspmc_0_psv_xram_atm 0xff970000 0x10000>,
-                 <0xff980000 &ocm_xmpu 0xff980000 0x10000>,
-                 <0xff990000 &lpd_xppu 0xff990000 0x10000>,
-                 <0xff9b0000 &blp_cips_pspmc_0_psv_lpd_afi_0 0xff9b0000 0x10000>,
                  <0xffa80000 &lpd_dma_chan0 0xffa80000 0x10000>,
                  <0xffa90000 &lpd_dma_chan1 0xffa90000 0x10000>,
                  <0xffaa0000 &lpd_dma_chan2 0xffaa0000 0x10000>,
@@ -115,18 +51,10 @@
                  <0xffad0000 &lpd_dma_chan5 0xffad0000 0x10000>,
                  <0xffae0000 &lpd_dma_chan6 0xffae0000 0x10000>,
                  <0xffaf0000 &lpd_dma_chan7 0xffaf0000 0x10000>,
-                 <0xffc90000 &blp_cips_pspmc_0_psv_psm_global_reg 0xffc90000 0xf000>,
-                 <0xffe00000 &psv_r5_0_atcm_global 0xffe00000 0x40000>,
-                 <0xffe90000 &psv_r5_1_atcm_global 0xffe90000 0x10000>,
-                 <0xffeb0000 &psv_r5_1_btcm_global 0xffeb0000 0x10000>,
-                 <0xf0083000 &blp_cips_pspmc_0_psv_pmc_tmr_inject_0 0xf0083000 0x1000>,
-                 <0xf0200000 &blp_cips_pspmc_0_psv_pmc_ram_instr_cntlr 0xf0200000 0x40000>,
-                 <0xf0240000 &blp_cips_pspmc_0_psv_pmc_ram_data_cntlr 0xf0240000 0x20000>,
-                 <0xf0280000 &iomodule0 0xf0280000 0x1000>,
-                 <0xf0283000 &blp_cips_pspmc_0_psv_pmc_tmr_manager_0 0xf0283000 0x1000>;
+                 <0xf0280000 &iomodule0 0xf0280000 0x1000>;
                 #ranges-address-cells = <0x1>;
                 #ranges-size-cells = <0x1>;
-                phandle = <0xba>;
+                phandle = <0xb6>;
 
                 psv_pmc_0: cpu@0 {
                         compatible = "pmc-microblaze";
@@ -354,7 +282,7 @@
                         xlnx,dcache-victims = <0x0>;
                         xlnx,m-axi-dc-user-value = <0x1f>;
                         xlnx,unaligned-exceptions = <0x1>;
-                        phandle = <0xbb>;
+                        phandle = <0xb7>;
                 };
         };
 
@@ -393,13 +321,13 @@
                 fpga-mgr = <&versal_fpga>;
                 #address-cells = <0x2>;
                 #size-cells = <0x2>;
-                phandle = <0xc3>;
+                phandle = <0xbf>;
         };
 
         psci: psci {
                 compatible = "arm,psci-0.2";
                 method = "smc";
-                phandle = <0xc4>;
+                phandle = <0xc0>;
         };
 
         pmu {
@@ -412,12 +340,12 @@
                 compatible = "arm,armv8-timer";
                 interrupt-parent = <&imux>;
                 interrupts = <0x1 0xd 0x4 0x1 0xe 0x4 0x1 0xb 0x4 0x1 0xa 0x4>;
-                phandle = <0xc5>;
+                phandle = <0xc1>;
         };
 
         versal_fpga: versal-fpga {
                 compatible = "xlnx,versal-fpga";
-                phandle = <0xac>;
+                phandle = <0xa8>;
         };
 
         sensor0: versal-thermal-sensor {
@@ -425,7 +353,7 @@
                 #thermal-sensor-cells = <0x0>;
                 io-channels = <&sysmon0>;
                 io-channel-names = "sysmon-temp-channel";
-                phandle = <0xae>;
+                phandle = <0xaa>;
         };
 
         thermal-zones {
@@ -433,8 +361,8 @@
                 versal_thermal: versal-thermal {
                         polling-delay-passive = <0xfa>;
                         polling-delay = <0x3e8>;
-                        thermal-sensors = <0xae>;
-                        phandle = <0xc6>;
+                        thermal-sensors = <0xaa>;
+                        phandle = <0xc2>;
 
                         trips {
 
@@ -442,14 +370,14 @@
                                         temperature = <0x11170>;
                                         hysteresis = <0x0>;
                                         type = "passive";
-                                        phandle = <0xc7>;
+                                        phandle = <0xc3>;
                                 };
 
                                 ot_crit: ot-crit {
                                         temperature = <0x1e848>;
                                         hysteresis = <0x0>;
                                         type = "critical";
-                                        phandle = <0xc8>;
+                                        phandle = <0xc4>;
                                 };
                         };
                 };
@@ -470,7 +398,7 @@
                 #size-cells = <0x2>;
                 ranges;
                 bootph-all;
-                phandle = <0x9d>;
+                phandle = <0x99>;
         };
 
         amba: axi {
@@ -488,28 +416,8 @@
                         #interrupt-cells = <0x3>;
                         interrupt-controller;
                         interrupt-map-mask = <0x0 0xffff 0x0>;
-                        interrupt-map = <0x0 0x14 0x0 0x4e 0x0 0x14 0x1 0x0 0x15 0x0 0x4e 0x0 0x15 0x1 0x0 0x6a 0x0 0x4e 0x0 0x6a 0x4 0x0 0x3c 0x0 0x4e 0x0 0x3c 0x4 0x0 0x3d 0x0 0x4e 0x0 0x3d 0x4 0x0 0x3e 0x0 0x4e 0x0 0x3e 0x4 0x0 0x3f 0x0 0x4e 0x0 0x3f 0x4 0x0 0x40 0x0 0x4e 0x0 0x40 0x4 0x0 0x41 0x0 0x4e 0x0 0x41 0x4 0x0 0x42 0x0 0x4e 0x0 0x42 0x4 0x0 0x43 0x0 0x4e 0x0 0x43 0x4 0x0 0x38 0x0 0x4e 0x0 0x38 0x4 0x0 0x3a 0x0 0x4e 0x0 0x3a 0x4 0x0 0xd 0x0 0x4e 0x0 0xd 0x4 0x0 0x7a 0x0 0x4e 0x0 0x7a 0x4 0x0 0xe 0x0 0x4e 0x0 0xe 0x4 0x0 0xf 0x0 0x4e 0x0 0xf 0x4 0x0 0x8e 0x0 0x4e 0x0 0x8e 0x4 0x0 0x8f 0x0 0x4e 0x0 0x8f 0x4 0x0 0x7e 0x0 0x4e 0x0 0x7e 0x4 0x0 0x80 0x0 0x4e 0x0 0x80 0x4 0x0 0x12 0x0 0x4e 0x0 0x12 0x4 0x0 0x13 0x0 0x4e 0x0 0x13 0x4 0x0 0x6b 0x0 0x4e 0x0 0x6b 0x4 0x0 0x7c 0x0 0x4e 0x0 0x7c 0x4 0x0 0x7d 0x0 0x4e 0x0 0x7d 0x4 0x0 0x10 0x0 0x4e 0x0 0x10 0x4 0x0 0x11 0x0 0x4e 0x0 0x11 0x4 0x0 0x16 0x0 0x4e 0x0 0x16 0x4 0x0 0x1a 0x0 0x4e 0x0 0x1a 0x4 0x0 0x4a 0x0 0x4e 0x0 0x4a 0x4 0x0 0x48 0x0 0x4e 0x0 0x48 0x4 0x0 0x1e 0x0 0x4e 0x0 0x1e 0x4 0x0 0x1f 0x0 0x4e 0x0 0x1f 0x4 0x0 0x83 0x0 0x4e 0x0 0x83 0x4 0x0 0x84 0x0 0x4e 0x0 0x84 0x4 0x0 0x14 0x0 0xa3 0x0 0x14 0x1 0x0 0x15 0x0 0xa3 0x0 0x15 0x1 0x0 0x6a 0x0 0xa3 0x0 0x6a 0x4 0x0 0x3c 0x0 0xa3 0x0 0x3c 0x4 0x0 0x3d 0x0 0xa3 0x0 0x3d 0x4 0x0 0x3e 0x0 0xa3 0x0 0x3e 0x4 0x0 0x3f 0x0 0xa3 0x0 0x3f 0x4 0x0 0x40 0x0 0xa3 0x0 0x40 0x4 0x0 0x41 0x0 0xa3 0x0 0x41 0x4 0x0 0x42 0x0 0xa3 0x0 0x42 0x4 0x0 0x43 0x0 0xa3 0x0 0x43 0x4 0x0 0x38 0x0 0xa3 0x0 0x38 0x4 0x0 0x3a 0x0 0xa3 0x0 0x3a 0x4 0x0 0xd 0x0 0xa3 0x0 0xd 0x4 0x0 0x7a 0x0 0xa3 0x0 0x7a 0x4 0x0 0xe 0x0 0xa3 0x0 0xe 0x4 0x0 0xf 0x0 0xa3 0x0 0xf 0x4 0x0 0x8e 0x0 0xa3 0x0 0x8e 0x4 0x0 0x8f 0x0 0xa3 0x0 0x8f 0x4 0x0 0x7e 0x0 0xa3 0x0 0x7e 0x4 0x0 0x80 0x0 0xa3 0x0 0x80 0x4 0x0 0x12 0x0 0xa3 0x0 0x12 0x4 0x0 0x13 0x0 0xa3 0x0 0x13 0x4 0x0 0x6b 0x0 0xa3 0x0 0x6b 0x4 0x0 0x7c 0x0 0xa3 0x0 0x7c 0x4 0x0 0x7d 0x0 0xa3 0x0 0x7d 0x4 0x0 0x10 0x0 0xa3 0x0 0x10 0x4 0x0 0x11 0x0 0xa3 0x0 0x11 0x4 0x0 0x16 0x0 0xa3 0x0 0x16 0x4 0x0 0x1a 0x0 0xa3 0x0 0x1a 0x4 0x0 0x4a 0x0 0xa3 0x0 0x4a 0x4 0x0 0x48 0x0 0xa3 0x0 0x48 0x4 0x0 0x1e 0x0 0xa3 0x0 0x1e 0x4 0x0 0x1f 0x0 0xa3 0x0 0x1f 0x4 0x0 0x83 0x0 0xa3 0x0 0x83 0x4 0x0 0x84 0x0 0xa3 0x0 0x84 0x4>;
-                        phandle = <0xad>;
-                };
-
-                cci: cci@fd000000 {
-                        compatible = "arm,cci-500";
-                        status = "okay";
-                        reg = <0x0 0xfd000000 0x0 0x10000>;
-                        ranges = <0x0 0x0 0xfd000000 0xa0000>;
-                        #address-cells = <0x1>;
-                        #size-cells = <0x1>;
-                        xlnx,ip-name = "psv_fpd_maincci";
-                        xlnx,name = "blp_cips_pspmc_0_psv_fpd_maincci_0";
-                        phandle = <0x50>;
-
-                        cci_pmu: pmu@10000 {
-                                compatible = "arm,cci-500-pmu,r0";
-                                reg = <0x10000 0x90000>;
-                                interrupt-parent = <&imux>;
-                                interrupts = <0x0 0x6a 0x4 0x0 0x6a 0x4 0x0 0x6a 0x4 0x0 0x6a 0x4 0x0 0x6a 0x4 0x0 0x6a 0x4 0x0 0x6a 0x4 0x0 0x6a 0x4>;
-                                phandle = <0xcb>;
-                        };
+                        interrupt-map = <0x0 0x14 0x0 0x4e 0x0 0x14 0x1 0x0 0x15 0x0 0x4e 0x0 0x15 0x1 0x0 0x6a 0x0 0x4e 0x0 0x6a 0x4 0x0 0x3c 0x0 0x4e 0x0 0x3c 0x4 0x0 0x3d 0x0 0x4e 0x0 0x3d 0x4 0x0 0x3e 0x0 0x4e 0x0 0x3e 0x4 0x0 0x3f 0x0 0x4e 0x0 0x3f 0x4 0x0 0x40 0x0 0x4e 0x0 0x40 0x4 0x0 0x41 0x0 0x4e 0x0 0x41 0x4 0x0 0x42 0x0 0x4e 0x0 0x42 0x4 0x0 0x43 0x0 0x4e 0x0 0x43 0x4 0x0 0x38 0x0 0x4e 0x0 0x38 0x4 0x0 0x3a 0x0 0x4e 0x0 0x3a 0x4 0x0 0xd 0x0 0x4e 0x0 0xd 0x4 0x0 0x7a 0x0 0x4e 0x0 0x7a 0x4 0x0 0xe 0x0 0x4e 0x0 0xe 0x4 0x0 0xf 0x0 0x4e 0x0 0xf 0x4 0x0 0x8e 0x0 0x4e 0x0 0x8e 0x4 0x0 0x8f 0x0 0x4e 0x0 0x8f 0x4 0x0 0x7e 0x0 0x4e 0x0 0x7e 0x4 0x0 0x80 0x0 0x4e 0x0 0x80 0x4 0x0 0x12 0x0 0x4e 0x0 0x12 0x4 0x0 0x13 0x0 0x4e 0x0 0x13 0x4 0x0 0x6b 0x0 0x4e 0x0 0x6b 0x4 0x0 0x7c 0x0 0x4e 0x0 0x7c 0x4 0x0 0x7d 0x0 0x4e 0x0 0x7d 0x4 0x0 0x10 0x0 0x4e 0x0 0x10 0x4 0x0 0x11 0x0 0x4e 0x0 0x11 0x4 0x0 0x16 0x0 0x4e 0x0 0x16 0x4 0x0 0x1a 0x0 0x4e 0x0 0x1a 0x4 0x0 0x4a 0x0 0x4e 0x0 0x4a 0x4 0x0 0x48 0x0 0x4e 0x0 0x48 0x4 0x0 0x1e 0x0 0x4e 0x0 0x1e 0x4 0x0 0x1f 0x0 0x4e 0x0 0x1f 0x4 0x0 0x83 0x0 0x4e 0x0 0x83 0x4 0x0 0x84 0x0 0x4e 0x0 0x84 0x4 0x0 0x14 0x0 0x9f 0x0 0x14 0x1 0x0 0x15 0x0 0x9f 0x0 0x15 0x1 0x0 0x6a 0x0 0x9f 0x0 0x6a 0x4 0x0 0x3c 0x0 0x9f 0x0 0x3c 0x4 0x0 0x3d 0x0 0x9f 0x0 0x3d 0x4 0x0 0x3e 0x0 0x9f 0x0 0x3e 0x4 0x0 0x3f 0x0 0x9f 0x0 0x3f 0x4 0x0 0x40 0x0 0x9f 0x0 0x40 0x4 0x0 0x41 0x0 0x9f 0x0 0x41 0x4 0x0 0x42 0x0 0x9f 0x0 0x42 0x4 0x0 0x43 0x0 0x9f 0x0 0x43 0x4 0x0 0x38 0x0 0x9f 0x0 0x38 0x4 0x0 0x3a 0x0 0x9f 0x0 0x3a 0x4 0x0 0xd 0x0 0x9f 0x0 0xd 0x4 0x0 0x7a 0x0 0x9f 0x0 0x7a 0x4 0x0 0xe 0x0 0x9f 0x0 0xe 0x4 0x0 0xf 0x0 0x9f 0x0 0xf 0x4 0x0 0x8e 0x0 0x9f 0x0 0x8e 0x4 0x0 0x8f 0x0 0x9f 0x0 0x8f 0x4 0x0 0x7e 0x0 0x9f 0x0 0x7e 0x4 0x0 0x80 0x0 0x9f 0x0 0x80 0x4 0x0 0x12 0x0 0x9f 0x0 0x12 0x4 0x0 0x13 0x0 0x9f 0x0 0x13 0x4 0x0 0x6b 0x0 0x9f 0x0 0x6b 0x4 0x0 0x7c 0x0 0x9f 0x0 0x7c 0x4 0x0 0x7d 0x0 0x9f 0x0 0x7d 0x4 0x0 0x10 0x0 0x9f 0x0 0x10 0x4 0x0 0x11 0x0 0x9f 0x0 0x11 0x4 0x0 0x16 0x0 0x9f 0x0 0x16 0x4 0x0 0x1a 0x0 0x9f 0x0 0x1a 0x4 0x0 0x4a 0x0 0x9f 0x0 0x4a 0x4 0x0 0x48 0x0 0x9f 0x0 0x48 0x4 0x0 0x1e 0x0 0x9f 0x0 0x1e 0x4 0x0 0x1f 0x0 0x9f 0x0 0x1f 0x4 0x0 0x83 0x0 0x9f 0x0 0x83 0x4 0x0 0x84 0x0 0x9f 0x0 0x84 0x4>;
+                        phandle = <0xa9>;
                 };
 
                 lpd_dma_chan0: dma-controller@ffa80000 {
@@ -731,21 +639,7 @@
                         reg = <0x0 0xff960000 0x0 0x1000>;
                         interrupts = <0x0 0xa 0x4>;
                         interrupt-parent = <&imux>;
-                        phandle = <0xd4>;
-                };
-
-                rtc: rtc@f12a0000 {
-                        compatible = "xlnx,zynqmp-rtc";
-                        status = "okay";
-                        reg = <0x0 0xf12a0000 0x0 0x100>;
-                        interrupt-names = "alarm", "sec";
-                        interrupts = <0x0 0x8e 0x4 0x0 0x8f 0x4>;
-                        interrupt-parent = <&imux>;
-                        calibration = <0x7fff>;
-                        power-domains = <&versal_firmware 0x18224034>;
-                        xlnx,ip-name = "psv_pmc_rtc";
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_rtc_0";
-                        phandle = <0x46>;
+                        phandle = <0xd0>;
                 };
 
                 serial0: serial@ff000000 {
@@ -798,20 +692,6 @@
                         phandle = <0x5d>;
                 };
 
-                smmu: iommu@fd800000 {
-                        compatible = "arm,mmu-500";
-                        status = "okay";
-                        reg = <0x0 0xfd800000 0x0 0x40000>;
-                        stream-match-mask = <0x7c00>;
-                        #iommu-cells = <0x1>;
-                        #global-interrupts = <0x1>;
-                        interrupts = <0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4 0x0 0x6b 0x4>;
-                        interrupt-parent = <&imux>;
-                        xlnx,ip-name = "psv_fpd_smmutcu";
-                        xlnx,name = "blp_cips_pspmc_0_psv_fpd_smmutcu_0";
-                        phandle = <0x5b>;
-                };
-
                 ospi: spi@f1010000 {
                         compatible = "xlnx,versal-ospi-1.0", "cdns,qspi-nor";
                         status = "okay";
@@ -837,29 +717,6 @@
                         xlnx,ospi-mode = <0x0>;
                         xlnx,name = "blp_cips_pspmc_0_psv_pmc_ospi_0";
                         phandle = <0x35>;
-                };
-
-                spi0: spi@ff040000 {
-                        compatible = "cdns,spi-r1p6";
-                        status = "okay";
-                        reg = <0x0 0xff040000 0x0 0x1000>;
-                        interrupts = <0x0 0x10 0x4>;
-                        interrupt-parent = <&imux>;
-                        clock-names = "ref_clk", "pclk";
-                        #address-cells = <0x1>;
-                        #size-cells = <0x0>;
-                        clocks = <&versal_clk 0x5e>,
-                         <&versal_clk 0x52>;
-                        power-domains = <&versal_firmware 0x1822401b>;
-                        xlnx,spi-board-interface = "custom";
-                        xlnx,has-ss0 = <0x1>;
-                        xlnx,ip-name = "psv_spi";
-                        xlnx,has-ss1 = <0x0>;
-                        num-cs = <0x1>;
-                        xlnx,spi-clk-freq-hz = <0xbebc149>;
-                        xlnx,has-ss2 = <0x0>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_spi_0";
-                        phandle = <0x5e>;
                 };
 
                 sysmon0: sysmon@f1270000 {
@@ -1272,7 +1129,7 @@
                         xlnx,gpo2-init = <0x0>;
                         xlnx,io-mask = <0xfffe0000>;
                         xlnx,lmb-awidth = <0x20>;
-                        phandle = <0x95>;
+                        phandle = <0x92>;
                 };
 
                 ipi_pmc: mailbox@ff320000 {
@@ -1303,7 +1160,7 @@
                                 xlnx,ipi-id = <0x2>;
                                 xlnx,ipi-buf-index = <0x2>;
                                 xlnx,ipi-req-msg-buf = <0xff3f0280>;
-                                phandle = <0xe3>;
+                                phandle = <0xdf>;
                         };
 
                         blp_cips_pspmc_0_psv_ipi_pmc_1: child@1 {
@@ -1312,7 +1169,7 @@
                                 xlnx,ipi-id = <0x3>;
                                 xlnx,ipi-buf-index = <0x3>;
                                 xlnx,ipi-req-msg-buf = <0xff3f02c0>;
-                                phandle = <0xe4>;
+                                phandle = <0xe0>;
                         };
 
                         blp_cips_pspmc_0_psv_ipi_pmc_2: child@2 {
@@ -1321,7 +1178,7 @@
                                 xlnx,ipi-id = <0x4>;
                                 xlnx,ipi-buf-index = <0x4>;
                                 xlnx,ipi-req-msg-buf = <0xff3f0300>;
-                                phandle = <0xe5>;
+                                phandle = <0xe1>;
                         };
 
                         blp_cips_pspmc_0_psv_ipi_pmc_3: child@3 {
@@ -1330,7 +1187,7 @@
                                 xlnx,ipi-id = <0x5>;
                                 xlnx,ipi-buf-index = <0x5>;
                                 xlnx,ipi-req-msg-buf = <0xff3f0340>;
-                                phandle = <0xe6>;
+                                phandle = <0xe2>;
                         };
 
                         blp_cips_pspmc_0_psv_ipi_pmc_4: child@4 {
@@ -1339,7 +1196,7 @@
                                 xlnx,ipi-id = <0x6>;
                                 xlnx,ipi-buf-index = <0x6>;
                                 xlnx,ipi-req-msg-buf = <0xff3f0380>;
-                                phandle = <0xe7>;
+                                phandle = <0xe3>;
                         };
 
                         blp_cips_pspmc_0_psv_ipi_pmc_5: child@5 {
@@ -1348,14 +1205,14 @@
                                 xlnx,ipi-id = <0x7>;
                                 xlnx,ipi-buf-index = <0x7>;
                                 xlnx,ipi-req-msg-buf = <0xff3f03c0>;
-                                phandle = <0xe8>;
+                                phandle = <0xe4>;
                         };
 
                         blp_cips_pspmc_0_psv_ipi_pmc_6: child@6 {
                                 xlnx,ipi-bitmask = <0x200>;
                                 xlnx,ipi-id = <0x9>;
                                 xlnx,ipi-buf-index = <0xffff>;
-                                phandle = <0xe9>;
+                                phandle = <0xe5>;
                         };
 
                         blp_cips_pspmc_0_psv_ipi_pmc_7: child@7 {
@@ -1364,14 +1221,14 @@
                                 xlnx,ipi-id = <0x1>;
                                 xlnx,ipi-buf-index = <0x1>;
                                 xlnx,ipi-req-msg-buf = <0xff3f0240>;
-                                phandle = <0xea>;
+                                phandle = <0xe6>;
                         };
 
                         blp_cips_pspmc_0_psv_ipi_pmc_8: child@8 {
                                 xlnx,ipi-bitmask = <0x100>;
                                 xlnx,ipi-id = <0x8>;
                                 xlnx,ipi-buf-index = <0xffff>;
-                                phandle = <0xeb>;
+                                phandle = <0xe7>;
                         };
 
                         blp_cips_pspmc_0_psv_ipi_pmc_9: child@9 {
@@ -1380,7 +1237,7 @@
                                 xlnx,ipi-id = <0x0>;
                                 xlnx,ipi-buf-index = <0x0>;
                                 xlnx,ipi-req-msg-buf = <0xff3f0200>;
-                                phandle = <0xec>;
+                                phandle = <0xe8>;
                         };
                 };
 
@@ -1410,468 +1267,71 @@
                                 xlnx,ipi-bitmask = <0x4>;
                                 xlnx,ipi-id = <0x2>;
                                 xlnx,ipi-buf-index = <0x2>;
-                                phandle = <0xed>;
+                                phandle = <0xe9>;
                         };
 
                         blp_cips_pspmc_0_psv_ipi_pmc_nobuf_1: child@1 {
                                 xlnx,ipi-bitmask = <0x8>;
                                 xlnx,ipi-id = <0x3>;
                                 xlnx,ipi-buf-index = <0x3>;
-                                phandle = <0xee>;
+                                phandle = <0xea>;
                         };
 
                         blp_cips_pspmc_0_psv_ipi_pmc_nobuf_2: child@2 {
                                 xlnx,ipi-bitmask = <0x10>;
                                 xlnx,ipi-id = <0x4>;
                                 xlnx,ipi-buf-index = <0x4>;
-                                phandle = <0xef>;
+                                phandle = <0xeb>;
                         };
 
                         blp_cips_pspmc_0_psv_ipi_pmc_nobuf_3: child@3 {
                                 xlnx,ipi-bitmask = <0x20>;
                                 xlnx,ipi-id = <0x5>;
                                 xlnx,ipi-buf-index = <0x5>;
-                                phandle = <0xf0>;
+                                phandle = <0xec>;
                         };
 
                         blp_cips_pspmc_0_psv_ipi_pmc_nobuf_4: child@4 {
                                 xlnx,ipi-bitmask = <0x40>;
                                 xlnx,ipi-id = <0x6>;
                                 xlnx,ipi-buf-index = <0x6>;
-                                phandle = <0xf1>;
+                                phandle = <0xed>;
                         };
 
                         blp_cips_pspmc_0_psv_ipi_pmc_nobuf_5: child@5 {
                                 xlnx,ipi-bitmask = <0x80>;
                                 xlnx,ipi-id = <0x7>;
                                 xlnx,ipi-buf-index = <0x7>;
-                                phandle = <0xf2>;
+                                phandle = <0xee>;
                         };
 
                         blp_cips_pspmc_0_psv_ipi_pmc_nobuf_6: child@6 {
                                 xlnx,ipi-bitmask = <0x200>;
                                 xlnx,ipi-id = <0x9>;
                                 xlnx,ipi-buf-index = <0xffff>;
-                                phandle = <0xf3>;
+                                phandle = <0xef>;
                         };
 
                         blp_cips_pspmc_0_psv_ipi_pmc_nobuf_7: child@7 {
                                 xlnx,ipi-bitmask = <0x2>;
                                 xlnx,ipi-id = <0x1>;
                                 xlnx,ipi-buf-index = <0x1>;
-                                phandle = <0xf4>;
+                                phandle = <0xf0>;
                         };
 
                         blp_cips_pspmc_0_psv_ipi_pmc_nobuf_8: child@8 {
                                 xlnx,ipi-bitmask = <0x100>;
                                 xlnx,ipi-id = <0x8>;
                                 xlnx,ipi-buf-index = <0xffff>;
-                                phandle = <0xf5>;
+                                phandle = <0xf1>;
                         };
 
                         blp_cips_pspmc_0_psv_ipi_pmc_nobuf_9: child@9 {
                                 xlnx,ipi-bitmask = <0x1>;
                                 xlnx,ipi-id = <0x0>;
                                 xlnx,ipi-buf-index = <0x0>;
-                                phandle = <0xf6>;
+                                phandle = <0xf2>;
                         };
-                };
-
-                blp_cips_pspmc_0_psv_cpm: blp_cips_pspmc_0_psv_cpm@0 {
-                        compatible = "xlnx,psv-cpm-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_cpm";
-                        reg = <0x0 0xfc000000 0x0 0x1000000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_cpm";
-                        phandle = <0x4f>;
-                };
-
-                blp_cips_pspmc_0_psv_crf_0: blp_cips_pspmc_0_psv_crf_0@fd1a0000 {
-                        compatible = "xlnx,psv-crf-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_crf";
-                        reg = <0x0 0xfd1a0000 0x0 0x140000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_crf_0";
-                        phandle = <0x51>;
-                };
-
-                blp_cips_pspmc_0_psv_crl_0: blp_cips_pspmc_0_psv_crl_0@ff5e0000 {
-                        compatible = "xlnx,psv-crl-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_crl";
-                        reg = <0x0 0xff5e0000 0x0 0x300000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_crl_0";
-                        phandle = <0x6a>;
-                };
-
-                blp_cips_pspmc_0_psv_crp_0: blp_cips_pspmc_0_psv_crp_0@f1260000 {
-                        compatible = "xlnx,psv-crp-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_crp";
-                        reg = <0x0 0xf1260000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_crp_0";
-                        phandle = <0x44>;
-                };
-
-                blp_cips_pspmc_0_psv_fpd_afi_0: blp_cips_pspmc_0_psv_fpd_afi_0@fd360000 {
-                        compatible = "xlnx,psv-fpd-afi-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_fpd_afi";
-                        reg = <0x0 0xfd360000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_fpd_afi_0";
-                        phandle = <0x52>;
-                };
-
-                blp_cips_pspmc_0_psv_fpd_afi_2: blp_cips_pspmc_0_psv_fpd_afi_2@fd380000 {
-                        compatible = "xlnx,psv-fpd-afi-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_fpd_afi";
-                        reg = <0x0 0xfd380000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_fpd_afi_2";
-                        phandle = <0x53>;
-                };
-
-                blp_cips_pspmc_0_psv_fpd_cci_0: blp_cips_pspmc_0_psv_fpd_cci_0@fd5e0000 {
-                        compatible = "xlnx,psv-fpd-cci-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_fpd_cci";
-                        reg = <0x0 0xfd5e0000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_fpd_cci_0";
-                        phandle = <0x56>;
-                };
-
-                blp_cips_pspmc_0_psv_fpd_gpv_0: blp_cips_pspmc_0_psv_fpd_gpv_0@fd700000 {
-                        compatible = "xlnx,psv-fpd-gpv-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_fpd_gpv";
-                        reg = <0x0 0xfd700000 0x0 0x100000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_fpd_gpv_0";
-                        phandle = <0x5a>;
-                };
-
-                blp_cips_pspmc_0_psv_fpd_slcr_0: blp_cips_pspmc_0_psv_fpd_slcr_0@fd610000 {
-                        compatible = "xlnx,psv-fpd-slcr-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_fpd_slcr";
-                        reg = <0x0 0xfd610000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_fpd_slcr_0";
-                        phandle = <0x58>;
-                };
-
-                blp_cips_pspmc_0_psv_fpd_slcr_secure_0: blp_cips_pspmc_0_psv_fpd_slcr_secure_0@fd690000 {
-                        compatible = "xlnx,psv-fpd-slcr-secure-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_fpd_slcr_secure";
-                        reg = <0x0 0xfd690000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_fpd_slcr_secure_0";
-                        phandle = <0x59>;
-                };
-
-                blp_cips_pspmc_0_psv_fpd_smmu_0: blp_cips_pspmc_0_psv_fpd_smmu_0@fd5f0000 {
-                        compatible = "xlnx,psv-fpd-smmu-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_fpd_smmu";
-                        reg = <0x0 0xfd5f0000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_fpd_smmu_0";
-                        phandle = <0x57>;
-                };
-
-                blp_cips_pspmc_0_psv_lpd_afi_0: blp_cips_pspmc_0_psv_lpd_afi_0@ff9b0000 {
-                        compatible = "xlnx,psv-lpd-afi-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_lpd_afi";
-                        reg = <0x0 0xff9b0000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_lpd_afi_0";
-                        phandle = <0x7a>;
-                };
-
-                blp_cips_pspmc_0_psv_lpd_iou_secure_slcr_0: blp_cips_pspmc_0_psv_lpd_iou_secure_slcr_0@ff0a0000 {
-                        compatible = "xlnx,psv-lpd-iou-secure-slcr-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_lpd_iou_secure_slcr";
-                        reg = <0x0 0xff0a0000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_lpd_iou_secure_slcr_0";
-                        phandle = <0x60>;
-                };
-
-                blp_cips_pspmc_0_psv_lpd_iou_slcr_0: blp_cips_pspmc_0_psv_lpd_iou_slcr_0@ff080000 {
-                        compatible = "xlnx,psv-lpd-iou-slcr-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_lpd_iou_slcr";
-                        reg = <0x0 0xff080000 0x0 0x20000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_lpd_iou_slcr_0";
-                        phandle = <0x5f>;
-                };
-
-                blp_cips_pspmc_0_psv_lpd_slcr_0: blp_cips_pspmc_0_psv_lpd_slcr_0@ff410000 {
-                        compatible = "xlnx,psv-lpd-slcr-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_lpd_slcr";
-                        reg = <0x0 0xff410000 0x0 0x100000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_lpd_slcr_0";
-                        phandle = <0x68>;
-                };
-
-                blp_cips_pspmc_0_psv_lpd_slcr_secure_0: blp_cips_pspmc_0_psv_lpd_slcr_secure_0@ff510000 {
-                        compatible = "xlnx,psv-lpd-slcr-secure-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_lpd_slcr_secure";
-                        reg = <0x0 0xff510000 0x0 0x40000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_lpd_slcr_secure_0";
-                        phandle = <0x69>;
-                };
-
-                blp_cips_pspmc_0_psv_ocm_ctrl: blp_cips_pspmc_0_psv_ocm_ctrl@ff960000 {
-                        compatible = "xlnx,psv-ocm-1.0";
-                        status = "okay";
-                        power-domains = <&versal_firmware 0x18314007>;
-                        xlnx,ip-name = "psv_ocm";
-                        reg = <0x0 0xff960000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_ocm_ctrl";
-                        phandle = <0x75>;
-                };
-
-                blp_cips_pspmc_0_psv_pmc_aes: blp_cips_pspmc_0_psv_pmc_aes@f11e0000 {
-                        compatible = "xlnx,psv-pmc-aes-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_pmc_aes";
-                        reg = <0x0 0xf11e0000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_aes";
-                        phandle = <0x3c>;
-                };
-
-                blp_cips_pspmc_0_psv_pmc_analog_0: blp_cips_pspmc_0_psv_pmc_analog_0@f1160000 {
-                        compatible = "xlnx,psv-pmc-analog-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_pmc_analog";
-                        reg = <0x0 0xf1160000 0x0 0x30000>;
-                        xlnx,npi-scan = <0x0>;
-                        xlnx,event-log = <0x0>;
-                        xlnx,cram-scan = <0x0>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_analog_0";
-                        phandle = <0x38>;
-                };
-
-                blp_cips_pspmc_0_psv_pmc_bbram_ctrl: blp_cips_pspmc_0_psv_pmc_bbram_ctrl@f11f0000 {
-                        compatible = "xlnx,psv-pmc-bbram-ctrl-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_pmc_bbram_ctrl";
-                        reg = <0x0 0xf11f0000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_bbram_ctrl";
-                        phandle = <0x3d>;
-                };
-
-                blp_cips_pspmc_0_psv_pmc_efuse_cache: blp_cips_pspmc_0_psv_pmc_efuse_cache@f1250000 {
-                        compatible = "xlnx,psv-pmc-efuse-cache-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_pmc_efuse_cache";
-                        reg = <0x0 0xf1250000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_efuse_cache";
-                        phandle = <0x43>;
-                };
-
-                blp_cips_pspmc_0_psv_pmc_efuse_ctrl: blp_cips_pspmc_0_psv_pmc_efuse_ctrl@f1240000 {
-                        compatible = "xlnx,psv-pmc-efuse-ctrl-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_pmc_efuse_ctrl";
-                        reg = <0x0 0xf1240000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_efuse_ctrl";
-                        phandle = <0x42>;
-                };
-
-                blp_cips_pspmc_0_psv_pmc_global_0: blp_cips_pspmc_0_psv_pmc_global_0@f1110000 {
-                        compatible = "xlnx,psv-pmc-global-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_pmc_global";
-                        reg = <0x0 0xf1110000 0x0 0x50000>;
-                        xlnx,npi-scan = <0x0>;
-                        xlnx,event-log = <0x0>;
-                        xlnx,cram-scan = <0x0>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_global_0";
-                        phandle = <0x37>;
-                };
-
-                blp_cips_pspmc_0_psv_pmc_ram_data_cntlr: blp_cips_pspmc_0_psv_pmc_ram_data_cntlr@f0240000 {
-                        xlnx,edk-special = "BRAM_CTRL";
-                        xlnx,write-access = <0x2>;
-                        compatible = "xlnx,ram-data-cntlr-1.0";
-                        xlnx,ecc-onoff-register = <0x1>;
-                        xlnx,ecc-onoff-reset-value = <0x1>;
-                        xlnx,s-axi-ctrl-protocol = "AXI4LITE";
-                        xlnx,mask = <0xffffffff 0xffffe000>;
-                        xlnx,mask1 = <0xffffffff 0xffffe000>;
-                        xlnx,s-axi-ctrl-aclk-freq-hz = <0x5f5e100>;
-                        xlnx,mask2 = <0x800000>;
-                        xlnx,fault-inject = <0x1>;
-                        xlnx,mask3 = <0x800000>;
-                        xlnx,ip-name = "ram_data_cntlr";
-                        xlnx,num-lmb = <0x2>;
-                        reg = <0x0 0xf0240000 0x0 0x20000>;
-                        xlnx,s-axi-ctrl-addr-width = <0x20>;
-                        xlnx,ecc-status-registers = <0x1>;
-                        xlnx,ce-counter-width = <0x10>;
-                        xlnx,ecc = <0x1>;
-                        xlnx,edk-iptype = "PERIPHERAL";
-                        xlnx,lmb-dwidth = <0x20>;
-                        xlnx,interconnect = <0x2>;
-                        xlnx,ce-failing-registers = <0x1>;
-                        xlnx,ue-failing-registers = <0x1>;
-                        status = "okay";
-                        xlnx,s-axi-ctrl-data-width = <0x20>;
-                        xlnx,bram-awidth = <0x20>;
-                        xlnx,lmb-awidth = <0x20>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_ram_data_cntlr";
-                        phandle = <0x94>;
-                };
-
-                blp_cips_pspmc_0_psv_pmc_ram_instr_cntlr: blp_cips_pspmc_0_psv_pmc_ram_instr_cntlr@f0200000 {
-                        xlnx,edk-special = "BRAM_CTRL";
-                        xlnx,write-access = <0x2>;
-                        compatible = "xlnx,ram-instr-cntlr-1.0";
-                        xlnx,ecc-onoff-register = <0x1>;
-                        xlnx,ecc-onoff-reset-value = <0x1>;
-                        xlnx,s-axi-ctrl-protocol = "AXI4LITE";
-                        xlnx,mask = <0xfffe0000>;
-                        xlnx,mask1 = <0xfffe0000>;
-                        xlnx,s-axi-ctrl-aclk-freq-hz = <0x5f5e100>;
-                        xlnx,mask2 = <0x800000>;
-                        xlnx,fault-inject = <0x1>;
-                        xlnx,mask3 = <0x800000>;
-                        xlnx,ip-name = "ram_instr_cntlr";
-                        xlnx,num-lmb = <0x2>;
-                        reg = <0x0 0xf0200000 0x0 0x40000>;
-                        xlnx,s-axi-ctrl-addr-width = <0x20>;
-                        xlnx,ecc-status-registers = <0x1>;
-                        xlnx,ce-counter-width = <0x10>;
-                        xlnx,ecc = <0x1>;
-                        xlnx,edk-iptype = "PERIPHERAL";
-                        xlnx,lmb-dwidth = <0x20>;
-                        xlnx,interconnect = <0x2>;
-                        xlnx,ce-failing-registers = <0x1>;
-                        xlnx,ue-failing-registers = <0x1>;
-                        status = "okay";
-                        xlnx,s-axi-ctrl-data-width = <0x20>;
-                        xlnx,bram-awidth = <0x20>;
-                        xlnx,lmb-awidth = <0x20>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_ram_instr_cntlr";
-                        phandle = <0x93>;
-                };
-
-                blp_cips_pspmc_0_psv_pmc_ram_npi: blp_cips_pspmc_0_psv_pmc_ram_npi@f6000000 {
-                        compatible = "xlnx,psv-pmc-ram-npi-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_pmc_ram_npi";
-                        reg = <0x0 0xf6000000 0x0 0x2000000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_ram_npi";
-                        phandle = <0x4d>;
-                };
-
-                blp_cips_pspmc_0_psv_pmc_rsa: blp_cips_pspmc_0_psv_pmc_rsa@f1200000 {
-                        compatible = "xlnx,psv-pmc-rsa-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_pmc_rsa";
-                        reg = <0x0 0xf1200000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_rsa";
-                        phandle = <0x3e>;
-                };
-
-                blp_cips_pspmc_0_psv_pmc_sha: blp_cips_pspmc_0_psv_pmc_sha@f1210000 {
-                        compatible = "xlnx,psv-pmc-sha-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_pmc_sha";
-                        reg = <0x0 0xf1210000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_sha";
-                        phandle = <0x3f>;
-                };
-
-                blp_cips_pspmc_0_psv_pmc_slave_boot: blp_cips_pspmc_0_psv_pmc_slave_boot@f1220000 {
-                        xlnx,device-id = <0x0>;
-                        compatible = "xlnx,psv-pmc-slave-boot-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_pmc_slave_boot";
-                        reg = <0x0 0xf1220000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_slave_boot";
-                        phandle = <0x40>;
-                };
-
-                blp_cips_pspmc_0_psv_pmc_slave_boot_stream: blp_cips_pspmc_0_psv_pmc_slave_boot_stream@f2100000 {
-                        xlnx,device-id = <0x0>;
-                        compatible = "xlnx,psv-pmc-slave-boot-stream-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_pmc_slave_boot_stream";
-                        reg = <0x0 0xf2100000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_slave_boot_stream";
-                        phandle = <0x4c>;
-                };
-
-                blp_cips_pspmc_0_psv_pmc_tap: blp_cips_pspmc_0_psv_pmc_tap@f11a0000 {
-                        compatible = "xlnx,psv-pmc-tap-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_pmc_tap";
-                        reg = <0x0 0xf11a0000 0x0 0x20000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_tap";
-                        phandle = <0x39>;
-                };
-
-                blp_cips_pspmc_0_psv_pmc_tmr_inject_0: blp_cips_pspmc_0_psv_pmc_tmr_inject_0@f0083000 {
-                        compatible = "xlnx,tmr-inject-1.0";
-                        xlnx,cpu-id = <0x1>;
-                        xlnx,edk-special = "tmr_inject";
-                        xlnx,mask = <0x84000>;
-                        xlnx,ip-name = "tmr_inject";
-                        reg = <0x0 0xf0083000 0x0 0x1000>;
-                        xlnx,magic = <0x27>;
-                        xlnx,lmb-dwidth = <0x20>;
-                        xlnx,edk-iptype = "PROCESSOR";
-                        status = "okay";
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_tmr_inject_0";
-                        xlnx,lmb-awidth = <0x20>;
-                        phandle = <0x92>;
-                };
-
-                blp_cips_pspmc_0_psv_pmc_tmr_manager_0: blp_cips_pspmc_0_psv_pmc_tmr_manager_0@f0283000 {
-                        xlnx,edk-special = "BRAM_CTRL";
-                        xlnx,use-debug-disable = <0x0>;
-                        xlnx,sem-interface-type = <0x1>;
-                        compatible = "xlnx,tmr-manager-1.0";
-                        xlnx,magic1 = <0x0>;
-                        xlnx,tmr = <0x1>;
-                        xlnx,magic2 = <0x0>;
-                        xlnx,brk-delay-rst-value = <0x0>;
-                        xlnx,mask = <0x83000>;
-                        xlnx,sem-heartbeat-watchdog-width = <0xa>;
-                        xlnx,watchdog-width = <0x1e>;
-                        xlnx,use-tmr-disable = <0x0>;
-                        xlnx,ue-width = <0x3>;
-                        xlnx,ip-name = "tmr_manager";
-                        xlnx,async-ff = <0x2>;
-                        xlnx,ue-is-fatal = <0x0>;
-                        xlnx,sem-heartbeat-watchdog = <0x0>;
-                        reg = <0x0 0xf0283000 0x0 0x1000>;
-                        xlnx,brk-delay-width = <0x0>;
-                        xlnx,watchdog = <0x0>;
-                        xlnx,sem-interface = <0x0>;
-                        xlnx,edk-iptype = "PERIPHERAL";
-                        xlnx,mask-rst-value = <0xffffffff 0xffffffff>;
-                        xlnx,comparators-mask = <0x0>;
-                        xlnx,lmb-dwidth = <0x20>;
-                        xlnx,test-comparator = <0x0>;
-                        xlnx,strict-miscompare = <0x0>;
-                        status = "okay";
-                        xlnx,no-of-comparators = <0x1>;
-                        xlnx,sem-async = <0x0>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_tmr_manager_0";
-                        xlnx,lmb-awidth = <0x20>;
-                        phandle = <0x96>;
-                };
-
-                blp_cips_pspmc_0_psv_psm_global_reg: blp_cips_pspmc_0_psv_psm_global_reg@ffc90000 {
-                        compatible = "xlnx,psv-psm-global-reg-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_psm_global_reg";
-                        reg = <0x0 0xffc90000 0x0 0xf000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_psm_global_reg";
-                        phandle = <0x83>;
                 };
 
                 blp_cips_pspmc_0_psv_r5_0_atcm: blp_cips_pspmc_0_psv_r5_0_atcm@0 {
@@ -1882,7 +1342,7 @@
                         xlnx,bank-size = <0x10000>;
                         reg = <0x0 0x0 0x0 0x10000>;
                         xlnx,name = "blp_cips_pspmc_0_psv_r5_0_atcm";
-                        phandle = <0xa0>;
+                        phandle = <0x9c>;
                 };
 
                 blp_cips_pspmc_0_psv_r5_0_atcm_lockstep: blp_cips_pspmc_0_psv_r5_0_atcm_lockstep@ffe10000 {
@@ -1904,7 +1364,7 @@
                         xlnx,bank-size = <0x10000>;
                         reg = <0x0 0x20000 0x0 0x10000>;
                         xlnx,name = "blp_cips_pspmc_0_psv_r5_0_btcm";
-                        phandle = <0xa2>;
+                        phandle = <0x9e>;
                 };
 
                 blp_cips_pspmc_0_psv_r5_0_btcm_lockstep: blp_cips_pspmc_0_psv_r5_0_btcm_lockstep@ffe30000 {
@@ -1926,7 +1386,7 @@
                         xlnx,bank-size = <0x10000>;
                         reg = <0x0 0x0 0x0 0x10000>;
                         xlnx,name = "blp_cips_pspmc_0_psv_r5_1_atcm";
-                        phandle = <0xaa>;
+                        phandle = <0xa6>;
                 };
 
                 blp_cips_pspmc_0_psv_r5_1_btcm: blp_cips_pspmc_0_psv_r5_1_btcm@20000 {
@@ -1937,7 +1397,7 @@
                         xlnx,bank-size = <0x10000>;
                         reg = <0x0 0x20000 0x0 0x10000>;
                         xlnx,name = "blp_cips_pspmc_0_psv_r5_1_btcm";
-                        phandle = <0xab>;
+                        phandle = <0xa7>;
                 };
 
                 blp_cips_pspmc_0_psv_r5_tcm_ram_0: blp_cips_pspmc_0_psv_r5_tcm_ram_0@0 {
@@ -1946,124 +1406,7 @@
                         xlnx,ip-name = "psv_r5_tcm";
                         reg = <0x0 0x0 0x0 0x40000>;
                         xlnx,name = "blp_cips_pspmc_0_psv_r5_tcm_ram_0";
-                        phandle = <0xa1>;
-                };
-
-                blp_cips_pspmc_0_psv_scntr_0: blp_cips_pspmc_0_psv_scntr_0@ff130000 {
-                        compatible = "xlnx,psv-scntr-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_scntr";
-                        reg = <0x0 0xff130000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_scntr_0";
-                        phandle = <0x66>;
-                };
-
-                blp_cips_pspmc_0_psv_scntrs_0: blp_cips_pspmc_0_psv_scntrs_0@ff140000 {
-                        compatible = "xlnx,psv-scntrs-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_scntrs";
-                        reg = <0x0 0xff140000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_scntrs_0";
-                        phandle = <0x67>;
-                };
-
-                blp_cips_pspmc_0_psv_xram_atm: blp_cips_pspmc_0_psv_xram_atm@ff970000 {
-                        compatible = "xlnx,psv-xram-atm-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_xram_atm";
-                        reg = <0x0 0xff970000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_xram_atm";
-                        phandle = <0x76>;
-                };
-
-                blp_cips_pspmc_0_psv_xram_ctrl_1: blp_cips_pspmc_0_psv_xram_ctrl_1@ff8e0000 {
-                        compatible = "xlnx,psv-xram-ctrl-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_xram_ctrl";
-                        reg = <0x0 0xff8e0000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_xram_ctrl_1";
-                        phandle = <0x6b>;
-                };
-
-                blp_cips_pspmc_0_psv_xram_ctrl_2: blp_cips_pspmc_0_psv_xram_ctrl_2@ff8f0000 {
-                        compatible = "xlnx,psv-xram-ctrl-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_xram_ctrl";
-                        reg = <0x0 0xff8f0000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_xram_ctrl_2";
-                        phandle = <0x6c>;
-                };
-
-                blp_cips_pspmc_0_psv_xram_ctrl_3: blp_cips_pspmc_0_psv_xram_ctrl_3@ff900000 {
-                        compatible = "xlnx,psv-xram-ctrl-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_xram_ctrl";
-                        reg = <0x0 0xff900000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_xram_ctrl_3";
-                        phandle = <0x6d>;
-                };
-
-                blp_cips_pspmc_0_psv_xram_ctrl_4: blp_cips_pspmc_0_psv_xram_ctrl_4@ff910000 {
-                        compatible = "xlnx,psv-xram-ctrl-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_xram_ctrl";
-                        reg = <0x0 0xff910000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_xram_ctrl_4";
-                        phandle = <0x6e>;
-                };
-
-                blp_cips_pspmc_0_psv_xram_global_ctrl: blp_cips_pspmc_0_psv_xram_global_ctrl@ff950000 {
-                        compatible = "xlnx,psv-xram-global-ctrl-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_xram_global_ctrl";
-                        reg = <0x0 0xff950000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_xram_global_ctrl";
-                        phandle = <0x74>;
-                };
-
-                blp_cips_pspmc_0_psv_xram_gpv: blp_cips_pspmc_0_psv_xram_gpv@ff940000 {
-                        compatible = "xlnx,psv-xram-gpv-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_xram_gpv";
-                        reg = <0x0 0xff940000 0x0 0x10000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_xram_gpv";
-                        phandle = <0x73>;
-                };
-
-                blp_cips_pspmc_0_psv_xram_xmpu_bank_1: blp_cips_pspmc_0_psv_xram_xmpu_bank_1@ff930000 {
-                        compatible = "xlnx,psv-xram-xmpu-bank-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_xram_xmpu_bank";
-                        reg = <0x0 0xff930000 0x0 0x4000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_xram_xmpu_bank_1";
-                        phandle = <0x6f>;
-                };
-
-                blp_cips_pspmc_0_psv_xram_xmpu_bank_2: blp_cips_pspmc_0_psv_xram_xmpu_bank_2@ff934000 {
-                        compatible = "xlnx,psv-xram-xmpu-bank-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_xram_xmpu_bank";
-                        reg = <0x0 0xff934000 0x0 0x4000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_xram_xmpu_bank_2";
-                        phandle = <0x70>;
-                };
-
-                blp_cips_pspmc_0_psv_xram_xmpu_bank_3: blp_cips_pspmc_0_psv_xram_xmpu_bank_3@ff938000 {
-                        compatible = "xlnx,psv-xram-xmpu-bank-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_xram_xmpu_bank";
-                        reg = <0x0 0xff938000 0x0 0x4000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_xram_xmpu_bank_3";
-                        phandle = <0x71>;
-                };
-
-                blp_cips_pspmc_0_psv_xram_xmpu_bank_4: blp_cips_pspmc_0_psv_xram_xmpu_bank_4@ff93c000 {
-                        compatible = "xlnx,psv-xram-xmpu-bank-1.0";
-                        status = "okay";
-                        xlnx,ip-name = "psv_xram_xmpu_bank";
-                        reg = <0x0 0xff93c000 0x0 0x4000>;
-                        xlnx,name = "blp_cips_pspmc_0_psv_xram_xmpu_bank_4";
-                        phandle = <0x72>;
+                        phandle = <0x9d>;
                 };
         };
 
@@ -2114,36 +1457,6 @@
                 #address-cells = <0x2>;
                 #size-cells = <0x2>;
                 phandle = <0x162>;
-
-                lpd_xppu: xppu@ff990000 {
-                        compatible = "xlnx,xppu";
-                        #firewall-cells = <0x0>;
-                        reg = <0x0 0xff990000 0x0 0x2000>;
-                        status = "okay";
-                        xlnx,ip-name = "psv_lpd_xppu";
-                        xlnx,name = "blp_cips_pspmc_0_psv_lpd_xppu_0";
-                        phandle = <0x78>;
-                };
-
-                pmc_xppu: xppu@f1310000 {
-                        compatible = "xlnx,xppu";
-                        #firewall-cells = <0x0>;
-                        reg = <0x0 0xf1310000 0x0 0x2000>;
-                        status = "okay";
-                        xlnx,ip-name = "psv_pmc_xppu";
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_xppu_0";
-                        phandle = <0x4b>;
-                };
-
-                pmc_xppu_npi: xppu@f1300000 {
-                        compatible = "xlnx,xppu";
-                        #firewall-cells = <0x0>;
-                        reg = <0x0 0xf1300000 0x0 0x2000>;
-                        status = "okay";
-                        xlnx,ip-name = "psv_pmc_xppu_npi";
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_xppu_npi_0";
-                        phandle = <0x4a>;
-                };
         };
 
         amba_xmpu: indirect-bus@2 {
@@ -2151,36 +1464,6 @@
                 #address-cells = <0x2>;
                 #size-cells = <0x2>;
                 phandle = <0x163>;
-
-                fpd_xmpu: xmpu@fd390000 {
-                        compatible = "xlnx,xmpu";
-                        #firewall-cells = <0x0>;
-                        reg = <0x0 0xfd390000 0x0 0x1000>;
-                        status = "okay";
-                        xlnx,ip-name = "psv_fpd_slave_xmpu";
-                        xlnx,name = "blp_cips_pspmc_0_psv_fpd_slave_xmpu_0";
-                        phandle = <0x54>;
-                };
-
-                pmc_xmpu: xmpu@f12f0000 {
-                        compatible = "xlnx,xmpu";
-                        #firewall-cells = <0x0>;
-                        reg = <0x0 0xf12f0000 0x0 0x1000>;
-                        status = "okay";
-                        xlnx,ip-name = "psv_pmc_xmpu";
-                        xlnx,name = "blp_cips_pspmc_0_psv_pmc_xmpu_0";
-                        phandle = <0x49>;
-                };
-
-                ocm_xmpu: xmpu@ff980000 {
-                        compatible = "xlnx,xmpu";
-                        #firewall-cells = <0x0>;
-                        reg = <0x0 0xff980000 0x0 0x1000>;
-                        status = "okay";
-                        xlnx,ip-name = "psv_ocm_xmpu";
-                        xlnx,name = "blp_cips_pspmc_0_psv_ocm_xmpu_0";
-                        phandle = <0x77>;
-                };
         };
 
         pl_alt_ref: pl-alt-ref {
@@ -2189,7 +1472,7 @@
                 #clock-cells = <0x0>;
                 clock-frequency = <0x1fca055>;
                 clock-output-names = "pl_alt_ref_clk";
-                phandle = <0xb5>;
+                phandle = <0xb1>;
         };
 
         ref: ref {
@@ -2198,7 +1481,7 @@
                 #clock-cells = <0x0>;
                 clock-frequency = <0x1fca034>;
                 clock-output-names = "ref_clk";
-                phandle = <0xb4>;
+                phandle = <0xb0>;
         };
 
         can0_clk: can0-clk {
@@ -2208,7 +1491,7 @@
                 clock-div = <0x2>;
                 clock-mult = <0x1>;
                 clock-output-names = "can0_clk";
-                phandle = <0xaf>;
+                phandle = <0xab>;
         };
 
         can1_clk: can1-clk {
@@ -2218,7 +1501,7 @@
                 clock-div = <0x2>;
                 clock-mult = <0x1>;
                 clock-output-names = "can1_clk";
-                phandle = <0xb0>;
+                phandle = <0xac>;
         };
 
         firmware {
@@ -2249,7 +1532,7 @@
                         versal_reset: reset-controller {
                                 compatible = "xlnx,versal-reset";
                                 #reset-cells = <0x1>;
-                                phandle = <0xb1>;
+                                phandle = <0xad>;
                         };
 
                         pinctrl0: pinctrl {
@@ -2259,8 +1542,6 @@
 
                         versal_sec_cfg: versal-sec-cfg {
                                 compatible = "xlnx,versal-sec-cfg";
-                                #address-cells = <0x1>;
-                                #size-cells = <0x1>;
                                 phandle = <0x16a>;
 
                                 nvmem-layout {
@@ -2352,919 +1633,8 @@
                         compatible = "fixed-clock";
                         clock-frequency = <0x7735940>;
                         #clock-cells = <0x0>;
-                        phandle = <0xb6>;
+                        phandle = <0xb2>;
                 };
-
-                blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_00: clk_wizard@80042000 {
-                        xlnx,reset-type = "ACTIVE_HIGH";
-                        xlnx,clk-out1-port = "clk_out1";
-                        xlnx,clkout1-actual-duty-cycle = <0x32>;
-                        xlnx,clkout2-phase = <0x0>;
-                        xlnx,clkout1-dyn-ps = <0x0>;
-                        xlnx,use-locked-deskew1 = <0x0>;
-                        xlnx,use-locked-deskew2 = <0x0>;
-                        xlnx,clkout3-drives = "BUFG";
-                        xlnx,deskew-delay1 = <0x0>;
-                        reg = <0x0 0x80042000 0x0 0x1000>;
-                        xlnx,deskew-delay2 = <0x0>;
-                        xlnx,clkin2-deskew-port = "clkin2_deskew";
-                        xlnx,clkout4-grouping = "Auto";
-                        xlnx,d-max = <0x6b>;
-                        xlnx,divide6-auto = <0x0>;
-                        xlnx,clkout1-phase = <0x0>;
-                        xlnx,clkout2-requested-out-freq = <0x64>;
-                        xlnx,clkout7-divide = <0xc>;
-                        xlnx,use-locked = <0x1>;
-                        xlnx,clkin1-ibufds = <0x0>;
-                        xlnx,input-clk-stopped-port = "input_clk_stopped";
-                        xlnx,clkout1-drives = "No_buffer";
-                        xlnx,divide3-auto = <0x0>;
-                        xlnx,clkout4-duty-cycle = <0x7a120>;
-                        xlnx,clkout4-mbufgce-mode = "PERFORMANCE";
-                        xlnx,use-dyn-reconfig = <0x1>;
-                        xlnx,clkout6-actual-duty-cycle = <0x32>;
-                        xlnx,clkout6-requested-duty-cycle = <0x32>;
-                        xlnx,deskew2-in = <0x0>;
-                        xlnx,deskew1-fb = <0x1>;
-                        xlnx,clkin2-jitter-ps = <0x64>;
-                        xlnx,feedback-source = "FDBK_AUTO";
-                        xlnx,clkout5-requested-out-freq = <0x64>;
-                        xlnx,bufgce-div-ce-type = "SYNC";
-                        xlnx,name = "blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_00";
-                        xlnx,clkout5-divide = <0xc>;
-                        xlnx,current-path = "clk_wizard_v1_0";
-                        xlnx,prim-in-freq = <0x1fc9f08>;
-                        xlnx,clkout-matched-routing = "false,false,false,false,false,false,false";
-                        xlnx,deskew2-lock-circuit-en;
-                        xlnx,clk-in2-board-interface = "Custom";
-                        xlnx,clkin1-deskew-port = "clkin1_deskew";
-                        xlnx,clkin1-ui-jitter = <0x2710>;
-                        xlnx,clkout3-mbufgce-mode = "PERFORMANCE";
-                        xlnx,use-inclk-switchover = <0x0>;
-                        clock-names = "clk_in1", "s_axi_aclk";
-                        xlnx,clkout3-divide = <0xc>;
-                        xlnx,clkout5-duty-cycle = <0x7a120>;
-                        xlnx,clkout1-grouping = "Auto";
-                        xlnx,use-dyn-phase-shift = <0x0>;
-                        xlnx,o-min = <0x3>;
-                        xlnx,daddr-port = "daddr";
-                        xlnx,clkout-grouping = "Auto,Auto,Auto,Auto,Auto,Auto,Auto";
-                        xlnx,clkin1-bufg = <0x0>;
-                        xlnx,precision = <0x1>;
-                        clock-output-names = "0x80042000-clk_out1";
-                        xlnx,clkout1-divide = <0xa>;
-                        xlnx,use-phase-alignment = <0x0>;
-                        xlnx,ref-clk-freq = <0x64>;
-                        xlnx,pllbufgcediv = <0x0>;
-                        xlnx,deskew1-in = <0x0>;
-                        xlnx,inclk-sum-row0 = "Input , Clock , Freq , (MHz) , Input , Jitter , (UI)";
-                        xlnx,clkout7-requested-duty-cycle = <0x32>;
-                        xlnx,inclk-sum-row1 = "primary , 100.000 , 0.010";
-                        xlnx,inclk-sum-row2 = "secondary , 100.000 , 0.010";
-                        xlnx,clkout2-mbufgce-mode = "PERFORMANCE";
-                        xlnx,din-port = "din";
-                        xlnx,reset-board-interface = "Custom";
-                        xlnx,clkout5-actual-duty-cycle = <0x32>;
-                        xlnx,clkout-requested-phase = "0.000,0.000,0.000,0.000,0.000,0.000,0.000";
-                        xlnx,clkout6-duty-cycle = <0x7a120>;
-                        xlnx,clkout1-requested-duty-cycle = <0x32>;
-                        xlnx,vco-max = <0x10e0>;
-                        xlnx,use-freq-synth = <0x1>;
-                        xlnx,clkout5-used = <0x0>;
-                        xlnx,d-min = <0x1>;
-                        xlnx,clk-out6-port = "clk_out6";
-                        xlnx,clk-tree1 = <0x0>;
-                        xlnx,clkout2-sequence-number = <0x1>;
-                        xlnx,clkout-used = "true,false,false,false,false,false,false";
-                        xlnx,clk-tree2 = <0x0>;
-                        xlnx,clk-tree3 = <0x0>;
-                        xlnx,clkin1-period = <0x1c9c4ac>;
-                        xlnx,clkout2-used = <0x0>;
-                        xlnx,clkout4-sequence-number = <0x1>;
-                        xlnx,psincdec-port = "psincdec";
-                        xlnx,clk-tree4 = <0x0>;
-                        xlnx,clkfbin-ibuf = <0x0>;
-                        xlnx,clk-tree5 = <0x0>;
-                        xlnx,clk-out3-port = "clk_out3";
-                        xlnx,clkout6-sequence-number = <0x1>;
-                        xlnx,clkout-port = "clk_out1,clk_out2,clk_out3,clk_out4,clk_out5,clk_out6,clk_out7";
-                        xlnx,locked-deskew1-port = "locked_deskew1";
-                        xlnx,clk-tree6 = <0x0>;
-                        xlnx,clk-tree7 = <0x0>;
-                        xlnx,clkin2-ibuf = <0x0>;
-                        xlnx,clkfbout-fract = <0x0>;
-                        xlnx,clkout5-grouping = "Auto";
-                        xlnx,pllbufgcediv1 = <0x0>;
-                        xlnx,nr-outputs = <0x1>;
-                        xlnx,pllbufgcediv2 = <0x0>;
-                        xlnx,pllbufgcediv3 = <0x0>;
-                        xlnx,pllbufgcediv4 = <0x0>;
-                        xlnx,clkout1-mbufgce-mode = "PERFORMANCE";
-                        xlnx,clkfb-deskew-port = "clkfb_deskew";
-                        xlnx,clkout2-matched-routing = <0x0>;
-                        xlnx,safeclock-startup-mode = "DESKEW_MODE";
-                        xlnx,ref-jitter1 = <0x2710>;
-                        xlnx,ref-jitter2 = <0x2710>;
-                        status = "okay";
-                        xlnx,clkout4-matched-routing = <0x0>;
-                        xlnx,clkout6-dyn-ps = <0x0>;
-                        xlnx,clkout6-matched-routing = <0x0>;
-                        xlnx,clkout7-duty-cycle = <0x7a120>;
-                        xlnx,outclk-sum-row1 = "no , clk_out1 , output";
-                        xlnx,outclk-sum-row2 = "no , clk_out2 , output";
-                        xlnx,jitter-sel = "No_Jitter";
-                        xlnx,outclk-sum-row3 = "no , clk_out3 , output";
-                        xlnx,outclk-sum-row4 = "no , clk_out4 , output";
-                        xlnx,outclk-sum-row5 = "no , clk_out5 , output";
-                        xlnx,clkout7-actual-phase = <0x0>;
-                        xlnx,outclk-sum-row6 = "no , clk_out6 , output";
-                        xlnx,outclk-sum-row7 = "no , clk_out7 , output";
-                        xlnx,divide5-auto = <0x0>;
-                        xlnx,deskew-fb1 = <0x1>;
-                        xlnx,deskew-fb2 = <0x1>;
-                        xlnx,clkfbin-obuf = <0x0>;
-                        xlnx,psdone-port = "psdone";
-                        xlnx,edk-iptype = "PERIPHERAL";
-                        xlnx,clkout3-requested-out-freq = <0x64>;
-                        xlnx,divide2-auto = <0x0>;
-                        xlnx,clkout4-dyn-ps = <0x0>;
-                        xlnx,ss-mode = "CENTER_HIGH";
-                        xlnx,clkfbout-mult = <0x1>;
-                        xlnx,clkout-requested-duty-cycle = "50.000,50.000,50.000,50.000,50.000,50.000,50.000";
-                        xlnx,clkout6-drives = "BUFG";
-                        xlnx,ss-mod-period = <0xfa0>;
-                        xlnx,clkout2-actual-out-freq = <0x5f5dd18>;
-                        xlnx,clkout2-requested-duty-cycle = <0x32>;
-                        xlnx,numbufgce = <0x0>;
-                        xlnx,clkout4-actual-duty-cycle = <0x32>;
-                        xlnx,clkout4-actual-out-freq = <0x5f5dd18>;
-                        xlnx,primary-port = "clk_in1";
-                        xlnx,clkout6-actual-out-freq = <0x5f5dd18>;
-                        xlnx,clkout6-requested-out-freq = <0x64>;
-                        xlnx,clkfbout-oddr = <0x0>;
-                        xlnx,use-locked-fb = <0x0>;
-                        xlnx,locked-fb-port = "locked_fb";
-                        xlnx,clkout2-requested-phase = <0x0>;
-                        xlnx,relative-inclk = "REL_PRIMARY";
-                        xlnx,clkout4-requested-phase = <0x0>;
-                        xlnx,enable-user-clock0 = <0x0>;
-                        xlnx,clkout2-dyn-ps = <0x0>;
-                        xlnx,clkout2-grouping = "Auto";
-                        xlnx,enable-user-clock1 = <0x0>;
-                        xlnx,clkout6-actual-phase = <0x0>;
-                        xlnx,clkout6-requested-phase = <0x0>;
-                        xlnx,clkout-requested-out-frequency = "300,100.000,100.000,100.000,100.000,100.000,100.000";
-                        xlnx,ss-mod-freq = <0xfa>;
-                        xlnx,enable-user-clock2 = <0x0>;
-                        xlnx,enable-user-clock3 = <0x0>;
-                        xlnx,primitive-type = "MMCM";
-                        xlnx,ce-sync-ext = <0x0>;
-                        xlnx,clkout4-drives = "BUFG";
-                        xlnx,den-port = "den";
-                        xlnx,use-safe-clock-startup = <0x0>;
-                        xlnx,dwe-port = "dwe";
-                        xlnx,drdy-port = "drdy";
-                        xlnx,vco-min = <0x870>;
-                        xlnx,clk-in-sel-port = "clk_in_sel";
-                        xlnx,clkin1-jitter-ps = <0x64>;
-                        xlnx,deskew-delay-path1;
-                        xlnx,deskew-delay-path2;
-                        xlnx,enable-pll0 = <0x0>;
-                        xlnx,enable-pll1 = <0x0>;
-                        xlnx,clkin2-ibufds = <0x0>;
-                        xlnx,clkfb2-deskew-port = "clkfb2_deskew";
-                        xlnx,clkout2-drives = "BUFG";
-                        xlnx,use-inclk-stopped = <0x0>;
-                        compatible = "xlnx,clk-wizard-1.0", "xlnx,versal-clk-wizard";
-                        xlnx,clkout5-actual-phase = <0x0>;
-                        xlnx,reset-port = "reset";
-                        xlnx,sim-device = "VERSAL_AI_EDGE";
-                        xlnx,speed-grade = <0x2>;
-                        xlnx,clkout6-divide = <0xc>;
-                        xlnx,clkout3-requested-duty-cycle = <0x32>;
-                        xlnx,prim-source = "No_buffer";
-                        xlnx,clkout7-used = <0x0>;
-                        xlnx,deskew1-delay-en;
-                        xlnx,use-clkfb-stopped = <0x0>;
-                        xlnx,clkout6-grouping = "Auto";
-                        xlnx,compensation = "AUTO";
-                        xlnx,mmcmbufgcediv = <0x0>;
-                        xlnx,clkin-deskew-port = "clkin_deskew";
-                        xlnx,clkout3-actual-duty-cycle = <0x32>;
-                        xlnx,clkout4-used = <0x0>;
-                        xlnx,clk-out5-port = "clk_out5";
-                        xlnx,psclk-port = "psclk";
-                        xlnx,ce-type = "SYNC";
-                        xlnx,clkfbout-phase = <0x0>;
-                        xlnx,clkout4-divide = <0xc>;
-                        xlnx,primitive = "MMCM";
-                        xlnx,clkout1-used = <0x1>;
-                        xlnx,deskew1-lock-circuit-en;
-                        xlnx,clk-in1-board-interface = "Custom";
-                        xlnx,clk-out2-port = "clk_out2";
-                        xlnx,clkout4-actual-phase = <0x0>;
-                        xlnx,power-down-port = "power_down";
-                        xlnx,clkfb1-deskew-port = "clkfb1_deskew";
-                        xlnx,bandwidth = "OPTIMIZED";
-                        xlnx,clkin1-ibuf = <0x0>;
-                        xlnx,user-clk-freq0 = <0x64>;
-                        xlnx,deskew1-delay-path = "ClkFb_Path";
-                        xlnx,user-clk-freq1 = <0x64>;
-                        xlnx,clkoutfb-phase-ctrl = <0x0>;
-                        xlnx,user-clk-freq2 = <0x64>;
-                        xlnx,user-clk-freq3 = <0x64>;
-                        xlnx,use-clock-sequencing = <0x0>;
-                        xlnx,secondary-source = "Single_ended_clock_capable_pin";
-                        xlnx,cddcdone-port = "cddcdone";
-                        xlnx,clkout2-divide = <0xc>;
-                        xlnx,actual-vco = <0xb2cfe8d0>;
-                        xlnx,clkout7-phase = <0x0>;
-                        xlnx,psen-port = "psen";
-                        xlnx,m-max = <0x1b0>;
-                        xlnx,deskew-delay-en1;
-                        xlnx,dclk-port = "dclk";
-                        xlnx,deskew-delay-en2;
-                        xlnx,outclk-sum-row0a = "Output , Output , Phase , Duty , Pk-to-Pk , Phase";
-                        xlnx,divide7-auto = <0x0>;
-                        xlnx,clkout1-requested-out-freq = <0x64>;
-                        xlnx,outclk-sum-row0b = "Clock , Freq , (MHz) , (degrees) , Cycle , () , Jitter , (ps) , Error , (ps)";
-                        xlnx,locked-port = "locked";
-                        xlnx,enable-clock-monitor = <0x0>;
-                        xlnx,clkin2-ui-jitter = <0x2710>;
-                        xlnx,ss-mod-time = <0xfa0>;
-                        xlnx,divide4-auto = <0x0>;
-                        xlnx,auto-primitive = "MMCM";
-                        xlnx,drp-addr-set1 = "00000328 , 0000032c , 00000330 , 00000334 , 00000338 , 0000033c , 00000340 , 00000344 , 00000348 , 0000034c , 00000350 , 00000354 , 00000358 , 0000035c , 00000360 , 00000364 , 00000368 , 0000036c , 00000370 , 00000374 , 00000378 , 0000037c , 00000380 , 00000384 , 00000388 , 0000038c , 00000390 , 00000394 , 00000398 , 0000039c , 000003a0 , 000003a4 , 000003a8 , 000003ac , 000003b0 , 000003b4 , 000003b8 , 000003bc , 000003c0 , 000003c4 , 000003c8 , 000003cc , 000003d0 , 000003d4 , 000003d8 , 000003dc , 000003e0 , 000003e4 , 000003e8 , 000003ec , 000003f0 , 000003f4 , 000003f8 , 000003fc";
-                        xlnx,drp-addr-set2 = "00000328 , 0000032c , 00000330 , 00000334 , 00000338 , 0000033c , 00000340 , 00000344 , 00000348 , 0000034c , 00000350 , 00000354 , 00000358 , 0000035c , 00000360 , 00000364 , 00000368 , 0000036c , 00000370 , 00000374 , 00000378 , 0000037c , 00000380 , 00000384 , 00000388 , 0000038c , 00000390 , 00000394 , 00000398 , 0000039c , 000003a0 , 000003a4 , 000003a8 , 000003ac , 000003b0 , 000003b4 , 000003b8 , 000003bc , 000003c0 , 000003c4 , 000003c8 , 000003cc , 000003d0 , 000003d4 , 000003d8 , 000003dc , 000003e0 , 000003e4 , 000003e8 , 000003ec , 000003f0 , 000003f4 , 000003f8 , 000003fc";
-                        xlnx,drp-addr-set3 = "00000328 , 0000032c , 00000330 , 00000334 , 00000338 , 0000033c , 00000340 , 00000344 , 00000348 , 0000034c , 00000350 , 00000354 , 00000358 , 0000035c , 00000360 , 00000364 , 00000368 , 0000036c , 00000370 , 00000374 , 00000378 , 0000037c , 00000380 , 00000384 , 00000388 , 0000038c , 00000390 , 00000394 , 00000398 , 0000039c , 000003a0 , 000003a4 , 000003a8 , 000003ac , 000003b0 , 000003b4 , 000003b8 , 000003bc , 000003c0 , 000003c4 , 000003c8 , 000003cc , 000003d0 , 000003d4 , 000003d8 , 000003dc , 000003e0 , 000003e4 , 000003e8 , 000003ec , 000003f0 , 000003f4 , 000003f8 , 000003fc";
-                        xlnx,clkout3-actual-phase = <0x0>;
-                        xlnx,clkout-mbufgce-mode = "PERFORMANCE,PERFORMANCE,PERFORMANCE,PERFORMANCE,PERFORMANCE,PERFORMANCE,PERFORMANCE";
-                        xlnx,use-power-down = <0x1>;
-                        xlnx,divide1-auto = <0x0>;
-                        xlnx,clkout3-grouping = "Auto";
-                        xlnx,clkout4-requested-duty-cycle = <0x32>;
-                        xlnx,clkout4-requested-out-freq = <0x64>;
-                        xlnx,clkout6-phase = <0x0>;
-                        xlnx,num-out-clks = <0x1>;
-                        xlnx,ip-name = "clk_wizard";
-                        xlnx,auto-nummbufgce = <0x0>;
-                        xlnx,deskew-in1 = <0x0>;
-                        xlnx,deskew2-delay = <0x0>;
-                        xlnx,deskew-in2 = <0x0>;
-                        xlnx,mmcmbufgcediv1 = <0x0>;
-                        xlnx,deskew2-delay-path = "ClkFb_Path";
-                        xlnx,mmcmbufgcediv2 = <0x0>;
-                        xlnx,clkin2-period = <0x13de432>;
-                        xlnx,clkout1-duty-cycle = <0x7a120>;
-                        xlnx,mmcmbufgcediv3 = <0x0>;
-                        xlnx,mmcmbufgcediv4 = <0x0>;
-                        xlnx,mmcmbufgcediv5 = <0x0>;
-                        xlnx,dout-port = "dout";
-                        xlnx,mmcmbufgcediv6 = <0x0>;
-                        xlnx,clkout1-sequence-number = <0x1>;
-                        xlnx,mmcmbufgcediv7 = <0x0>;
-                        xlnx,cddcreq-port = "cddcreq";
-                        xlnx,clkout7-requested-out-freq = <0x64>;
-                        xlnx,use-spread-spectrum;
-                        xlnx,clkout3-sequence-number = <0x1>;
-                        xlnx,clkout7-mbufgce-mode = "PERFORMANCE";
-                        xlnx,clkout2-actual-duty-cycle = <0x32>;
-                        xlnx,clkout5-sequence-number = <0x1>;
-                        xlnx,clkout5-phase = <0x0>;
-                        xlnx,clkout7-sequence-number = <0x1>;
-                        xlnx,deskew1-delay = <0x0>;
-                        xlnx,clkfb-in-port = "clkfb_in";
-                        xlnx,zhold;
-                        xlnx,clkout2-actual-phase = <0x0>;
-                        xlnx,clkout7-dyn-ps = <0x0>;
-                        xlnx,deskew-lock-circuit-en1 = <0x0>;
-                        xlnx,clkout-dyn-ps = "None,None,None,None,None,None,None";
-                        xlnx,deskew-lock-circuit-en2 = <0x0>;
-                        xlnx,clkfbout-bufg = <0x0>;
-                        xlnx,clkout1-matched-routing = <0x0>;
-                        xlnx,interface-selection = <0x1>;
-                        xlnx,clkout3-matched-routing = <0x0>;
-                        xlnx,override-primitive = <0x0>;
-                        xlnx,calc-done = "empty";
-                        xlnx,clkout5-matched-routing = <0x0>;
-                        xlnx,clkfbin-obufds = <0x0>;
-                        xlnx,actual-pfd = <0xa98a58>;
-                        xlnx,clkout7-matched-routing = <0x0>;
-                        xlnx,clkin2-bufg = <0x0>;
-                        xlnx,clkout2-duty-cycle = <0x7a120>;
-                        xlnx,clkout4-phase = <0x0>;
-                        xlnx,clkout5-dyn-ps = <0x0>;
-                        xlnx,clkout6-mbufgce-mode = "PERFORMANCE";
-                        xlnx,clkout7-actual-duty-cycle = <0x32>;
-                        clocks = <&versal_clk 0x42>,
-                         <&versal_clk 0x42>;
-                        xlnx,deskew2-delay-en;
-                        xlnx,clkout7-grouping = "Auto";
-                        xlnx,clkfbin-ibufds = <0x0>;
-                        xlnx,clkfb-bufg = <0x0>;
-                        xlnx,clkout7-drives = "BUFG";
-                        xlnx,clkout-drives = "No_buffer,BUFG,BUFG,BUFG,BUFG,BUFG,BUFG";
-                        xlnx,clkout5-requested-duty-cycle = <0x32>;
-                        xlnx,drp-data-set1 = "4b06 , 0001 , 1600 , 8787 , 1b00 , 0202 , 0a00 , 0303 , 0a00 , 0303 , 0a00 , 0303 , f37c , 7c4d , d042 , ebd8 , ec5f , edfb , aacd , 4428 , 002f , 0000 , 0400 , 0101 , 000f , 0006 , 0000 , 0000 , 0e80 , 40e1 , 43e9 , 1188 , 0008 , 0001 , 0000 , 00c0 , 0dfd , 0961 , 0001 , 0000 , 068b , 0a00 , 0303 , 0a00 , 0303 , 0a00 , 0303 , 0000 , 0000 , 0000 , 0000 , 0000 , 0f00 , 0001";
-                        xlnx,divclk-divide = <0x3>;
-                        xlnx,clkfb-in-signaling = "SINGLE";
-                        xlnx,drp-data-set2 = "4b06 , 0001 , 1600 , 8787 , 1a00 , 0202 , 0b00 , 0101 , 0a00 , 0000 , 0a00 , 0101 , f37c , 7c4d , d042 , ebd8 , ec5f , edfb , aacd , 4428 , 002f , 0000 , 0400 , 0101 , 000f , 0006 , 0000 , 0000 , 0e80 , 40e1 , 43e9 , 1188 , 0008 , 0001 , 0000 , 00c0 , 0dfd , 0961 , 0001 , 0000 , 068b , 0a00 , 0303 , 0b00 , 0101 , 0a00 , 0202 , 0000 , 0000 , 0000 , 0000 , 0000 , 0f00 , 0001";
-                        xlnx,clkout1-actual-phase = <0x0>;
-                        xlnx,drp-data-set3 = "4b06 , 0001 , 1600 , 8787 , 1b00 , 0202 , 0a00 , 0303 , 0a00 , 0303 , 0a00 , 0303 , f37c , 7c4d , d042 , ebd8 , ec5f , edfb , aacd , 4428 , 002f , 0000 , 0400 , 0101 , 000f , 0006 , 0000 , 0000 , 0e80 , 40e1 , 43e9 , 1188 , 0008 , 0001 , 0000 , 00c0 , 0dfd , 0961 , 0001 , 0000 , 068b , 0a00 , 0303 , 0a00 , 0303 , 0a00 , 0303 , 0000 , 0000 , 0000 , 0000 , 0000 , 0f00 , 0001";
-                        xlnx,deskew2-fb = <0x1>;
-                        xlnx,secondary-port = "clk_in2";
-                        xlnx,clkout1-actual-out-freq = <0x11e19748>;
-                        xlnx,clkout3-phase = <0x0>;
-                        xlnx,numbufg = <0x0>;
-                        xlnx,clkout3-actual-out-freq = <0x5f5dd18>;
-                        xlnx,use-reset = <0x1>;
-                        xlnx,clkout3-dyn-ps = <0x0>;
-                        xlnx,m-min = <0x5>;
-                        xlnx,clkout5-actual-out-freq = <0x5f5dd18>;
-                        xlnx,clkout6-used = <0x0>;
-                        xlnx,perf-mode = "FULL";
-                        xlnx,clkfb-stopped-port = "clkfb_stopped";
-                        xlnx,clk-out7-port = "clk_out7";
-                        xlnx,clkout1-requested-phase = <0x0>;
-                        xlnx,clkout7-actual-out-freq = <0x5f5dd18>;
-                        xlnx,phaseshift-mode = "LATENCY";
-                        xlnx,clkfb-out-port = "clkfb_out";
-                        xlnx,clkout5-drives = "BUFG";
-                        xlnx,o-max = <0x1b0>;
-                        xlnx,clkout3-requested-phase = <0x0>;
-                        xlnx,jitter-options = "UI";
-                        xlnx,clkout3-used = <0x0>;
-                        xlnx,clkout5-requested-phase = <0x0>;
-                        xlnx,clk-out4-port = "clk_out4";
-                        xlnx,clkout3-duty-cycle = <0x7a120>;
-                        xlnx,locked-deskew2-port = "locked_deskew2";
-                        xlnx,clkout7-requested-phase = <0x0>;
-                        xlnx,secondary-in-freq = <0x30>;
-                        xlnx,clkout5-mbufgce-mode = "PERFORMANCE";
-                        xlnx,use-min-power = <0x0>;
-                        #clock-cells = <0x1>;
-                        xlnx,nummbufgce = <0x0>;
-                        phandle = <0xf>;
-                };
-
-                blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_01: clk_wizard@80043000 {
-                        xlnx,reset-type = "ACTIVE_HIGH";
-                        xlnx,clk-out1-port = "clk_out1";
-                        xlnx,clkout1-actual-duty-cycle = <0x32>;
-                        xlnx,clkout2-phase = <0x0>;
-                        xlnx,clkout1-dyn-ps = <0x0>;
-                        xlnx,use-locked-deskew1 = <0x0>;
-                        xlnx,use-locked-deskew2 = <0x0>;
-                        xlnx,clkout3-drives = "BUFG";
-                        xlnx,deskew-delay1 = <0x0>;
-                        reg = <0x0 0x80043000 0x0 0x1000>;
-                        xlnx,deskew-delay2 = <0x0>;
-                        xlnx,clkin2-deskew-port = "clkin2_deskew";
-                        xlnx,clkout4-grouping = "Auto";
-                        xlnx,d-max = <0x6b>;
-                        xlnx,divide6-auto = <0x0>;
-                        xlnx,clkout1-phase = <0x0>;
-                        xlnx,clkout2-requested-out-freq = <0x64>;
-                        xlnx,clkout7-divide = <0xc>;
-                        xlnx,use-locked = <0x1>;
-                        xlnx,clkin1-ibufds = <0x0>;
-                        xlnx,input-clk-stopped-port = "input_clk_stopped";
-                        xlnx,clkout1-drives = "No_buffer";
-                        xlnx,divide3-auto = <0x0>;
-                        xlnx,clkout4-duty-cycle = <0x7a120>;
-                        xlnx,clkout4-mbufgce-mode = "PERFORMANCE";
-                        xlnx,use-dyn-reconfig = <0x1>;
-                        xlnx,clkout6-actual-duty-cycle = <0x32>;
-                        xlnx,clkout6-requested-duty-cycle = <0x32>;
-                        xlnx,deskew2-in = <0x0>;
-                        xlnx,deskew1-fb = <0x1>;
-                        xlnx,clkin2-jitter-ps = <0x64>;
-                        xlnx,feedback-source = "FDBK_AUTO";
-                        xlnx,clkout5-requested-out-freq = <0x64>;
-                        xlnx,bufgce-div-ce-type = "SYNC";
-                        xlnx,name = "blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_01";
-                        xlnx,clkout5-divide = <0xc>;
-                        xlnx,current-path = "clk_wizard_v1_0";
-                        xlnx,prim-in-freq = <0x1fc9f08>;
-                        xlnx,clkout-matched-routing = "false,false,false,false,false,false,false";
-                        xlnx,deskew2-lock-circuit-en;
-                        xlnx,clk-in2-board-interface = "Custom";
-                        xlnx,clkin1-deskew-port = "clkin1_deskew";
-                        xlnx,clkin1-ui-jitter = <0x2710>;
-                        xlnx,clkout3-mbufgce-mode = "PERFORMANCE";
-                        xlnx,use-inclk-switchover = <0x0>;
-                        clock-names = "clk_in1", "s_axi_aclk";
-                        xlnx,clkout3-divide = <0xc>;
-                        xlnx,clkout5-duty-cycle = <0x7a120>;
-                        xlnx,clkout1-grouping = "Auto";
-                        xlnx,use-dyn-phase-shift = <0x0>;
-                        xlnx,o-min = <0x3>;
-                        xlnx,daddr-port = "daddr";
-                        xlnx,clkout-grouping = "Auto,Auto,Auto,Auto,Auto,Auto,Auto";
-                        xlnx,clkin1-bufg = <0x0>;
-                        xlnx,precision = <0x1>;
-                        clock-output-names = "0x80043000-clk_out1";
-                        xlnx,clkout1-divide = <0xc>;
-                        xlnx,use-phase-alignment = <0x0>;
-                        xlnx,ref-clk-freq = <0x64>;
-                        xlnx,pllbufgcediv = <0x0>;
-                        xlnx,deskew1-in = <0x0>;
-                        xlnx,inclk-sum-row0 = "Input , Clock , Freq , (MHz) , Input , Jitter , (UI)";
-                        xlnx,clkout7-requested-duty-cycle = <0x32>;
-                        xlnx,inclk-sum-row1 = "primary , 100.000 , 0.010";
-                        xlnx,inclk-sum-row2 = "secondary , 100.000 , 0.010";
-                        xlnx,clkout2-mbufgce-mode = "PERFORMANCE";
-                        xlnx,din-port = "din";
-                        xlnx,reset-board-interface = "Custom";
-                        xlnx,clkout5-actual-duty-cycle = <0x32>;
-                        xlnx,clkout-requested-phase = "0.000,0.000,0.000,0.000,0.000,0.000,0.000";
-                        xlnx,clkout6-duty-cycle = <0x7a120>;
-                        xlnx,clkout1-requested-duty-cycle = <0x32>;
-                        xlnx,vco-max = <0x10e0>;
-                        xlnx,use-freq-synth = <0x1>;
-                        xlnx,clkout5-used = <0x0>;
-                        xlnx,d-min = <0x1>;
-                        xlnx,clk-out6-port = "clk_out6";
-                        xlnx,clk-tree1 = <0x0>;
-                        xlnx,clkout2-sequence-number = <0x1>;
-                        xlnx,clkout-used = "true,false,false,false,false,false,false";
-                        xlnx,clk-tree2 = <0x0>;
-                        xlnx,clk-tree3 = <0x0>;
-                        xlnx,clkin1-period = <0x1c9c4ac>;
-                        xlnx,clkout2-used = <0x0>;
-                        xlnx,clkout4-sequence-number = <0x1>;
-                        xlnx,psincdec-port = "psincdec";
-                        xlnx,clk-tree4 = <0x0>;
-                        xlnx,clkfbin-ibuf = <0x0>;
-                        xlnx,clk-tree5 = <0x0>;
-                        xlnx,clk-out3-port = "clk_out3";
-                        xlnx,clkout6-sequence-number = <0x1>;
-                        xlnx,clkout-port = "clk_out1,clk_out2,clk_out3,clk_out4,clk_out5,clk_out6,clk_out7";
-                        xlnx,locked-deskew1-port = "locked_deskew1";
-                        xlnx,clk-tree6 = <0x0>;
-                        xlnx,clk-tree7 = <0x0>;
-                        xlnx,clkin2-ibuf = <0x0>;
-                        xlnx,clkfbout-fract = <0x0>;
-                        xlnx,clkout5-grouping = "Auto";
-                        xlnx,pllbufgcediv1 = <0x0>;
-                        xlnx,nr-outputs = <0x1>;
-                        xlnx,pllbufgcediv2 = <0x0>;
-                        xlnx,pllbufgcediv3 = <0x0>;
-                        xlnx,pllbufgcediv4 = <0x0>;
-                        xlnx,clkout1-mbufgce-mode = "PERFORMANCE";
-                        xlnx,clkfb-deskew-port = "clkfb_deskew";
-                        xlnx,clkout2-matched-routing = <0x0>;
-                        xlnx,safeclock-startup-mode = "DESKEW_MODE";
-                        xlnx,ref-jitter1 = <0x2710>;
-                        xlnx,ref-jitter2 = <0x2710>;
-                        status = "okay";
-                        xlnx,clkout4-matched-routing = <0x0>;
-                        xlnx,clkout6-dyn-ps = <0x0>;
-                        xlnx,clkout6-matched-routing = <0x0>;
-                        xlnx,clkout7-duty-cycle = <0x7a120>;
-                        xlnx,outclk-sum-row1 = "no , clk_out1 , output";
-                        xlnx,outclk-sum-row2 = "no , clk_out2 , output";
-                        xlnx,jitter-sel = "No_Jitter";
-                        xlnx,outclk-sum-row3 = "no , clk_out3 , output";
-                        xlnx,outclk-sum-row4 = "no , clk_out4 , output";
-                        xlnx,outclk-sum-row5 = "no , clk_out5 , output";
-                        xlnx,clkout7-actual-phase = <0x0>;
-                        xlnx,outclk-sum-row6 = "no , clk_out6 , output";
-                        xlnx,outclk-sum-row7 = "no , clk_out7 , output";
-                        xlnx,divide5-auto = <0x0>;
-                        xlnx,deskew-fb1 = <0x1>;
-                        xlnx,deskew-fb2 = <0x1>;
-                        xlnx,clkfbin-obuf = <0x0>;
-                        xlnx,psdone-port = "psdone";
-                        xlnx,edk-iptype = "PERIPHERAL";
-                        xlnx,clkout3-requested-out-freq = <0x64>;
-                        xlnx,divide2-auto = <0x0>;
-                        xlnx,clkout4-dyn-ps = <0x0>;
-                        xlnx,ss-mode = "CENTER_HIGH";
-                        xlnx,clkfbout-mult = <0x1>;
-                        xlnx,clkout-requested-duty-cycle = "50.000,50.000,50.000,50.000,50.000,50.000,50.000";
-                        xlnx,clkout6-drives = "BUFG";
-                        xlnx,ss-mod-period = <0xfa0>;
-                        xlnx,clkout2-actual-out-freq = <0x5f5dd18>;
-                        xlnx,clkout2-requested-duty-cycle = <0x32>;
-                        xlnx,numbufgce = <0x0>;
-                        xlnx,clkout4-actual-duty-cycle = <0x32>;
-                        xlnx,clkout4-actual-out-freq = <0x5f5dd18>;
-                        xlnx,primary-port = "clk_in1";
-                        xlnx,clkout6-actual-out-freq = <0x5f5dd18>;
-                        xlnx,clkout6-requested-out-freq = <0x64>;
-                        xlnx,clkfbout-oddr = <0x0>;
-                        xlnx,use-locked-fb = <0x0>;
-                        xlnx,locked-fb-port = "locked_fb";
-                        xlnx,clkout2-requested-phase = <0x0>;
-                        xlnx,relative-inclk = "REL_PRIMARY";
-                        xlnx,clkout4-requested-phase = <0x0>;
-                        xlnx,enable-user-clock0 = <0x0>;
-                        xlnx,clkout2-dyn-ps = <0x0>;
-                        xlnx,clkout2-grouping = "Auto";
-                        xlnx,enable-user-clock1 = <0x0>;
-                        xlnx,clkout6-actual-phase = <0x0>;
-                        xlnx,clkout6-requested-phase = <0x0>;
-                        xlnx,clkout-requested-out-frequency = "250,100.000,100.000,100.000,100.000,100.000,100.000";
-                        xlnx,ss-mod-freq = <0xfa>;
-                        xlnx,enable-user-clock2 = <0x0>;
-                        xlnx,enable-user-clock3 = <0x0>;
-                        xlnx,primitive-type = "MMCM";
-                        xlnx,ce-sync-ext = <0x0>;
-                        xlnx,clkout4-drives = "BUFG";
-                        xlnx,den-port = "den";
-                        xlnx,use-safe-clock-startup = <0x0>;
-                        xlnx,dwe-port = "dwe";
-                        xlnx,drdy-port = "drdy";
-                        xlnx,vco-min = <0x870>;
-                        xlnx,clk-in-sel-port = "clk_in_sel";
-                        xlnx,clkin1-jitter-ps = <0x64>;
-                        xlnx,deskew-delay-path1;
-                        xlnx,deskew-delay-path2;
-                        xlnx,enable-pll0 = <0x0>;
-                        xlnx,enable-pll1 = <0x0>;
-                        xlnx,clkin2-ibufds = <0x0>;
-                        xlnx,clkfb2-deskew-port = "clkfb2_deskew";
-                        xlnx,clkout2-drives = "BUFG";
-                        xlnx,use-inclk-stopped = <0x0>;
-                        compatible = "xlnx,clk-wizard-1.0", "xlnx,versal-clk-wizard";
-                        xlnx,clkout5-actual-phase = <0x0>;
-                        xlnx,reset-port = "reset";
-                        xlnx,sim-device = "VERSAL_AI_EDGE";
-                        xlnx,speed-grade = <0x2>;
-                        xlnx,clkout6-divide = <0xc>;
-                        xlnx,clkout3-requested-duty-cycle = <0x32>;
-                        xlnx,prim-source = "No_buffer";
-                        xlnx,clkout7-used = <0x0>;
-                        xlnx,deskew1-delay-en;
-                        xlnx,use-clkfb-stopped = <0x0>;
-                        xlnx,clkout6-grouping = "Auto";
-                        xlnx,compensation = "AUTO";
-                        xlnx,mmcmbufgcediv = <0x0>;
-                        xlnx,clkin-deskew-port = "clkin_deskew";
-                        xlnx,clkout3-actual-duty-cycle = <0x32>;
-                        xlnx,clkout4-used = <0x0>;
-                        xlnx,clk-out5-port = "clk_out5";
-                        xlnx,psclk-port = "psclk";
-                        xlnx,ce-type = "SYNC";
-                        xlnx,clkfbout-phase = <0x0>;
-                        xlnx,clkout4-divide = <0xc>;
-                        xlnx,primitive = "MMCM";
-                        xlnx,clkout1-used = <0x1>;
-                        xlnx,deskew1-lock-circuit-en;
-                        xlnx,clk-in1-board-interface = "Custom";
-                        xlnx,clk-out2-port = "clk_out2";
-                        xlnx,clkout4-actual-phase = <0x0>;
-                        xlnx,power-down-port = "power_down";
-                        xlnx,clkfb1-deskew-port = "clkfb1_deskew";
-                        xlnx,bandwidth = "OPTIMIZED";
-                        xlnx,clkin1-ibuf = <0x0>;
-                        xlnx,user-clk-freq0 = <0x64>;
-                        xlnx,deskew1-delay-path = "ClkFb_Path";
-                        xlnx,user-clk-freq1 = <0x64>;
-                        xlnx,clkoutfb-phase-ctrl = <0x0>;
-                        xlnx,user-clk-freq2 = <0x64>;
-                        xlnx,user-clk-freq3 = <0x64>;
-                        xlnx,use-clock-sequencing = <0x0>;
-                        xlnx,secondary-source = "Single_ended_clock_capable_pin";
-                        xlnx,cddcdone-port = "cddcdone";
-                        xlnx,clkout2-divide = <0xc>;
-                        xlnx,actual-vco = <0xb2cfe8d0>;
-                        xlnx,clkout7-phase = <0x0>;
-                        xlnx,psen-port = "psen";
-                        xlnx,m-max = <0x1b0>;
-                        xlnx,deskew-delay-en1;
-                        xlnx,dclk-port = "dclk";
-                        xlnx,deskew-delay-en2;
-                        xlnx,outclk-sum-row0a = "Output , Output , Phase , Duty , Pk-to-Pk , Phase";
-                        xlnx,divide7-auto = <0x0>;
-                        xlnx,clkout1-requested-out-freq = <0x64>;
-                        xlnx,outclk-sum-row0b = "Clock , Freq , (MHz) , (degrees) , Cycle , () , Jitter , (ps) , Error , (ps)";
-                        xlnx,locked-port = "locked";
-                        xlnx,enable-clock-monitor = <0x0>;
-                        xlnx,clkin2-ui-jitter = <0x2710>;
-                        xlnx,ss-mod-time = <0xfa0>;
-                        xlnx,divide4-auto = <0x0>;
-                        xlnx,auto-primitive = "MMCM";
-                        xlnx,drp-addr-set1 = "00000328 , 0000032c , 00000330 , 00000334 , 00000338 , 0000033c , 00000340 , 00000344 , 00000348 , 0000034c , 00000350 , 00000354 , 00000358 , 0000035c , 00000360 , 00000364 , 00000368 , 0000036c , 00000370 , 00000374 , 00000378 , 0000037c , 00000380 , 00000384 , 00000388 , 0000038c , 00000390 , 00000394 , 00000398 , 0000039c , 000003a0 , 000003a4 , 000003a8 , 000003ac , 000003b0 , 000003b4 , 000003b8 , 000003bc , 000003c0 , 000003c4 , 000003c8 , 000003cc , 000003d0 , 000003d4 , 000003d8 , 000003dc , 000003e0 , 000003e4 , 000003e8 , 000003ec , 000003f0 , 000003f4 , 000003f8 , 000003fc";
-                        xlnx,drp-addr-set2 = "00000328 , 0000032c , 00000330 , 00000334 , 00000338 , 0000033c , 00000340 , 00000344 , 00000348 , 0000034c , 00000350 , 00000354 , 00000358 , 0000035c , 00000360 , 00000364 , 00000368 , 0000036c , 00000370 , 00000374 , 00000378 , 0000037c , 00000380 , 00000384 , 00000388 , 0000038c , 00000390 , 00000394 , 00000398 , 0000039c , 000003a0 , 000003a4 , 000003a8 , 000003ac , 000003b0 , 000003b4 , 000003b8 , 000003bc , 000003c0 , 000003c4 , 000003c8 , 000003cc , 000003d0 , 000003d4 , 000003d8 , 000003dc , 000003e0 , 000003e4 , 000003e8 , 000003ec , 000003f0 , 000003f4 , 000003f8 , 000003fc";
-                        xlnx,drp-addr-set3 = "00000328 , 0000032c , 00000330 , 00000334 , 00000338 , 0000033c , 00000340 , 00000344 , 00000348 , 0000034c , 00000350 , 00000354 , 00000358 , 0000035c , 00000360 , 00000364 , 00000368 , 0000036c , 00000370 , 00000374 , 00000378 , 0000037c , 00000380 , 00000384 , 00000388 , 0000038c , 00000390 , 00000394 , 00000398 , 0000039c , 000003a0 , 000003a4 , 000003a8 , 000003ac , 000003b0 , 000003b4 , 000003b8 , 000003bc , 000003c0 , 000003c4 , 000003c8 , 000003cc , 000003d0 , 000003d4 , 000003d8 , 000003dc , 000003e0 , 000003e4 , 000003e8 , 000003ec , 000003f0 , 000003f4 , 000003f8 , 000003fc";
-                        xlnx,clkout3-actual-phase = <0x0>;
-                        xlnx,clkout-mbufgce-mode = "PERFORMANCE,PERFORMANCE,PERFORMANCE,PERFORMANCE,PERFORMANCE,PERFORMANCE,PERFORMANCE";
-                        xlnx,use-power-down = <0x1>;
-                        xlnx,divide1-auto = <0x0>;
-                        xlnx,clkout3-grouping = "Auto";
-                        xlnx,clkout4-requested-duty-cycle = <0x32>;
-                        xlnx,clkout4-requested-out-freq = <0x64>;
-                        xlnx,clkout6-phase = <0x0>;
-                        xlnx,num-out-clks = <0x1>;
-                        xlnx,ip-name = "clk_wizard";
-                        xlnx,auto-nummbufgce = <0x0>;
-                        xlnx,deskew-in1 = <0x0>;
-                        xlnx,deskew2-delay = <0x0>;
-                        xlnx,deskew-in2 = <0x0>;
-                        xlnx,mmcmbufgcediv1 = <0x0>;
-                        xlnx,deskew2-delay-path = "ClkFb_Path";
-                        xlnx,mmcmbufgcediv2 = <0x0>;
-                        xlnx,clkin2-period = <0x13de432>;
-                        xlnx,clkout1-duty-cycle = <0x7a120>;
-                        xlnx,mmcmbufgcediv3 = <0x0>;
-                        xlnx,mmcmbufgcediv4 = <0x0>;
-                        xlnx,mmcmbufgcediv5 = <0x0>;
-                        xlnx,dout-port = "dout";
-                        xlnx,mmcmbufgcediv6 = <0x0>;
-                        xlnx,clkout1-sequence-number = <0x1>;
-                        xlnx,mmcmbufgcediv7 = <0x0>;
-                        xlnx,cddcreq-port = "cddcreq";
-                        xlnx,clkout7-requested-out-freq = <0x64>;
-                        xlnx,use-spread-spectrum;
-                        xlnx,clkout3-sequence-number = <0x1>;
-                        xlnx,clkout7-mbufgce-mode = "PERFORMANCE";
-                        xlnx,clkout2-actual-duty-cycle = <0x32>;
-                        xlnx,clkout5-sequence-number = <0x1>;
-                        xlnx,clkout5-phase = <0x0>;
-                        xlnx,clkout7-sequence-number = <0x1>;
-                        xlnx,deskew1-delay = <0x0>;
-                        xlnx,clkfb-in-port = "clkfb_in";
-                        xlnx,zhold;
-                        xlnx,clkout2-actual-phase = <0x0>;
-                        xlnx,clkout7-dyn-ps = <0x0>;
-                        xlnx,deskew-lock-circuit-en1 = <0x0>;
-                        xlnx,clkout-dyn-ps = "None,None,None,None,None,None,None";
-                        xlnx,deskew-lock-circuit-en2 = <0x0>;
-                        xlnx,clkfbout-bufg = <0x0>;
-                        xlnx,clkout1-matched-routing = <0x0>;
-                        xlnx,interface-selection = <0x1>;
-                        xlnx,clkout3-matched-routing = <0x0>;
-                        xlnx,override-primitive = <0x0>;
-                        xlnx,calc-done = "empty";
-                        xlnx,clkout5-matched-routing = <0x0>;
-                        xlnx,clkfbin-obufds = <0x0>;
-                        xlnx,actual-pfd = <0xa98a58>;
-                        xlnx,clkout7-matched-routing = <0x0>;
-                        xlnx,clkin2-bufg = <0x0>;
-                        xlnx,clkout2-duty-cycle = <0x7a120>;
-                        xlnx,clkout4-phase = <0x0>;
-                        xlnx,clkout5-dyn-ps = <0x0>;
-                        xlnx,clkout6-mbufgce-mode = "PERFORMANCE";
-                        xlnx,clkout7-actual-duty-cycle = <0x32>;
-                        clocks = <&versal_clk 0x42>,
-                         <&versal_clk 0x42>;
-                        xlnx,deskew2-delay-en;
-                        xlnx,clkout7-grouping = "Auto";
-                        xlnx,clkfbin-ibufds = <0x0>;
-                        xlnx,clkfb-bufg = <0x0>;
-                        xlnx,clkout7-drives = "BUFG";
-                        xlnx,clkout-drives = "No_buffer,BUFG,BUFG,BUFG,BUFG,BUFG,BUFG";
-                        xlnx,clkout5-requested-duty-cycle = <0x32>;
-                        xlnx,drp-data-set1 = "4b06 , 0001 , 1600 , 8787 , 1a00 , 0303 , 0a00 , 0303 , 0a00 , 0303 , 0a00 , 0303 , f37c , 7c4d , d042 , ebd8 , ec5f , edfb , aacd , 4428 , 002f , 0000 , 0400 , 0101 , 000f , 0006 , 0000 , 0000 , 0e80 , 40e1 , 43e9 , 1188 , 0008 , 0001 , 0000 , 00c0 , 0dfd , 0961 , 0001 , 0000 , 068b , 0a00 , 0303 , 0a00 , 0303 , 0a00 , 0303 , 0000 , 0000 , 0000 , 0000 , 0000 , 0f00 , 0001";
-                        xlnx,divclk-divide = <0x3>;
-                        xlnx,clkfb-in-signaling = "SINGLE";
-                        xlnx,drp-data-set2 = "4b06 , 0001 , 1600 , 8787 , 1a00 , 0202 , 0b00 , 0101 , 0a00 , 0000 , 0a00 , 0101 , f37c , 7c4d , d042 , ebd8 , ec5f , edfb , aacd , 4428 , 002f , 0000 , 0400 , 0101 , 000f , 0006 , 0000 , 0000 , 0e80 , 40e1 , 43e9 , 1188 , 0008 , 0001 , 0000 , 00c0 , 0dfd , 0961 , 0001 , 0000 , 068b , 0a00 , 0303 , 0b00 , 0101 , 0a00 , 0202 , 0000 , 0000 , 0000 , 0000 , 0000 , 0f00 , 0001";
-                        xlnx,clkout1-actual-phase = <0x0>;
-                        xlnx,drp-data-set3 = "4b06 , 0001 , 1600 , 8787 , 1a00 , 0303 , 0a00 , 0303 , 0a00 , 0303 , 0a00 , 0303 , f37c , 7c4d , d042 , ebd8 , ec5f , edfb , aacd , 4428 , 002f , 0000 , 0400 , 0101 , 000f , 0006 , 0000 , 0000 , 0e80 , 40e1 , 43e9 , 1188 , 0008 , 0001 , 0000 , 00c0 , 0dfd , 0961 , 0001 , 0000 , 068b , 0a00 , 0303 , 0a00 , 0303 , 0a00 , 0303 , 0000 , 0000 , 0000 , 0000 , 0000 , 0f00 , 0001";
-                        xlnx,deskew2-fb = <0x1>;
-                        xlnx,secondary-port = "clk_in2";
-                        xlnx,clkout1-actual-out-freq = <0xee6a8bc>;
-                        xlnx,clkout3-phase = <0x0>;
-                        xlnx,numbufg = <0x0>;
-                        xlnx,clkout3-actual-out-freq = <0x5f5dd18>;
-                        xlnx,use-reset = <0x1>;
-                        xlnx,clkout3-dyn-ps = <0x0>;
-                        xlnx,m-min = <0x5>;
-                        xlnx,clkout5-actual-out-freq = <0x5f5dd18>;
-                        xlnx,clkout6-used = <0x0>;
-                        xlnx,perf-mode = "FULL";
-                        xlnx,clkfb-stopped-port = "clkfb_stopped";
-                        xlnx,clk-out7-port = "clk_out7";
-                        xlnx,clkout1-requested-phase = <0x0>;
-                        xlnx,clkout7-actual-out-freq = <0x5f5dd18>;
-                        xlnx,phaseshift-mode = "LATENCY";
-                        xlnx,clkfb-out-port = "clkfb_out";
-                        xlnx,clkout5-drives = "BUFG";
-                        xlnx,o-max = <0x1b0>;
-                        xlnx,clkout3-requested-phase = <0x0>;
-                        xlnx,jitter-options = "UI";
-                        xlnx,clkout3-used = <0x0>;
-                        xlnx,clkout5-requested-phase = <0x0>;
-                        xlnx,clk-out4-port = "clk_out4";
-                        xlnx,clkout3-duty-cycle = <0x7a120>;
-                        xlnx,locked-deskew2-port = "locked_deskew2";
-                        xlnx,clkout7-requested-phase = <0x0>;
-                        xlnx,secondary-in-freq = <0x30>;
-                        xlnx,clkout5-mbufgce-mode = "PERFORMANCE";
-                        xlnx,use-min-power = <0x0>;
-                        #clock-cells = <0x1>;
-                        xlnx,nummbufgce = <0x0>;
-                        phandle = <0x10>;
-                };
-
-                blp_blp_logic_axi_firewall_user: axi_firewall@80001000 {
-                        xlnx,protocol = <0x2>;
-                        compatible = "xlnx,axi-firewall-1.2";
-                        xlnx,enable-pipelining = <0x1>;
-                        xlnx,enable-protocol-checks = <0x1>;
-                        xlnx,awuser-width = <0x0>;
-                        xlnx,has-rresp = <0x1>;
-                        xlnx,has-bresp = <0x1>;
-                        xlnx,supports-narrow = <0x0>;
-                        xlnx,read-write-mode = "READ_WRITE";
-                        xlnx,has-prot = <0x1>;
-                        xlnx,wdata-width = <0x20>;
-                        xlnx,ruser-width = <0x0>;
-                        xlnx,buser-width = <0x0>;
-                        xlnx,has-aclken = <0x0>;
-                        xlnx,ip-name = "axi_firewall";
-                        xlnx,num-write-threads = <0x1>;
-                        reg = <0x0 0x80001000 0x0 0x1000>;
-                        xlnx,addr-width = <0x40>;
-                        clocks = <&versal_clk 0x41>;
-                        xlnx,num-read-threads = <0x1>;
-                        xlnx,has-lock = <0x1>;
-                        xlnx,id-width = <0x0>;
-                        xlnx,enable-initial-delay = <0x1>;
-                        xlnx,has-wstrb = <0x1>;
-                        xlnx,has-aresetn = <0x1>;
-                        xlnx,wuser-width = <0x0>;
-                        xlnx,has-qos = <0x1>;
-                        xlnx,edk-iptype = "PERIPHERAL";
-                        xlnx,has-region = <0x1>;
-                        xlnx,has-cache = <0x1>;
-                        xlnx,num-write-outstanding = <0x20>;
-                        xlnx,enable-prescaler = <0x1>;
-                        xlnx,num-read-outstanding = <0x20>;
-                        status = "okay";
-                        clock-names = "aclk";
-                        xlnx,data-width = <0x20>;
-                        xlnx,aruser-width = <0x0>;
-                        xlnx,firewall-mode = <0x0>;
-                        xlnx,enable-ctl-clock = <0x0>;
-                        xlnx,has-burst = <0x1>;
-                        xlnx,rdata-width = <0x20>;
-                        xlnx,mask-err-resp = <0x1>;
-                        xlnx,enable-timeout-checks = <0x1>;
-                        xlnx,name = "blp_blp_logic_axi_firewall_user";
-                        phandle = <0x9>;
-                };
-
-                blp_blp_logic_axi_uart_rpu: serial@80021000 {
-                        interrupts = <0x0 0x57 0x1>;
-                        compatible = "xlnx,axi-uartlite-2.0", "xlnx,xps-uartlite-1.00.a";
-                        xlnx,uartlite-board-interface = "Custom";
-                        xlnx,s-axi-aclk-freq-hz-d = <0x5f5e09d>;
-                        interrupt-parent = <&imux>;
-                        xlnx,ip-name = "axi_uartlite";
-                        reg = <0x0 0x80021000 0x0 0x1000>;
-                        xlnx,baudrate = <0x38400>;
-                        clocks = <&versal_clk 0x41>;
-                        current-speed = <0x38400>;
-                        xlnx,use-parity = <0x0>;
-                        xlnx,edk-iptype = "PERIPHERAL";
-                        xlnx,odd-parity = <0x0>;
-                        status = "okay";
-                        clock-names = "s_axi_aclk";
-                        interrupt-names = "interrupt";
-                        xlnx,name = "blp_blp_logic_axi_uart_rpu";
-                        xlnx,data-bits = <0x8>;
-                        xlnx,parity = "No_Parity";
-                        phandle = <0xd>;
-                };
-
-                blp_blp_logic_base_clocking_pr_reset_gpio: gpio@80020000 {
-                        xlnx,gpio-board-interface = "Custom";
-                        compatible = "xlnx,axi-gpio-2.0", "xlnx,xps-gpio-1.00.a";
-                        xlnx,all-outputs = <0x1>;
-                        #gpio-cells = <0x2>;
-                        xlnx,gpio-width = <0x2>;
-                        xlnx,dout-default = <0x0>;
-                        xlnx,is-dual = <0x1>;
-                        xlnx,ip-name = "axi_gpio";
-                        xlnx,tri-default-2 = <0xffffffff>;
-                        reg = <0x0 0x80020000 0x0 0x1000>;
-                        xlnx,all-inputs-2 = <0x1>;
-                        clocks = <&versal_clk 0x41>;
-                        xlnx,all-outputs-2 = <0x0>;
-                        gpio-controller;
-                        xlnx,interrupt-present = <0x0>;
-                        xlnx,gpio2-board-interface = "Custom";
-                        xlnx,edk-iptype = "PERIPHERAL";
-                        xlnx,dout-default-2 = <0x0>;
-                        status = "okay";
-                        xlnx,gpio2-width = <0x2>;
-                        clock-names = "s_axi_aclk";
-                        xlnx,tri-default = <0xffffffff>;
-                        xlnx,name = "blp_blp_logic_base_clocking_pr_reset_gpio";
-                        xlnx,all-inputs = <0x0>;
-                        phandle = <0xc>;
-                };
-
-                blp_blp_logic_gcq_m2r: cmd_queue@20102010000 {
-                        compatible = "xlnx,cmd-queue-2.0";
-                        interrupts = <0x0 0x54 0x1>;
-                        interrupt-parent = <&imux>;
-                        xlnx,ip-name = "cmd_queue";
-                        reg = <0x0 0x80010000 0x0 0x1000 0x201 0x2010000 0x0 0x1000>;
-                        clocks = <&versal_clk 0x41>;
-                        xlnx,s01-addr-width = <0xc>;
-                        xlnx,edk-iptype = "PERIPHERAL";
-                        status = "okay";
-                        clock-names = "aclk";
-                        xlnx,s00-addr-width = <0xc>;
-                        interrupt-names = "irq_sq";
-                        xlnx,name = "blp_blp_logic_gcq_m2r";
-                        phandle = <0xa>;
-                };
-
-                blp_blp_logic_gcq_r2a: cmd_queue@80011000 {
-                        compatible = "xlnx,cmd-queue-2.0";
-                        interrupts = <0x0 0x55 0x1 0x0 0x5c 0x1>;
-                        interrupt-parent = <&imux>;
-                        xlnx,ip-name = "cmd_queue";
-                        reg = <0x0 0x80011000 0x0 0x1000 0x4 0x2000000 0x0 0x1000>;
-                        clocks = <&versal_clk 0x41>;
-                        xlnx,s01-addr-width = <0xc>;
-                        xlnx,edk-iptype = "PERIPHERAL";
-                        status = "okay";
-                        clock-names = "aclk";
-                        xlnx,s00-addr-width = <0xc>;
-                        interrupt-names = "irq_cq", "irq_sq";
-                        xlnx,name = "blp_blp_logic_gcq_r2a";
-                        phandle = <0xb>;
-                };
-
-                blp_blp_logic_pfm_irq_ctlr: pfm_irq_ctlr@80044000 {
-                        compatible = "xlnx,pfm-irq-ctlr-1.0";
-                        xlnx,num-of-irq-pf0 = <0x1>;
-                        xlnx,num-of-irq-pf1 = <0x1>;
-                        xlnx,ip-name = "pfm_irq_ctlr";
-                        xlnx,cpm-type = <0x0>;
-                        xlnx,num-of-pfs = <0x2>;
-                        xlnx,num-of-irq-pf2 = <0x20>;
-                        reg = <0x0 0x80044000 0x0 0x1000>;
-                        xlnx,addr-width = <0xa>;
-                        clocks = <&misc_clk_0>;
-                        xlnx,num-of-irq-pf3 = <0x20>;
-                        xlnx,edk-iptype = "PERIPHERAL";
-                        xlnx,axi-ctrl-en = <0x1>;
-                        xlnx,edge-select-pf0 = <0x0>;
-                        status = "okay";
-                        xlnx,edge-select-pf1 = <0x0>;
-                        clock-names = "aclk";
-                        xlnx,edge-select-pf2 = <0x0>;
-                        xlnx,max-pf-length = <0x20>;
-                        xlnx,edge-select-pf3 = <0x0>;
-                        xlnx,name = "blp_blp_logic_pfm_irq_ctlr";
-                        phandle = <0x11>;
-                };
-
-                blp_blp_logic_ulp_clocking_shell_utils_ucc: shell_utils_ucc@80030000 {
-                        compatible = "xlnx,shell-utils-ucc-1.0";
-                        status = "okay";
-                        clock-names = "aclk_ctrl", "aclk_freerun", "aclk_pcie", "clk_in_kernel_00", "clk_in_kernel_01";
-                        xlnx,ip-name = "shell_utils_ucc";
-                        xlnx,edk-iptype = "PERIPHERAL";
-                        xlnx,num-clocks = <0x2>;
-                        xlnx,freq-cnt-ref-clk-hz = <0x8235>;
-                        xlnx,ext-tog-enable = <0x1>;
-                        reg = <0x0 0x80030000 0x0 0x10000>;
-                        clocks = <&versal_clk 0x41>,
-                         <&versal_clk 0x42>,
-                         <&misc_clk_0>,
-                         <&blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_00 0x0>,
-                         <&blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_01 0x0>;
-                        xlnx,name = "blp_blp_logic_ulp_clocking_shell_utils_ucc";
-                        phandle = <0xe>;
-                };
-
-                blp_blp_logic_uuid_register: uuid_register@20102002000 {
-                        compatible = "xlnx,uuid-register-1.0";
-                        status = "okay";
-                        clock-names = "S_AXI_ACLK";
-                        xlnx,ip-name = "uuid_register";
-                        xlnx,edk-iptype = "PERIPHERAL";
-                        reg = <0x0 0x80045000 0x0 0x1000 0x201 0x2002000 0x0 0x1000>;
-                        clocks = <&versal_clk 0x41>;
-                        xlnx,name = "blp_blp_logic_uuid_register";
-                        phandle = <0x12>;
-                };
-        };
-
-        blp_axi_noc_mc_1x_ddr_memory: memory@00000000 {
-                compatible = "xlnx,axi-noc-1.1";
-                xlnx,ip-name = "axi_noc";
-                device_type = "memory";
-                reg = <0x0 0x0 0x0 0x80000000>;
-                memory_type = "memory";
-                phandle = <0x3>;
-        };
-
-        blp_cips_pspmc_0_psv_ocm_ram_0_memory: memory@FFFC0000 {
-                compatible = "xlnx,psv-ocm-ram-0-1.0", "mmio-sram";
-                xlnx,ip-name = "psv_ocm_ram_0";
-                device_type = "memory";
-                memory_type = "memory";
-                reg = <0x0 0xfffc0000 0x0 0x40000>;
-                phandle = <0x8>;
         };
 
         chosen {
@@ -3304,8 +1674,6 @@
                 amba_rpu = "/rpu-bus";
                 amba = "/axi";
                 imux = "/axi/interrupt-multiplex";
-                cci = "/axi/cci@fd000000";
-                cci_pmu = "/axi/cci@fd000000/pmu@10000";
                 lpd_dma_chan0 = "/axi/dma-controller@ffa80000";
                 lpd_dma_chan1 = "/axi/dma-controller@ffa90000";
                 lpd_dma_chan2 = "/axi/dma-controller@ffaa0000";
@@ -3318,12 +1686,9 @@
                 gpio1 = "/axi/gpio@f1020000";
                 i2c2 = "/axi/i2c@f1000000";
                 ocm = "/axi/memory-controller@ff960000";
-                rtc = "/axi/rtc@f12a0000";
                 serial0 = "/axi/serial@ff000000";
                 serial1 = "/axi/serial@ff010000";
-                smmu = "/axi/iommu@fd800000";
                 ospi = "/axi/spi@f1010000";
-                spi0 = "/axi/spi@ff040000";
                 sysmon0 = "/axi/sysmon@f1270000";
                 ttc0 = "/axi/timer@ff0e0000";
                 ttc1 = "/axi/timer@ff0f0000";
@@ -3358,40 +1723,6 @@
                 blp_cips_pspmc_0_psv_ipi_pmc_nobuf_7 = "/axi/mailbox@ff390000/child@7";
                 blp_cips_pspmc_0_psv_ipi_pmc_nobuf_8 = "/axi/mailbox@ff390000/child@8";
                 blp_cips_pspmc_0_psv_ipi_pmc_nobuf_9 = "/axi/mailbox@ff390000/child@9";
-                blp_cips_pspmc_0_psv_cpm = "/axi/blp_cips_pspmc_0_psv_cpm@0";
-                blp_cips_pspmc_0_psv_crf_0 = "/axi/blp_cips_pspmc_0_psv_crf_0@fd1a0000";
-                blp_cips_pspmc_0_psv_crl_0 = "/axi/blp_cips_pspmc_0_psv_crl_0@ff5e0000";
-                blp_cips_pspmc_0_psv_crp_0 = "/axi/blp_cips_pspmc_0_psv_crp_0@f1260000";
-                blp_cips_pspmc_0_psv_fpd_afi_0 = "/axi/blp_cips_pspmc_0_psv_fpd_afi_0@fd360000";
-                blp_cips_pspmc_0_psv_fpd_afi_2 = "/axi/blp_cips_pspmc_0_psv_fpd_afi_2@fd380000";
-                blp_cips_pspmc_0_psv_fpd_cci_0 = "/axi/blp_cips_pspmc_0_psv_fpd_cci_0@fd5e0000";
-                blp_cips_pspmc_0_psv_fpd_gpv_0 = "/axi/blp_cips_pspmc_0_psv_fpd_gpv_0@fd700000";
-                blp_cips_pspmc_0_psv_fpd_slcr_0 = "/axi/blp_cips_pspmc_0_psv_fpd_slcr_0@fd610000";
-                blp_cips_pspmc_0_psv_fpd_slcr_secure_0 = "/axi/blp_cips_pspmc_0_psv_fpd_slcr_secure_0@fd690000";
-                blp_cips_pspmc_0_psv_fpd_smmu_0 = "/axi/blp_cips_pspmc_0_psv_fpd_smmu_0@fd5f0000";
-                blp_cips_pspmc_0_psv_lpd_afi_0 = "/axi/blp_cips_pspmc_0_psv_lpd_afi_0@ff9b0000";
-                blp_cips_pspmc_0_psv_lpd_iou_secure_slcr_0 = "/axi/blp_cips_pspmc_0_psv_lpd_iou_secure_slcr_0@ff0a0000";
-                blp_cips_pspmc_0_psv_lpd_iou_slcr_0 = "/axi/blp_cips_pspmc_0_psv_lpd_iou_slcr_0@ff080000";
-                blp_cips_pspmc_0_psv_lpd_slcr_0 = "/axi/blp_cips_pspmc_0_psv_lpd_slcr_0@ff410000";
-                blp_cips_pspmc_0_psv_lpd_slcr_secure_0 = "/axi/blp_cips_pspmc_0_psv_lpd_slcr_secure_0@ff510000";
-                blp_cips_pspmc_0_psv_ocm_ctrl = "/axi/blp_cips_pspmc_0_psv_ocm_ctrl@ff960000";
-                blp_cips_pspmc_0_psv_pmc_aes = "/axi/blp_cips_pspmc_0_psv_pmc_aes@f11e0000";
-                blp_cips_pspmc_0_psv_pmc_analog_0 = "/axi/blp_cips_pspmc_0_psv_pmc_analog_0@f1160000";
-                blp_cips_pspmc_0_psv_pmc_bbram_ctrl = "/axi/blp_cips_pspmc_0_psv_pmc_bbram_ctrl@f11f0000";
-                blp_cips_pspmc_0_psv_pmc_efuse_cache = "/axi/blp_cips_pspmc_0_psv_pmc_efuse_cache@f1250000";
-                blp_cips_pspmc_0_psv_pmc_efuse_ctrl = "/axi/blp_cips_pspmc_0_psv_pmc_efuse_ctrl@f1240000";
-                blp_cips_pspmc_0_psv_pmc_global_0 = "/axi/blp_cips_pspmc_0_psv_pmc_global_0@f1110000";
-                blp_cips_pspmc_0_psv_pmc_ram_data_cntlr = "/axi/blp_cips_pspmc_0_psv_pmc_ram_data_cntlr@f0240000";
-                blp_cips_pspmc_0_psv_pmc_ram_instr_cntlr = "/axi/blp_cips_pspmc_0_psv_pmc_ram_instr_cntlr@f0200000";
-                blp_cips_pspmc_0_psv_pmc_ram_npi = "/axi/blp_cips_pspmc_0_psv_pmc_ram_npi@f6000000";
-                blp_cips_pspmc_0_psv_pmc_rsa = "/axi/blp_cips_pspmc_0_psv_pmc_rsa@f1200000";
-                blp_cips_pspmc_0_psv_pmc_sha = "/axi/blp_cips_pspmc_0_psv_pmc_sha@f1210000";
-                blp_cips_pspmc_0_psv_pmc_slave_boot = "/axi/blp_cips_pspmc_0_psv_pmc_slave_boot@f1220000";
-                blp_cips_pspmc_0_psv_pmc_slave_boot_stream = "/axi/blp_cips_pspmc_0_psv_pmc_slave_boot_stream@f2100000";
-                blp_cips_pspmc_0_psv_pmc_tap = "/axi/blp_cips_pspmc_0_psv_pmc_tap@f11a0000";
-                blp_cips_pspmc_0_psv_pmc_tmr_inject_0 = "/axi/blp_cips_pspmc_0_psv_pmc_tmr_inject_0@f0083000";
-                blp_cips_pspmc_0_psv_pmc_tmr_manager_0 = "/axi/blp_cips_pspmc_0_psv_pmc_tmr_manager_0@f0283000";
-                blp_cips_pspmc_0_psv_psm_global_reg = "/axi/blp_cips_pspmc_0_psv_psm_global_reg@ffc90000";
                 blp_cips_pspmc_0_psv_r5_0_atcm = "/axi/blp_cips_pspmc_0_psv_r5_0_atcm@0";
                 blp_cips_pspmc_0_psv_r5_0_atcm_lockstep = "/axi/blp_cips_pspmc_0_psv_r5_0_atcm_lockstep@ffe10000";
                 blp_cips_pspmc_0_psv_r5_0_btcm = "/axi/blp_cips_pspmc_0_psv_r5_0_btcm@20000";
@@ -3399,31 +1730,12 @@
                 blp_cips_pspmc_0_psv_r5_1_atcm = "/axi/blp_cips_pspmc_0_psv_r5_1_atcm@0";
                 blp_cips_pspmc_0_psv_r5_1_btcm = "/axi/blp_cips_pspmc_0_psv_r5_1_btcm@20000";
                 blp_cips_pspmc_0_psv_r5_tcm_ram_0 = "/axi/blp_cips_pspmc_0_psv_r5_tcm_ram_0@0";
-                blp_cips_pspmc_0_psv_scntr_0 = "/axi/blp_cips_pspmc_0_psv_scntr_0@ff130000";
-                blp_cips_pspmc_0_psv_scntrs_0 = "/axi/blp_cips_pspmc_0_psv_scntrs_0@ff140000";
-                blp_cips_pspmc_0_psv_xram_atm = "/axi/blp_cips_pspmc_0_psv_xram_atm@ff970000";
-                blp_cips_pspmc_0_psv_xram_ctrl_1 = "/axi/blp_cips_pspmc_0_psv_xram_ctrl_1@ff8e0000";
-                blp_cips_pspmc_0_psv_xram_ctrl_2 = "/axi/blp_cips_pspmc_0_psv_xram_ctrl_2@ff8f0000";
-                blp_cips_pspmc_0_psv_xram_ctrl_3 = "/axi/blp_cips_pspmc_0_psv_xram_ctrl_3@ff900000";
-                blp_cips_pspmc_0_psv_xram_ctrl_4 = "/axi/blp_cips_pspmc_0_psv_xram_ctrl_4@ff910000";
-                blp_cips_pspmc_0_psv_xram_global_ctrl = "/axi/blp_cips_pspmc_0_psv_xram_global_ctrl@ff950000";
-                blp_cips_pspmc_0_psv_xram_gpv = "/axi/blp_cips_pspmc_0_psv_xram_gpv@ff940000";
-                blp_cips_pspmc_0_psv_xram_xmpu_bank_1 = "/axi/blp_cips_pspmc_0_psv_xram_xmpu_bank_1@ff930000";
-                blp_cips_pspmc_0_psv_xram_xmpu_bank_2 = "/axi/blp_cips_pspmc_0_psv_xram_xmpu_bank_2@ff934000";
-                blp_cips_pspmc_0_psv_xram_xmpu_bank_3 = "/axi/blp_cips_pspmc_0_psv_xram_xmpu_bank_3@ff938000";
-                blp_cips_pspmc_0_psv_xram_xmpu_bank_4 = "/axi/blp_cips_pspmc_0_psv_xram_xmpu_bank_4@ff93c000";
                 psv_r5_0_atcm_global = "/psv_r5_0_atcm_global@ffe00000";
                 psv_r5_0_btcm_global = "/psv_r5_0_btcm_global@ffe20000";
                 psv_r5_1_atcm_global = "/psv_r5_1_atcm_global@ffe90000";
                 psv_r5_1_btcm_global = "/psv_r5_1_btcm_global@ffeb0000";
                 amba_xppu = "/indirect-bus@1";
-                lpd_xppu = "/indirect-bus@1/xppu@ff990000";
-                pmc_xppu = "/indirect-bus@1/xppu@f1310000";
-                pmc_xppu_npi = "/indirect-bus@1/xppu@f1300000";
                 amba_xmpu = "/indirect-bus@2";
-                fpd_xmpu = "/indirect-bus@2/xmpu@fd390000";
-                pmc_xmpu = "/indirect-bus@2/xmpu@f12f0000";
-                ocm_xmpu = "/indirect-bus@2/xmpu@ff980000";
                 pl_alt_ref = "/pl-alt-ref";
                 ref = "/ref";
                 can0_clk = "/can0-clk";
@@ -3449,17 +1761,5 @@
                 amba_pl = "/amba_pl";
                 fpga_PR = "/amba_pl/fpga-PR";
                 misc_clk_0 = "/amba_pl/misc_clk_0";
-                blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_00 = "/amba_pl/clk_wizard@80042000";
-                blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_01 = "/amba_pl/clk_wizard@80043000";
-                blp_blp_logic_axi_firewall_user = "/amba_pl/axi_firewall@80001000";
-                blp_blp_logic_axi_uart_rpu = "/amba_pl/serial@80021000";
-                blp_blp_logic_base_clocking_pr_reset_gpio = "/amba_pl/gpio@80020000";
-                blp_blp_logic_gcq_m2r = "/amba_pl/cmd_queue@20102010000";
-                blp_blp_logic_gcq_r2a = "/amba_pl/cmd_queue@80011000";
-                blp_blp_logic_pfm_irq_ctlr = "/amba_pl/pfm_irq_ctlr@80044000";
-                blp_blp_logic_ulp_clocking_shell_utils_ucc = "/amba_pl/shell_utils_ucc@80030000";
-                blp_blp_logic_uuid_register = "/amba_pl/uuid_register@20102002000";
-                blp_axi_noc_mc_1x_ddr_memory = "/memory@00000000";
-                blp_cips_pspmc_0_psv_ocm_ram_0_memory = "/memory@FFFC0000";
         };
 };

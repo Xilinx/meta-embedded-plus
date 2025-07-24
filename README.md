@@ -10,9 +10,9 @@ the Embedded Plus platform:
 | Machine             | Target             | Description            |
 |---------------------|--------------------|------------------------|
 | emb-plus-ve2302-amr | emb-plus-apu-image | APU image              |
-| emb-plus-ve2302-amr | emb-plus-ospi      | OSPI image             |
+| emb-plus-ve2302-amr | emb-plus-ospi-amr  | OSPI image             |
 | emb-plus-ve2302-xrt | emb-plus-apu-image | APU image              |
-| emb-plus-ve2302-xrt | emb-plus-ospi      | OSPI image             |
+| emb-plus-ve2302-xrt | emb-plus-ospi-vmr  | OSPI image             |
 
 > Usageexample:
 >

@@ -124,9 +124,17 @@ for mach in ${!MACHINES[@]}; do
   echo "Post:         ${POST[${mach}]}"
   echo
 
+  if [ ${MACHINES[${mach}]} = "emb-plus-ve2302-amr" ]; then
+    add_args="--add-config CONFIG_SUBSYSTEM_TF-A_SERIAL_SERIAL1_SELECT=y \
+     --add-config CONFIG_SUBSYSTEM_SERIAL_TF-A_IP_NAME="pl011_1" \
+     "
+  else
+    add_args=""
+  fi
+
   set -x
   rm -rf output
-  gen-machineconf parse-sdt --hw-description ${URLS[${mach}]} -c ${conf_path} --machine-name ${MACHINES[${mach}]} ${MULTICONFIGS[${mach}]} ${OVERLAYS[${mach}]} ${DOMAINS[${mach}]} ${OVERRIDES[${mach}]}
+  gen-machineconf parse-sdt --hw-description ${URLS[${mach}]} -c ${conf_path} --machine-name ${MACHINES[${mach}]} ${MULTICONFIGS[${mach}]} ${OVERLAYS[${mach}]} ${DOMAINS[${mach}]} ${OVERRIDES[${mach}]} ${add_args}
   rm -f ${conf_path}/domains.yaml
   rm -f ${conf_path}/system-top.dts.pp
   set +x
@@ -140,4 +148,13 @@ for mach in ${!MACHINES[@]}; do
   if [ -n "${POST[${mach}]}" ]; then
     sed -i ${conf_path}/machine/${MACHINES[${mach}]}.conf -e 's!\(^require conf/machine/.*\.conf\)!\1\n\n'"${POST[${mach}]}"'!'
   fi
+
+   # Manipulate configuration variables
+  case ${MACHINES[${mach}]} in
+    emb-plus-ve2302-amr)
+      sed -i ${conf_path}/machine/${MACHINES[${mach}]}.conf \
+        -e 's,UBOOT_ENTRYPOINT  ?= "0x200000",UBOOT_ENTRYPOINT  ?= "0x8200000",' \
+        -e 's,UBOOT_LOADADDRESS ?= "0x200000",UBOOT_LOADADDRESS ?= "0x8200000",' \
+      ;;
+  esac
 done

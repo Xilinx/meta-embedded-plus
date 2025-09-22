@@ -1207,7 +1207,7 @@
                         xlnx,bit-position = <0x0>;
                         xlnx,name = "blp_cips_pspmc_0_psv_ipi_psm";
 
-                        ipi_psm_to_ipi_0: child@0 {
+                        ipi_psm_to_ipi_0: child@ff330000 {
                                 phandle = <0xf3>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 xlnx,ipi-bitmask = <0x4>;
@@ -1221,7 +1221,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_psm_to_ipi_1: child@1 {
+                        ipi_psm_to_ipi_1: child@ff340000 {
                                 phandle = <0xf4>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 xlnx,ipi-bitmask = <0x8>;
@@ -1235,7 +1235,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_psm_to_ipi_2: child@2 {
+                        ipi_psm_to_ipi_2: child@ff350000 {
                                 phandle = <0xf5>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 xlnx,ipi-bitmask = <0x10>;
@@ -1249,7 +1249,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_psm_to_ipi_3: child@3 {
+                        ipi_psm_to_ipi_3: child@ff360000 {
                                 phandle = <0xf6>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 xlnx,ipi-bitmask = <0x20>;
@@ -1263,7 +1263,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_psm_to_ipi_4: child@4 {
+                        ipi_psm_to_ipi_4: child@ff370000 {
                                 phandle = <0xf7>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 xlnx,ipi-bitmask = <0x40>;
@@ -1277,7 +1277,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_psm_to_ipi_5: child@5 {
+                        ipi_psm_to_ipi_5: child@ff380000 {
                                 phandle = <0xf8>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 xlnx,ipi-bitmask = <0x80>;
@@ -1291,7 +1291,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_psm_to_ipi_6: child@6 {
+                        ipi_psm_to_ipi_6: child@ff3a0000 {
                                 phandle = <0xf9>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 xlnx,ipi-bitmask = <0x200>;
@@ -1303,7 +1303,7 @@
                                 reg-names = "ctrl";
                         };
 
-                        ipi_psm_to_ipi_pmc: child@7 {
+                        ipi_psm_to_ipi_pmc: child@ff320000 {
                                 phandle = <0xfa>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 xlnx,ipi-bitmask = <0x2>;
@@ -1317,7 +1317,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_psm_to_ipi_pmc_nobuf: child@8 {
+                        ipi_psm_to_ipi_pmc_nobuf: child@ff390000 {
                                 phandle = <0xfb>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 xlnx,ipi-bitmask = <0x100>;
@@ -1329,7 +1329,7 @@
                                 reg-names = "ctrl";
                         };
 
-                        ipi_psm_to_ipi_psm: child@9 {
+                        ipi_psm_to_ipi_psm: child@ff310000 {
                                 phandle = <0xfc>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 xlnx,ipi-bitmask = <0x1>;
@@ -3306,16 +3306,16 @@
                 pmc_cfu_apb_0 = "/axi/cfu_apb@f12b0000";
                 pmc_ppu1_mdm_0 = "/axi/ppu1_mdm@f0310000";
                 ipi_psm = "/axi/mailbox@ff310000";
-                ipi_psm_to_ipi_0 = "/axi/mailbox@ff310000/child@0";
-                ipi_psm_to_ipi_1 = "/axi/mailbox@ff310000/child@1";
-                ipi_psm_to_ipi_2 = "/axi/mailbox@ff310000/child@2";
-                ipi_psm_to_ipi_3 = "/axi/mailbox@ff310000/child@3";
-                ipi_psm_to_ipi_4 = "/axi/mailbox@ff310000/child@4";
-                ipi_psm_to_ipi_5 = "/axi/mailbox@ff310000/child@5";
-                ipi_psm_to_ipi_6 = "/axi/mailbox@ff310000/child@6";
-                ipi_psm_to_ipi_pmc = "/axi/mailbox@ff310000/child@7";
-                ipi_psm_to_ipi_pmc_nobuf = "/axi/mailbox@ff310000/child@8";
-                ipi_psm_to_ipi_psm = "/axi/mailbox@ff310000/child@9";
+                ipi_psm_to_ipi_0 = "/axi/mailbox@ff310000/child@ff330000";
+                ipi_psm_to_ipi_1 = "/axi/mailbox@ff310000/child@ff340000";
+                ipi_psm_to_ipi_2 = "/axi/mailbox@ff310000/child@ff350000";
+                ipi_psm_to_ipi_3 = "/axi/mailbox@ff310000/child@ff360000";
+                ipi_psm_to_ipi_4 = "/axi/mailbox@ff310000/child@ff370000";
+                ipi_psm_to_ipi_5 = "/axi/mailbox@ff310000/child@ff380000";
+                ipi_psm_to_ipi_6 = "/axi/mailbox@ff310000/child@ff3a0000";
+                ipi_psm_to_ipi_pmc = "/axi/mailbox@ff310000/child@ff320000";
+                ipi_psm_to_ipi_pmc_nobuf = "/axi/mailbox@ff310000/child@ff390000";
+                ipi_psm_to_ipi_psm = "/axi/mailbox@ff310000/child@ff310000";
                 blp_cips_pspmc_0_psv_crf_0 = "/axi/blp_cips_pspmc_0_psv_crf_0@fd1a0000";
                 blp_cips_pspmc_0_psv_crl_0 = "/axi/blp_cips_pspmc_0_psv_crl_0@ff5e0000";
                 blp_cips_pspmc_0_psv_crp_0 = "/axi/blp_cips_pspmc_0_psv_crp_0@f1260000";

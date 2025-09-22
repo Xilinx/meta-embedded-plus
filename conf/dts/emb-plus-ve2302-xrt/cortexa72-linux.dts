@@ -1168,7 +1168,7 @@
                         ranges;
                         reg-names = "ctrl", "msg";
 
-                        ipi_0_to_ipi_0: child@0 {
+                        ipi_0_to_ipi_0: child@ff330000 {
                                 phandle = <0xfd>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1177,7 +1177,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_0_to_ipi_1: child@1 {
+                        ipi_0_to_ipi_1: child@ff340000 {
                                 phandle = <0xfe>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1186,7 +1186,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_0_to_ipi_2: child@2 {
+                        ipi_0_to_ipi_2: child@ff350000 {
                                 phandle = <0xff>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1195,7 +1195,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_0_to_ipi_3: child@3 {
+                        ipi_0_to_ipi_3: child@ff360000 {
                                 phandle = <0x100>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1204,7 +1204,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_0_to_ipi_4: child@4 {
+                        ipi_0_to_ipi_4: child@ff370000 {
                                 phandle = <0x101>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1213,7 +1213,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_0_to_ipi_5: child@5 {
+                        ipi_0_to_ipi_5: child@ff380000 {
                                 phandle = <0x102>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1222,7 +1222,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_0_to_ipi_6: child@6 {
+                        ipi_0_to_ipi_6: child@ff3a0000 {
                                 phandle = <0x103>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1231,7 +1231,7 @@
                                 reg-names = "ctrl";
                         };
 
-                        ipi_0_to_ipi_pmc: child@7 {
+                        ipi_0_to_ipi_pmc: child@ff320000 {
                                 phandle = <0x104>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1240,7 +1240,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_0_to_ipi_pmc_nobuf: child@8 {
+                        ipi_0_to_ipi_pmc_nobuf: child@ff390000 {
                                 phandle = <0x105>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1249,7 +1249,7 @@
                                 reg-names = "ctrl";
                         };
 
-                        ipi_0_to_ipi_psm: child@9 {
+                        ipi_0_to_ipi_psm: child@ff310000 {
                                 phandle = <0x106>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1271,7 +1271,7 @@
                         ranges;
                         reg-names = "ctrl", "msg";
 
-                        ipi_1_to_ipi_0: child@0 {
+                        ipi_1_to_ipi_0: child@ff330000 {
                                 phandle = <0x107>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1280,7 +1280,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_1_to_ipi_1: child@1 {
+                        ipi_1_to_ipi_1: child@ff340000 {
                                 phandle = <0x108>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1289,7 +1289,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_1_to_ipi_2: child@2 {
+                        ipi_1_to_ipi_2: child@ff350000 {
                                 phandle = <0x109>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1298,7 +1298,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_1_to_ipi_3: child@3 {
+                        ipi_1_to_ipi_3: child@ff360000 {
                                 phandle = <0x10a>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1307,7 +1307,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_1_to_ipi_4: child@4 {
+                        ipi_1_to_ipi_4: child@ff370000 {
                                 phandle = <0x10b>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1316,7 +1316,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_1_to_ipi_5: child@5 {
+                        ipi_1_to_ipi_5: child@ff380000 {
                                 phandle = <0x10c>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1325,7 +1325,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_1_to_ipi_6: child@6 {
+                        ipi_1_to_ipi_6: child@ff3a0000 {
                                 phandle = <0x10d>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1334,7 +1334,7 @@
                                 reg-names = "ctrl";
                         };
 
-                        ipi_1_to_ipi_pmc: child@7 {
+                        ipi_1_to_ipi_pmc: child@ff320000 {
                                 phandle = <0x10e>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1343,7 +1343,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_1_to_ipi_pmc_nobuf: child@8 {
+                        ipi_1_to_ipi_pmc_nobuf: child@ff390000 {
                                 phandle = <0x10f>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1352,7 +1352,7 @@
                                 reg-names = "ctrl";
                         };
 
-                        ipi_1_to_ipi_psm: child@9 {
+                        ipi_1_to_ipi_psm: child@ff310000 {
                                 phandle = <0x110>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1374,7 +1374,7 @@
                         ranges;
                         reg-names = "ctrl", "msg";
 
-                        ipi_2_to_ipi_0: child@0 {
+                        ipi_2_to_ipi_0: child@ff330000 {
                                 phandle = <0x111>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1383,7 +1383,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_2_to_ipi_1: child@1 {
+                        ipi_2_to_ipi_1: child@ff340000 {
                                 phandle = <0x112>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1392,7 +1392,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_2_to_ipi_2: child@2 {
+                        ipi_2_to_ipi_2: child@ff350000 {
                                 phandle = <0x113>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1401,7 +1401,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_2_to_ipi_3: child@3 {
+                        ipi_2_to_ipi_3: child@ff360000 {
                                 phandle = <0x114>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1410,7 +1410,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_2_to_ipi_4: child@4 {
+                        ipi_2_to_ipi_4: child@ff370000 {
                                 phandle = <0x115>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1419,7 +1419,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_2_to_ipi_5: child@5 {
+                        ipi_2_to_ipi_5: child@ff380000 {
                                 phandle = <0x116>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1428,7 +1428,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_2_to_ipi_6: child@6 {
+                        ipi_2_to_ipi_6: child@ff3a0000 {
                                 phandle = <0x117>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1437,7 +1437,7 @@
                                 reg-names = "ctrl";
                         };
 
-                        ipi_2_to_ipi_pmc: child@7 {
+                        ipi_2_to_ipi_pmc: child@ff320000 {
                                 phandle = <0x118>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1446,7 +1446,7 @@
                                 reg-names = "ctrl", "msg";
                         };
 
-                        ipi_2_to_ipi_pmc_nobuf: child@8 {
+                        ipi_2_to_ipi_pmc_nobuf: child@ff390000 {
                                 phandle = <0x119>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -1455,7 +1455,7 @@
                                 reg-names = "ctrl";
                         };
 
-                        ipi_2_to_ipi_psm: child@9 {
+                        ipi_2_to_ipi_psm: child@ff310000 {
                                 phandle = <0x11a>;
                                 compatible = "xlnx,versal-ipi-dest-mailbox";
                                 #mbox-cells = <0x1>;
@@ -2410,38 +2410,38 @@
                 dma0 = "/axi/pmcdma@f11c0000";
                 dma1 = "/axi/pmcdma@f11d0000";
                 ipi0 = "/axi/mailbox@ff330000";
-                ipi_0_to_ipi_0 = "/axi/mailbox@ff330000/child@0";
-                ipi_0_to_ipi_1 = "/axi/mailbox@ff330000/child@1";
-                ipi_0_to_ipi_2 = "/axi/mailbox@ff330000/child@2";
-                ipi_0_to_ipi_3 = "/axi/mailbox@ff330000/child@3";
-                ipi_0_to_ipi_4 = "/axi/mailbox@ff330000/child@4";
-                ipi_0_to_ipi_5 = "/axi/mailbox@ff330000/child@5";
-                ipi_0_to_ipi_6 = "/axi/mailbox@ff330000/child@6";
-                ipi_0_to_ipi_pmc = "/axi/mailbox@ff330000/child@7";
-                ipi_0_to_ipi_pmc_nobuf = "/axi/mailbox@ff330000/child@8";
-                ipi_0_to_ipi_psm = "/axi/mailbox@ff330000/child@9";
+                ipi_0_to_ipi_0 = "/axi/mailbox@ff330000/child@ff330000";
+                ipi_0_to_ipi_1 = "/axi/mailbox@ff330000/child@ff340000";
+                ipi_0_to_ipi_2 = "/axi/mailbox@ff330000/child@ff350000";
+                ipi_0_to_ipi_3 = "/axi/mailbox@ff330000/child@ff360000";
+                ipi_0_to_ipi_4 = "/axi/mailbox@ff330000/child@ff370000";
+                ipi_0_to_ipi_5 = "/axi/mailbox@ff330000/child@ff380000";
+                ipi_0_to_ipi_6 = "/axi/mailbox@ff330000/child@ff3a0000";
+                ipi_0_to_ipi_pmc = "/axi/mailbox@ff330000/child@ff320000";
+                ipi_0_to_ipi_pmc_nobuf = "/axi/mailbox@ff330000/child@ff390000";
+                ipi_0_to_ipi_psm = "/axi/mailbox@ff330000/child@ff310000";
                 ipi1 = "/axi/mailbox@ff340000";
-                ipi_1_to_ipi_0 = "/axi/mailbox@ff340000/child@0";
-                ipi_1_to_ipi_1 = "/axi/mailbox@ff340000/child@1";
-                ipi_1_to_ipi_2 = "/axi/mailbox@ff340000/child@2";
-                ipi_1_to_ipi_3 = "/axi/mailbox@ff340000/child@3";
-                ipi_1_to_ipi_4 = "/axi/mailbox@ff340000/child@4";
-                ipi_1_to_ipi_5 = "/axi/mailbox@ff340000/child@5";
-                ipi_1_to_ipi_6 = "/axi/mailbox@ff340000/child@6";
-                ipi_1_to_ipi_pmc = "/axi/mailbox@ff340000/child@7";
-                ipi_1_to_ipi_pmc_nobuf = "/axi/mailbox@ff340000/child@8";
-                ipi_1_to_ipi_psm = "/axi/mailbox@ff340000/child@9";
+                ipi_1_to_ipi_0 = "/axi/mailbox@ff340000/child@ff330000";
+                ipi_1_to_ipi_1 = "/axi/mailbox@ff340000/child@ff340000";
+                ipi_1_to_ipi_2 = "/axi/mailbox@ff340000/child@ff350000";
+                ipi_1_to_ipi_3 = "/axi/mailbox@ff340000/child@ff360000";
+                ipi_1_to_ipi_4 = "/axi/mailbox@ff340000/child@ff370000";
+                ipi_1_to_ipi_5 = "/axi/mailbox@ff340000/child@ff380000";
+                ipi_1_to_ipi_6 = "/axi/mailbox@ff340000/child@ff3a0000";
+                ipi_1_to_ipi_pmc = "/axi/mailbox@ff340000/child@ff320000";
+                ipi_1_to_ipi_pmc_nobuf = "/axi/mailbox@ff340000/child@ff390000";
+                ipi_1_to_ipi_psm = "/axi/mailbox@ff340000/child@ff310000";
                 ipi2 = "/axi/mailbox@ff350000";
-                ipi_2_to_ipi_0 = "/axi/mailbox@ff350000/child@0";
-                ipi_2_to_ipi_1 = "/axi/mailbox@ff350000/child@1";
-                ipi_2_to_ipi_2 = "/axi/mailbox@ff350000/child@2";
-                ipi_2_to_ipi_3 = "/axi/mailbox@ff350000/child@3";
-                ipi_2_to_ipi_4 = "/axi/mailbox@ff350000/child@4";
-                ipi_2_to_ipi_5 = "/axi/mailbox@ff350000/child@5";
-                ipi_2_to_ipi_6 = "/axi/mailbox@ff350000/child@6";
-                ipi_2_to_ipi_pmc = "/axi/mailbox@ff350000/child@7";
-                ipi_2_to_ipi_pmc_nobuf = "/axi/mailbox@ff350000/child@8";
-                ipi_2_to_ipi_psm = "/axi/mailbox@ff350000/child@9";
+                ipi_2_to_ipi_0 = "/axi/mailbox@ff350000/child@ff330000";
+                ipi_2_to_ipi_1 = "/axi/mailbox@ff350000/child@ff340000";
+                ipi_2_to_ipi_2 = "/axi/mailbox@ff350000/child@ff350000";
+                ipi_2_to_ipi_3 = "/axi/mailbox@ff350000/child@ff360000";
+                ipi_2_to_ipi_4 = "/axi/mailbox@ff350000/child@ff370000";
+                ipi_2_to_ipi_5 = "/axi/mailbox@ff350000/child@ff380000";
+                ipi_2_to_ipi_6 = "/axi/mailbox@ff350000/child@ff3a0000";
+                ipi_2_to_ipi_pmc = "/axi/mailbox@ff350000/child@ff320000";
+                ipi_2_to_ipi_pmc_nobuf = "/axi/mailbox@ff350000/child@ff390000";
+                ipi_2_to_ipi_psm = "/axi/mailbox@ff350000/child@ff310000";
                 coresight = "/axi/coresight@f0800000";
                 blp_cips_pspmc_0_psv_coresight_fpd_cti1b = "/axi/blp_cips_pspmc_0_psv_coresight_fpd_cti1b@f0bb0000";
                 blp_cips_pspmc_0_psv_coresight_fpd_cti1c = "/axi/blp_cips_pspmc_0_psv_coresight_fpd_cti1c@f0bc0000";

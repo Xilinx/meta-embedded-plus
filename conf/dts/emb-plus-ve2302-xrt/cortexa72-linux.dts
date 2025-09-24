@@ -1923,7 +1923,7 @@
                 compatible = "simple-bus";
                 #address-cells = <0x2>;
                 #size-cells = <0x2>;
-                firmware-name = "ve2302_pcie_qdma_secure_base.pdi";
+                firmware-name = "ve2302_pcie_qdma_base.pdi";
 
                 blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_00: clk_wizard@80042000 {
                         phandle = <0xf>;

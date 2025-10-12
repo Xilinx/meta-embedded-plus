@@ -90,4 +90,19 @@
 		xlnx,data-width = <256>;
 		xlnx,name = "blp_xdma_bypass_addr_mask";
 	};
+	blp_xdma_lite_addr_mask: blp_xdma_lite_addr_mask@0 {
+		compatible = "xlnx,axi-addr-mask-1.0";
+		xlnx,awuser-width = <0>;
+		xlnx,s-addr-mask = <0xffffff>;
+		xlnx,ip-name = "axi_addr_mask";
+		reg = <0x0 0x000000 0x0 0x1000000>;
+		xlnx,addr-width = <64>;
+		clocks = <&misc_clk_0>;
+		xlnx,id-width = <1>;
+		xlnx,edk-iptype = "PERIPHERAL";
+		clock-names = "aclk";
+		xlnx,aruser-width = <0>;
+		xlnx,data-width = <32>;
+		xlnx,name = "blp_xdma_lite_addr_mask";
+	};
 };

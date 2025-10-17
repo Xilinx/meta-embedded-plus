@@ -3102,9 +3102,9 @@
                         xlnx,edk-iptype = "PERIPHERAL";
                         xlnx,has-region = <0x1>;
                         xlnx,has-cache = <0x1>;
-                        xlnx,num-write-outstanding = <0x2>;
+                        xlnx,num-write-outstanding = <0x20>;
                         xlnx,enable-prescaler = <0x1>;
-                        xlnx,num-read-outstanding = <0x2>;
+                        xlnx,num-read-outstanding = <0x20>;
                         status = "okay";
                         clock-names = "aclk";
                         xlnx,data-width = <0x20>;

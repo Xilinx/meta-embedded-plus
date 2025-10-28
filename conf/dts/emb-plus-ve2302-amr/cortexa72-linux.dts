@@ -1527,7 +1527,7 @@
                         xlnx,ip-name = "psv_coresight";
                 };
 
-                blp_cips_pspmc_0_psv_coresight_fpd_cti1b: blp_cips_pspmc_0_psv_coresight_fpd_cti1b@f0bb0000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_coresight_fpd_cti1b: STATIC_DESIGN_cips_pspmc_0_psv_coresight_fpd_cti1b@f0bb0000 {
                         phandle = <0x13>;
                         compatible = "xlnx,psv-coresight-fpd-cti1b-1.0";
                         status = "okay";
@@ -1535,7 +1535,7 @@
                         reg = <0x0 0xf0bb0000 0x0 0x10000>;
                 };
 
-                blp_cips_pspmc_0_psv_coresight_fpd_cti1c: blp_cips_pspmc_0_psv_coresight_fpd_cti1c@f0bc0000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_coresight_fpd_cti1c: STATIC_DESIGN_cips_pspmc_0_psv_coresight_fpd_cti1c@f0bc0000 {
                         phandle = <0x14>;
                         compatible = "xlnx,psv-coresight-fpd-cti1c-1.0";
                         status = "okay";
@@ -1543,7 +1543,7 @@
                         reg = <0x0 0xf0bc0000 0x0 0x10000>;
                 };
 
-                blp_cips_pspmc_0_psv_coresight_fpd_cti1d: blp_cips_pspmc_0_psv_coresight_fpd_cti1d@f0bd0000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_coresight_fpd_cti1d: STATIC_DESIGN_cips_pspmc_0_psv_coresight_fpd_cti1d@f0bd0000 {
                         phandle = <0x15>;
                         compatible = "xlnx,psv-coresight-fpd-cti1d-1.0";
                         status = "okay";
@@ -1551,7 +1551,7 @@
                         reg = <0x0 0xf0bd0000 0x0 0x10000>;
                 };
 
-                blp_cips_pspmc_0_psv_coresight_lpd_cti: blp_cips_pspmc_0_psv_coresight_lpd_cti@f09d0000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_coresight_lpd_cti: STATIC_DESIGN_cips_pspmc_0_psv_coresight_lpd_cti@f09d0000 {
                         phandle = <0xe>;
                         compatible = "xlnx,psv-coresight-lpd-cti-1.0";
                         status = "okay";
@@ -1559,7 +1559,7 @@
                         reg = <0x0 0xf09d0000 0x0 0x10000>;
                 };
 
-                blp_cips_pspmc_0_psv_coresight_pmc_cti: blp_cips_pspmc_0_psv_coresight_pmc_cti@f08d0000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_coresight_pmc_cti: STATIC_DESIGN_cips_pspmc_0_psv_coresight_pmc_cti@f08d0000 {
                         phandle = <0xc>;
                         compatible = "xlnx,psv-coresight-pmc-cti-1.0";
                         status = "okay";
@@ -1567,7 +1567,7 @@
                         reg = <0x0 0xf08d0000 0x0 0x10000>;
                 };
 
-                blp_cips_pspmc_0_psv_coresight_r50_cti: blp_cips_pspmc_0_psv_coresight_r50_cti@f0a10000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_coresight_r50_cti: STATIC_DESIGN_cips_pspmc_0_psv_coresight_r50_cti@f0a10000 {
                         phandle = <0xf>;
                         compatible = "xlnx,psv-coresight-r50-cti-1.0";
                         status = "okay";
@@ -1575,7 +1575,7 @@
                         reg = <0x0 0xf0a10000 0x0 0x10000>;
                 };
 
-                blp_cips_pspmc_0_psv_coresight_r51_cti: blp_cips_pspmc_0_psv_coresight_r51_cti@f0a50000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_coresight_r51_cti: STATIC_DESIGN_cips_pspmc_0_psv_coresight_r51_cti@f0a50000 {
                         phandle = <0x10>;
                         compatible = "xlnx,psv-coresight-r51-cti-1.0";
                         status = "okay";
@@ -1583,7 +1583,7 @@
                         reg = <0x0 0xf0a50000 0x0 0x10000>;
                 };
 
-                blp_cips_pspmc_0_psv_cpm: blp_cips_pspmc_0_psv_cpm@0 {
+                STATIC_DESIGN_cips_pspmc_0_psv_cpm: STATIC_DESIGN_cips_pspmc_0_psv_cpm@0 {
                         phandle = <0x56>;
                         compatible = "xlnx,psv-cpm-1.0";
                         status = "okay";
@@ -1591,7 +1591,7 @@
                         reg = <0x0 0xfc000000 0x0 0x1000000>;
                 };
 
-                blp_cips_pspmc_0_psv_pmc_analog_0: blp_cips_pspmc_0_psv_pmc_analog_0@f1160000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_analog_0: STATIC_DESIGN_cips_pspmc_0_psv_pmc_analog_0@f1160000 {
                         phandle = <0x30>;
                         compatible = "xlnx,psv-pmc-analog-1.0";
                         status = "okay";
@@ -1602,7 +1602,7 @@
                         xlnx,cram-scan = <0x0>;
                 };
 
-                blp_cips_pspmc_0_psv_pmc_iou_slcr_0: blp_cips_pspmc_0_psv_pmc_iou_slcr_0@f1060000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_iou_slcr_0: STATIC_DESIGN_cips_pspmc_0_psv_pmc_iou_slcr_0@f1060000 {
                         phandle = <0x2e>;
                         compatible = "xlnx,psv-pmc-iou-slcr-1.0";
                         status = "okay";
@@ -1610,7 +1610,7 @@
                         reg = <0x0 0xf1060000 0x0 0x10000>;
                 };
 
-                blp_cips_pspmc_0_psv_pmc_tap: blp_cips_pspmc_0_psv_pmc_tap@f11a0000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_tap: STATIC_DESIGN_cips_pspmc_0_psv_pmc_tap@f11a0000 {
                         phandle = <0x31>;
                         compatible = "xlnx,psv-pmc-tap-1.0";
                         status = "okay";
@@ -1618,7 +1618,7 @@
                         reg = <0x0 0xf11a0000 0x0 0x20000>;
                 };
 
-                blp_cips_pspmc_0_psv_xram_atm: blp_cips_pspmc_0_psv_xram_atm@ff970000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_atm: STATIC_DESIGN_cips_pspmc_0_psv_xram_atm@ff970000 {
                         phandle = <0x7d>;
                         compatible = "xlnx,psv-xram-atm-1.0";
                         status = "okay";
@@ -1626,7 +1626,7 @@
                         reg = <0x0 0xff970000 0x0 0x10000>;
                 };
 
-                blp_cips_pspmc_0_psv_xram_ctrl_1: blp_cips_pspmc_0_psv_xram_ctrl_1@ff8e0000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_ctrl_1: STATIC_DESIGN_cips_pspmc_0_psv_xram_ctrl_1@ff8e0000 {
                         phandle = <0x72>;
                         compatible = "xlnx,psv-xram-ctrl-1.0";
                         status = "okay";
@@ -1634,7 +1634,7 @@
                         reg = <0x0 0xff8e0000 0x0 0x10000>;
                 };
 
-                blp_cips_pspmc_0_psv_xram_ctrl_2: blp_cips_pspmc_0_psv_xram_ctrl_2@ff8f0000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_ctrl_2: STATIC_DESIGN_cips_pspmc_0_psv_xram_ctrl_2@ff8f0000 {
                         phandle = <0x73>;
                         compatible = "xlnx,psv-xram-ctrl-1.0";
                         status = "okay";
@@ -1642,7 +1642,7 @@
                         reg = <0x0 0xff8f0000 0x0 0x10000>;
                 };
 
-                blp_cips_pspmc_0_psv_xram_ctrl_3: blp_cips_pspmc_0_psv_xram_ctrl_3@ff900000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_ctrl_3: STATIC_DESIGN_cips_pspmc_0_psv_xram_ctrl_3@ff900000 {
                         phandle = <0x74>;
                         compatible = "xlnx,psv-xram-ctrl-1.0";
                         status = "okay";
@@ -1650,7 +1650,7 @@
                         reg = <0x0 0xff900000 0x0 0x10000>;
                 };
 
-                blp_cips_pspmc_0_psv_xram_ctrl_4: blp_cips_pspmc_0_psv_xram_ctrl_4@ff910000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_ctrl_4: STATIC_DESIGN_cips_pspmc_0_psv_xram_ctrl_4@ff910000 {
                         phandle = <0x75>;
                         compatible = "xlnx,psv-xram-ctrl-1.0";
                         status = "okay";
@@ -1658,7 +1658,7 @@
                         reg = <0x0 0xff910000 0x0 0x10000>;
                 };
 
-                blp_cips_pspmc_0_psv_xram_global_ctrl: blp_cips_pspmc_0_psv_xram_global_ctrl@ff950000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_global_ctrl: STATIC_DESIGN_cips_pspmc_0_psv_xram_global_ctrl@ff950000 {
                         phandle = <0x7b>;
                         compatible = "xlnx,psv-xram-global-ctrl-1.0";
                         status = "okay";
@@ -1666,7 +1666,7 @@
                         reg = <0x0 0xff950000 0x0 0x10000>;
                 };
 
-                blp_cips_pspmc_0_psv_xram_gpv: blp_cips_pspmc_0_psv_xram_gpv@ff940000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_gpv: STATIC_DESIGN_cips_pspmc_0_psv_xram_gpv@ff940000 {
                         phandle = <0x7a>;
                         compatible = "xlnx,psv-xram-gpv-1.0";
                         status = "okay";
@@ -1674,7 +1674,7 @@
                         reg = <0x0 0xff940000 0x0 0x10000>;
                 };
 
-                blp_cips_pspmc_0_psv_xram_xmpu_bank_1: blp_cips_pspmc_0_psv_xram_xmpu_bank_1@ff930000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_xmpu_bank_1: STATIC_DESIGN_cips_pspmc_0_psv_xram_xmpu_bank_1@ff930000 {
                         phandle = <0x76>;
                         compatible = "xlnx,psv-xram-xmpu-bank-1.0";
                         status = "okay";
@@ -1682,7 +1682,7 @@
                         reg = <0x0 0xff930000 0x0 0x4000>;
                 };
 
-                blp_cips_pspmc_0_psv_xram_xmpu_bank_2: blp_cips_pspmc_0_psv_xram_xmpu_bank_2@ff934000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_xmpu_bank_2: STATIC_DESIGN_cips_pspmc_0_psv_xram_xmpu_bank_2@ff934000 {
                         phandle = <0x77>;
                         compatible = "xlnx,psv-xram-xmpu-bank-1.0";
                         status = "okay";
@@ -1690,7 +1690,7 @@
                         reg = <0x0 0xff934000 0x0 0x4000>;
                 };
 
-                blp_cips_pspmc_0_psv_xram_xmpu_bank_3: blp_cips_pspmc_0_psv_xram_xmpu_bank_3@ff938000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_xmpu_bank_3: STATIC_DESIGN_cips_pspmc_0_psv_xram_xmpu_bank_3@ff938000 {
                         phandle = <0x78>;
                         compatible = "xlnx,psv-xram-xmpu-bank-1.0";
                         status = "okay";
@@ -1698,7 +1698,7 @@
                         reg = <0x0 0xff938000 0x0 0x4000>;
                 };
 
-                blp_cips_pspmc_0_psv_xram_xmpu_bank_4: blp_cips_pspmc_0_psv_xram_xmpu_bank_4@ff93c000 {
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_xmpu_bank_4: STATIC_DESIGN_cips_pspmc_0_psv_xram_xmpu_bank_4@ff93c000 {
                         phandle = <0x79>;
                         compatible = "xlnx,psv-xram-xmpu-bank-1.0";
                         status = "okay";
@@ -1979,7 +1979,7 @@
                 };
         };
 
-        blp_axi_noc_mc_1x_ddr_memory: memory@00000000 {
+        STATIC_DESIGN_axi_noc_mc_1x_ddr_memory: memory@00000000 {
                 phandle = <0x3>;
                 compatible = "xlnx,axi-noc-1.1";
                 xlnx,ip-name = "axi_noc";
@@ -2115,28 +2115,28 @@
                 ipi_2_to_ipi_pmc_nobuf = "/axi/mailbox@ff350000/child@ff390000";
                 ipi_2_to_ipi_psm = "/axi/mailbox@ff350000/child@ff310000";
                 coresight = "/axi/coresight@f0800000";
-                blp_cips_pspmc_0_psv_coresight_fpd_cti1b = "/axi/blp_cips_pspmc_0_psv_coresight_fpd_cti1b@f0bb0000";
-                blp_cips_pspmc_0_psv_coresight_fpd_cti1c = "/axi/blp_cips_pspmc_0_psv_coresight_fpd_cti1c@f0bc0000";
-                blp_cips_pspmc_0_psv_coresight_fpd_cti1d = "/axi/blp_cips_pspmc_0_psv_coresight_fpd_cti1d@f0bd0000";
-                blp_cips_pspmc_0_psv_coresight_lpd_cti = "/axi/blp_cips_pspmc_0_psv_coresight_lpd_cti@f09d0000";
-                blp_cips_pspmc_0_psv_coresight_pmc_cti = "/axi/blp_cips_pspmc_0_psv_coresight_pmc_cti@f08d0000";
-                blp_cips_pspmc_0_psv_coresight_r50_cti = "/axi/blp_cips_pspmc_0_psv_coresight_r50_cti@f0a10000";
-                blp_cips_pspmc_0_psv_coresight_r51_cti = "/axi/blp_cips_pspmc_0_psv_coresight_r51_cti@f0a50000";
-                blp_cips_pspmc_0_psv_cpm = "/axi/blp_cips_pspmc_0_psv_cpm@0";
-                blp_cips_pspmc_0_psv_pmc_analog_0 = "/axi/blp_cips_pspmc_0_psv_pmc_analog_0@f1160000";
-                blp_cips_pspmc_0_psv_pmc_iou_slcr_0 = "/axi/blp_cips_pspmc_0_psv_pmc_iou_slcr_0@f1060000";
-                blp_cips_pspmc_0_psv_pmc_tap = "/axi/blp_cips_pspmc_0_psv_pmc_tap@f11a0000";
-                blp_cips_pspmc_0_psv_xram_atm = "/axi/blp_cips_pspmc_0_psv_xram_atm@ff970000";
-                blp_cips_pspmc_0_psv_xram_ctrl_1 = "/axi/blp_cips_pspmc_0_psv_xram_ctrl_1@ff8e0000";
-                blp_cips_pspmc_0_psv_xram_ctrl_2 = "/axi/blp_cips_pspmc_0_psv_xram_ctrl_2@ff8f0000";
-                blp_cips_pspmc_0_psv_xram_ctrl_3 = "/axi/blp_cips_pspmc_0_psv_xram_ctrl_3@ff900000";
-                blp_cips_pspmc_0_psv_xram_ctrl_4 = "/axi/blp_cips_pspmc_0_psv_xram_ctrl_4@ff910000";
-                blp_cips_pspmc_0_psv_xram_global_ctrl = "/axi/blp_cips_pspmc_0_psv_xram_global_ctrl@ff950000";
-                blp_cips_pspmc_0_psv_xram_gpv = "/axi/blp_cips_pspmc_0_psv_xram_gpv@ff940000";
-                blp_cips_pspmc_0_psv_xram_xmpu_bank_1 = "/axi/blp_cips_pspmc_0_psv_xram_xmpu_bank_1@ff930000";
-                blp_cips_pspmc_0_psv_xram_xmpu_bank_2 = "/axi/blp_cips_pspmc_0_psv_xram_xmpu_bank_2@ff934000";
-                blp_cips_pspmc_0_psv_xram_xmpu_bank_3 = "/axi/blp_cips_pspmc_0_psv_xram_xmpu_bank_3@ff938000";
-                blp_cips_pspmc_0_psv_xram_xmpu_bank_4 = "/axi/blp_cips_pspmc_0_psv_xram_xmpu_bank_4@ff93c000";
+                STATIC_DESIGN_cips_pspmc_0_psv_coresight_fpd_cti1b = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_coresight_fpd_cti1b@f0bb0000";
+                STATIC_DESIGN_cips_pspmc_0_psv_coresight_fpd_cti1c = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_coresight_fpd_cti1c@f0bc0000";
+                STATIC_DESIGN_cips_pspmc_0_psv_coresight_fpd_cti1d = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_coresight_fpd_cti1d@f0bd0000";
+                STATIC_DESIGN_cips_pspmc_0_psv_coresight_lpd_cti = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_coresight_lpd_cti@f09d0000";
+                STATIC_DESIGN_cips_pspmc_0_psv_coresight_pmc_cti = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_coresight_pmc_cti@f08d0000";
+                STATIC_DESIGN_cips_pspmc_0_psv_coresight_r50_cti = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_coresight_r50_cti@f0a10000";
+                STATIC_DESIGN_cips_pspmc_0_psv_coresight_r51_cti = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_coresight_r51_cti@f0a50000";
+                STATIC_DESIGN_cips_pspmc_0_psv_cpm = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_cpm@0";
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_analog_0 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_pmc_analog_0@f1160000";
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_iou_slcr_0 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_pmc_iou_slcr_0@f1060000";
+                STATIC_DESIGN_cips_pspmc_0_psv_pmc_tap = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_pmc_tap@f11a0000";
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_atm = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_xram_atm@ff970000";
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_ctrl_1 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_xram_ctrl_1@ff8e0000";
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_ctrl_2 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_xram_ctrl_2@ff8f0000";
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_ctrl_3 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_xram_ctrl_3@ff900000";
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_ctrl_4 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_xram_ctrl_4@ff910000";
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_global_ctrl = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_xram_global_ctrl@ff950000";
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_gpv = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_xram_gpv@ff940000";
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_xmpu_bank_1 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_xram_xmpu_bank_1@ff930000";
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_xmpu_bank_2 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_xram_xmpu_bank_2@ff934000";
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_xmpu_bank_3 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_xram_xmpu_bank_3@ff938000";
+                STATIC_DESIGN_cips_pspmc_0_psv_xram_xmpu_bank_4 = "/axi/STATIC_DESIGN_cips_pspmc_0_psv_xram_xmpu_bank_4@ff93c000";
                 amba_xppu = "/indirect-bus@1";
                 lpd_xppu = "/indirect-bus@1/xppu@ff990000";
                 pmc_xppu = "/indirect-bus@1/xppu@f1310000";
@@ -2171,7 +2171,7 @@
                 user_key5 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@1b0";
                 user_key6 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@1d0";
                 user_key7 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@1f0";
-                blp_axi_noc_mc_1x_ddr_memory = "/memory@00000000";
+                STATIC_DESIGN_axi_noc_mc_1x_ddr_memory = "/memory@00000000";
                 gic = "/axi/interrupt-controller@f9000000";
         };
 };

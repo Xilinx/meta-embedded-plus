@@ -5,6 +5,7 @@ args:
     - -O emb-plus-amr
 kconfig:
     CONFIG_YOCTO_BBMC_CORTEXR5_0_FREERTOS: y
+    CONFIG_YOCTO_BBMC_CORTEXR5_1_BAREMETAL: y
 machine:
     pre:
         TFA_CONSOLE:

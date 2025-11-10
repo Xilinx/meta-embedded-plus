@@ -35,3 +35,8 @@ XRT_INSTALL = " \
      soft-kernel-daemon \
 "
 IMAGE_INSTALL:append:emb-plus-ve2302-xrt = " ${XRT_INSTALL}"
+
+IMAGE_INSTALL:append:emb-plus-ve2302-amr = " \
+    dfx-mgr \
+"
+

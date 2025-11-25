@@ -2825,6 +2825,7 @@
                         xlnx,clkin2-bufg = <0x0>;
                         xlnx,clkout2-duty-cycle = <0x7a120>;
                         xlnx,clkout4-phase = <0x0>;
+                        xlnx,perf-mode-en = <0x0>;
                         xlnx,clkout5-dyn-ps = <0x0>;
                         xlnx,clkout6-mbufgce-mode = "PERFORMANCE";
                         xlnx,clkout7-actual-duty-cycle = <0x32>;
@@ -3177,6 +3178,7 @@
                         xlnx,clkin2-bufg = <0x0>;
                         xlnx,clkout2-duty-cycle = <0x7a120>;
                         xlnx,clkout4-phase = <0x0>;
+                        xlnx,perf-mode-en = <0x0>;
                         xlnx,clkout5-dyn-ps = <0x0>;
                         xlnx,clkout6-mbufgce-mode = "PERFORMANCE";
                         xlnx,clkout7-actual-duty-cycle = <0x32>;

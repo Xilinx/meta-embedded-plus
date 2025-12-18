@@ -14,7 +14,7 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 inherit update-rc.d systemd
 
-RDEPENDS:${PN}-essential:versal = " xrt"
+RDEPENDS:${PN}:append:versal = " xrt"
 
 INITSCRIPT_NAME = "soft-kernel-daemon.sh"
 INITSCRIPT_PARAMS = "start 99 S ."

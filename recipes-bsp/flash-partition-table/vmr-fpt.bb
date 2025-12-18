@@ -15,7 +15,6 @@ RCONFLICTS:${PN} = "amr-fpt"
 
 S = "${WORKDIR}/git"
 
-inherit deploy image-artifact-names
 
 do_compile () {
     ${PYTHON} ${S}/gen_fpt_bin.py --fpt ${S}/metadata/rave_ivh/main_fpt.json --output ${WORKDIR}/${PN}.bin

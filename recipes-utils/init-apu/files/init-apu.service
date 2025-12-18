@@ -3,7 +3,8 @@ Description=APU init Daemon
 Before=soft-kernel-daemon.service
 
 [Service]
-Type=exec
+Type=oneshot
+RemainAfterExit=yes
 ExecStart=/usr/bin/init-apu
 StandardOutput=journal+console
 

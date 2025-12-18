@@ -1,5 +1,5 @@
 DESCRIPTION = "Embedded-Plus AMR OSPI images"
-SUMMARY = "Adaptive Management Runtime(AMR) compoment"
+SUMMARY = "Adaptive Management Runtime(AMR) component"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
@@ -29,8 +29,8 @@ IMAGE_COMPONENTS:emb-plus-ve2302-amr = "fpt image_active"
 
 do_deploy() {
     install -Dm 644 ${B}/${PN}.bin ${DEPLOYDIR}/${IMAGE_NAME}.bin
-    ln -s ${IMAGE_NAME}.bin ${DEPLOYDIR}/${IMAGE_LINK_NAME}.bin
-    ln -s ${IMAGE_NAME}.bin ${DEPLOYDIR}/${OSPI_IMAGE_VERSION}.bin
+    ln -sf ${IMAGE_NAME}.bin ${DEPLOYDIR}/${IMAGE_LINK_NAME}.bin
+    ln -sf ${IMAGE_NAME}.bin ${DEPLOYDIR}/${OSPI_IMAGE_VERSION}.bin
 }
 
 addtask do_deploy after do_compile

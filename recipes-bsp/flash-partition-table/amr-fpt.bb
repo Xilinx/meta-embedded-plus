@@ -1,5 +1,5 @@
 DESCRIPTION = "Generate the Embedded-Plus Flash Partition Table(FPT) - AMR"
-SUMMARY = "Adaptive Management Runtime(AMR) compoment"
+SUMMARY = "Adaptive Management Runtime(AMR) component"
 
 inherit python3native deploy image-artifact-names
 

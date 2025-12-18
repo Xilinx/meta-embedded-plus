@@ -1,5 +1,5 @@
 DESCRIPTION = "Generate Embedded-Plus Adaptive Management Controller (AMC) application image"
-SUMMARY = "Adaptive Management Runtime(AMR) compoment"
+SUMMARY = "Adaptive Management Runtime(AMR) component"
 
 inherit python3native ccmake cmake deploy
 

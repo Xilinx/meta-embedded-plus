@@ -30,12 +30,12 @@ do_xsabin () {
 
 do_deploy () {
     install -Dm 644 ${B}/${PN}.bin ${DEPLOYDIR}/${IMAGE_NAME}.bin
-    ln -s ${IMAGE_NAME}.bin ${DEPLOYDIR}/${IMAGE_LINK_NAME}.bin
-    ln -s ${IMAGE_NAME}.bin ${DEPLOYDIR}/${OSPI_IMAGE_VERSION}.bin
+    ln -sf ${IMAGE_NAME}.bin ${DEPLOYDIR}/${IMAGE_LINK_NAME}.bin
+    ln -sf ${IMAGE_NAME}.bin ${DEPLOYDIR}/${OSPI_IMAGE_VERSION}.bin
 
     install -Dm 644 ${B}/${PN}.xsabin ${DEPLOYDIR}/${IMAGE_NAME}.xsabin
-    ln -s ${IMAGE_NAME}.xsabin ${DEPLOYDIR}/${IMAGE_LINK_NAME}.xsabin
-    ln -s ${IMAGE_NAME}.bin ${DEPLOYDIR}/${OSPI_IMAGE_VERSION}.xsabin
+    ln -sf ${IMAGE_NAME}.xsabin ${DEPLOYDIR}/${IMAGE_LINK_NAME}.xsabin
+    ln -sf ${IMAGE_NAME}.xsabin ${DEPLOYDIR}/${OSPI_IMAGE_VERSION}.xsabin
 }
 
 addtask xsabin after do_compile

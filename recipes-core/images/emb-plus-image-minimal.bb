@@ -36,7 +36,5 @@ XRT_INSTALL = " \
 "
 IMAGE_INSTALL:append:emb-plus-ve2302-xrt = " ${XRT_INSTALL}"
 
-IMAGE_INSTALL:append:emb-plus-ve2302-amr = " \
-    dfx-mgr \
-"
+IMAGE_FSTYPES:emb-plus-ve2302-amr = "cpio.lzma cpio.lzma.u-boot"
 

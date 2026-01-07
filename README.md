@@ -83,8 +83,6 @@ This layer depends on:
 	URI: https://github.com/Xilinx/meta-petalinux
 	branch: amd xilinx release version (e.g. rel-v2026.1)
 
-	URI: https://github.com/Xilinx/meta-jupyter
-	branch: scarthgap or amd xilinx release version (e.g. rel-v2026.1)
 
 ## License
 

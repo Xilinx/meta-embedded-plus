@@ -15,7 +15,7 @@
 
                 u-boot {
                         compatible = "u-boot,config";
-                        bootscr-address = /bits/ 64 <0x0 0x20000000>;
+                        bootscr-address = /bits/ 64 <0x20000000>;
                 };
         };
 
@@ -379,25 +379,25 @@
                 opp-shared;
 
                 opp-1350000000 {
-                        opp-hz = /bits/ 64 <0x0 0x50775d80>;
+                        opp-hz = /bits/ 64 <0x50775d80>;
                         clock-latency-ns = <0x7a120>;
                         opp-microvolt = <0xf4240>;
                 };
 
                 opp-675000000 {
-                        opp-hz = /bits/ 64 <0x0 0x283baec0>;
+                        opp-hz = /bits/ 64 <0x283baec0>;
                         clock-latency-ns = <0x7a120>;
                         opp-microvolt = <0xf4240>;
                 };
 
                 opp-450000000 {
-                        opp-hz = /bits/ 64 <0x0 0x1ad27480>;
+                        opp-hz = /bits/ 64 <0x1ad27480>;
                         clock-latency-ns = <0x7a120>;
                         opp-microvolt = <0xf4240>;
                 };
 
                 opp-337500000 {
-                        opp-hz = /bits/ 64 <0x0 0x141dd760>;
+                        opp-hz = /bits/ 64 <0x141dd760>;
                         clock-latency-ns = <0x7a120>;
                         opp-microvolt = <0xf4240>;
                 };

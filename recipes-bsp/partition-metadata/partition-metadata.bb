@@ -18,12 +18,12 @@ inherit deploy image-artifact-names
 IMAGE_NAME_SUFFIX = ""
 
 do_compile() {
-    xclbinutil --add-section PARTITION_METADATA:JSON:${MACHINE}_${PARTMETA_FILE} \
-        -o ${WORKDIR}/${PN}.xsabin --force
+    xclbinutil --add-section PARTITION_METADATA:JSON:${B}/${MACHINE}_${PARTMETA_FILE} \
+        -o ${B}/${PN}.xsabin --force
 }
 
 do_install() {
-    install -Dm 0644 ${MACHINE}_${PARTMETA_FILE} ${D}/boot/${PARTMETA_FILE}
+    install -Dm 0644 ${B}/${MACHINE}_${PARTMETA_FILE} ${D}/boot/${PARTMETA_FILE}
 }
 
 SYSROOT_DIRS += "/boot"
@@ -31,8 +31,8 @@ FILES:${PN} = "/boot/${PARTMETA_FILE}"
 
 do_deploy() {
     install -d ${DEPLOYDIR}
-    install -Dm 0644 ${MACHINE}_${PARTMETA_FILE} ${DEPLOYDIR}/${PARTMETA_FILE}
-    install -Dm 0644 ${WORKDIR}/${PN}.xsabin ${DEPLOYDIR}/${IMAGE_NAME}.xsabin
+    install -Dm 0644 ${B}/${MACHINE}_${PARTMETA_FILE} ${DEPLOYDIR}/${PARTMETA_FILE}
+    install -Dm 0644 ${B}/${PN}.xsabin ${DEPLOYDIR}/${IMAGE_NAME}.xsabin
     ln -sf ${IMAGE_NAME}.xsabin ${DEPLOYDIR}/${IMAGE_LINK_NAME}.xsabin
 }
 

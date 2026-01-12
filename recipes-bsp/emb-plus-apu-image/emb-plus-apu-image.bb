@@ -76,7 +76,7 @@ do_compile[depends] += " \
 
 do_compile () {
     bootgen -image ${WORKDIR}/${PN}.bif -arch ${SOC_FAMILY} -w -o ${B}/${IMAGE_NAME}.bin
-    xclbinutil --add-section PDI:RAW:${B}/${IMAGE_NAME}.bin -o ${IMAGE_NAME}.xsabin
+    xclbinutil --add-section PDI:RAW:${B}/${IMAGE_NAME}.bin -o ${B}/${IMAGE_NAME}.xsabin
 }
 
 do_deploy () {

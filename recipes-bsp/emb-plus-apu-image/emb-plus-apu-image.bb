@@ -8,6 +8,8 @@ BIF_ROOTFS_TYPE = "cpio.gz.u-boot"
 
 BIF_ROOTFS_TYPE:emb-plus-ve2302-amr = "cpio.lzma.u-boot"
 
+BIF_ROOTFS_TYPE:emb-plus-ve2302-xrt = "cpio.lzma.u-boot"
+
 BIF_ROOTFS_NAME = "${BIF_ROOTFS}-${MACHINE}.rootfs.${BIF_ROOTFS_TYPE}"
 
 DEPENDS += "\

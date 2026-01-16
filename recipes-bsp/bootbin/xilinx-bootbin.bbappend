@@ -1,8 +1,3 @@
-EMB_PLUS_INC ?= ""
-EMB_PLUS_INC:emb-plus-ve2302-amr = "${@'versal-hello-world.inc' if d.getVar('BB_CURRENT_MC') != 'xilinx-image-recovery' else ''}"
-
-include ${EMB_PLUS_INC}
-
 BIF_OPTIONAL_DATA:emb-plus-ve2302-xrt = "${DEPLOY_DIR_IMAGE}/bootbin-version-string-${MACHINE}.txt, id=0x21"
 
 BIF_FSBL_ATTR:emb-plus-ve2302-xrt = "base-pdi plmfw"

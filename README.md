@@ -80,11 +80,12 @@ This layer depends on:
 	layers: meta-amd-adaptive-socs-core 
 	branch: amd xilinx release version (e.g. rel-v2026.1)
 
-	URI: https://github.com/Xilinx/meta-petalinux
+	URI: https://github.com/Xilinx/meta-amd-edf
+	layers: meta-amd-edf
 	branch: amd xilinx release version (e.g. rel-v2026.1)
 
 
 ## License
 
-Copyright (C) 2024, Advanced Micro Devices, Inc.\
+Copyright (C) 2024-2026, Advanced Micro Devices, Inc.\
 SPDX-License-Identifier: MIT

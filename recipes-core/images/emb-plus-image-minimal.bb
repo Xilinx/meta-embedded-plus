@@ -27,15 +27,12 @@ IMAGE_INSTALL = " \
     i2c-tools \
 "
 
-
-# TODO: Temporarily disable packages that depend on zocl because
-# these modules do not build with the 6.18 kernel. Re-enable them once
-# zocl is buildable with the 6.18 kernel.
-#    zocl,xrt and soft-kernel-daemon
-
 XRT_INSTALL = " \
+     xrt \
+     zocl \
      apu-boot \
      init-apu \
+     soft-kernel-daemon \
 "
 IMAGE_INSTALL:append:emb-plus-ve2302-xrt = " ${XRT_INSTALL}"
 

@@ -23,7 +23,7 @@ DEPENDS += "\
     xclbinutil-native \
     "
 
-inherit deploy image-artifact-names
+inherit deploy image-artifact-names bootgen-bif
 
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:emb-plus-ve2302-xrt = "emb-plus-ve2302-xrt"
@@ -77,7 +77,7 @@ do_compile[depends] += " \
     "
 
 do_compile () {
-    bootgen -image ${WORKDIR}/${PN}.bif -arch ${SOC_FAMILY} -w -o ${B}/${IMAGE_NAME}.bin
+    bootgen -image ${WORKDIR}/${PN}.bif -arch ${BOOTGEN_ARCH} -w -o ${B}/${IMAGE_NAME}.bin
     xclbinutil --add-section PDI:RAW:${B}/${IMAGE_NAME}.bin -o ${B}/${IMAGE_NAME}.xsabin
 }
 

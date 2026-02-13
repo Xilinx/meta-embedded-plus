@@ -19,3 +19,7 @@ machine:
             op: '?='
             val: '0x8200000'
     post:
+        BOOTBIN_INC:
+            comment: 'Enable hello-world application'
+            op: '='
+            val: 'versal-hello-world.inc'

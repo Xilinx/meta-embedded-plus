@@ -9,7 +9,7 @@ IMAGE_NAME_SUFFIX = ""
 
 INHIBIT_DEFAULT_DEPS = "1"
 
-OSPI_VERSION:emb-plus-ve2302-amr = "1.0.0"
+OSPI_VERSION:emb-plus-ve2302-amr = "2.0.0"
 
 OSPI_IMAGE_VERSION:emb-plus-ve2302-amr = "${PN}-${MACHINE}-v${OSPI_VERSION}${IMAGE_VERSION_SUFFIX}"
 

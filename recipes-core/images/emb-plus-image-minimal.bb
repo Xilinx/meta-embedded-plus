@@ -5,6 +5,7 @@ inherit core-image
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:emb-plus-ve2302-xrt = "${MACHINE}"
 COMPATIBLE_MACHINE:emb-plus-ve2302-amr = "${MACHINE}"
+COMPATIBLE_MACHINE:alveo-v80-amr = "${MACHINE}"
 
 IMAGE_INSTALL = " \
     ${CORE_IMAGE_EXTRA_INSTALL} \

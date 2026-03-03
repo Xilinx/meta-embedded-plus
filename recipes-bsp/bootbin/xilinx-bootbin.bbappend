@@ -23,11 +23,13 @@ BIF_PARTITION_ATTR:emb-plus-ve2302-xrt = "${BIF_FSBL_ATTR} ${BIF_VMR_ATTR} ${BIF
 
 BIF_FSBL_ATTR:emb-plus-ve2302-amr = "base-pdi"
 BIF_AMC_ATTR:emb-plus-ve2302-amr = "amcfw"
+BIF_FSBL_ATTR:alveo-v80-amr = "base-pdi"
 
 # specify BIF partition attributes for VMR
 BIF_PARTITION_ATTR[amcfw] = "core=r5-0"
 BIF_PARTITION_IMAGE[amcfw] = "${DEPLOY_DIR_IMAGE}/amc-firmware-${MACHINE}.elf"
 BIF_PARTITION_ID[amcfw] = "0x1c000000, name=rpu_subsystem, delay_handoff"
+BIF_PARTITION_ATTR:alveo-v80-amr = "${BIF_FSBL_ATTR}"
 
 BIF_PARTITION_ATTR:emb-plus-ve2302-amr = "${BIF_FSBL_ATTR} ${BIF_AMC_ATTR}"
 

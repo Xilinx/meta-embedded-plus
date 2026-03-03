@@ -1,0 +1,6 @@
+args:
+    - --hw-description https://xcoartifactory.xilinx.com/artifactory/petalinux-hwproj-dev/sdt/2026.1/2026.1_0222_1_02230017/external/alveo-v80-amr/alveo-v80-amr_sdt.tar.gz
+    - --machine-name alveo-v80-amr
+    - -g full
+    - -O alveo-amr
+kconfig:

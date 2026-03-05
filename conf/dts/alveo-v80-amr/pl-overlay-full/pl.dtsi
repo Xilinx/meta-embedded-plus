@@ -1,0 +1,36 @@
+/dts-v1/;
+/plugin/;
+
+&fpga {
+        firmware-name = "alveo_v80_pld.pdi";
+};
+
+&amba {
+
+        PF1_axi_gpio_test_pf1: gpio@20200020000 {
+                xlnx,all-inputs = <0x0>;
+                xlnx,name = "PF1_axi_gpio_test_pf1";
+                xlnx,tri-default = <0xffffffff>;
+                clock-names = "s_axi_aclk";
+                xlnx,gpio2-width = <0x20>;
+                xlnx,dout-default-2 = <0x0>;
+                xlnx,edk-iptype = "PERIPHERAL";
+                xlnx,gpio2-board-interface = "Custom";
+                xlnx,interrupt-present = <0x0>;
+                gpio-controller;
+                xlnx,all-outputs-2 = <0x0>;
+                clocks = <&versal_clk 0x41>;
+                xlnx,all-inputs-2 = <0x0>;
+                reg = <0x202 0x20000 0x0 0x1000>;
+                xlnx,tri-default-2 = <0xffffffff>;
+                xlnx,ip-name = "axi_gpio";
+                xlnx,is-dual = <0x0>;
+                xlnx,dout-default = <0xf1>;
+                xlnx,gpio-width = <0x20>;
+                #gpio-cells = <0x2>;
+                xlnx,all-outputs = <0x0>;
+                compatible = "xlnx,axi-gpio-2.0", "xlnx,xps-gpio-1.00.a";
+                xlnx,gpio-board-interface = "Custom";
+        };
+};
+

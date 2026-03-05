@@ -30,65 +30,83 @@ COMPATIBLE_MACHINE:emb-plus-ve2302-xrt = "emb-plus-ve2302-xrt"
 COMPATIBLE_MACHINE:emb-plus-ve2302-amr = "emb-plus-ve2302-amr"
 COMPATIBLE_MACHINE:alveo-v80-amr = "alveo-v80-amr"
 
-do_configure:append:emb-plus-ve2302-xrt () {
-cat > ${WORKDIR}/${PN}.bif << EOF
-    all:
-    {
-        id_code = 0x14cc8093
-        extended_id_code = 0x01
-        image { 
-            id = 0x1c000000, name=apu_subsystem
-            { core=a72-0, exception_level=el-3, trustzone, file=${DEPLOY_DIR_IMAGE}/arm-trusted-firmware.elf }
-            { core=a72-0, exception_level=el-2, file=${DEPLOY_DIR_IMAGE}/u-boot.elf }
-            { load=0x4000000, file=${DEPLOY_DIR_IMAGE}/${BIF_ROOTFS_NAME} }
-            { load=0x20000000, file=${DEPLOY_DIR_IMAGE}/boot.scr }
-            { load=0x200000, file=${DEPLOY_DIR_IMAGE}/${KERNEL_IMAGETYPE} }
-            { load=0x1000, file=${DEPLOY_DIR_IMAGE}/system.dtb }
-        }
-    }
-EOF
+BIF_FILE_PATH = "${B}/${PN}.bif"
+
+BIF_TOPLEVEL_ATTR = "id_code extended_id_code"
+BIF_TOPLEVEL_ATTR[id_code] = "${EMB_PLUS_ID_CODE}"
+BIF_TOPLEVEL_ATTR[extended_id_code] = "0x01"
+
+EMB_PLUS_ID_CODE ?= ""
+EMB_PLUS_ID_CODE:emb-plus-ve2302-xrt = "0x14cc8093"
+EMB_PLUS_ID_CODE:emb-plus-ve2302-amr = "0x14cc8093"
+EMB_PLUS_ID_CODE:alveo-v80-amr = "0x14d2f093"
+
+BIF_PARTITION_ATTR = "atf uboot rootfs bootscr kernel dtb"
+BIF_PARTITION_NAME[0x1c000000] = "apu_subsystem"
+
+BIF_PARTITION_ATTR[atf] = "core=a72-0, exception_level=el-3, trustzone"
+BIF_PARTITION_IMAGE[atf] = "${DEPLOY_DIR_IMAGE}/arm-trusted-firmware.elf"
+BIF_PARTITION_ID[atf] = "0x1c000000"
+
+BIF_PARTITION_ATTR[uboot] = "core=a72-0, exception_level=el-2"
+BIF_PARTITION_IMAGE[uboot] = "${DEPLOY_DIR_IMAGE}/u-boot.elf"
+BIF_PARTITION_ID[uboot] = "0x1c000000"
+
+BIF_PARTITION_ATTR[rootfs] = "load=${EMB_PLUS_ROOTFS_ADDR}"
+BIF_PARTITION_IMAGE[rootfs] = "${DEPLOY_DIR_IMAGE}/${BIF_ROOTFS_NAME}"
+BIF_PARTITION_ID[rootfs] = "0x1c000000"
+
+BIF_PARTITION_ATTR[bootscr] = "load=${EMB_PLUS_BOOTSCR_ADDR}"
+BIF_PARTITION_IMAGE[bootscr] = "${DEPLOY_DIR_IMAGE}/boot.scr"
+BIF_PARTITION_ID[bootscr] = "0x1c000000"
+
+BIF_PARTITION_ATTR[kernel] = "load=${EMB_PLUS_KERNEL_ADDR}"
+BIF_PARTITION_IMAGE[kernel] = "${DEPLOY_DIR_IMAGE}/${KERNEL_IMAGETYPE}"
+BIF_PARTITION_ID[kernel] = "0x1c000000"
+
+BIF_PARTITION_ATTR[dtb] = "load=${EMB_PLUS_DTB_ADDR}"
+BIF_PARTITION_IMAGE[dtb] = "${DEPLOY_DIR_IMAGE}/system.dtb"
+BIF_PARTITION_ID[dtb] = "0x1c000000"
+
+EMB_PLUS_ROOTFS_ADDR ?= ""
+EMB_PLUS_ROOTFS_ADDR:emb-plus-ve2302-xrt = "0x4000000"
+EMB_PLUS_ROOTFS_ADDR:emb-plus-ve2302-amr = "0x20800000"
+EMB_PLUS_ROOTFS_ADDR:alveo-v80-amr = "0x20800000"
+
+EMB_PLUS_BOOTSCR_ADDR ?= "0x20000000"
+
+EMB_PLUS_KERNEL_ADDR ?= ""
+EMB_PLUS_KERNEL_ADDR:emb-plus-ve2302-xrt = "0x200000"
+EMB_PLUS_KERNEL_ADDR:emb-plus-ve2302-amr = "0x19000000"
+EMB_PLUS_KERNEL_ADDR:alveo-v80-amr = "0x19000000"
+
+EMB_PLUS_DTB_ADDR ?= ""
+EMB_PLUS_DTB_ADDR:emb-plus-ve2302-xrt = "0x1000"
+EMB_PLUS_DTB_ADDR:emb-plus-ve2302-amr = "0x1F400000"
+EMB_PLUS_DTB_ADDR:alveo-v80-amr = "0x1F400000"
+
+python do_generate_bif() {
+    # Skip file copy for all partitions to preserve full paths in the BIF.
+    # Using basenames causes bootgen to choke on "Image" (reserved keyword).
+    partitions = (d.getVar("BIF_PARTITION_ATTR") or "").split()
+    bootgen_bif_generate(d, skip_check=partitions)
 }
 
-do_configure:append:emb-plus-ve2302-amr () {
-cat > ${WORKDIR}/${PN}.bif << EOF
-    all:
-    {
-        id_code = 0x14cc8093
-        extended_id_code = 0x01
-        image {
-            id = 0x1c000000, name=apu_subsystem
-            { core=a72-0, exception_level=el-3, trustzone, file=${DEPLOY_DIR_IMAGE}/arm-trusted-firmware.elf }
-            { core=a72-0, exception_level=el-2, file=${DEPLOY_DIR_IMAGE}/u-boot.elf }
-            { load=0x20800000, file=${DEPLOY_DIR_IMAGE}/${BIF_ROOTFS_NAME} }
-            { load=0x20000000, file=${DEPLOY_DIR_IMAGE}/boot.scr }
-            { load=0x19000000, file=${DEPLOY_DIR_IMAGE}/${KERNEL_IMAGETYPE} }
-            { load=0x1F400000, file=${DEPLOY_DIR_IMAGE}/system.dtb }
-        }
-    }
-EOF
-}
+do_generate_bif[vardeps] += "\
+    BIF_FILE_PATH \
+    BIF_PARTITION_ATTR \
+    BIF_PARTITION_ID \
+    BIF_PARTITION_IMAGE \
+    BIF_PARTITION_NAME \
+    BIF_TOPLEVEL_ATTR \
+    EMB_PLUS_BOOTSCR_ADDR \
+    EMB_PLUS_DTB_ADDR \
+    EMB_PLUS_ID_CODE \
+    EMB_PLUS_KERNEL_ADDR \
+    EMB_PLUS_ROOTFS_ADDR \
+"
 
-
-do_configure:append:alveo-v80-amr () {
-cat > ${WORKDIR}/${PN}.bif << EOF
-    all:
-    {
-        id_code = 0x14d2f093
-        extended_id_code = 0x01
-        image {
-            id = 0x1c000000, name=apu_subsystem
-            { core=a72-0, exception_level=el-3, trustzone, file=${DEPLOY_DIR_IMAGE}/arm-trusted-firmware.elf }
-            { core=a72-0, exception_level=el-2, file=${DEPLOY_DIR_IMAGE}/u-boot.elf }
-            { load=0x20800000, file=${DEPLOY_DIR_IMAGE}/${BIF_ROOTFS_NAME} }
-            { load=0x20000000, file=${DEPLOY_DIR_IMAGE}/boot.scr }
-            { load=0x19000000, file=${DEPLOY_DIR_IMAGE}/${KERNEL_IMAGETYPE} }
-            { load=0x1F400000, file=${DEPLOY_DIR_IMAGE}/system.dtb }
-        }
-    }
-EOF
-}
-
-do_compile[depends] += " \
+do_generate_bif[depends] += " \
     virtual/bootloader:do_deploy \
     virtual/arm-trusted-firmware:do_deploy \
     ${BIF_ROOTFS}:do_image_complete \
@@ -97,8 +115,10 @@ do_compile[depends] += " \
     virtual/dtb:do_deploy \
     "
 
+addtask do_generate_bif after do_configure before do_compile
+
 do_compile () {
-    bootgen -image ${WORKDIR}/${PN}.bif -arch ${BOOTGEN_ARCH} -w -o ${B}/${IMAGE_NAME}.bin
+    bootgen -image ${BIF_FILE_PATH} -arch ${BOOTGEN_ARCH} -w -o ${B}/${IMAGE_NAME}.bin
     xclbinutil --add-section PDI:RAW:${B}/${IMAGE_NAME}.bin -o ${B}/${IMAGE_NAME}.xsabin
 }
 

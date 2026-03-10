@@ -12,6 +12,7 @@ PROVIDES = "virtual/fpt"
 
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:emb-plus-ve2302-amr = "${MACHINE}"
+COMPATIBLE_MACHINE:alveo-v80-amr = "${MACHINE}"
 
 do_compile[depends] += "virtual/boot-bin:do_deploy"
 
@@ -35,6 +36,14 @@ FPT_PDI_B_ADDR:emb-plus-ve2302-amr = "0x03B80000"
 FPT_PDI_B_SIZE:emb-plus-ve2302-amr = "0x03A00000"
 FPT_USER_ADDR:emb-plus-ve2302-amr  = "0x07680000"
 FPT_USER_SIZE:emb-plus-ve2302-amr  = "0x00800000"
+
+# V80 profile (alveo-v80-amr) - 256MB flash
+FPT_PDI_A_ADDR:alveo-v80-amr = "0x00080000"
+FPT_PDI_A_SIZE:alveo-v80-amr = "0x07400000"
+FPT_PDI_B_ADDR:alveo-v80-amr = "0x07480000"
+FPT_PDI_B_SIZE:alveo-v80-amr = "0x07400000"
+FPT_USER_ADDR:alveo-v80-amr  = "0x0E880000"
+FPT_USER_SIZE:alveo-v80-amr  = "0x01700000"
 
 FPT_ENTRY_TYPE[pdi_a]  = "PDI"
 FPT_ENTRY_ADDR[pdi_a]  = "${FPT_PDI_A_ADDR}"

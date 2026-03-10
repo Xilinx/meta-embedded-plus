@@ -13,9 +13,11 @@ inherit amd-spi-image deploy image-artifact-names
 
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:emb-plus-ve2302-amr = "${MACHINE}"
+COMPATIBLE_MACHINE:alveo-v80-amr = "${MACHINE}"
 
 # Output size covers FPT + boot.bin (pdi_a region only)
 SPI_OUTPUT_SIZE:emb-plus-ve2302-amr = "0x3A0_0000"
+SPI_OUTPUT_SIZE:alveo-v80-amr = "0x748_0000"
 
 SPI_COMPONENTS = "fpt bootbin"
 
@@ -30,8 +32,11 @@ SPI_SOURCE[bootbin] = "boot.bin"
 # Version configuration
 OSPI_VERSION ?= ""
 OSPI_VERSION:emb-plus-ve2302-amr = "2.0.0"
+OSPI_VERSION:alveo-v80-amr = "1.0.0"
 SPI_VERSION = "${PN}-${MACHINE}-v${OSPI_VERSION}${IMAGE_VERSION_SUFFIX}"
 
+# AMC firmware only on VE2302 (cortexr5 multiconfig)
+DEPENDS:append:emb-plus-ve2302-amr = " amcfw"
 SPI_DEPLOY_DEPENDS = "virtual/fpt virtual/boot-bin"
 do_compile[vardeps] += "OSPI_VERSION"
 

@@ -1,36 +1,43 @@
+#
+# Copyright (C) 2023-2026, Advanced Micro Devices, Inc.  All rights reserved.
+#
+# SPDX-License-Identifier: MIT
+#
+
 DESCRIPTION = "Embedded-Plus AMR OSPI images"
 SUMMARY = "Adaptive Management Runtime(AMR) component"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-inherit deploy image-artifact-names amd_versal_image
-
-IMAGE_NAME_SUFFIX = ""
-
-INHIBIT_DEFAULT_DEPS = "1"
-
-OSPI_VERSION:emb-plus-ve2302-amr = "2.0.0"
-
-OSPI_IMAGE_VERSION:emb-plus-ve2302-amr = "${PN}-${MACHINE}-v${OSPI_VERSION}${IMAGE_VERSION_SUFFIX}"
+inherit amd-spi-image deploy image-artifact-names
 
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:emb-plus-ve2302-amr = "${MACHINE}"
 
-DEPENDS += "amcfw amr-fpt virtual/boot-bin"
+# Output size covers FPT + boot.bin (pdi_a region only)
+SPI_OUTPUT_SIZE:emb-plus-ve2302-amr = "0x3A0_0000"
+
+SPI_COMPONENTS = "fpt bootbin"
+
+# Flash Partition Table
+SPI_OFFSET[fpt] = "0x0"
+SPI_SOURCE[fpt] = "fpt-${MACHINE}.bin"
+
+# Boot.bin (active only, no backup for AMR)
+SPI_OFFSET[bootbin] = "0x8_0000"
+SPI_SOURCE[bootbin] = "boot.bin"
+
+# Version configuration
+OSPI_VERSION ?= ""
+OSPI_VERSION:emb-plus-ve2302-amr = "2.0.0"
+SPI_VERSION = "${PN}-${MACHINE}-v${OSPI_VERSION}${IMAGE_VERSION_SUFFIX}"
+
+SPI_DEPLOY_DEPENDS = "virtual/fpt virtual/boot-bin"
+do_compile[vardeps] += "OSPI_VERSION"
 
 do_configure[noexec] = "1"
 do_install[noexec] = "1"
 
-do_compile[depends] += "amcfw:do_deploy amr-fpt:do_deploy virtual/boot-bin:do_deploy"
-IMAGE_SIZE = "0x03A0_0000"
-IMAGE_ACTIVE_OFFSET = "0x0008_0000"
-
-IMAGE_COMPONENTS:emb-plus-ve2302-amr = "fpt image_active"
-
-do_deploy() {
-    install -Dm 644 ${B}/${PN}.bin ${DEPLOYDIR}/${IMAGE_NAME}.bin
-    ln -sf ${IMAGE_NAME}.bin ${DEPLOYDIR}/${IMAGE_LINK_NAME}.bin
-    ln -sf ${IMAGE_NAME}.bin ${DEPLOYDIR}/${OSPI_IMAGE_VERSION}.bin
+do_deploy:append() {
+    ln -sf ${IMAGE_NAME}.bin ${DEPLOYDIR}/${SPI_VERSION}.bin
 }
-
-addtask do_deploy after do_compile

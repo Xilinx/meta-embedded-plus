@@ -25,3 +25,7 @@ machine:
             comment: 'Enable hello-world application'
             op: '='
             val: 'versal-hello-world.inc'
+        SPI_IMAGE_SIZE:
+            comment: 'OSPI flash size (128MB)'
+            op: '='
+            val: '0x0800_0000'

@@ -15,7 +15,7 @@ BIF_ROOTFS_NAME = "${BIF_ROOTFS}-${MACHINE}.rootfs.${BIF_ROOTFS_TYPE}"
 DEPENDS += "\
     bootgen-native \
     ${BIF_ROOTFS} \
-    u-boot-xlnx-scr \
+    ${UBOOT_BOOT_SCRIPT} \
     virtual/arm-trusted-firmware \
     virtual/bootloader \
     virtual/dtb \
@@ -110,7 +110,7 @@ do_generate_bif[depends] += " \
     virtual/bootloader:do_deploy \
     virtual/arm-trusted-firmware:do_deploy \
     ${BIF_ROOTFS}:do_image_complete \
-    u-boot-xlnx-scr:do_deploy \
+    ${UBOOT_BOOT_SCRIPT}:do_deploy \
     virtual/kernel:do_deploy \
     virtual/dtb:do_deploy \
     "

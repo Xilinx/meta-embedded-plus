@@ -29,3 +29,7 @@ machine:
             comment: 'OSPI flash size (128MB)'
             op: '='
             val: '0x0800_0000'
+        UBOOT_BOOT_SCRIPT:emb-plus-ve2302-amr:${DISTRO}:
+            comment: 'Use the specific boot script'
+            op: '='
+            val: 'u-boot-xlnx-scr'

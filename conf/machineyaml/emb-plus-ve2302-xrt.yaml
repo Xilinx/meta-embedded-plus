@@ -4,3 +4,11 @@ args:
 
 kconfig:
     CONFIG_SUBSYSTEM_BOOTMODE_5: y
+
+machine:
+    post:
+        UBOOT_BOOT_SCRIPT:emb-plus-ve2302-xrt:${DISTRO}:
+            comment: 'Use the specific boot script'
+            op: '='
+            val: 'u-boot-xlnx-scr'
+

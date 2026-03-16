@@ -11,3 +11,7 @@ machine:
             comment: 'OSPI flash size (256MB)'
             op: '='
             val: '0x1000_0000'
+        UBOOT_BOOT_SCRIPT:alveo-v80-amr:${DISTRO}:
+            comment: 'Use the specific boot script'
+            op: '='
+            val: 'u-boot-xlnx-scr'

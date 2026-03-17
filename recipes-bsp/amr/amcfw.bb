@@ -9,6 +9,8 @@ INHIBIT_DEFAULT_DEPS = "1"
 
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:emb-plus-ve2302-amr = "${MACHINE}"
+COMPATIBLE_MACHINE:alveo-v80-amr = "${MACHINE}"
+
 
 # Since we're just copying, we can run any config
 COMPATIBLE_HOST = ".*"
@@ -18,8 +20,11 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 # Default expects the user to provide the plm-firmware in the deploy
 # directory, named "plm-${MACHINE}.elf"
 # A machine, multiconfig, or local.conf should override this
-AMC_MCDEPENDS ??= "mc::emb-plus-ve2302-amr-cortexr5-0-freertos:amc-firmware:do_deploy"
-AMC_DEPLOY_DIR ??= "${TMPDIR}-emb-plus-ve2302-amr-cortexr5-0-freertos/deploy/images/${MACHINE}"
+AMC_MCDEPENDS:emb-plus-ve2302-amr ??= "mc::emb-plus-ve2302-amr-cortexr5-0-freertos:amc-firmware:do_deploy"
+AMC_DEPLOY_DIR:emb-plus-ve2302-amr ??= "${TMPDIR}-emb-plus-ve2302-amr-cortexr5-0-freertos/deploy/images/${MACHINE}"
+AMC_MCDEPENDS:alveo-v80-amr ??= "mc::alveo-v80-amr-cortexr5-0-freertos:amc-firmware:do_deploy"
+AMC_DEPLOY_DIR:alveo-v80-amr ??= "${TMPDIR}-alveo-v80-amr-cortexr5-0-freertos/deploy/images/${MACHINE}"
+
 AMC_DEPLOY_DIR[vardepsexclude] += "TOPDIR"
 AMC_IMAGE_NAME ??= "amc-firmware-${MACHINE}"
 

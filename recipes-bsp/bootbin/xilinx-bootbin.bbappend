@@ -24,12 +24,13 @@ BIF_PARTITION_ATTR:emb-plus-ve2302-xrt = "${BIF_FSBL_ATTR} ${BIF_VMR_ATTR} ${BIF
 BIF_FSBL_ATTR:emb-plus-ve2302-amr = "base-pdi"
 BIF_AMC_ATTR:emb-plus-ve2302-amr = "amcfw"
 BIF_FSBL_ATTR:alveo-v80-amr = "base-pdi"
+BIF_AMC_ATTR:alveo-v80-amr = "amcfw"
 
 # specify BIF partition attributes for VMR
 BIF_PARTITION_ATTR[amcfw] = "core=r5-0"
 BIF_PARTITION_IMAGE[amcfw] = "${DEPLOY_DIR_IMAGE}/amc-firmware-${MACHINE}.elf"
 BIF_PARTITION_ID[amcfw] = "0x1c000000, name=rpu_subsystem, delay_handoff"
-BIF_PARTITION_ATTR:alveo-v80-amr = "${BIF_FSBL_ATTR}"
+BIF_PARTITION_ATTR:alveo-v80-amr = "${BIF_FSBL_ATTR} ${BIF_AMC_ATTR}"
 
 BIF_PARTITION_ATTR:emb-plus-ve2302-amr = "${BIF_FSBL_ATTR} ${BIF_AMC_ATTR}"
 
@@ -38,6 +39,7 @@ DEPENDS:append:emb-plus-ve2302-xrt = " xclbinutil-native"
 ADDN_COMPILE_DEPENDS = ""
 ADDN_COMPILE_DEPENDS:emb-plus-ve2302-xrt = "vmr-deploy:do_deploy extension-fpt:do_deploy partition-metadata:do_deploy"
 ADDN_COMPILE_DEPENDS:emb-plus-ve2302-amr = "amcfw:do_deploy"
+ADDN_COMPILE_DEPENDS:alveo-v80-amr = "amcfw:do_deploy"
 
 require xilinx-bootbin-version.inc
 

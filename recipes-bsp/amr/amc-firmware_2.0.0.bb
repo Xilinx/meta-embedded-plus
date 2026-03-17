@@ -11,6 +11,7 @@ COMPATIBLE_HOST:arm = "[^-]*-[^-]*-eabi"
 
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:emb-plus-ve2302-amr = "${MACHINE}"
+COMPATIBLE_MACHINE:alveo-v80-amr = "${MACHINE}"
 
 DEPENDS += "libxil xilstandalone xiltimer freertos10-xilinx xilmailbox xilloader xilplmi"
 
@@ -24,6 +25,7 @@ EXTRA_OECMAKE += " \
     -DCMAKE_LIBRARY_PATH=${PKG_CONFIG_SYSROOT_DIR}/usr/lib/ \
     -DYOCTO=ON \
     "
+EXTRA_OECMAKE:append:alveo-v80-amr = " -DPROFILE=v80"
 
 # Append cross-compilation settings to the generated toolchain file
 cmake_do_generate_toolchain_file:append:arm() {

@@ -11,4 +11,7 @@ machine:
             comment: 'Use the specific boot script'
             op: '='
             val: 'u-boot-xlnx-scr'
-
+        SPI_IMAGE_SIZE:
+            comment: 'OSPI flash size (128MB)'
+            op: '='
+            val: '0x0800_0000'

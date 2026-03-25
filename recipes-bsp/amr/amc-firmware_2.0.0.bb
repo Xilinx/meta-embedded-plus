@@ -13,7 +13,7 @@ COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:emb-plus-ve2302-amr = "${MACHINE}"
 COMPATIBLE_MACHINE:alveo-v80-amr = "${MACHINE}"
 
-DEPENDS += "libxil xilstandalone xiltimer freertos10-xilinx xilmailbox xilloader xilplmi"
+DEPENDS += "libxil xilstandalone xiltimer freertos10-xilinx xilmailbox xilloader xilplmi xilpm"
 
 S = "${WORKDIR}/git/fw/AMC"
 B = "${WORKDIR}/build"
@@ -25,7 +25,12 @@ EXTRA_OECMAKE += " \
     -DCMAKE_LIBRARY_PATH=${PKG_CONFIG_SYSROOT_DIR}/usr/lib/ \
     -DYOCTO=ON \
     "
-EXTRA_OECMAKE:append:alveo-v80-amr = " -DPROFILE=v80"
+
+# Profile selects the CDO and build config per machine
+AMC_PROFILE:emb-plus-ve2302-amr = "rave"
+AMC_PROFILE:alveo-v80-amr = "v80"
+EXTRA_OECMAKE:append:emb-plus-ve2302-amr = " -DPROFILE=${AMC_PROFILE}"
+EXTRA_OECMAKE:append:alveo-v80-amr = " -DPROFILE=${AMC_PROFILE}"
 
 # Append cross-compilation settings to the generated toolchain file
 cmake_do_generate_toolchain_file:append:arm() {
@@ -44,6 +49,14 @@ EOF
 do_deploy() {
     install -Dm 644 ${B}/amc.elf ${DEPLOYDIR}/${PN}-${MACHINE}.elf
     ln -sf ${PN}-${MACHINE}.elf ${DEPLOYDIR}/${PN}.elf
+
+    # Deploy overlay CDO for subsystem isolation
+    if [ ! -f "${S}/scripts/${AMC_PROFILE}/isospec.cdo" ]; then
+        bbfatal "Overlay CDO not found: ${S}/scripts/${AMC_PROFILE}/isospec.cdo"
+    fi
+    install -Dm 644 ${S}/scripts/${AMC_PROFILE}/isospec.cdo \
+        ${DEPLOYDIR}/${PN}-${MACHINE}.cdo
+    ln -sf ${PN}-${MACHINE}.cdo ${DEPLOYDIR}/${PN}.cdo
 }
 
 addtask deploy before do_build after do_compile

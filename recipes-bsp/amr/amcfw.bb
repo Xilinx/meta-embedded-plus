@@ -32,6 +32,9 @@ AMC_IMAGE_NAME ??= "amc-firmware-${MACHINE}"
 AMC_FILE ??= "${AMC_DEPLOY_DIR}/${AMC_IMAGE_NAME}"
 AMC_FILE[vardepsexclude] = "AMC_DEPLOY_DIR"
 
+AMC_CDO_FILE ??= "${AMC_DEPLOY_DIR}/${AMC_IMAGE_NAME}.cdo"
+AMC_CDO_FILE[vardepsexclude] = "AMC_DEPLOY_DIR"
+
 do_fetch[mcdepends] += "${AMC_MCDEPENDS}"
 
 inherit deploy
@@ -43,6 +46,11 @@ do_install() {
     fi
 
     install -Dm 0644 ${AMC_FILE}.elf ${D}/boot/${PN}.elf
+
+    if [ ! -e "${AMC_CDO_FILE}" ]; then
+        bbfatal "Overlay CDO not found: ${AMC_CDO_FILE}"
+    fi
+    install -Dm 0644 ${AMC_CDO_FILE} ${D}/boot/${PN}.cdo
 }
 
 # If the item is already in OUR deploy_image_dir, nothing to deploy!
@@ -51,6 +59,7 @@ do_deploy() {
     # If the item is already in OUR deploy_image_dir, nothing to deploy!
     if ${SHOULD_DEPLOY}; then
         install -Dm 0644 ${AMC_FILE}.elf ${DEPLOYDIR}/${AMC_IMAGE_NAME}.elf
+        install -Dm 0644 ${AMC_CDO_FILE} ${DEPLOYDIR}/${AMC_IMAGE_NAME}.cdo
     fi
 }
 
@@ -63,4 +72,4 @@ INSANE_SKIP:${PN}-dbg = "arch"
 INSANE_SKIP:${PN} += "buildpaths"
 
 SYSROOT_DIRS += "/boot"
-FILES:${PN} = "/boot/${PN}.elf"
+FILES:${PN} = "/boot/${PN}.elf /boot/${PN}.cdo"

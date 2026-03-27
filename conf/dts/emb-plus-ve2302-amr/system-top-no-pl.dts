@@ -1543,6 +1543,7 @@
                         interrupt-parent = <&imux>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
+                        iommus = <&smmu 0x210>;
                         #dma-cells = <0x1>;
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
@@ -1563,6 +1564,7 @@
                         interrupt-parent = <&imux>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
+                        iommus = <&smmu 0x212>;
                         #dma-cells = <0x1>;
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
@@ -1583,6 +1585,7 @@
                         interrupt-parent = <&imux>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
+                        iommus = <&smmu 0x214>;
                         #dma-cells = <0x1>;
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
@@ -1603,6 +1606,7 @@
                         interrupt-parent = <&imux>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
+                        iommus = <&smmu 0x216>;
                         #dma-cells = <0x1>;
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
@@ -1623,6 +1627,7 @@
                         interrupt-parent = <&imux>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
+                        iommus = <&smmu 0x218>;
                         #dma-cells = <0x1>;
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
@@ -1643,6 +1648,7 @@
                         interrupt-parent = <&imux>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
+                        iommus = <&smmu 0x21a>;
                         #dma-cells = <0x1>;
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
@@ -1663,6 +1669,7 @@
                         interrupt-parent = <&imux>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
+                        iommus = <&smmu 0x21c>;
                         #dma-cells = <0x1>;
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
@@ -1683,6 +1690,7 @@
                         interrupt-parent = <&imux>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
+                        iommus = <&smmu 0x21e>;
                         #dma-cells = <0x1>;
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
@@ -1702,6 +1710,7 @@
                         interrupts = <0x0 0x38 0x4 0x0 0x38 0x4>;
                         interrupt-parent = <&imux>;
                         clock-names = "pclk", "hclk", "tx_clk", "rx_clk", "tsu_clk";
+                        iommus = <&smmu 0x234>;
                         #address-cells = <0x1>;
                         #size-cells = <0x0>;
                         clocks = <&versal_clk 0x52>,
@@ -1720,6 +1729,7 @@
                         interrupts = <0x0 0x3a 0x4 0x0 0x3a 0x4>;
                         interrupt-parent = <&imux>;
                         clock-names = "pclk", "hclk", "tx_clk", "rx_clk", "tsu_clk";
+                        iommus = <&smmu 0x235>;
                         #address-cells = <0x1>;
                         #size-cells = <0x0>;
                         clocks = <&versal_clk 0x52>,
@@ -1887,6 +1897,7 @@
                         clock-names = "clk_xin", "clk_ahb", "gate";
                         #clock-cells = <0x1>;
                         clock-output-names = "clk_out_sd0", "clk_in_sd0";
+                        iommus = <&smmu 0x242>;
                         clocks = <&versal_clk 0x3b>,
                          <&versal_clk 0x52>,
                          <&versal_clk 0x4a>;
@@ -1903,6 +1914,7 @@
                         clock-names = "clk_xin", "clk_ahb", "gate";
                         #clock-cells = <0x1>;
                         clock-output-names = "clk_out_sd1", "clk_in_sd1";
+                        iommus = <&smmu 0x243>;
                         clocks = <&versal_clk 0x3c>,
                          <&versal_clk 0x52>,
                          <&versal_clk 0x4a>;
@@ -1982,6 +1994,7 @@
                         reg = <0x0 0xf1010000 0x0 0x10000 0x0 0xc0000000 0x0 0x20000000>;
                         interrupts = <0x0 0x7c 0x4>;
                         interrupt-parent = <&imux>;
+                        iommus = <&smmu 0x245>;
                         cdns,fifo-depth = <0x100>;
                         cdns,fifo-width = <0x4>;
                         cdns,is-dma = <0x1>;
@@ -2010,6 +2023,7 @@
                         interrupts = <0x0 0x7d 0x4>;
                         interrupt-parent = <&imux>;
                         clock-names = "ref_clk", "pclk";
+                        iommus = <&smmu 0x244>;
                         #address-cells = <0x1>;
                         #size-cells = <0x0>;
                         clocks = <&versal_clk 0x39>,
@@ -2348,6 +2362,7 @@
                                 interrupt-names = "host", "peripheral", "otg", "wakeup";
                                 interrupts = <0x0 0x16 0x4 0x0 0x16 0x4 0x0 0x1a 0x4 0x0 0x4a 0x4>;
                                 interrupt-parent = <&imux>;
+                                iommus = <&smmu 0x230>;
                                 snps,dis_u2_susphy_quirk;
                                 snps,dis_u3_susphy_quirk;
                                 snps,quirk-frame-length-adjustment = <0x20>;
@@ -4555,7 +4570,6 @@
                         compatible = "xlnx,psv-fpd-afi-mem-1.0";
                         status = "okay";
                         xlnx,ip-name = "psv_fpd_afi_mem";
-                        xlnx,is-hierarchy;
                         reg = <0x0 0xa4000000 0x0 0xc000000>;
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_fpd_afi_mem_0";
                 };
@@ -4565,7 +4579,6 @@
                         compatible = "xlnx,psv-fpd-afi-mem-1.0";
                         status = "okay";
                         xlnx,ip-name = "psv_fpd_afi_mem";
-                        xlnx,is-hierarchy;
                         reg = <0x0 0xb0000000 0x0 0x10000000>;
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_fpd_afi_mem_2";
                 };
@@ -4638,7 +4651,6 @@
                         compatible = "xlnx,psv-lpd-afi-mem-1.0";
                         status = "okay";
                         xlnx,ip-name = "psv_lpd_afi_mem";
-                        xlnx,is-hierarchy;
                         reg = <0x0 0x80000000 0x0 0x20000000>;
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_lpd_afi_mem_0";
                 };
@@ -5335,7 +5347,6 @@
                         status = "okay";
                         power-domains = <&versal_firmware 0x1831800b>;
                         xlnx,ip-name = "psv_r5_0_atcm_lockstep";
-                        xlnx,is-hierarchy;
                         reg = <0x0 0xffe10000 0x0 0x10000>;
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_r5_0_atcm_lockstep";
                 };
@@ -5357,7 +5368,6 @@
                         status = "okay";
                         power-domains = <&versal_firmware 0x1831800c>;
                         xlnx,ip-name = "psv_r5_0_btcm_lockstep";
-                        xlnx,is-hierarchy;
                         reg = <0x0 0xffe30000 0x0 0x10000>;
                         xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_r5_0_btcm_lockstep";
                 };
@@ -5596,7 +5606,6 @@
                         compatible = "xlnx,psv-xram-atm-1.0";
                         status = "okay";
                         xlnx,ip-name = "psv_xram_atm";
-                        xlnx,is-hierarchy;
                         reg = <0x0 0xff970000 0x0 0x10000>;
                         xlnx,name = "STATIC_DESIGN_cips_xram_psv_xram_atm";
                 };
@@ -5642,7 +5651,6 @@
                         compatible = "xlnx,psv-xram-ctrl-1.0";
                         status = "okay";
                         xlnx,ip-name = "psv_xram_ctrl";
-                        xlnx,is-hierarchy;
                         reg = <0x0 0xff8e0000 0x0 0x10000>;
                         xlnx,name = "STATIC_DESIGN_cips_xram_psv_xram_ctrl_1";
                 };
@@ -5652,7 +5660,6 @@
                         compatible = "xlnx,psv-xram-ctrl-1.0";
                         status = "okay";
                         xlnx,ip-name = "psv_xram_ctrl";
-                        xlnx,is-hierarchy;
                         reg = <0x0 0xff8f0000 0x0 0x10000>;
                         xlnx,name = "STATIC_DESIGN_cips_xram_psv_xram_ctrl_2";
                 };
@@ -5662,7 +5669,6 @@
                         compatible = "xlnx,psv-xram-ctrl-1.0";
                         status = "okay";
                         xlnx,ip-name = "psv_xram_ctrl";
-                        xlnx,is-hierarchy;
                         reg = <0x0 0xff900000 0xffffffff 0xfff10000>;
                         xlnx,name = "STATIC_DESIGN_cips_xram_psv_xram_ctrl_3";
                 };
@@ -5672,7 +5678,6 @@
                         compatible = "xlnx,psv-xram-ctrl-1.0";
                         status = "okay";
                         xlnx,ip-name = "psv_xram_ctrl";
-                        xlnx,is-hierarchy;
                         reg = <0x0 0xff910000 0x0 0x10000>;
                         xlnx,name = "STATIC_DESIGN_cips_xram_psv_xram_ctrl_4";
                 };
@@ -5682,7 +5687,6 @@
                         compatible = "xlnx,psv-xram-global-ctrl-1.0";
                         status = "okay";
                         xlnx,ip-name = "psv_xram_global_ctrl";
-                        xlnx,is-hierarchy;
                         reg = <0x0 0xff950000 0x0 0x10000>;
                         xlnx,name = "STATIC_DESIGN_cips_xram_psv_xram_global_ctrl";
                 };
@@ -5692,7 +5696,6 @@
                         compatible = "xlnx,psv-xram-gpv-1.0";
                         status = "okay";
                         xlnx,ip-name = "psv_xram_gpv";
-                        xlnx,is-hierarchy;
                         reg = <0x0 0xff940000 0x0 0x10000>;
                         xlnx,name = "STATIC_DESIGN_cips_xram_psv_xram_gpv";
                 };
@@ -5702,7 +5705,6 @@
                         compatible = "xlnx,psv-xram-xmpu-bank-1.0";
                         status = "okay";
                         xlnx,ip-name = "psv_xram_xmpu_bank";
-                        xlnx,is-hierarchy;
                         reg = <0x0 0xff930000 0x0 0x4000>;
                         xlnx,name = "STATIC_DESIGN_cips_xram_psv_xram_xmpu_bank_1";
                 };
@@ -5712,7 +5714,6 @@
                         compatible = "xlnx,psv-xram-xmpu-bank-1.0";
                         status = "okay";
                         xlnx,ip-name = "psv_xram_xmpu_bank";
-                        xlnx,is-hierarchy;
                         reg = <0x0 0xff934000 0x0 0x4000>;
                         xlnx,name = "STATIC_DESIGN_cips_xram_psv_xram_xmpu_bank_2";
                 };
@@ -5722,7 +5723,6 @@
                         compatible = "xlnx,psv-xram-xmpu-bank-1.0";
                         status = "okay";
                         xlnx,ip-name = "psv_xram_xmpu_bank";
-                        xlnx,is-hierarchy;
                         reg = <0x0 0xff938000 0x0 0x4000>;
                         xlnx,name = "STATIC_DESIGN_cips_xram_psv_xram_xmpu_bank_3";
                 };
@@ -5732,7 +5732,6 @@
                         compatible = "xlnx,psv-xram-xmpu-bank-1.0";
                         status = "okay";
                         xlnx,ip-name = "psv_xram_xmpu_bank";
-                        xlnx,is-hierarchy;
                         reg = <0x0 0xff93c000 0x0 0x1000>;
                         xlnx,name = "STATIC_DESIGN_cips_xram_psv_xram_xmpu_bank_4";
                 };
@@ -5745,7 +5744,6 @@
                 reg = <0x0 0xffe00000 0x0 0x10000>;
                 status = "okay";
                 xlnx,ip-name = "psv_tcm_global";
-                xlnx,is-hierarchy;
                 xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_r5_0_atcm_global";
         };
 
@@ -5756,7 +5754,6 @@
                 reg = <0x0 0xffe20000 0x0 0x10000>;
                 status = "okay";
                 xlnx,ip-name = "psv_tcm_global";
-                xlnx,is-hierarchy;
                 xlnx,name = "STATIC_DESIGN_cips_pspmc_0_psv_r5_0_btcm_global";
         };
 

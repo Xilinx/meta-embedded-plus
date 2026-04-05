@@ -600,7 +600,6 @@
                         interrupt-parent = <&imux>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
-                        iommus = <&smmu 0x210>;
                         #dma-cells = <0x1>;
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
@@ -621,7 +620,6 @@
                         interrupt-parent = <&imux>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
-                        iommus = <&smmu 0x212>;
                         #dma-cells = <0x1>;
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
@@ -642,7 +640,6 @@
                         interrupt-parent = <&imux>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
-                        iommus = <&smmu 0x214>;
                         #dma-cells = <0x1>;
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
@@ -663,7 +660,6 @@
                         interrupt-parent = <&imux>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
-                        iommus = <&smmu 0x216>;
                         #dma-cells = <0x1>;
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
@@ -684,7 +680,6 @@
                         interrupt-parent = <&imux>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
-                        iommus = <&smmu 0x218>;
                         #dma-cells = <0x1>;
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
@@ -705,7 +700,6 @@
                         interrupt-parent = <&imux>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
-                        iommus = <&smmu 0x21a>;
                         #dma-cells = <0x1>;
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
@@ -726,7 +720,6 @@
                         interrupt-parent = <&imux>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
-                        iommus = <&smmu 0x21c>;
                         #dma-cells = <0x1>;
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
@@ -747,7 +740,6 @@
                         interrupt-parent = <&imux>;
                         clock-names = "clk_main", "clk_apb";
                         xlnx,dma-type = <0x1>;
-                        iommus = <&smmu 0x21e>;
                         #dma-cells = <0x1>;
                         xlnx,bus-width = <0x40>;
                         clocks = <&versal_clk 0x51>,
@@ -911,7 +903,6 @@
                         reg = <0x0 0xf1010000 0x0 0x10000 0x0 0xc0000000 0x0 0x20000000>;
                         interrupts = <0x0 0x7c 0x4>;
                         interrupt-parent = <&imux>;
-                        iommus = <&smmu 0x245>;
                         cdns,fifo-depth = <0x100>;
                         cdns,fifo-width = <0x4>;
                         cdns,is-dma = <0x1>;

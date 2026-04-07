@@ -1,5 +1,5 @@
 args:
-    - --hw-description https://edf.amd.com/sswreleases/rel-v2026.1/sdt/2026.1/2026.1_0406_1_04061619/external/emb-plus-ve2302-xrt/emb-plus-ve2302-xrt_2026.1_0405_1_04061619.tar.gz
+    - --hw-description https://edf.amd.com/sswreleases/rel-v2026.1/sdt/2026.1/2026.1_0407_2_04071529/external/emb-plus-ve2302-xrt/emb-plus-ve2302-xrt_2026.1_0406_1_04071529.tar.gz
     - --machine-name emb-plus-ve2302-xrt
 
 kconfig:

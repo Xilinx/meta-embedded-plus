@@ -33,5 +33,26 @@
                 compatible = "xlnx,axi-gpio-2.0", "xlnx,xps-gpio-1.00.a";
                 xlnx,gpio-board-interface = "Custom";
         };
+
+        smbus_hier_smbus_0: smbus@80044000 {
+                xlnx,name = "smbus_hier_smbus_0";
+                xlnx,smbus-dev-class = <0x0>;
+                xlnx,minor-version = <0x0>;
+                interrupt-names = "ip2intc_irpt";
+                clock-names = "s_axi_aclk";
+                xlnx,core-revision = <0x0>;
+                xlnx,num-target-devices = <0x8>;
+                xlnx,edk-iptype = "PERIPHERAL";
+                clocks = <&versal_clk 0x41>;
+                xlnx,addr-width = <0xc>;
+                reg = <0x0 0x80044000 0x0 0x1000>;
+                xlnx,ip-name = "smbus";
+                interrupt-parent = <&gic>;
+                xlnx,patch-revision = <0x0>;
+                xlnx,major-version = <0x1>;
+                xlnx,freq-hz-axi-aclk = <0x5f5e100>;
+                compatible = "xlnx,smbus-1.1";
+                interrupts = <0x0 0x55 0x4>;
+        };
 };
 

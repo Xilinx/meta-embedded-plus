@@ -3,14 +3,17 @@ reserved-memory:
   "#address-cells": 2
   ranges: true
   rpu0_runtime_region@0:
+    label: rpu0_runtime_region
     no-map: true
     start: 0x00000000
     size: 256M
   rpu0_shared_region@10000000:
+    label: rpu0_shared_region
     no-map: true
     start: 0x10000000
     size: 8M
   rpu1_runtime_region@10800000:
+    label: rpu1_runtime_region
     no-map: true
     start: 0x10800000
     size: 64M

@@ -1,5 +1,5 @@
 args:
-    - --hw-description https://edf.amd.com/sswreleases/rel-v2026.1/sdt/2026.1/2026.1_0412_1_04121811/external/alveo-v80-amr/alveo-v80-amr_2026.1_0412_1_04121811.tar.gz
+    - --hw-description https://edf.amd.com/sswreleases/rel-v2026.1/sdt/2026.1/2026.1_0413_1_04131543/external/alveo-v80-amr/alveo-v80-amr_2026.1_0413_1_04131543.tar.gz
     - --machine-name alveo-v80-amr
     - -g full
     - -O alveo-amr

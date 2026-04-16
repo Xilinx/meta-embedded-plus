@@ -2422,7 +2422,7 @@
                 #size-cells = <0x2>;
                 firmware-name = "ve2302_xdma_base.pdi";
 
-                fpga_PR: fpga-PR {
+                fpga_PRDFX_RP: fpga-PRDFX_RP {
                         phandle = <0x197>;
                         ranges;
                         compatible = "fpga-region";
@@ -2646,7 +2646,7 @@
                 user_key6 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@1d0";
                 user_key7 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@1f0";
                 amba_pl = "/amba_pl";
-                fpga_PR = "/amba_pl/fpga-PR";
+                fpga_PRDFX_RP = "/amba_pl/fpga-PRDFX_RP";
                 misc_clk_0 = "/amba_pl/misc_clk_0";
                 STATIC_DESIGN_blp_logic_uuid_register = "/amba_pl/uuid_register@0";
                 STATIC_DESIGN_axi_noc_mc_1x_ddr_memory = "/memory@00000000";

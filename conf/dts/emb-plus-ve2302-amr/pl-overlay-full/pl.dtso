@@ -10,7 +10,7 @@
                 compatible = "fixed-clock";
         };
 
-        fpga_PR: fpga-PR {
+        fpga_PRDFX_RP: fpga-PRDFX_RP {
                 #size-cells = <0x2>;
                 #address-cells = <0x2>;
                 compatible = "fpga-region";

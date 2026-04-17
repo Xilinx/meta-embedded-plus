@@ -2438,7 +2438,7 @@
                 #size-cells = <0x2>;
                 firmware-name = "ve2302_pcie_xdma_base.pdi";
 
-                fpga_PR: fpga-PR {
+                fpga_PRulp: fpga-PRulp {
                         phandle = <0x1a5>;
                         ranges;
                         compatible = "fpga-region";
@@ -3159,6 +3159,35 @@
                         xlnx,nummbufgce = <0x0>;
                 };
 
+                blp_blp_logic_base_clocking_pr_reset_gpio: gpio@80020000 {
+                        phandle = <0xc>;
+                        xlnx,gpio-board-interface = "Custom";
+                        compatible = "xlnx,axi-gpio-2.0", "xlnx,xps-gpio-1.00.a";
+                        xlnx,all-outputs = <0x1>;
+                        #gpio-cells = <0x2>;
+                        xlnx,gpio-width = <0x2>;
+                        xlnx,dout-default = <0x0>;
+                        xlnx,is-dual = <0x1>;
+                        xlnx,ip-name = "axi_gpio";
+                        xlnx,tri-default-2 = <0xffffffff>;
+                        reg = <0x0 0x80020000 0x0 0x1000>;
+                        xlnx,all-inputs-2 = <0x1>;
+                        clocks = <&versal_clk 0x41>;
+                        xlnx,all-outputs-2 = <0x0>;
+                        gpio-controller;
+                        device_type = "gpio";
+                        xlnx,interrupt-present = <0x0>;
+                        xlnx,gpio2-board-interface = "Custom";
+                        xlnx,edk-iptype = "PERIPHERAL";
+                        xlnx,dout-default-2 = <0x0>;
+                        status = "okay";
+                        xlnx,gpio2-width = <0x2>;
+                        clock-names = "s_axi_aclk";
+                        xlnx,tri-default = <0xffffffff>;
+                        xlnx,name = "blp_blp_logic_base_clocking_pr_reset_gpio";
+                        xlnx,all-inputs = <0x0>;
+                };
+
                 blp_blp_logic_axi_firewall_user: axi_firewall@80001000 {
                         phandle = <0x9>;
                         xlnx,protocol = <0x2>;
@@ -3230,35 +3259,6 @@
                         xlnx,name = "blp_blp_logic_axi_uart_rpu";
                         xlnx,data-bits = <0x8>;
                         xlnx,parity = "No_Parity";
-                };
-
-                blp_blp_logic_base_clocking_pr_reset_gpio: gpio@80020000 {
-                        phandle = <0xc>;
-                        xlnx,gpio-board-interface = "Custom";
-                        compatible = "xlnx,axi-gpio-2.0", "xlnx,xps-gpio-1.00.a";
-                        xlnx,all-outputs = <0x1>;
-                        #gpio-cells = <0x2>;
-                        xlnx,gpio-width = <0x2>;
-                        xlnx,dout-default = <0x0>;
-                        xlnx,is-dual = <0x1>;
-                        xlnx,ip-name = "axi_gpio";
-                        xlnx,tri-default-2 = <0xffffffff>;
-                        reg = <0x0 0x80020000 0x0 0x1000>;
-                        xlnx,all-inputs-2 = <0x1>;
-                        clocks = <&versal_clk 0x41>;
-                        xlnx,all-outputs-2 = <0x0>;
-                        gpio-controller;
-                        device_type = "gpio";
-                        xlnx,interrupt-present = <0x0>;
-                        xlnx,gpio2-board-interface = "Custom";
-                        xlnx,edk-iptype = "PERIPHERAL";
-                        xlnx,dout-default-2 = <0x0>;
-                        status = "okay";
-                        xlnx,gpio2-width = <0x2>;
-                        clock-names = "s_axi_aclk";
-                        xlnx,tri-default = <0xffffffff>;
-                        xlnx,name = "blp_blp_logic_base_clocking_pr_reset_gpio";
-                        xlnx,all-inputs = <0x0>;
                 };
 
                 blp_blp_logic_gcq_m2r: cmd_queue@20102010000 {
@@ -3552,13 +3552,13 @@
                 user_key6 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@1d0";
                 user_key7 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@1f0";
                 amba_pl = "/amba_pl";
-                fpga_PR = "/amba_pl/fpga-PR";
+                fpga_PRulp = "/amba_pl/fpga-PRulp";
                 misc_clk_0 = "/amba_pl/misc_clk_0";
                 blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_00 = "/amba_pl/clk_wizard@80042000";
                 blp_blp_logic_ulp_clocking_clkwiz_aclk_kernel_01 = "/amba_pl/clk_wizard@80043000";
+                blp_blp_logic_base_clocking_pr_reset_gpio = "/amba_pl/gpio@80020000";
                 blp_blp_logic_axi_firewall_user = "/amba_pl/axi_firewall@80001000";
                 blp_blp_logic_axi_uart_rpu = "/amba_pl/serial@80021000";
-                blp_blp_logic_base_clocking_pr_reset_gpio = "/amba_pl/gpio@80020000";
                 blp_blp_logic_gcq_m2r = "/amba_pl/cmd_queue@20102010000";
                 blp_blp_logic_gcq_r2a = "/amba_pl/cmd_queue@80011000";
                 blp_blp_logic_pfm_irq_ctlr = "/amba_pl/pfm_irq_ctlr@80044000";

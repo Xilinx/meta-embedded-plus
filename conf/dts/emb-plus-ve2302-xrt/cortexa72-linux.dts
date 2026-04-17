@@ -1116,7 +1116,7 @@
                         bus-range = <0x0 0xff>;
                         ranges = <0x2000000 0x0 0xe0010000 0x0 0xe0010000 0x0 0x10000000 0x43000000 0x80 0x0 0x80 0x0 0x0 0x80000000>;
                         msi-map = <0x0 &gic_its 0x0 0x10000>;
-                        reg = <0x6 0x0 0x0 0x1000000 0x0 0xfca10000 0x0 0x1000 0x0 0xfca00000 0x0 0x10000>;
+                        reg = <0x6 0x0 0x0 0x10000000 0x0 0xfca10000 0x0 0x1000 0x0 0xfca00000 0x0 0x10000>;
                         reg-names = "cfg", "cpm_slcr", "cpm_crx";
 
                         pcie_intc_0: interrupt-controller {
@@ -1149,7 +1149,7 @@
                         bus-range = <0x0 0xff>;
                         ranges = <0x2000000 0x0 0xe0000000 0x0 0xe0000000 0x0 0x10000000 0x43000000 0x80 0x0 0x80 0x0 0x0 0x80000000>;
                         msi-map = <0x0 &gic_its 0x0 0x10000>;
-                        reg = <0x6 0x0 0x0 0x1000000 0x0 0xfcdd0000 0x0 0x1000 0x0 0xfce20000 0x0 0x10000 0x0 0xfcdc0000 0x0 0x10000>;
+                        reg = <0x6 0x0 0x0 0x10000000 0x0 0xfcdd0000 0x0 0x1000 0x0 0xfce20000 0x0 0x10000 0x0 0xfcdc0000 0x0 0x10000>;
                         reg-names = "cfg", "cpm_slcr", "cpm_csr", "cpm_crx";
 
                         pcie_intc_2: interrupt-controller {
@@ -2421,6 +2421,34 @@
                         xlnx,async-intr = <0xffffffff>;
                 };
 
+                blp_blp_logic_base_clocking_pr_reset_gpio: gpio@80020000 {
+                        phandle = <0xc>;
+                        xlnx,gpio-board-interface = "Custom";
+                        compatible = "xlnx,axi-gpio-2.0", "xlnx,xps-gpio-1.00.a";
+                        xlnx,all-outputs = <0x1>;
+                        #gpio-cells = <0x2>;
+                        xlnx,gpio-width = <0x2>;
+                        xlnx,dout-default = <0x0>;
+                        xlnx,is-dual = <0x1>;
+                        xlnx,ip-name = "axi_gpio";
+                        xlnx,tri-default-2 = <0xffffffff>;
+                        reg = <0x0 0x80020000 0x0 0x1000>;
+                        xlnx,all-inputs-2 = <0x1>;
+                        clocks = <&versal_clk 0x41>;
+                        xlnx,all-outputs-2 = <0x0>;
+                        gpio-controller;
+                        device_type = "gpio";
+                        xlnx,interrupt-present = <0x0>;
+                        xlnx,gpio2-board-interface = "Custom";
+                        xlnx,edk-iptype = "PERIPHERAL";
+                        xlnx,dout-default-2 = <0x0>;
+                        status = "okay";
+                        xlnx,gpio2-width = <0x2>;
+                        clock-names = "s_axi_aclk";
+                        xlnx,tri-default = <0xffffffff>;
+                        xlnx,all-inputs = <0x0>;
+                };
+
                 blp_blp_logic_axi_firewall_user: axi_firewall@80001000 {
                         phandle = <0x9>;
                         xlnx,protocol = <0x2>;
@@ -2514,34 +2542,6 @@
                         interrupt-names = "interrupt";
                         xlnx,data-bits = <0x8>;
                         xlnx,parity = "No_Parity";
-                };
-
-                blp_blp_logic_base_clocking_pr_reset_gpio: gpio@80020000 {
-                        phandle = <0xc>;
-                        xlnx,gpio-board-interface = "Custom";
-                        compatible = "xlnx,axi-gpio-2.0", "xlnx,xps-gpio-1.00.a";
-                        xlnx,all-outputs = <0x1>;
-                        #gpio-cells = <0x2>;
-                        xlnx,gpio-width = <0x2>;
-                        xlnx,dout-default = <0x0>;
-                        xlnx,is-dual = <0x1>;
-                        xlnx,ip-name = "axi_gpio";
-                        xlnx,tri-default-2 = <0xffffffff>;
-                        reg = <0x0 0x80020000 0x0 0x1000>;
-                        xlnx,all-inputs-2 = <0x1>;
-                        clocks = <&versal_clk 0x41>;
-                        xlnx,all-outputs-2 = <0x0>;
-                        gpio-controller;
-                        device_type = "gpio";
-                        xlnx,interrupt-present = <0x0>;
-                        xlnx,gpio2-board-interface = "Custom";
-                        xlnx,edk-iptype = "PERIPHERAL";
-                        xlnx,dout-default-2 = <0x0>;
-                        status = "okay";
-                        xlnx,gpio2-width = <0x2>;
-                        clock-names = "s_axi_aclk";
-                        xlnx,tri-default = <0xffffffff>;
-                        xlnx,all-inputs = <0x0>;
                 };
 
                 blp_blp_logic_gcq_m2r: cmd_queue@20102010000 {
@@ -2874,10 +2874,10 @@
                 blp_blp_logic_axi_intc_gcq_apu = "/amba_pl/interrupt-controller@402031000";
                 blp_blp_logic_axi_intc_uart_apu = "/amba_pl/interrupt-controller@402030000";
                 blp_blp_logic_ert_support_axi_intc_0_31 = "/amba_pl/interrupt-controller@20202020000";
+                blp_blp_logic_base_clocking_pr_reset_gpio = "/amba_pl/gpio@80020000";
                 blp_blp_logic_axi_firewall_user = "/amba_pl/axi_firewall@80001000";
                 blp_blp_logic_axi_uart_apu0 = "/amba_pl/serial@402020000";
                 blp_blp_logic_axi_uart_rpu = "/amba_pl/serial@80021000";
-                blp_blp_logic_base_clocking_pr_reset_gpio = "/amba_pl/gpio@80020000";
                 blp_blp_logic_gcq_m2r = "/amba_pl/cmd_queue@20102010000";
                 blp_blp_logic_gcq_r2a = "/amba_pl/cmd_queue@80011000";
                 blp_blp_logic_gcq_u2a_0 = "/amba_pl/cmd_queue@20202010000";
@@ -2888,7 +2888,7 @@
                 gic = "/axi/interrupt-controller@f9000000";
         };
 
-        fpga_PR: fpga-PR {
+        fpga_PRulp: fpga-PRulp {
                 phandle = <0x1a5>;
                 ranges;
                 compatible = "fpga-region";

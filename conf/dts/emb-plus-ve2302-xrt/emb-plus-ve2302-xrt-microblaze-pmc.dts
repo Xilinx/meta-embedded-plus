@@ -1840,7 +1840,7 @@
                 #size-cells = <0x2>;
                 firmware-name = "ve2302_pcie_xdma_base.pdi";
 
-                fpga_PR: fpga-PR {
+                fpga_PRulp: fpga-PRulp {
                         phandle = <0x1a5>;
                         ranges;
                         compatible = "fpga-region";
@@ -1989,7 +1989,7 @@
                 user_key6 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@1d0";
                 user_key7 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@1f0";
                 amba_pl = "/amba_pl";
-                fpga_PR = "/amba_pl/fpga-PR";
+                fpga_PRulp = "/amba_pl/fpga-PRulp";
                 misc_clk_0 = "/amba_pl/misc_clk_0";
         };
 };

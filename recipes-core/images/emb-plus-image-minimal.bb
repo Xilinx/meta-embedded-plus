@@ -28,6 +28,11 @@ IMAGE_INSTALL = " \
     i2c-tools \
 "
 
+# Adding fpgautil as a workaround until the AMR stack solution is available 
+IMAGE_INSTALL:append:emb-plus-ve2302-amr = " \
+    fpga-manager-script \
+"
+
 XRT_INSTALL = " \
      xrt \
      zocl \

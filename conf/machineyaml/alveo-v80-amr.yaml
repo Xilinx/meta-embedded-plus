@@ -3,7 +3,8 @@ args:
     - --machine-name alveo-v80-amr
     - -g full
     - -O alveo-amr
-    - --domain-file ${LAYER_PATH_embedded-plus-layer}/conf/domainyaml/alveo-v80-amr-linux.yaml
+    - --domain-file ${LAYER_PATH_xilinx-standalone-sdt}/conf/domainyaml/versal-linux-only-base.yaml \
+                    ${LAYER_PATH_embedded-plus-layer}/conf/domainyaml/alveo-v80-amr-linux-overlay.yaml
 kconfig:
     CONFIG_YOCTO_BBMC_CORTEXR5_0_FREERTOS: y
     CONFIG_SUBSYSTEM_TF-A_SERIAL_SERIAL1_SELECT: y

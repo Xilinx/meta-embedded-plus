@@ -19,15 +19,7 @@ reserved-memory:
     size: 64M
 domains:
   APU_Linux:
-    compatible:
-      - "openamp,domain-v1"
-    cpus:
-      - cluster: cpus_a72
-        cpumask: 0xf
-        mode:
-          secure: true
-          el: 0x3
-    os,type: linux
+    compatible: openamp,domain-v1
     chosen:
       stdout-path: "serial1:115200n8"
       bootargs: "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8"

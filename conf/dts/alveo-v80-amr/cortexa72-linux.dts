@@ -2551,6 +2551,21 @@
                 gic = "/axi/interrupt-controller@f9000000";
         };
 
+        domains {
+
+                APU_Linux {
+                        compatible = "openamp,domain-v1";
+                        reserved-memory = <0x17f 0x180 0x181>;
+                        cpus = <&cpus_a72 0xf 0x80000003>;
+                        os,type = "linux";
+
+                        chosen {
+                                stdout-path = "serial1:115200n8";
+                                bootargs = "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8";
+                        };
+                };
+        };
+
         reserved-memory {
                 #size-cells = <0x2>;
                 #address-cells = <0x2>;
@@ -2575,21 +2590,6 @@
                         label = "rpu1_runtime_region";
                         no-map;
                         reg = <0x0 0x10800000 0x0 0x4000000>;
-                };
-        };
-
-        domains {
-
-                APU_Linux {
-                        compatible = "openamp,domain-v1";
-                        cpus = <&cpus_a72 0xf 0x80000003>;
-                        os,type = "linux";
-                        reserved-memory = <0x17f 0x180 0x181>;
-
-                        chosen {
-                                stdout-path = "serial1:115200n8";
-                                bootargs = "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8";
-                        };
                 };
         };
 };

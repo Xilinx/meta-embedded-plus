@@ -10,6 +10,11 @@ kconfig:
     CONFIG_SUBSYSTEM_BOOTMODE_5: y
 
 machine:
+    description: >-
+        AMP/multidomain machine for the AMD Embedded+ VE2302 board
+        (Versal AI Edge VE2302) running the AMR stack: Cortex-A72 Linux
+        plus Cortex-R5 FreeRTOS/baremetal and MicroBlaze PMC/PSM
+        sub-machines.
     pre:
         TFA_CONSOLE:
             op: '?='

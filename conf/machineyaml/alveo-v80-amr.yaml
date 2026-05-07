@@ -9,6 +9,11 @@ kconfig:
     CONFIG_YOCTO_BBMC_CORTEXR5_0_FREERTOS: y
     CONFIG_SUBSYSTEM_TF-A_SERIAL_SERIAL1_SELECT: y
 machine:
+    description: >-
+        AMP/multidomain machine for the AMD Alveo V80 Compute
+        Accelerator Card (Versal Premium) running the AMR (AVED
+        Management Runtime) stack: Cortex-A72 Linux plus Cortex-R5
+        FreeRTOS and MicroBlaze PMC/PSM sub-machines.
     post:
         SPI_IMAGE_SIZE:
             comment: 'OSPI flash size (256MB)'

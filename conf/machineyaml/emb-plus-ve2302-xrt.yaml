@@ -6,6 +6,10 @@ kconfig:
     CONFIG_SUBSYSTEM_BOOTMODE_5: y
 
 machine:
+    description: >-
+        Machine configuration for the AMD Embedded+ VE2302 board (Versal
+        AI Edge VE2302) running the XRT (Xilinx Runtime) stack:
+        Cortex-A72 Linux plus MicroBlaze PMC/PSM firmware sub-machines.
     post:
         UBOOT_BOOT_SCRIPT:emb-plus-ve2302-xrt:${DISTRO}:
             comment: 'Use the specific boot script'

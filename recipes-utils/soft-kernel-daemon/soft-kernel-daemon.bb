@@ -1,4 +1,7 @@
 SUMMARY = "PS Kernel Daemon"
+DESCRIPTION = "User-space daemon that loads and manages 'soft kernel' \
+(PL-side) firmware payloads on AMD Embedded+ Versal boards via the PS \
+Kernel framework."
 LICENSE = "MIT"
 
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"

@@ -1,4 +1,7 @@
 SUMMARY = "apu-boot application"
+DESCRIPTION = "Helper application that drives boot of the APU \
+(Cortex-A72 application processor) cluster on AMD Embedded+ Versal \
+boards from a running RPU or system controller context."
 LICENSE = "MIT"
 
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"

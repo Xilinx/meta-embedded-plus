@@ -1,4 +1,7 @@
 SUMMARY = "Init APU service"
+DESCRIPTION = "systemd service that performs Embedded+ board init \
+steps for the APU at first boot (loading firmware, programming PL \
+artifacts and starting the apu-boot helper as needed)."
 LICENSE = "MIT"
 
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"

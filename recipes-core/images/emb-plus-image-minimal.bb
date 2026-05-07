@@ -1,3 +1,4 @@
+SUMMARY = "Minimal bring-up image for AMD Embedded+ Versal boards."
 DESCRIPTION = "A minimal image for Embedded Plus."
 
 inherit core-image

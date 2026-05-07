@@ -1,4 +1,7 @@
-DESCRIPTION = "Boot image for RAVE containing ATF, u-boot, boot.scr, Linux and rootfs"
+SUMMARY = "Combined APU boot image (TF-A + U-Boot + boot.scr + Linux + \
+rootfs) for AMD Embedded+ boards."
+DESCRIPTION = "Boot image for RAVE containing ATF, u-boot, boot.scr, \
+Linux and rootfs"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 

@@ -26,10 +26,6 @@ machine:
             op: '?='
             val: '0x8200000'
     post:
-        BOOTBIN_INC:
-            comment: 'Enable hello-world application'
-            op: '='
-            val: 'versal-hello-world.inc'
         SPI_IMAGE_SIZE:
             comment: 'OSPI flash size (128MB)'
             op: '='

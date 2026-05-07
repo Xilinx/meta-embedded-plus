@@ -29,7 +29,8 @@ BIF_AMC_ATTR:alveo-v80-amr = "amcfw"
 # specify BIF partition attributes for VMR
 BIF_PARTITION_ATTR[amcfw] = "core=r5-0"
 BIF_PARTITION_IMAGE[amcfw] = "${DEPLOY_DIR_IMAGE}/amc-firmware-${MACHINE}.elf"
-BIF_PARTITION_ID[amcfw] = "0x1c000006, name=rpu_subsystem, delay_handoff"
+BIF_PARTITION_ID[amcfw] = "0x1c000006"
+BIF_PARTITION_NAME[0x1c000006] = "amr_subsystem, delay_handoff"
 BIF_PARTITION_ATTR:alveo-v80-amr = "${BIF_FSBL_ATTR} ${BIF_AMC_ATTR}"
 
 BIF_PARTITION_ATTR:emb-plus-ve2302-amr = "${BIF_FSBL_ATTR} ${BIF_AMC_ATTR}"
@@ -41,9 +42,14 @@ ADDN_COMPILE_DEPENDS:emb-plus-ve2302-xrt = "vmr-deploy:do_deploy extension-fpt:d
 ADDN_COMPILE_DEPENDS:emb-plus-ve2302-amr = "amcfw:do_deploy"
 ADDN_COMPILE_DEPENDS:alveo-v80-amr = "amcfw:do_deploy"
 
+# Build hello-world for R5-1
+HELLOWORLD_MCDEPENDS = ""
+HELLOWORLD_MCDEPENDS:emb-plus-ve2302-amr = "mc::emb-plus-ve2302-amr-cortexr5-1-baremetal:hello-world:do_deploy"
+
 require xilinx-bootbin-version.inc
 
 do_compile[depends] += "${ADDN_COMPILE_DEPENDS}"
+do_compile[mcdepends] += "${HELLOWORLD_MCDEPENDS}"
 
 # Overlay CDO: merge AMR subsystem definitions into the base PDI
 # before the main bootgen assembles BOOT.bin. The design BIF from

@@ -2339,6 +2339,7 @@
                         phandle = <0xe4>;
                         compatible = "xlnx,versal-sysmon";
                         status = "disabled";
+                        #io-channel-cells = <0x1>;
                         reg = <0x1 0x9270000 0x0 0x4000>;
                         xlnx,numchannels = [00];
                         #address-cells = <0x1>;
@@ -2350,6 +2351,7 @@
                         phandle = <0xe5>;
                         compatible = "xlnx,versal-sysmon";
                         status = "disabled";
+                        #io-channel-cells = <0x1>;
                         reg = <0x1 0x11270000 0x0 0x4000>;
                         xlnx,numchannels = [00];
                         #address-cells = <0x1>;
@@ -2361,6 +2363,7 @@
                         phandle = <0xe6>;
                         compatible = "xlnx,versal-sysmon";
                         status = "disabled";
+                        #io-channel-cells = <0x1>;
                         reg = <0x1 0x19270000 0x0 0x4000>;
                         xlnx,numchannels = [00];
                         #address-cells = <0x1>;
@@ -6718,7 +6721,7 @@
         reserved-memory {
                 #size-cells = <0x2>;
                 #address-cells = <0x2>;
-                ranges = <0x1>;
+                ranges;
 
                 rpu0_runtime_region: rpu0_runtime_region@0 {
                         phandle = <0x17f>;

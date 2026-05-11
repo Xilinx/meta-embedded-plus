@@ -1,0 +1,30 @@
+reserved-memory:
+  "#size-cells": 2
+  "#address-cells": 2
+  ranges: true
+  rpu0_runtime_region@0:
+    label: rpu0_runtime_region
+    no-map: true
+    start: 0x00000000
+    size: 256M
+  rpu0_shared_region@10000000:
+    label: rpu0_shared_region
+    no-map: true
+    start: 0x10000000
+    size: 8M
+  rpu1_runtime_region@10800000:
+    label: rpu1_runtime_region
+    no-map: true
+    start: 0x10800000
+    size: 128M
+
+domains:
+  APU_Linux:
+    compatible: openamp,domain-v1
+    chosen:
+      stdout-path: "serial1:115200n8"
+      bootargs: "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8"
+    reserved-memory:
+      - rpu0_runtime_region@0
+      - rpu0_shared_region@10000000
+      - rpu1_runtime_region@10800000

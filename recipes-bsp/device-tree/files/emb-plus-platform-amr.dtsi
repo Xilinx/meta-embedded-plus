@@ -7,33 +7,6 @@
  *
  */
 
-/ {
-	chosen {
-                bootargs = "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8";
-                stdout-path = "serial1:115200n8";
-        };
-
-	reserved-memory {
-		#address-cells = <0x2>;
-		#size-cells = <0x2>;
-		ranges;
-		rpu0_runtime_region: buffer0@0 {
-	    		no-map;
-	    		reg = <0x0 0x0 0x0 0x10000000>;
-		};
-
-		rpu0_shared_region: buffer@10000000 {
-	    		no-map;
-	    		reg = <0x0 0x10000000 0x0 0x800000>;
-		};
-		rpu1_runtime_region: buffer@10200000 {
-			no-map;
-			reg = <0x0 0x10200000 0x0 0x8000000>;
-		};
-
-	};
-};
-
 &serial0 {
         status = "disabled";
 };

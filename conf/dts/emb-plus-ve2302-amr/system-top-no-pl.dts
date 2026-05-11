@@ -6301,8 +6301,8 @@
         };
 
         chosen {
-                stdout-path = "serial0:115200";
-                bootargs = "earlycon clk_ignore_unused";
+                stdout-path = "serial1:115200n8";
+                bootargs = "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8";
         };
 
         aliases {
@@ -6722,5 +6722,50 @@
                 user_key7 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@1f0";
                 STATIC_DESIGN_axi_noc_mc_1x_ddr_memory = "/memory@00000000";
                 STATIC_DESIGN_cips_pspmc_0_psv_ocm_ram_0_memory = "/memory@FFFC0000";
+                rpu0_runtime_region = "/reserved-memory/rpu0_runtime_region@0";
+                rpu0_shared_region = "/reserved-memory/rpu0_shared_region@10000000";
+                rpu1_runtime_region = "/reserved-memory/rpu1_runtime_region@10800000";
+        };
+
+        domains {
+
+                APU_Linux {
+                        compatible = "openamp,domain-v1";
+                        reserved-memory = <0x199 0x19a 0x19b>;
+                        cpus = <&cpus_a72 0xf 0x80000003>;
+                        os,type = "linux";
+
+                        chosen {
+                                stdout-path = "serial1:115200n8";
+                                bootargs = "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8";
+                        };
+                };
+        };
+
+        reserved-memory {
+                #size-cells = <0x2>;
+                #address-cells = <0x2>;
+                ranges;
+
+                rpu0_runtime_region: rpu0_runtime_region@0 {
+                        phandle = <0x199>;
+                        label = "rpu0_runtime_region";
+                        no-map;
+                        reg = <0x0 0x0 0x0 0x10000000>;
+                };
+
+                rpu0_shared_region: rpu0_shared_region@10000000 {
+                        phandle = <0x19a>;
+                        label = "rpu0_shared_region";
+                        no-map;
+                        reg = <0x0 0x10000000 0x0 0x800000>;
+                };
+
+                rpu1_runtime_region: rpu1_runtime_region@10800000 {
+                        phandle = <0x19b>;
+                        label = "rpu1_runtime_region";
+                        no-map;
+                        reg = <0x0 0x10800000 0x0 0x8000000>;
+                };
         };
 };

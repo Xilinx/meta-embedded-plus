@@ -504,7 +504,7 @@
                 gpio1: gpio@f1020000 {
                         phandle = <0x2f>;
                         compatible = "xlnx,pmc-gpio-1.0";
-                        status = "okay";
+                        status = "disabled";
                         reg = <0x0 0xf1020000 0x0 0x1000>;
                         interrupts = <0x0 0x7a 0x4>;
                         interrupt-parent = <&gic>;
@@ -633,7 +633,7 @@
                 sdhci0: mmc@f1040000 {
                         phandle = <0x30>;
                         compatible = "xlnx,versal-8.9a", "arasan,sdhci-8.9a";
-                        status = "okay";
+                        status = "disabled";
                         reg = <0x0 0xf1040000 0x0 0x10000>;
                         interrupts = <0x0 0x7e 0x4>;
                         interrupt-parent = <&gic>;
@@ -685,7 +685,7 @@
                 serial0: serial@ff000000 {
                         phandle = <0x66>;
                         compatible = "arm,pl011", "arm,primecell";
-                        status = "okay";
+                        status = "disabled";
                         reg = <0x0 0xff000000 0x0 0x1000>;
                         interrupts = <0x0 0x12 0x4>;
                         interrupt-parent = <&gic>;
@@ -748,7 +748,7 @@
                 ospi: spi@f1010000 {
                         phandle = <0x2e>;
                         compatible = "xlnx,versal-ospi-1.0", "cdns,qspi-nor";
-                        status = "okay";
+                        status = "disabled";
                         reg = <0x0 0xf1010000 0x0 0x10000 0x0 0xc0000000 0x0 0x20000000>;
                         interrupts = <0x0 0x7c 0x4>;
                         interrupt-parent = <&gic>;
@@ -1142,7 +1142,7 @@
                 ttc0: timer@ff0e0000 {
                         phandle = <0x6e>;
                         compatible = "cdns,ttc";
-                        status = "okay";
+                        status = "disabled";
                         interrupts = <0x0 0x25 0x4 0x0 0x26 0x4 0x0 0x27 0x4>;
                         interrupt-parent = <&gic>;
                         reg = <0x0 0xff0e0000 0x0 0x1000>;
@@ -1163,7 +1163,7 @@
                 ttc1: timer@ff0f0000 {
                         phandle = <0x6f>;
                         compatible = "cdns,ttc";
-                        status = "okay";
+                        status = "disabled";
                         interrupts = <0x0 0x28 0x4 0x0 0x29 0x4 0x0 0x2a 0x4>;
                         interrupt-parent = <&gic>;
                         reg = <0x0 0xff0f0000 0x0 0x1000>;
@@ -2324,25 +2324,7 @@
                 compatible = "xlnx,axi-noc-1.1";
                 xlnx,ip-name = "axi_noc";
                 device_type = "memory";
-                reg = <0x0 0x0 0x0 0x80000000 0x201 0x0 0x0 0x800000 0x500 0x80000000 0x0 0x80000000>;
-                memory_type = "memory";
-        };
-
-        axi_noc_cips_hbm_memory: memory@4000000000 {
-                phandle = <0x3>;
-                compatible = "xlnx,axi-noc-1.1";
-                xlnx,ip-name = "axi_noc";
-                device_type = "memory";
-                reg = <0x40 0x0 0x8 0x0>;
-                memory_type = "memory";
-        };
-
-        axi_noc_mc_ddr4_1_ddr_memory: memory@60000000000 {
-                phandle = <0x5>;
-                compatible = "xlnx,axi-noc-1.1";
-                xlnx,ip-name = "axi_noc";
-                device_type = "memory";
-                reg = <0x600 0x0 0x8 0x0>;
+                reg = <0x0 0x0 0x0 0x80000000>;
                 memory_type = "memory";
         };
 

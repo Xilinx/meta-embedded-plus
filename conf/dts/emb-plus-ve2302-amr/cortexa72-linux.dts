@@ -504,7 +504,7 @@
                 gpio1: gpio@f1020000 {
                         phandle = <0x2c>;
                         compatible = "xlnx,pmc-gpio-1.0";
-                        status = "okay";
+                        status = "disabled";
                         reg = <0x0 0xf1020000 0x0 0x1000>;
                         interrupts = <0x0 0x7a 0x4>;
                         interrupt-parent = <&gic>;
@@ -549,7 +549,7 @@
                 i2c2: i2c@f1000000 {
                         phandle = <0x2a>;
                         compatible = "cdns,i2c-r1p14";
-                        status = "okay";
+                        status = "disabled";
                         reg = <0x0 0xf1000000 0x0 0x1000>;
                         interrupts = <0x0 0x7b 0x4>;
                         interrupt-parent = <&gic>;
@@ -660,7 +660,7 @@
                 serial0: serial@ff000000 {
                         phandle = <0x62>;
                         compatible = "arm,pl011", "arm,primecell";
-                        status = "okay";
+                        status = "disabled";
                         reg = <0x0 0xff000000 0x0 0x1000>;
                         interrupts = <0x0 0x12 0x4>;
                         interrupt-parent = <&gic>;
@@ -723,7 +723,7 @@
                 ospi: spi@f1010000 {
                         phandle = <0x2b>;
                         compatible = "xlnx,versal-ospi-1.0", "cdns,qspi-nor";
-                        status = "okay";
+                        status = "disabled";
                         reg = <0x0 0xf1010000 0x0 0x10000 0x0 0xc0000000 0x0 0x20000000>;
                         interrupts = <0x0 0x7c 0x4>;
                         interrupt-parent = <&gic>;
@@ -986,7 +986,7 @@
                 ttc0: timer@ff0e0000 {
                         phandle = <0x68>;
                         compatible = "cdns,ttc";
-                        status = "okay";
+                        status = "disabled";
                         interrupts = <0x0 0x25 0x4 0x0 0x26 0x4 0x0 0x27 0x4>;
                         interrupt-parent = <&gic>;
                         reg = <0x0 0xff0e0000 0x0 0x1000>;
@@ -1007,7 +1007,7 @@
                 ttc1: timer@ff0f0000 {
                         phandle = <0x69>;
                         compatible = "cdns,ttc";
-                        status = "okay";
+                        status = "disabled";
                         interrupts = <0x0 0x28 0x4 0x0 0x29 0x4 0x0 0x2a 0x4>;
                         interrupt-parent = <&gic>;
                         reg = <0x0 0xff0f0000 0x0 0x1000>;
@@ -1738,6 +1738,37 @@
                                 compatible = "arm,gic-v3-its";
                         };
                 };
+
+                aie_core_ref_clk: aie_core_ref_clk {
+                        phandle = <0x2>;
+                        #clock-cells = <0x0>;
+                        clock-frequency = <0x4a817c80>;
+                        compatible = "fixed-clock";
+                };
+
+                ai_engine@20000000000 {
+                        #address-cells = <0x2>;
+                        #size-cells = <0x2>;
+                        compatible = "xlnx,ai-engine-v2.0";
+                        clock-names = "aclk0";
+                        clocks = <&aie_core_ref_clk>;
+                        power-domains = <&versal_firmware 0x18224072>;
+                        ranges;
+                        reg = <0x200 0x0 0x1 0x0>;
+                        xlnx,aie-gen = [02];
+                        xlnx,core-rows = [02 02];
+                        xlnx,mem-rows = [01 01];
+                        xlnx,shim-rows = [00 01];
+
+                        aie_aperture@20000000000 {
+                                #address-cells = <0x2>;
+                                #size-cells = <0x2>;
+                                reg = <0x200 0x0 0x1 0x0>;
+                                xlnx,columns = <0x0 0x11>;
+                                xlnx,device-name = <0x0>;
+                                xlnx,node-id = <0x18800000>;
+                        };
+                };
         };
 
         amba_xppu: indirect-bus@1 {
@@ -2261,8 +2292,8 @@
         };
 
         chosen {
-                stdout-path = "serial0:115200";
-                bootargs = "earlycon clk_ignore_unused";
+                stdout-path = "serial1:115200n8";
+                bootargs = "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8";
         };
 
         aliases {
@@ -2470,6 +2501,52 @@
                 user_key6 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@1d0";
                 user_key7 = "/firmware/versal-firmware/versal-sec-cfg/nvmem-layout/user-key@1f0";
                 STATIC_DESIGN_axi_noc_mc_1x_ddr_memory = "/memory@00000000";
+                rpu0_runtime_region = "/reserved-memory/rpu0_runtime_region@0";
+                rpu0_shared_region = "/reserved-memory/rpu0_shared_region@10000000";
+                rpu1_runtime_region = "/reserved-memory/rpu1_runtime_region@10800000";
                 gic = "/axi/interrupt-controller@f9000000";
+                aie_core_ref_clk = "/axi/aie_core_ref_clk";
+        };
+
+        domains {
+
+                APU_Linux {
+                        compatible = "openamp,domain-v1";
+                        reserved-memory = <0x199 0x19a 0x19b>;
+                        cpus = <&cpus_a72 0xf 0x80000003>;
+                        os,type = "linux";
+
+                        chosen {
+                                stdout-path = "serial1:115200n8";
+                                bootargs = "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8";
+                        };
+                };
+        };
+
+        reserved-memory {
+                #size-cells = <0x2>;
+                #address-cells = <0x2>;
+                ranges;
+
+                rpu0_runtime_region: rpu0_runtime_region@0 {
+                        phandle = <0x199>;
+                        label = "rpu0_runtime_region";
+                        no-map;
+                        reg = <0x0 0x0 0x0 0x10000000>;
+                };
+
+                rpu0_shared_region: rpu0_shared_region@10000000 {
+                        phandle = <0x19a>;
+                        label = "rpu0_shared_region";
+                        no-map;
+                        reg = <0x0 0x10000000 0x0 0x800000>;
+                };
+
+                rpu1_runtime_region: rpu1_runtime_region@10800000 {
+                        phandle = <0x19b>;
+                        label = "rpu1_runtime_region";
+                        no-map;
+                        reg = <0x0 0x10800000 0x0 0x8000000>;
+                };
         };
 };

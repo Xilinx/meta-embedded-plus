@@ -31,8 +31,8 @@ SPI_SOURCE[bootbin] = "boot.bin"
 
 # Version configuration
 OSPI_VERSION ?= ""
-OSPI_VERSION:emb-plus-ve2302-amr = "2.0.0"
-OSPI_VERSION:alveo-v80-amr = "2.0.0"
+OSPI_VERSION:emb-plus-ve2302-amr = "3.0.0"
+OSPI_VERSION:alveo-v80-amr = "3.0.0"
 SPI_VERSION = "${PN}-${MACHINE}-v${OSPI_VERSION}${IMAGE_VERSION_SUFFIX}"
 
 DEPENDS:append:emb-plus-ve2302-amr = " amcfw"

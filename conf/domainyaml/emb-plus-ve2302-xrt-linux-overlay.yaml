@@ -1,0 +1,50 @@
+reserved-memory:
+  "#size-cells": 2
+  "#address-cells": 2
+  ranges: true
+  buffer0@36000000:
+    label: u2a_xgq_region
+    no-map: true
+    start: 0x36000000
+    size: 16M
+  buffer@37000000:
+    label: r2a_xgq_region
+    no-map: true
+    start: 0x37000000
+    size: 16M
+  buffer@38000000:
+    label: rpu_region_mgmt
+    no-map: true
+    start: 0x38000000
+    size: 128M
+  buffer@40000000:
+    label: rpu_region
+    no-map: true
+    start: 0x40000000
+    size: 512M
+  cma_reserved@50000000000:
+    label: cma_reserved
+    start: 0x50000000000
+    size: 1G
+    compatible: "shared-dma-pool"
+    reusable: true
+    linux,cma-default: true
+  buffer@50040000000:
+    label: zocl_versal_region0
+    no-map: true
+    start: 0x50040000000
+    size: 5G
+
+domains:
+  APU_Linux:
+    compatible: openamp,domain-v1
+    chosen:
+      bootargs: "console=ttyAMA1 earlycon=pl011,mmio32,0xFF010000,115200n8"
+      stdout-path: "serial0:115200n8"
+    reserved-memory:
+      - buffer0@36000000
+      - buffer@37000000
+      - buffer@38000000
+      - buffer@40000000
+      - cma_reserved@50000000000
+      - buffer@50040000000

@@ -8,6 +8,10 @@ args:
 kconfig:
     CONFIG_YOCTO_BBMC_CORTEXR5_0_FREERTOS: y
     CONFIG_SUBSYSTEM_TF-A_SERIAL_SERIAL1_SELECT: y
+    CONFIG_SUBSYSTEM_SERIAL_SERIAL1_SELECT: y
+    CONFIG_YOCTO_BBMC_LINUX_DTSI: \
+      ${LAYER_PATH_embedded-plus-layer}/recipes-bsp/device-tree/files/alveo-platform-amr.dtsi
+
 machine:
     description: >-
         AMP/multidomain machine for the AMD Alveo V80 Compute

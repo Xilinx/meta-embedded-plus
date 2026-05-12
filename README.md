@@ -13,10 +13,14 @@ the Embedded Plus platform:
 | emb-plus-ve2302-amr | emb-plus-ospi-amr  | OSPI image             |
 | emb-plus-ve2302-xrt | emb-plus-apu-image | APU image              |
 | emb-plus-ve2302-xrt | emb-plus-ospi-vmr  | OSPI image             |
+| alveo-v80-amr       | emb-plus-apu-image | APU image              |
+| alveo-v80-amr       | emb-plus-ospi-amr  | OSPI image             |
 
-> Usageexample:
+> Usage example:
 >
-> MACHINE=emb-plus-ve2302-amr bitbake emb-plus-apu-image
+> DISTRO=amd-edf-small MACHINE=emb-plus-ve2302-amr bitbake emb-plus-apu-image
+>
+> MACHINE=emb-plus-ve2302-xrt bitbake emb-plus-apu-image
 
 ## Maintainers, Patches/Submissions, Community
 

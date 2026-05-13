@@ -20,7 +20,11 @@ the Embedded Plus platform:
 >
 > DISTRO=amd-edf-small MACHINE=emb-plus-ve2302-amr bitbake emb-plus-apu-image
 >
+> **NOTE:** `DISTRO=amd-edf-small` is required only for the AMR APU image. It is not required for OSPI images or other machines.
+>
 > MACHINE=emb-plus-ve2302-xrt bitbake emb-plus-apu-image
+> 
+> MACHINE=emb-plus-ve2302-amr bitbake emb-plus-ospi-amr
 
 ## Maintainers, Patches/Submissions, Community
 

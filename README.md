@@ -2,29 +2,42 @@
 
 This layer enables AMD Embedded Plus platform.
 
+For detailed steps on setting up the EDF Yocto environment, including host requirements, layer configuration, and build instructions, refer to the [AMD EDF Documentation](https://edf.docs.amd.com/).
+
 ## Embedded Plus buildable machines and images
 
 The following MACHINE and build target combinations are possible to build artifacts in SDT flow for
 the Embedded Plus platform:
 
-| Machine             | Target             | Description            |
-|---------------------|--------------------|------------------------|
-| emb-plus-ve2302-amr | emb-plus-apu-image | APU image              |
-| emb-plus-ve2302-amr | emb-plus-ospi-amr  | OSPI image             |
-| emb-plus-ve2302-xrt | emb-plus-apu-image | APU image              |
-| emb-plus-ve2302-xrt | emb-plus-ospi-vmr  | OSPI image             |
-| alveo-v80-amr       | emb-plus-apu-image | APU image              |
-| alveo-v80-amr       | emb-plus-ospi-amr  | OSPI image             |
+| Machine             | Target             | Description            | DISTRO         |
+|---------------------|--------------------|------------------------|----------------|
+| emb-plus-ve2302-amr | emb-plus-apu-image | APU image              | amd-edf-small  |
+| emb-plus-ve2302-amr | emb-plus-ospi-amr  | OSPI image             | amd-edf        |
+| emb-plus-ve2302-xrt | emb-plus-apu-image | APU image              | amd-edf        |
+| emb-plus-ve2302-xrt | emb-plus-ospi-vmr  | OSPI image             | amd-edf        |
+| alveo-v80-amr       | emb-plus-apu-image | APU image              | amd-edf        |
+| alveo-v80-amr       | emb-plus-ospi-amr  | OSPI image             | amd-edf        |
 
-> Usage example:
->
-> DISTRO=amd-edf-small MACHINE=emb-plus-ve2302-amr bitbake emb-plus-apu-image
->
-> **NOTE:** `DISTRO=amd-edf-small` is required only for the AMR APU image. It is not required for OSPI images or other machines.
->
-> MACHINE=emb-plus-ve2302-xrt bitbake emb-plus-apu-image
-> 
-> MACHINE=emb-plus-ve2302-amr bitbake emb-plus-ospi-amr
+> **NOTE:** `DISTRO=amd-edf-small` is required only for the AMR APU to reduce the APU image size.
+
+**Usage examples:**
+
+For AMR APU Image (requires `amd-edf-small` distro):
+```
+DISTRO=amd-edf-small MACHINE=emb-plus-ve2302-amr bitbake emb-plus-apu-image
+```
+
+For XRT/V80 APU Image (uses default `amd-edf` distro):
+```
+MACHINE=emb-plus-ve2302-xrt bitbake emb-plus-apu-image
+MACHINE=alveo-v80-amr bitbake emb-plus-apu-image
+```
+
+For OSPI Image (uses default `amd-edf` distro):
+```
+MACHINE=emb-plus-ve2302-amr bitbake emb-plus-ospi-amr
+MACHINE=alveo-v80-amr bitbake emb-plus-ospi-amr
+```
 
 ## Maintainers, Patches/Submissions, Community
 
